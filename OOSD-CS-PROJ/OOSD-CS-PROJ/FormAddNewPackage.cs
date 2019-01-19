@@ -31,16 +31,16 @@ namespace OOSD_CS_PROJ
                 this.PutPackageData(package);
             
                 try
-            {
+                {
                 package.PackageID = PackageDB.AddNewPackage(package);
                 this.DialogResult = DialogResult.OK;
                 txtPackageID.Text = Convert.ToString(package.PackageID);
                 //sending the completed package to the AddNewPackage method, then retrieving the packageID to be displayed
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
-            }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, ex.GetType().ToString());
+                }
 
 
         }
