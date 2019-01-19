@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label lblPkgID;
-            System.Windows.Forms.Label lblPkgName;
-            System.Windows.Forms.Label lblPkgStartDate;
-            System.Windows.Forms.Label lblPkgEndDate;
-            System.Windows.Forms.Label lblPkgDesc;
-            System.Windows.Forms.Label lblPkgBasePrice;
-            System.Windows.Forms.Label lblPkgAgencyComm;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            this.lblID = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblStartDate = new System.Windows.Forms.Label();
+            this.lblEndDate = new System.Windows.Forms.Label();
+            this.lblDesc = new System.Windows.Forms.Label();
+            this.lblBasePrice = new System.Windows.Forms.Label();
+            this.lblAgencyComm = new System.Windows.Forms.Label();
             this.dGView = new System.Windows.Forms.DataGridView();
             this.travelExpertsDataSet = new OOSD_CS_PROJ.TravelExpertsDataSet();
             this.packagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -55,15 +54,15 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.packagesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.txtPkgID = new System.Windows.Forms.TextBox();
-            this.txtPkgName = new System.Windows.Forms.TextBox();
-            this.txtPkgDesc = new System.Windows.Forms.TextBox();
-            this.txtPkgBasePrice = new System.Windows.Forms.TextBox();
-            this.txtPkgAgencyComm = new System.Windows.Forms.TextBox();
-            this.txtPkgStartDate = new System.Windows.Forms.TextBox();
-            this.txtPkgEndDate = new System.Windows.Forms.TextBox();
-            this.lblPkgDetails = new System.Windows.Forms.Label();
-            this.lblSearchPkg = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtDesc = new System.Windows.Forms.TextBox();
+            this.txtBasePrice = new System.Windows.Forms.TextBox();
+            this.txtAgencyComm = new System.Windows.Forms.TextBox();
+            this.txtStartDate = new System.Windows.Forms.TextBox();
+            this.txtEndDate = new System.Windows.Forms.TextBox();
+            this.lblDetails = new System.Windows.Forms.Label();
+            this.lblSearch = new System.Windows.Forms.Label();
             this.dDLSearch = new System.Windows.Forms.ComboBox();
             this.lblFor = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -72,13 +71,6 @@
             this.btnPrdts = new System.Windows.Forms.Button();
             this.btnSupps = new System.Windows.Forms.Button();
             this.btnPrdctSupps = new System.Windows.Forms.Button();
-            lblPkgID = new System.Windows.Forms.Label();
-            lblPkgName = new System.Windows.Forms.Label();
-            lblPkgStartDate = new System.Windows.Forms.Label();
-            lblPkgEndDate = new System.Windows.Forms.Label();
-            lblPkgDesc = new System.Windows.Forms.Label();
-            lblPkgBasePrice = new System.Windows.Forms.Label();
-            lblPkgAgencyComm = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dGView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.packagesBindingSource)).BeginInit();
@@ -86,84 +78,84 @@
             this.packagesBindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
-            // DGVTest
+            // lblID
             // 
-            lblPkgID.AutoSize = true;
-            lblPkgID.Location = new System.Drawing.Point(167, 131);
-            lblPkgID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            lblPkgID.Name = "lblPkgID";
-            lblPkgID.Size = new System.Drawing.Size(21, 13);
-            lblPkgID.TabIndex = 2;
-            lblPkgID.Text = "ID:";
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(156, 104);
+            this.lblID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(21, 13);
+            this.lblID.TabIndex = 2;
+            this.lblID.Text = "ID:";
             // 
-            // btnAdd
+            // lblName
             // 
-            lblPkgName.AutoSize = true;
-            lblPkgName.Location = new System.Drawing.Point(167, 153);
-            lblPkgName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            lblPkgName.Name = "lblPkgName";
-            lblPkgName.Size = new System.Drawing.Size(38, 13);
-            lblPkgName.TabIndex = 4;
-            lblPkgName.Text = "Name:";
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(156, 135);
+            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(38, 13);
+            this.lblName.TabIndex = 4;
+            this.lblName.Text = "Name:";
             // 
-            // lblPkgStartDate
+            // lblStartDate
             // 
-            lblPkgStartDate.AutoSize = true;
-            lblPkgStartDate.Location = new System.Drawing.Point(167, 174);
-            lblPkgStartDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            lblPkgStartDate.Name = "lblPkgStartDate";
-            lblPkgStartDate.Size = new System.Drawing.Size(58, 13);
-            lblPkgStartDate.TabIndex = 6;
-            lblPkgStartDate.Text = "Start Date:";
+            this.lblStartDate.AutoSize = true;
+            this.lblStartDate.Location = new System.Drawing.Point(156, 166);
+            this.lblStartDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblStartDate.Name = "lblStartDate";
+            this.lblStartDate.Size = new System.Drawing.Size(58, 13);
+            this.lblStartDate.TabIndex = 6;
+            this.lblStartDate.Text = "Start Date:";
             // 
-            // lblPkgEndDate
+            // lblEndDate
             // 
-            lblPkgEndDate.AutoSize = true;
-            lblPkgEndDate.Location = new System.Drawing.Point(167, 196);
-            lblPkgEndDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            lblPkgEndDate.Name = "lblPkgEndDate";
-            lblPkgEndDate.Size = new System.Drawing.Size(55, 13);
-            lblPkgEndDate.TabIndex = 8;
-            lblPkgEndDate.Text = "End Date:";
+            this.lblEndDate.AutoSize = true;
+            this.lblEndDate.Location = new System.Drawing.Point(156, 200);
+            this.lblEndDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEndDate.Name = "lblEndDate";
+            this.lblEndDate.Size = new System.Drawing.Size(55, 13);
+            this.lblEndDate.TabIndex = 8;
+            this.lblEndDate.Text = "End Date:";
             // 
-            // lblPkgDesc
+            // lblDesc
             // 
-            lblPkgDesc.AutoSize = true;
-            lblPkgDesc.Location = new System.Drawing.Point(167, 216);
-            lblPkgDesc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            lblPkgDesc.Name = "lblPkgDesc";
-            lblPkgDesc.Size = new System.Drawing.Size(60, 13);
-            lblPkgDesc.TabIndex = 10;
-            lblPkgDesc.Text = "Description";
+            this.lblDesc.AutoSize = true;
+            this.lblDesc.Location = new System.Drawing.Point(156, 236);
+            this.lblDesc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDesc.Name = "lblDesc";
+            this.lblDesc.Size = new System.Drawing.Size(60, 13);
+            this.lblDesc.TabIndex = 10;
+            this.lblDesc.Text = "Description";
             // 
-            // lblPkgBasePrice
+            // lblBasePrice
             // 
-            lblPkgBasePrice.AutoSize = true;
-            lblPkgBasePrice.Location = new System.Drawing.Point(167, 237);
-            lblPkgBasePrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            lblPkgBasePrice.Name = "lblPkgBasePrice";
-            lblPkgBasePrice.Size = new System.Drawing.Size(61, 13);
-            lblPkgBasePrice.TabIndex = 12;
-            lblPkgBasePrice.Text = "Base Price:";
+            this.lblBasePrice.AutoSize = true;
+            this.lblBasePrice.Location = new System.Drawing.Point(156, 264);
+            this.lblBasePrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBasePrice.Name = "lblBasePrice";
+            this.lblBasePrice.Size = new System.Drawing.Size(61, 13);
+            this.lblBasePrice.TabIndex = 12;
+            this.lblBasePrice.Text = "Base Price:";
             // 
-            // lblPkgAgencyComm
+            // lblAgencyComm
             // 
-            lblPkgAgencyComm.AutoSize = true;
-            lblPkgAgencyComm.Location = new System.Drawing.Point(151, 256);
-            lblPkgAgencyComm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            lblPkgAgencyComm.Name = "lblPkgAgencyComm";
-            lblPkgAgencyComm.Size = new System.Drawing.Size(104, 13);
-            lblPkgAgencyComm.TabIndex = 14;
-            lblPkgAgencyComm.Text = "Agency Commission:";
+            this.lblAgencyComm.AutoSize = true;
+            this.lblAgencyComm.Location = new System.Drawing.Point(144, 295);
+            this.lblAgencyComm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAgencyComm.Name = "lblAgencyComm";
+            this.lblAgencyComm.Size = new System.Drawing.Size(104, 13);
+            this.lblAgencyComm.TabIndex = 14;
+            this.lblAgencyComm.Text = "Agency Commission:";
             // 
             // dGView
             // 
             this.dGView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGView.Location = new System.Drawing.Point(197, 341);
+            this.dGView.Location = new System.Drawing.Point(45, 344);
             this.dGView.Margin = new System.Windows.Forms.Padding(2);
             this.dGView.MultiSelect = false;
             this.dGView.Name = "dGView";
-            this.dGView.Size = new System.Drawing.Size(544, 122);
+            this.dGView.Size = new System.Drawing.Size(688, 99);
             this.dGView.TabIndex = 0;
             this.dGView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVTest_CellContentClick);
             this.dGView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dGView_DataError);
@@ -219,14 +211,13 @@
             this.packagesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.packagesBindingNavigator.Name = "packagesBindingNavigator";
             this.packagesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.packagesBindingNavigator.Size = new System.Drawing.Size(782, 25);
+            this.packagesBindingNavigator.Size = new System.Drawing.Size(845, 25);
             this.packagesBindingNavigator.TabIndex = 1;
             this.packagesBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorAddNewItem
             // 
             this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
@@ -242,7 +233,6 @@
             // bindingNavigatorDeleteItem
             // 
             this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
@@ -251,7 +241,6 @@
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
@@ -260,7 +249,6 @@
             // bindingNavigatorMovePreviousItem
             // 
             this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
@@ -288,7 +276,6 @@
             // bindingNavigatorMoveNextItem
             // 
             this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
@@ -297,7 +284,6 @@
             // bindingNavigatorMoveLastItem
             // 
             this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
@@ -311,89 +297,88 @@
             // packagesBindingNavigatorSaveItem
             // 
             this.packagesBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.packagesBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("packagesBindingNavigatorSaveItem.Image")));
             this.packagesBindingNavigatorSaveItem.Name = "packagesBindingNavigatorSaveItem";
             this.packagesBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.packagesBindingNavigatorSaveItem.Text = "Save Data";
             this.packagesBindingNavigatorSaveItem.Click += new System.EventHandler(this.packagesBindingNavigatorSaveItem_Click);
             // 
-            // txtPkgID
+            // txtID
             // 
-            this.txtPkgID.Location = new System.Drawing.Point(259, 129);
-            this.txtPkgID.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPkgID.Name = "txtPkgID";
-            this.txtPkgID.Size = new System.Drawing.Size(151, 20);
-            this.txtPkgID.TabIndex = 3;
+            this.txtID.Location = new System.Drawing.Point(252, 102);
+            this.txtID.Margin = new System.Windows.Forms.Padding(2);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(114, 20);
+            this.txtID.TabIndex = 3;
             // 
-            // txtPkgName
+            // txtName
             // 
-            this.txtPkgName.Location = new System.Drawing.Point(259, 150);
-            this.txtPkgName.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPkgName.Name = "txtPkgName";
-            this.txtPkgName.Size = new System.Drawing.Size(151, 20);
-            this.txtPkgName.TabIndex = 5;
+            this.txtName.Location = new System.Drawing.Point(252, 132);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(114, 20);
+            this.txtName.TabIndex = 5;
             // 
-            // txtPkgDesc
+            // txtDesc
             // 
-            this.txtPkgDesc.Location = new System.Drawing.Point(259, 213);
-            this.txtPkgDesc.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPkgDesc.Name = "txtPkgDesc";
-            this.txtPkgDesc.Size = new System.Drawing.Size(151, 20);
-            this.txtPkgDesc.TabIndex = 11;
+            this.txtDesc.Location = new System.Drawing.Point(252, 232);
+            this.txtDesc.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.Size = new System.Drawing.Size(114, 20);
+            this.txtDesc.TabIndex = 11;
             // 
-            // txtPkgBasePrice
+            // txtBasePrice
             // 
-            this.txtPkgBasePrice.Location = new System.Drawing.Point(259, 235);
-            this.txtPkgBasePrice.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPkgBasePrice.Name = "txtPkgBasePrice";
-            this.txtPkgBasePrice.Size = new System.Drawing.Size(151, 20);
-            this.txtPkgBasePrice.TabIndex = 13;
+            this.txtBasePrice.Location = new System.Drawing.Point(252, 261);
+            this.txtBasePrice.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBasePrice.Name = "txtBasePrice";
+            this.txtBasePrice.Size = new System.Drawing.Size(114, 20);
+            this.txtBasePrice.TabIndex = 13;
             // 
-            // txtPkgAgencyComm
+            // txtAgencyComm
             // 
-            this.txtPkgAgencyComm.Location = new System.Drawing.Point(259, 256);
-            this.txtPkgAgencyComm.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPkgAgencyComm.Name = "txtPkgAgencyComm";
-            this.txtPkgAgencyComm.Size = new System.Drawing.Size(151, 20);
-            this.txtPkgAgencyComm.TabIndex = 15;
+            this.txtAgencyComm.Location = new System.Drawing.Point(252, 294);
+            this.txtAgencyComm.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAgencyComm.Name = "txtAgencyComm";
+            this.txtAgencyComm.Size = new System.Drawing.Size(114, 20);
+            this.txtAgencyComm.TabIndex = 15;
             // 
-            // txtPkgStartDate
+            // txtStartDate
             // 
-            this.txtPkgStartDate.Location = new System.Drawing.Point(259, 172);
-            this.txtPkgStartDate.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPkgStartDate.Name = "txtPkgStartDate";
-            this.txtPkgStartDate.Size = new System.Drawing.Size(151, 20);
-            this.txtPkgStartDate.TabIndex = 16;
+            this.txtStartDate.Location = new System.Drawing.Point(252, 164);
+            this.txtStartDate.Margin = new System.Windows.Forms.Padding(2);
+            this.txtStartDate.Name = "txtStartDate";
+            this.txtStartDate.Size = new System.Drawing.Size(114, 20);
+            this.txtStartDate.TabIndex = 16;
             // 
-            // txtPkgEndDate
+            // txtEndDate
             // 
-            this.txtPkgEndDate.Location = new System.Drawing.Point(259, 193);
-            this.txtPkgEndDate.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPkgEndDate.Name = "txtPkgEndDate";
-            this.txtPkgEndDate.Size = new System.Drawing.Size(151, 20);
-            this.txtPkgEndDate.TabIndex = 17;
+            this.txtEndDate.Location = new System.Drawing.Point(252, 197);
+            this.txtEndDate.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEndDate.Name = "txtEndDate";
+            this.txtEndDate.Size = new System.Drawing.Size(114, 20);
+            this.txtEndDate.TabIndex = 17;
             // 
-            // lblPkgDetails
-            //
-            this.lblPkgDetails.AutoSize = true;
-            this.lblPkgDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPkgDetails.Location = new System.Drawing.Point(240, 79);
-            this.lblPkgDetails.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPkgDetails.Name = "lblPkgDetails";
-            this.lblPkgDetails.Size = new System.Drawing.Size(168, 25);
-            this.lblPkgDetails.TabIndex = 18;
-            this.lblPkgDetails.Text = "Package Details";
-            //
-            // lblSearchPkg
+            // lblDetails
             // 
-            this.lblSearchPkg.AutoSize = true;
-            this.lblSearchPkg.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchPkg.Location = new System.Drawing.Point(496, 86);
-            this.lblSearchPkg.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblSearchPkg.Name = "lblSearchPkg";
-            this.lblSearchPkg.Size = new System.Drawing.Size(182, 25);
-            this.lblSearchPkg.TabIndex = 19;
-            this.lblSearchPkg.Text = "Search Package: ";
+            this.lblDetails.AutoSize = true;
+            this.lblDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetails.Location = new System.Drawing.Point(198, 58);
+            this.lblDetails.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDetails.Name = "lblDetails";
+            this.lblDetails.Size = new System.Drawing.Size(168, 25);
+            this.lblDetails.TabIndex = 18;
+            this.lblDetails.Text = "Package Details";
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearch.Location = new System.Drawing.Point(482, 75);
+            this.lblSearch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(193, 25);
+            this.lblSearch.TabIndex = 19;
+            this.lblSearch.Text = "Search Packages: ";
             // 
             // dDLSearch
             // 
@@ -407,10 +392,10 @@
             "Description",
             "Base Price",
             "Agency Commission"});
-            this.dDLSearch.Location = new System.Drawing.Point(512, 117);
+            this.dDLSearch.Location = new System.Drawing.Point(483, 120);
             this.dDLSearch.Margin = new System.Windows.Forms.Padding(2);
             this.dDLSearch.Name = "dDLSearch";
-            this.dDLSearch.Size = new System.Drawing.Size(92, 21);
+            this.dDLSearch.Size = new System.Drawing.Size(70, 21);
             this.dDLSearch.TabIndex = 20;
             this.dDLSearch.SelectedIndexChanged += new System.EventHandler(this.dDLSearchPkg_SelectedIndexChanged);
             // 
@@ -418,7 +403,7 @@
             // 
             this.lblFor.AutoSize = true;
             this.lblFor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFor.Location = new System.Drawing.Point(621, 114);
+            this.lblFor.Location = new System.Drawing.Point(565, 118);
             this.lblFor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFor.Name = "lblFor";
             this.lblFor.Size = new System.Drawing.Size(37, 25);
@@ -427,17 +412,18 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(667, 117);
+            this.txtSearch.Location = new System.Drawing.Point(608, 120);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(74, 20);
+            this.txtSearch.Size = new System.Drawing.Size(56, 20);
             this.txtSearch.TabIndex = 22;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(603, 171);
+            this.btnSearch.Location = new System.Drawing.Point(546, 173);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.Size = new System.Drawing.Size(56, 19);
             this.btnSearch.TabIndex = 23;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -445,45 +431,52 @@
             // 
             // btnPkgs
             // 
-            this.btnPkgs.Location = new System.Drawing.Point(25, 95);
+            this.btnPkgs.Location = new System.Drawing.Point(19, 77);
+            this.btnPkgs.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPkgs.Name = "btnPkgs";
-            this.btnPkgs.Size = new System.Drawing.Size(87, 42);
+            this.btnPkgs.Size = new System.Drawing.Size(65, 34);
             this.btnPkgs.TabIndex = 24;
             this.btnPkgs.Text = "Packages";
             this.btnPkgs.UseVisualStyleBackColor = true;
             // 
             // btnPrdts
             // 
-            this.btnPrdts.Location = new System.Drawing.Point(25, 153);
+            this.btnPrdts.Location = new System.Drawing.Point(19, 124);
+            this.btnPrdts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPrdts.Name = "btnPrdts";
-            this.btnPrdts.Size = new System.Drawing.Size(87, 42);
+            this.btnPrdts.Size = new System.Drawing.Size(65, 34);
             this.btnPrdts.TabIndex = 25;
             this.btnPrdts.Text = "Products";
             this.btnPrdts.UseVisualStyleBackColor = true;
+            this.btnPrdts.Click += new System.EventHandler(this.btnPrdts_Click_1);
             // 
             // btnSupps
             // 
-            this.btnSupps.Location = new System.Drawing.Point(25, 208);
+            this.btnSupps.Location = new System.Drawing.Point(19, 169);
+            this.btnSupps.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSupps.Name = "btnSupps";
-            this.btnSupps.Size = new System.Drawing.Size(87, 42);
+            this.btnSupps.Size = new System.Drawing.Size(65, 34);
             this.btnSupps.TabIndex = 26;
             this.btnSupps.Text = "Suppliers";
             this.btnSupps.UseVisualStyleBackColor = true;
+            this.btnSupps.Click += new System.EventHandler(this.btnSupps_Click_1);
             // 
             // btnPrdctSupps
             // 
-            this.btnPrdctSupps.Location = new System.Drawing.Point(25, 268);
+            this.btnPrdctSupps.Location = new System.Drawing.Point(19, 218);
+            this.btnPrdctSupps.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPrdctSupps.Name = "btnPrdctSupps";
-            this.btnPrdctSupps.Size = new System.Drawing.Size(87, 42);
+            this.btnPrdctSupps.Size = new System.Drawing.Size(65, 34);
             this.btnPrdctSupps.TabIndex = 27;
             this.btnPrdctSupps.Text = "Product\r\nSuppliers\r\n";
             this.btnPrdctSupps.UseVisualStyleBackColor = true;
+            this.btnPrdctSupps.Click += new System.EventHandler(this.btnPrdctSupps_Click_1);
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 486);
+            this.ClientSize = new System.Drawing.Size(845, 507);
             this.Controls.Add(this.btnPrdctSupps);
             this.Controls.Add(this.btnSupps);
             this.Controls.Add(this.btnPrdts);
@@ -492,29 +485,35 @@
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lblFor);
             this.Controls.Add(this.dDLSearch);
-            this.Controls.Add(this.lblSearchPkg);
-            this.Controls.Add(this.lblPkgDetails);
-            this.Controls.Add(this.txtPkgEndDate);
-            this.Controls.Add(this.txtPkgStartDate);
-            this.Controls.Add(lblPkgID);
-            this.Controls.Add(this.txtPkgID);
-            this.Controls.Add(lblPkgName);
-            this.Controls.Add(this.txtPkgName);
-            this.Controls.Add(lblPkgStartDate);
-            this.Controls.Add(lblPkgEndDate);
-            this.Controls.Add(lblPkgDesc);
-            this.Controls.Add(this.txtPkgDesc);
-            this.Controls.Add(lblPkgBasePrice);
-            this.Controls.Add(this.txtPkgBasePrice);
-            this.Controls.Add(lblPkgAgencyComm);
-            this.Controls.Add(this.txtPkgAgencyComm);
+            this.Controls.Add(this.lblSearch);
+            this.Controls.Add(this.lblDetails);
+            this.Controls.Add(this.txtEndDate);
+            this.Controls.Add(this.txtStartDate);
+            this.Controls.Add(this.lblID);
+            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.lblStartDate);
+            this.Controls.Add(this.lblEndDate);
+            this.Controls.Add(this.lblDesc);
+            this.Controls.Add(this.txtDesc);
+            this.Controls.Add(this.lblBasePrice);
+            this.Controls.Add(this.txtBasePrice);
+            this.Controls.Add(this.lblAgencyComm);
+            this.Controls.Add(this.txtAgencyComm);
             this.Controls.Add(this.packagesBindingNavigator);
             this.Controls.Add(this.dGView);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Main";
             this.Text = "Main";
             ((System.ComponentModel.ISupportInitialize)(this.dGView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.packagesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.packagesBindingNavigator)).EndInit();
+            this.packagesBindingNavigator.ResumeLayout(false);
+            this.packagesBindingNavigator.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -538,15 +537,15 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton packagesBindingNavigatorSaveItem;
-        private System.Windows.Forms.TextBox txtPkgID;
-        private System.Windows.Forms.TextBox txtPkgName;
-        private System.Windows.Forms.TextBox txtPkgDesc;
-        private System.Windows.Forms.TextBox txtPkgBasePrice;
-        private System.Windows.Forms.TextBox txtPkgAgencyComm;
-        private System.Windows.Forms.TextBox txtPkgStartDate;
-        private System.Windows.Forms.TextBox txtPkgEndDate;
-        private System.Windows.Forms.Label lblPkgDetails;
-        private System.Windows.Forms.Label lblSearchPkg;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtDesc;
+        private System.Windows.Forms.TextBox txtBasePrice;
+        private System.Windows.Forms.TextBox txtAgencyComm;
+        private System.Windows.Forms.TextBox txtStartDate;
+        private System.Windows.Forms.TextBox txtEndDate;
+        private System.Windows.Forms.Label lblDetails;
+        private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.ComboBox dDLSearch;
         private System.Windows.Forms.Label lblFor;
         private System.Windows.Forms.TextBox txtSearch;
@@ -555,6 +554,13 @@
         private System.Windows.Forms.Button btnPrdts;
         private System.Windows.Forms.Button btnSupps;
         private System.Windows.Forms.Button btnPrdctSupps;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblStartDate;
+        private System.Windows.Forms.Label lblEndDate;
+        private System.Windows.Forms.Label lblDesc;
+        private System.Windows.Forms.Label lblBasePrice;
+        private System.Windows.Forms.Label lblAgencyComm;
     }
 }
 

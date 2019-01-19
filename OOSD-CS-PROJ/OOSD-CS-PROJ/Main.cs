@@ -138,7 +138,7 @@ namespace OOSD_CS_PROJ
             Err.SQLErrorParser(sender, e);
         }
 
-        private void btnPkgs_Click(object sender, EventArgs e)
+        private void btnPkgs_Click_1(object sender, EventArgs e)
         {
             dGView.DataSource = null;
             dGView.DataSource = DBCall.GetPackages();
@@ -149,11 +149,11 @@ namespace OOSD_CS_PROJ
             txtAgencyComm.Visible = true;
             ClearTxtBoxes();
             lblDetails.Text = "Package Details";
-            lblSearchPkg.Text = "Search Packages:";
+            lblSearch.Text = "Search Packages:";
             PopulateList();
         }
 
-        private void btnPrdts_Click(object sender, EventArgs e)
+        private void btnPrdts_Click_1(object sender, EventArgs e)
         {
             dGView.DataSource = null;
             dGView.DataSource = DBCall.GetProducts();
@@ -164,11 +164,11 @@ namespace OOSD_CS_PROJ
             txtAgencyComm.Visible = false;
             ClearTxtBoxes();
             lblDetails.Text = "Product Details";
-            lblSearchPkg.Text = "Search Products:";
+            lblSearch.Text = "Search Products:";
             PopulateList();
         }
 
-        private void btnSupps_Click(object sender, EventArgs e)
+        private void btnSupps_Click_1(object sender, EventArgs e)
         {
             dGView.DataSource = null;
             dGView.DataSource = DBCall.GetSuppliers();
@@ -179,11 +179,11 @@ namespace OOSD_CS_PROJ
             txtAgencyComm.Visible = false;
             ClearTxtBoxes();
             lblDetails.Text = "Supplier Details";
-            lblSearchPkg.Text = "Search Suppliers:";
+            lblSearch.Text = "Search Suppliers:";
             PopulateList();
         }
 
-        private void btnPrdctSupps_Click(object sender, EventArgs e)
+        private void btnPrdctSupps_Click_1(object sender, EventArgs e)
         {
             dGView.DataSource = null;
             dGView.DataSource = DBCall.GetPSuppliers();
@@ -194,7 +194,7 @@ namespace OOSD_CS_PROJ
             txtAgencyComm.Visible = false;
             ClearTxtBoxes();
             lblDetails.Text = "Product Supplier Details";
-            lblSearchPkg.Text = "Search Product Suppliers:";
+            lblSearch.Text = "Search Product Suppliers:";
             PopulateList();
         }
     }
