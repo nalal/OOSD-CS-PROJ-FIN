@@ -15,8 +15,16 @@ namespace OOSD_CS_PROJ
         public Main()
         {
             InitializeComponent();
-            DBCall.SQL();
-            DGVTest.DataSource = DBCall.TB;
+            DBCall.SQL();//connecting to the database
+            DGVTest.DataSource = DBCall.TB; //DBCall creates the new data table, populates it to DGVTEST
+        }
+
+        //When user Clicks "Add new package"
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            
+            FormAddNewPackage f2= new FormAddNewPackage();//create a variable for AddPackage form
+            f2.ShowDialog();//show the AddPackage form 
         }
     }
 }
