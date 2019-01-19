@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="DBCall.cs" />
     <Compile Include="Err.cs" />
+    <Compile Include="FormAddNewPackage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddNewPackage.Designer.cs">
+      <DependentUpon>FormAddNewPackage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
