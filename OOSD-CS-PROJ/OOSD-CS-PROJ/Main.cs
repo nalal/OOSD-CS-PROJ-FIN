@@ -13,13 +13,19 @@ namespace OOSD_CS_PROJ
 {
     public partial class Main : Form
     {
-        List<string> ddl = new List<string>();
+        static List<string> ddl = new List<string>();
         public Main()
         {
             InitializeComponent();
             DBCall.InitSQL();
-            dGView.DataSource = DBCall.GetPackages();
+            bindRefresh();
             PopulateList();
+            dDLSelected = ddl[0].ToString();
+        }
+        private void bindRefresh()
+        {
+            dGView.DataSource = null;
+            dGView.DataSource = DBCall.GetPackages();
         }
 
         public void PopulateList()
@@ -44,7 +50,12 @@ namespace OOSD_CS_PROJ
         {
             // TODO: This line of code loads data into the 'travelExpertsDataSet.Packages' table. You can move, or remove it, as needed.
             this.packagesTableAdapter.Fill(this.travelExpertsDataSet.Packages);
+
+            //  * * set the data source for the drop down list
             dDLSearch.DataSource = ddl;
+
+            ClearTxtBoxes();
+
 
 
         }
@@ -63,28 +74,63 @@ namespace OOSD_CS_PROJ
                 txtPkgDesc, txtPkgBasePrice, txtPkgAgencyComm};
                 foreach (DataGridViewCell i in row.Cells)
                 {
-                    string info = i.Value.ToString();
-                    int tbid = i.ColumnIndex;
-                    textboxes[tbid].Text = info;
-
+                    if (i.Value != null)
+                    {
+                        string info = i.Value.ToString();
+                        int tbid = i.ColumnIndex;
+                        textboxes[tbid].Text = info;
+                    }
                 }
 
 
             }
         }
 
+        string dDLSelected = "";
         private void dDLSearchPkg_SelectedIndexChanged(object sender, EventArgs e)
         {
             // create string variable for what is selected from the dropdown list
-            string dDLSelected = dDLSearch.SelectedValue.ToString();
+            
+             dDLSelected = dDLSearch.SelectedValue.ToString();
+             
+        }
 
-            foreach (DataGridView col in dGView.SelectedRows)
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(txtSearch.Text);
+            bindRefresh();
+
+            Cull();
+        }
+
+        private void Cull()
+        {
+            int CID = dDLSearch.SelectedIndex;
+            List<DataGridViewRow> RowsToDelete = new List<DataGridViewRow>();
+            foreach (DataGridViewRow row in dGView.Rows)
+                if (row.Cells[CID].Value != null &&
+                     row.Cells[CID].Value.ToString().Contains(txtSearch.Text) != true) RowsToDelete.Add(row);
+            foreach (DataGridViewRow row in RowsToDelete)
             {
-                if (dDLSelected == col.ToString())
-                {
-
-                }
+                //Currency manager hackery because I cannot hide irrelivant column without doing so
+                CurrencyManager currencyManager1 = (CurrencyManager)BindingContext[dGView.DataSource];
+                currencyManager1.SuspendBinding();
+                dGView.Rows[row.Index].Visible = false;
+                currencyManager1.ResumeBinding();
             }
+            RowsToDelete.Clear();
+        }
+
+        // all text boxes are cleared
+        public void ClearTxtBoxes()
+        {
+            txtPkgID.Text = "";
+            txtPkgName.Text = "";
+            txtPkgStartDate.Text = "";
+            txtPkgEndDate.Text = "";
+            txtPkgDesc.Text = "";
+            txtPkgBasePrice.Text = "";
+            txtPkgAgencyComm.Text = "";
 
         }
     }
