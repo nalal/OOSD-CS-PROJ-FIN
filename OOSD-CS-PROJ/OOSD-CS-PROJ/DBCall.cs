@@ -21,7 +21,7 @@ namespace OOSD_CS_PROJ
         public static DataTable GetPackages()
         {
             DataTable TB = new DataTable();
-            using (SqlConnection conn = new SqlConnection(InitSQL().builder.ConnectionString))
+            using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
             {
                 string query = "select * from Packages";
                 SqlCommand cmd = new SqlCommand(query, conn);

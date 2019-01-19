@@ -10,13 +10,13 @@ namespace OOSD_CS_PROJ
 {
     class Packages
     {
-        public static List<string> PackageID = new List<string>;
+        public static List<string> PackageID = new List<string>();
         public static void GetPID()
         {
             DataTable TB = DBCall.GetPackages();
             foreach(DataRow row in TB.Rows)
             {
-                row.Field(0);
+                PackageID.Add(row.Field<string>("PackageID").ToString());
             }
         }
     }
