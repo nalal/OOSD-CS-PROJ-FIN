@@ -55,13 +55,13 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.packagesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.txtPkgID = new System.Windows.Forms.TextBox();
-            this.txtPkgName = new System.Windows.Forms.TextBox();
-            this.txtPkgDesc = new System.Windows.Forms.TextBox();
-            this.txtPkgBasePrice = new System.Windows.Forms.TextBox();
-            this.txtPkgAgencyComm = new System.Windows.Forms.TextBox();
-            this.txtPkgStartDate = new System.Windows.Forms.TextBox();
-            this.txtPkgEndDate = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtDesc = new System.Windows.Forms.TextBox();
+            this.txtBasePrice = new System.Windows.Forms.TextBox();
+            this.txtAgencyComm = new System.Windows.Forms.TextBox();
+            this.txtStartDate = new System.Windows.Forms.TextBox();
+            this.txtEndDate = new System.Windows.Forms.TextBox();
             this.lblDetails = new System.Windows.Forms.Label();
             this.lblSearchPkg = new System.Windows.Forms.Label();
             this.dDLSearch = new System.Windows.Forms.ComboBox();
@@ -317,61 +317,61 @@
             this.packagesBindingNavigatorSaveItem.Text = "Save Data";
             this.packagesBindingNavigatorSaveItem.Click += new System.EventHandler(this.packagesBindingNavigatorSaveItem_Click);
             // 
-            // txtPkgID
+            // txtID
             // 
-            this.txtPkgID.Location = new System.Drawing.Point(259, 95);
-            this.txtPkgID.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPkgID.Name = "txtPkgID";
-            this.txtPkgID.Size = new System.Drawing.Size(151, 20);
-            this.txtPkgID.TabIndex = 3;
+            this.txtID.Location = new System.Drawing.Point(259, 95);
+            this.txtID.Margin = new System.Windows.Forms.Padding(2);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(151, 20);
+            this.txtID.TabIndex = 3;
             // 
-            // txtPkgName
+            // txtName
             // 
-            this.txtPkgName.Location = new System.Drawing.Point(259, 129);
-            this.txtPkgName.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPkgName.Name = "txtPkgName";
-            this.txtPkgName.Size = new System.Drawing.Size(151, 20);
-            this.txtPkgName.TabIndex = 5;
+            this.txtName.Location = new System.Drawing.Point(259, 129);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(151, 20);
+            this.txtName.TabIndex = 5;
             // 
-            // txtPkgDesc
+            // txtDesc
             // 
-            this.txtPkgDesc.Location = new System.Drawing.Point(259, 230);
-            this.txtPkgDesc.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPkgDesc.Name = "txtPkgDesc";
-            this.txtPkgDesc.Size = new System.Drawing.Size(239, 20);
-            this.txtPkgDesc.TabIndex = 11;
+            this.txtDesc.Location = new System.Drawing.Point(259, 230);
+            this.txtDesc.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.Size = new System.Drawing.Size(239, 20);
+            this.txtDesc.TabIndex = 11;
             // 
-            // txtPkgBasePrice
+            // txtBasePrice
             // 
-            this.txtPkgBasePrice.Location = new System.Drawing.Point(259, 268);
-            this.txtPkgBasePrice.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPkgBasePrice.Name = "txtPkgBasePrice";
-            this.txtPkgBasePrice.Size = new System.Drawing.Size(151, 20);
-            this.txtPkgBasePrice.TabIndex = 13;
+            this.txtBasePrice.Location = new System.Drawing.Point(259, 268);
+            this.txtBasePrice.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBasePrice.Name = "txtBasePrice";
+            this.txtBasePrice.Size = new System.Drawing.Size(151, 20);
+            this.txtBasePrice.TabIndex = 13;
             // 
-            // txtPkgAgencyComm
+            // txtAgencyComm
             // 
-            this.txtPkgAgencyComm.Location = new System.Drawing.Point(259, 299);
-            this.txtPkgAgencyComm.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPkgAgencyComm.Name = "txtPkgAgencyComm";
-            this.txtPkgAgencyComm.Size = new System.Drawing.Size(151, 20);
-            this.txtPkgAgencyComm.TabIndex = 15;
+            this.txtAgencyComm.Location = new System.Drawing.Point(259, 299);
+            this.txtAgencyComm.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAgencyComm.Name = "txtAgencyComm";
+            this.txtAgencyComm.Size = new System.Drawing.Size(151, 20);
+            this.txtAgencyComm.TabIndex = 15;
             // 
-            // txtPkgStartDate
+            // txtStartDate
             // 
-            this.txtPkgStartDate.Location = new System.Drawing.Point(259, 165);
-            this.txtPkgStartDate.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPkgStartDate.Name = "txtPkgStartDate";
-            this.txtPkgStartDate.Size = new System.Drawing.Size(151, 20);
-            this.txtPkgStartDate.TabIndex = 16;
+            this.txtStartDate.Location = new System.Drawing.Point(259, 165);
+            this.txtStartDate.Margin = new System.Windows.Forms.Padding(2);
+            this.txtStartDate.Name = "txtStartDate";
+            this.txtStartDate.Size = new System.Drawing.Size(151, 20);
+            this.txtStartDate.TabIndex = 16;
             // 
-            // txtPkgEndDate
+            // txtEndDate
             // 
-            this.txtPkgEndDate.Location = new System.Drawing.Point(259, 195);
-            this.txtPkgEndDate.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPkgEndDate.Name = "txtPkgEndDate";
-            this.txtPkgEndDate.Size = new System.Drawing.Size(151, 20);
-            this.txtPkgEndDate.TabIndex = 17;
+            this.txtEndDate.Location = new System.Drawing.Point(259, 195);
+            this.txtEndDate.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEndDate.Name = "txtEndDate";
+            this.txtEndDate.Size = new System.Drawing.Size(151, 20);
+            this.txtEndDate.TabIndex = 17;
             // 
             // lblDetails
             // 
@@ -498,20 +498,20 @@
             this.Controls.Add(this.dDLSearch);
             this.Controls.Add(this.lblSearchPkg);
             this.Controls.Add(this.lblDetails);
-            this.Controls.Add(this.txtPkgEndDate);
-            this.Controls.Add(this.txtPkgStartDate);
+            this.Controls.Add(this.txtEndDate);
+            this.Controls.Add(this.txtStartDate);
             this.Controls.Add(lblPkgID);
-            this.Controls.Add(this.txtPkgID);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(lblPkgName);
-            this.Controls.Add(this.txtPkgName);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(lblPkgStartDate);
             this.Controls.Add(lblPkgEndDate);
             this.Controls.Add(lblPkgDesc);
-            this.Controls.Add(this.txtPkgDesc);
+            this.Controls.Add(this.txtDesc);
             this.Controls.Add(lblPkgBasePrice);
-            this.Controls.Add(this.txtPkgBasePrice);
+            this.Controls.Add(this.txtBasePrice);
             this.Controls.Add(lblPkgAgencyComm);
-            this.Controls.Add(this.txtPkgAgencyComm);
+            this.Controls.Add(this.txtAgencyComm);
             this.Controls.Add(this.packagesBindingNavigator);
             this.Controls.Add(this.dGView);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -549,13 +549,13 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton packagesBindingNavigatorSaveItem;
-        private System.Windows.Forms.TextBox txtPkgID;
-        private System.Windows.Forms.TextBox txtPkgName;
-        private System.Windows.Forms.TextBox txtPkgDesc;
-        private System.Windows.Forms.TextBox txtPkgBasePrice;
-        private System.Windows.Forms.TextBox txtPkgAgencyComm;
-        private System.Windows.Forms.TextBox txtPkgStartDate;
-        private System.Windows.Forms.TextBox txtPkgEndDate;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtDesc;
+        private System.Windows.Forms.TextBox txtBasePrice;
+        private System.Windows.Forms.TextBox txtAgencyComm;
+        private System.Windows.Forms.TextBox txtStartDate;
+        private System.Windows.Forms.TextBox txtEndDate;
         private System.Windows.Forms.Label lblDetails;
         private System.Windows.Forms.Label lblSearchPkg;
         private System.Windows.Forms.ComboBox dDLSearch;

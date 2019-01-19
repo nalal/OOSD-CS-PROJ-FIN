@@ -68,8 +68,8 @@ namespace OOSD_CS_PROJ
             foreach (DataGridViewRow row in dGView.SelectedRows)
             {
                 //populate text box with column data
-                TextBox[] textboxes = { txtPkgID, txtPkgName, txtPkgStartDate, txtPkgEndDate,
-                txtPkgDesc, txtPkgBasePrice, txtPkgAgencyComm};
+                TextBox[] textboxes = { txtID, txtName, txtStartDate, txtEndDate,
+                txtDesc, txtBasePrice, txtAgencyComm};
                 foreach (DataGridViewCell i in row.Cells)
                 {
                     if (i.Value != null)
@@ -123,13 +123,13 @@ namespace OOSD_CS_PROJ
         // all text boxes are cleared
         public void ClearTxtBoxes()
         {
-            txtPkgID.Text = "";
-            txtPkgName.Text = "";
-            txtPkgStartDate.Text = "";
-            txtPkgEndDate.Text = "";
-            txtPkgDesc.Text = "";
-            txtPkgBasePrice.Text = "";
-            txtPkgAgencyComm.Text = "";
+            txtID.Text = "";
+            txtName.Text = "";
+            txtStartDate.Text = "";
+            txtEndDate.Text = "";
+            txtDesc.Text = "";
+            txtBasePrice.Text = "";
+            txtAgencyComm.Text = "";
 
         }
 
@@ -142,6 +142,11 @@ namespace OOSD_CS_PROJ
         {
             dGView.DataSource = null;
             dGView.DataSource = DBCall.GetPackages();
+            txtStartDate.Visible = true;
+            txtEndDate.Visible = true;
+            txtDesc.Visible = true;
+            txtBasePrice.Visible = true;
+            txtAgencyComm.Visible = true;
             ClearTxtBoxes();
             lblDetails.Text = "Package Details";
             lblSearchPkg.Text = "Search Packages:";
@@ -152,6 +157,11 @@ namespace OOSD_CS_PROJ
         {
             dGView.DataSource = null;
             dGView.DataSource = DBCall.GetProducts();
+            txtStartDate.Visible = false;
+            txtEndDate.Visible = false;
+            txtDesc.Visible = false;
+            txtBasePrice.Visible = false;
+            txtAgencyComm.Visible = false;
             ClearTxtBoxes();
             lblDetails.Text = "Product Details";
             lblSearchPkg.Text = "Search Products:";
@@ -162,6 +172,11 @@ namespace OOSD_CS_PROJ
         {
             dGView.DataSource = null;
             dGView.DataSource = DBCall.GetSuppliers();
+            txtStartDate.Visible = false;
+            txtEndDate.Visible = false;
+            txtDesc.Visible = false;
+            txtBasePrice.Visible = false;
+            txtAgencyComm.Visible = false;
             ClearTxtBoxes();
             lblDetails.Text = "Supplier Details";
             lblSearchPkg.Text = "Search Suppliers:";
@@ -172,6 +187,11 @@ namespace OOSD_CS_PROJ
         {
             dGView.DataSource = null;
             dGView.DataSource = DBCall.GetPSuppliers();
+            txtStartDate.Visible = true;
+            txtEndDate.Visible = false;
+            txtDesc.Visible = false;
+            txtBasePrice.Visible = false;
+            txtAgencyComm.Visible = false;
             ClearTxtBoxes();
             lblDetails.Text = "Product Supplier Details";
             lblSearchPkg.Text = "Search Product Suppliers:";
