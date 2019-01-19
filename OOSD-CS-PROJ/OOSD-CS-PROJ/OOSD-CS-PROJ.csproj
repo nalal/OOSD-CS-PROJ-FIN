@@ -54,6 +54,12 @@
     <Compile Include="FormAddNewPackage.Designer.cs">
       <DependentUpon>FormAddNewPackage.cs</DependentUpon>
     </Compile>
+    <Compile Include="LISTTEST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LISTTEST.Designer.cs">
+      <DependentUpon>LISTTEST.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestOpen.cs" />
     <Compile Include="TravelExpertsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -69,6 +76,9 @@
     </Compile>
     <EmbeddedResource Include="FormAddNewPackage.resx">
       <DependentUpon>FormAddNewPackage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LISTTEST.resx">
+      <DependentUpon>LISTTEST.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
