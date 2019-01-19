@@ -15,16 +15,127 @@ namespace OOSD_CS_PROJ
         public Main()
         {
             InitializeComponent();
-            DBCall.SQL();//connecting to the database
-            DGVTest.DataSource = DBCall.TB; //DBCall creates the new data table, populates it to DGVTEST
+            DBCall.InitSQL();
+            bindRefresh();
+            PopulateList();
+            dDLSelected = ddl[0].ToString();
+        }
+        private void bindRefresh()
+        {
+            dGView.DataSource = null;
+            dGView.DataSource = DBCall.GetPackages();
         }
 
         //When user Clicks "Add new package"
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            ddl.Clear();
+
+            foreach (DataGridViewColumn col in dGView.Columns)
+            {
+                ddl.Add(col.Name.ToString());
+            }
+
+        }
+        private void packagesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.packagesBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.travelExpertsDataSet);
+
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'travelExpertsDataSet.Packages' table. You can move, or remove it, as needed.
+            this.packagesTableAdapter.Fill(this.travelExpertsDataSet.Packages);
+
+            //  * * set the data source for the drop down list
+            dDLSearch.DataSource = ddl;
+
+            ClearTxtBoxes();
+
+
+
+        }
+
+        private void DGVTest_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DGVTest_SelectionChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dGView.SelectedRows)
+            {
+                //populate text box with column data
+                TextBox[] textboxes = { txtPkgID, txtPkgName, txtPkgStartDate, txtPkgEndDate,
+                txtPkgDesc, txtPkgBasePrice, txtPkgAgencyComm};
+                foreach (DataGridViewCell i in row.Cells)
+                {
+                    if (i.Value != null)
+                    {
+                        string info = i.Value.ToString();
+                        int tbid = i.ColumnIndex;
+                        textboxes[tbid].Text = info;
+                    }
+                }
+
+
+            }
+        }
+
+        string dDLSelected = "";
+        private void dDLSearchPkg_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // create string variable for what is selected from the dropdown list
             
-            FormAddNewPackage f2= new FormAddNewPackage();//create a variable for AddPackage form
-            f2.ShowDialog();//show the AddPackage form 
+             dDLSelected = dDLSearch.SelectedValue.ToString();
+             
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(txtSearch.Text);
+            bindRefresh();
+
+            Cull();
+        }
+
+        private void Cull()
+        {
+            int CID = dDLSearch.SelectedIndex;
+            List<DataGridViewRow> RowsToDelete = new List<DataGridViewRow>();
+            foreach (DataGridViewRow row in dGView.Rows)
+                if (row.Cells[CID].Value != null &&
+                     row.Cells[CID].Value.ToString().Contains(txtSearch.Text) != true) RowsToDelete.Add(row);
+            foreach (DataGridViewRow row in RowsToDelete)
+            {
+                //Currency manager hackery because I cannot hide irrelivant column without doing so
+                CurrencyManager currencyManager1 = (CurrencyManager)BindingContext[dGView.DataSource];
+                currencyManager1.SuspendBinding();
+                dGView.Rows[row.Index].Visible = false;
+                currencyManager1.ResumeBinding();
+            }
+            RowsToDelete.Clear();
+        }
+
+        // all text boxes are cleared
+        public void ClearTxtBoxes()
+        {
+            txtPkgID.Text = "";
+            txtPkgName.Text = "";
+            txtPkgStartDate.Text = "";
+            txtPkgEndDate.Text = "";
+            txtPkgDesc.Text = "";
+            txtPkgBasePrice.Text = "";
+            txtPkgAgencyComm.Text = "";
+
+        }
+
+        private void dGView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            Err.SQLErrorParser(sender, e);
         }
     }
 }
