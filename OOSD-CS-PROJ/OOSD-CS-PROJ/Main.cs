@@ -133,5 +133,10 @@ namespace OOSD_CS_PROJ
             txtPkgAgencyComm.Text = "";
 
         }
+
+        private void dGView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            Err.SQLErrorParser(sender, e);
+        }
     }
 }
