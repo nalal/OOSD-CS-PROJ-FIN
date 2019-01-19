@@ -10,15 +10,18 @@ namespace OOSD_CS_PROJ
 {
     class DBCall
     {
-        public static DataTable TB = new DataTable();
-        public static void SQL()
+        public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+        public static void InitSQL()
         {
-            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
             builder.DataSource = "10.163.37.67";   // update me
             builder.UserID = "sa";              // update me
             builder.Password = "N1o2a3h4!"; // update me
             builder.InitialCatalog = "TravelExperts";
-            using(SqlConnection conn = new SqlConnection(builder.ConnectionString))
+        }
+        public static DataTable GetPackages()
+        {
+            DataTable TB = new DataTable();
+            using (SqlConnection conn = new SqlConnection(InitSQL().builder.ConnectionString))
             {
                 string query = "select * from Packages";
                 SqlCommand cmd = new SqlCommand(query, conn);
@@ -28,6 +31,7 @@ namespace OOSD_CS_PROJ
                 conn.Close();
                 da.Dispose();
             }
+            return TB;
         }
     }
 }
