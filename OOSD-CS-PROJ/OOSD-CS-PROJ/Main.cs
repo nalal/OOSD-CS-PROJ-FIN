@@ -16,7 +16,51 @@ namespace OOSD_CS_PROJ
         {
             InitializeComponent();
             DBCall.SQL();
-            DGVTest.DataSource = DBCall.TB;
+            dGVPkg.DataSource = DBCall.TB;
+        }
+
+        private void packagesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.packagesBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.travelExpertsDataSet);
+
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'travelExpertsDataSet.Packages' table. You can move, or remove it, as needed.
+            this.packagesTableAdapter.Fill(this.travelExpertsDataSet.Packages);
+
+        }
+
+        private void DGVTest_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DGVTest_SelectionChanged(object sender, EventArgs e)
+        {
+            foreach(DataGridViewRow row in dGVPkg.SelectedRows)
+            {
+                //populate text box with column data 
+                TextBox[] textboxes = { txtPkgID, txtPkgName, txtPkgStartDate, txtPkgEndDate,
+                txtPkgDesc, txtPkgBasePrice, txtPkgAgencyComm};
+                foreach (DataGridViewCell i in row.Cells)
+                {
+                    string info = i.Value.ToString();
+                    int tbid = i.ColumnIndex;
+                    textboxes[tbid].Text = info;
+
+                }
+
+
+            }
+        }
+
+        private void dDLSearchPkg_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
