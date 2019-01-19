@@ -166,6 +166,7 @@
             this.dGView.Size = new System.Drawing.Size(544, 122);
             this.dGView.TabIndex = 0;
             this.dGView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVTest_CellContentClick);
+            this.dGView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dGView_DataError);
             this.dGView.SelectionChanged += new System.EventHandler(this.DGVTest_SelectionChanged);
             // 
             // travelExpertsDataSet
