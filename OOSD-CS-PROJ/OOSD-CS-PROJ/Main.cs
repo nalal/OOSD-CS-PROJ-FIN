@@ -15,8 +15,8 @@ namespace OOSD_CS_PROJ
         public Main()
         {
             InitializeComponent();
-            DBCall.SQL();
-            dGVPkg.DataSource = DBCall.TB;
+            DBCall.InitSQL();
+            dGVPkg.DataSource = DBCall.GetPackages();
         }
 
         private void packagesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
