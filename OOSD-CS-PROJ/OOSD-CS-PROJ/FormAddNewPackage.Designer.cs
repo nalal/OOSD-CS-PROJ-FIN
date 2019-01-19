@@ -28,12 +28,190 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtPackageID = new System.Windows.Forms.TextBox();
+            this.txtPkgName = new System.Windows.Forms.TextBox();
+            this.txtPkgDesc = new System.Windows.Forms.TextBox();
+            this.txtPkgBasePrice = new System.Windows.Forms.TextBox();
+            this.txtPkgAgencyComission = new System.Windows.Forms.TextBox();
+            this.btnSaveNewPackage = new System.Windows.Forms.Button();
+            this.dtStartDate = new System.Windows.Forms.DateTimePicker();
+            this.dtEndDate = new System.Windows.Forms.DateTimePicker();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(32, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Package Id";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(32, 84);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Package Name";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(32, 167);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(126, 17);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Package End Date";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(32, 122);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(131, 17);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Package Start Date";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(32, 249);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(135, 17);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Package Base Price";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(32, 210);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(138, 17);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Package Description";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(31, 287);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(193, 17);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Package Agency Commission";
+            // 
+            // txtPackageID
+            // 
+            this.txtPackageID.Location = new System.Drawing.Point(271, 45);
+            this.txtPackageID.Name = "txtPackageID";
+            this.txtPackageID.ReadOnly = true;
+            this.txtPackageID.Size = new System.Drawing.Size(100, 22);
+            this.txtPackageID.TabIndex = 7;
+            // 
+            // txtPkgName
+            // 
+            this.txtPkgName.Location = new System.Drawing.Point(271, 84);
+            this.txtPkgName.Name = "txtPkgName";
+            this.txtPkgName.Size = new System.Drawing.Size(100, 22);
+            this.txtPkgName.TabIndex = 8;
+            // 
+            // txtPkgDesc
+            // 
+            this.txtPkgDesc.Location = new System.Drawing.Point(271, 210);
+            this.txtPkgDesc.Name = "txtPkgDesc";
+            this.txtPkgDesc.Size = new System.Drawing.Size(100, 22);
+            this.txtPkgDesc.TabIndex = 11;
+            // 
+            // txtPkgBasePrice
+            // 
+            this.txtPkgBasePrice.Location = new System.Drawing.Point(271, 249);
+            this.txtPkgBasePrice.Name = "txtPkgBasePrice";
+            this.txtPkgBasePrice.Size = new System.Drawing.Size(100, 22);
+            this.txtPkgBasePrice.TabIndex = 12;
+            // 
+            // txtPkgAgencyComission
+            // 
+            this.txtPkgAgencyComission.Location = new System.Drawing.Point(271, 287);
+            this.txtPkgAgencyComission.Name = "txtPkgAgencyComission";
+            this.txtPkgAgencyComission.Size = new System.Drawing.Size(100, 22);
+            this.txtPkgAgencyComission.TabIndex = 13;
+            // 
+            // btnSaveNewPackage
+            // 
+            this.btnSaveNewPackage.Location = new System.Drawing.Point(489, 287);
+            this.btnSaveNewPackage.Name = "btnSaveNewPackage";
+            this.btnSaveNewPackage.Size = new System.Drawing.Size(130, 47);
+            this.btnSaveNewPackage.TabIndex = 14;
+            this.btnSaveNewPackage.Text = "Save Package";
+            this.btnSaveNewPackage.UseVisualStyleBackColor = true;
+            this.btnSaveNewPackage.Click += new System.EventHandler(this.btnSaveNewPackage_Click);
+            // 
+            // dtStartDate
+            // 
+            this.dtStartDate.Location = new System.Drawing.Point(271, 122);
+            this.dtStartDate.Name = "dtStartDate";
+            this.dtStartDate.Size = new System.Drawing.Size(200, 22);
+            this.dtStartDate.TabIndex = 15;
+            // 
+            // dtEndDate
+            // 
+            this.dtEndDate.Location = new System.Drawing.Point(271, 167);
+            this.dtEndDate.Name = "dtEndDate";
+            this.dtEndDate.Size = new System.Drawing.Size(200, 22);
+            this.dtEndDate.TabIndex = 16;
+            // 
+            // FormAddNewPackage
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(816, 471);
+            this.Controls.Add(this.dtEndDate);
+            this.Controls.Add(this.dtStartDate);
+            this.Controls.Add(this.btnSaveNewPackage);
+            this.Controls.Add(this.txtPkgAgencyComission);
+            this.Controls.Add(this.txtPkgBasePrice);
+            this.Controls.Add(this.txtPkgDesc);
+            this.Controls.Add(this.txtPkgName);
+            this.Controls.Add(this.txtPackageID);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Name = "FormAddNewPackage";
             this.Text = "FormAddNewPackage";
+            this.Load += new System.EventHandler(this.FormAddNewPackage_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtPackageID;
+        private System.Windows.Forms.TextBox txtPkgName;
+        private System.Windows.Forms.TextBox txtPkgDesc;
+        private System.Windows.Forms.TextBox txtPkgBasePrice;
+        private System.Windows.Forms.TextBox txtPkgAgencyComission;
+        private System.Windows.Forms.Button btnSaveNewPackage;
+        private System.Windows.Forms.DateTimePicker dtStartDate;
+        private System.Windows.Forms.DateTimePicker dtEndDate;
     }
 }
