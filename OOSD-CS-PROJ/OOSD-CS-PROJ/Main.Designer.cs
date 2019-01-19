@@ -68,11 +68,10 @@
             this.lblFor = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnPkgs = new System.Windows.Forms.Button();
+            this.btnPrdts = new System.Windows.Forms.Button();
+            this.btnSupps = new System.Windows.Forms.Button();
+            this.btnPrdctSupps = new System.Windows.Forms.Button();
             lblPkgID = new System.Windows.Forms.Label();
             lblPkgName = new System.Windows.Forms.Label();
             lblPkgStartDate = new System.Windows.Forms.Label();
@@ -443,61 +442,51 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // button1
+            // btnPkgs
             // 
-            this.button1.Location = new System.Drawing.Point(25, 100);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnPkgs.Location = new System.Drawing.Point(25, 95);
+            this.btnPkgs.Name = "btnPkgs";
+            this.btnPkgs.Size = new System.Drawing.Size(87, 42);
+            this.btnPkgs.TabIndex = 24;
+            this.btnPkgs.Text = "Packages";
+            this.btnPkgs.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnPrdts
             // 
-            this.button2.Location = new System.Drawing.Point(25, 143);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 25;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnPrdts.Location = new System.Drawing.Point(25, 153);
+            this.btnPrdts.Name = "btnPrdts";
+            this.btnPrdts.Size = new System.Drawing.Size(87, 42);
+            this.btnPrdts.TabIndex = 25;
+            this.btnPrdts.Text = "Products";
+            this.btnPrdts.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnSupps
             // 
-            this.button3.Location = new System.Drawing.Point(25, 186);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 26;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSupps.Location = new System.Drawing.Point(25, 208);
+            this.btnSupps.Name = "btnSupps";
+            this.btnSupps.Size = new System.Drawing.Size(87, 42);
+            this.btnSupps.TabIndex = 26;
+            this.btnSupps.Text = "Suppliers";
+            this.btnSupps.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnPrdctSupps
             // 
-            this.button4.Location = new System.Drawing.Point(25, 227);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 27;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(25, 265);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 28;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnPrdctSupps.Location = new System.Drawing.Point(25, 268);
+            this.btnPrdctSupps.Name = "btnPrdctSupps";
+            this.btnPrdctSupps.Size = new System.Drawing.Size(87, 42);
+            this.btnPrdctSupps.TabIndex = 27;
+            this.btnPrdctSupps.Text = "Product\r\nSuppliers\r\n";
+            this.btnPrdctSupps.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 486);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnPrdctSupps);
+            this.Controls.Add(this.btnSupps);
+            this.Controls.Add(this.btnPrdts);
+            this.Controls.Add(this.btnPkgs);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lblFor);
@@ -568,10 +557,9 @@
         private System.Windows.Forms.Label lblFor;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnPkgs;
+        private System.Windows.Forms.Button btnPrdts;
+        private System.Windows.Forms.Button btnSupps;
+        private System.Windows.Forms.Button btnPrdctSupps;
     }
 }
