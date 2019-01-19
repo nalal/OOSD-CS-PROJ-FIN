@@ -7,29 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 
 namespace OOSD_CS_PROJ
 {
     public partial class Main : Form
     {
-        static List<string> ddl = new List<string>();
         public Main()
         {
             InitializeComponent();
             DBCall.InitSQL();
-            dGView.DataSource = DBCall.GetPackages();
+            bindRefresh();
             PopulateList();
             dDLSelected = ddl[0].ToString();
         }
         private void bindRefresh()
         {
-            object db = dGView.DataSource;
             dGView.DataSource = null;
-            dGView.DataSource = db;
+            dGView.DataSource = DBCall.GetPackages();
         }
 
-        public void PopulateList()
+        //When user Clicks "Add new package"
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             ddl.Clear();
 
@@ -37,8 +35,7 @@ namespace OOSD_CS_PROJ
             {
                 ddl.Add(col.Name.ToString());
             }
-            dDLSearch.DataSource = null;
-            dDLSearch.DataSource = ddl;
+
         }
         private void packagesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -53,8 +50,12 @@ namespace OOSD_CS_PROJ
             // TODO: This line of code loads data into the 'travelExpertsDataSet.Packages' table. You can move, or remove it, as needed.
             this.packagesTableAdapter.Fill(this.travelExpertsDataSet.Packages);
 
+            //  * * set the data source for the drop down list
+            dDLSearch.DataSource = ddl;
 
             ClearTxtBoxes();
+
+
 
         }
 
@@ -68,8 +69,8 @@ namespace OOSD_CS_PROJ
             foreach (DataGridViewRow row in dGView.SelectedRows)
             {
                 //populate text box with column data
-                TextBox[] textboxes = { txtID, txtName, txtStartDate, txtEndDate,
-                txtDesc, txtBasePrice, txtAgencyComm};
+                TextBox[] textboxes = { txtPkgID, txtPkgName, txtPkgStartDate, txtPkgEndDate,
+                txtPkgDesc, txtPkgBasePrice, txtPkgAgencyComm};
                 foreach (DataGridViewCell i in row.Cells)
                 {
                     if (i.Value != null)
@@ -88,10 +89,9 @@ namespace OOSD_CS_PROJ
         private void dDLSearchPkg_SelectedIndexChanged(object sender, EventArgs e)
         {
             // create string variable for what is selected from the dropdown list
-            if (dDLSearch.SelectedValue != null)
-            {
-                dDLSelected = dDLSearch.SelectedValue.ToString();
-            }
+            
+             dDLSelected = dDLSearch.SelectedValue.ToString();
+             
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -123,79 +123,19 @@ namespace OOSD_CS_PROJ
         // all text boxes are cleared
         public void ClearTxtBoxes()
         {
-            txtID.Text = "";
-            txtName.Text = "";
-            txtStartDate.Text = "";
-            txtEndDate.Text = "";
-            txtDesc.Text = "";
-            txtBasePrice.Text = "";
-            txtAgencyComm.Text = "";
+            txtPkgID.Text = "";
+            txtPkgName.Text = "";
+            txtPkgStartDate.Text = "";
+            txtPkgEndDate.Text = "";
+            txtPkgDesc.Text = "";
+            txtPkgBasePrice.Text = "";
+            txtPkgAgencyComm.Text = "";
 
         }
 
         private void dGView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             Err.SQLErrorParser(sender, e);
-        }
-
-        private void btnPkgs_Click(object sender, EventArgs e)
-        {
-            dGView.DataSource = null;
-            dGView.DataSource = DBCall.GetPackages();
-            txtStartDate.Visible = true;
-            txtEndDate.Visible = true;
-            txtDesc.Visible = true;
-            txtBasePrice.Visible = true;
-            txtAgencyComm.Visible = true;
-            ClearTxtBoxes();
-            lblDetails.Text = "Package Details";
-            lblSearchPkg.Text = "Search Packages:";
-            PopulateList();
-        }
-
-        private void btnPrdts_Click(object sender, EventArgs e)
-        {
-            dGView.DataSource = null;
-            dGView.DataSource = DBCall.GetProducts();
-            txtStartDate.Visible = false;
-            txtEndDate.Visible = false;
-            txtDesc.Visible = false;
-            txtBasePrice.Visible = false;
-            txtAgencyComm.Visible = false;
-            ClearTxtBoxes();
-            lblDetails.Text = "Product Details";
-            lblSearchPkg.Text = "Search Products:";
-            PopulateList();
-        }
-
-        private void btnSupps_Click(object sender, EventArgs e)
-        {
-            dGView.DataSource = null;
-            dGView.DataSource = DBCall.GetSuppliers();
-            txtStartDate.Visible = false;
-            txtEndDate.Visible = false;
-            txtDesc.Visible = false;
-            txtBasePrice.Visible = false;
-            txtAgencyComm.Visible = false;
-            ClearTxtBoxes();
-            lblDetails.Text = "Supplier Details";
-            lblSearchPkg.Text = "Search Suppliers:";
-            PopulateList();
-        }
-
-        private void btnPrdctSupps_Click(object sender, EventArgs e)
-        {
-            dGView.DataSource = null;
-            dGView.DataSource = DBCall.GetPSuppliers();
-            txtStartDate.Visible = true;
-            txtEndDate.Visible = false;
-            txtDesc.Visible = false;
-            txtBasePrice.Visible = false;
-            txtAgencyComm.Visible = false;
-            ClearTxtBoxes();
-            lblDetails.Text = "Product Supplier Details";
-            lblSearchPkg.Text = "Search Product Suppliers:";
-            PopulateList();
         }
     }
 }
