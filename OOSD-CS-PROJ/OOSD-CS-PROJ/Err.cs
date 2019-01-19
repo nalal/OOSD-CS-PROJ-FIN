@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace OOSD_CS_PROJ
 {
@@ -37,6 +38,16 @@ namespace OOSD_CS_PROJ
                 res = false;
             }
             return res;
+        }
+        //Error message multiline relay for the lazy
+        public static void EMA(string[] i, string t)
+        {
+            string c = "";
+            foreach (string s in i)
+            {
+                c = c + s + "\n";
+            }
+            MessageBox.Show(c,t);
         }
     }
 }

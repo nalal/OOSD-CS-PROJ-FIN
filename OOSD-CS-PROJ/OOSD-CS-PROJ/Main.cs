@@ -15,6 +15,8 @@ namespace OOSD_CS_PROJ
         public Main()
         {
             InitializeComponent();
+            DBCall.SQL();
+            DGVTest.DataSource = DBCall.TB;
         }
     }
 }
