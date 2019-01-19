@@ -86,7 +86,7 @@
             this.packagesBindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblPkgID
+            // DGVTest
             // 
             lblPkgID.AutoSize = true;
             lblPkgID.Location = new System.Drawing.Point(167, 131);
@@ -96,7 +96,7 @@
             lblPkgID.TabIndex = 2;
             lblPkgID.Text = "ID:";
             // 
-            // lblPkgName
+            // btnAdd
             // 
             lblPkgName.AutoSize = true;
             lblPkgName.Location = new System.Drawing.Point(167, 153);
@@ -481,7 +481,7 @@
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 486);
             this.Controls.Add(this.btnPrdctSupps);
@@ -513,15 +513,8 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Main";
             this.Text = "Main";
-            this.Load += new System.EventHandler(this.Main_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dGView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.packagesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.packagesBindingNavigator)).EndInit();
-            this.packagesBindingNavigator.ResumeLayout(false);
-            this.packagesBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVTest)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -564,3 +557,4 @@
         private System.Windows.Forms.Button btnPrdctSupps;
     }
 }
+

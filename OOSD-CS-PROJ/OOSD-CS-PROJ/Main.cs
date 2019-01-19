@@ -7,13 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 
 namespace OOSD_CS_PROJ
 {
     public partial class Main : Form
     {
-        static List<string> ddl = new List<string>();
         public Main()
         {
             InitializeComponent();
@@ -28,7 +26,8 @@ namespace OOSD_CS_PROJ
             dGView.DataSource = DBCall.GetPackages();
         }
 
-        public void PopulateList()
+        //When user Clicks "Add new package"
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             ddl.Clear();
 
