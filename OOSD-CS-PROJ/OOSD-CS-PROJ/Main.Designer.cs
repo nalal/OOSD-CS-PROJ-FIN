@@ -375,14 +375,14 @@
             //
             // lblPkgDetails
             //
-            //this.lblPkgDetails.AutoSize = true;
-            //this.lblPkgDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //this.lblPkgDetails.Location = new System.Drawing.Point(240, 79);
-            //this.lblPkgDetails.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            //this.lblPkgDetails.Name = "lblPkgDetails";
-            //this.lblPkgDetails.Size = new System.Drawing.Size(168, 25);
-            //this.lblPkgDetails.TabIndex = 18;
-            //this.lblPkgDetails.Text = "Package Details";
+            this.lblPkgDetails.AutoSize = true;
+            this.lblPkgDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPkgDetails.Location = new System.Drawing.Point(240, 79);
+            this.lblPkgDetails.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPkgDetails.Name = "lblPkgDetails";
+            this.lblPkgDetails.Size = new System.Drawing.Size(168, 25);
+            this.lblPkgDetails.TabIndex = 18;
+            this.lblPkgDetails.Text = "Package Details";
             //
             // lblSearchPkg
             //
