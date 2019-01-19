@@ -10,6 +10,7 @@ namespace OOSD_CS_PROJ
 {
     class DBCall
     {
+        //Init connection
         public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         public static void InitSQL()
         {
@@ -18,6 +19,7 @@ namespace OOSD_CS_PROJ
             builder.Password = "N1o2a3h4!";     
             builder.InitialCatalog = "TravelExperts";
         }
+        //Get DB Table data
         public static DataTable GetPackages()
         {
             DataTable TB = new DataTable();
