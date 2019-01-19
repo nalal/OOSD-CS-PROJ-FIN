@@ -414,16 +414,6 @@
             this.txtSearch.Size = new System.Drawing.Size(97, 20);
             this.txtSearch.TabIndex = 22;
             //
-            // btnAdd
-            //
-            this.btnAdd.Location = new System.Drawing.Point(41, 52);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(99, 61);
-            this.btnAdd.TabIndex = 1;
-            this.btnAdd.Text = "Add New Package";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            //
             // Main
             //
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
