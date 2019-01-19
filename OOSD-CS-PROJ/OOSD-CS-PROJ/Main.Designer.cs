@@ -513,7 +513,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Main";
             this.Text = "Main";
-            ((System.ComponentModel.ISupportInitialize)(this.DGVTest)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGView)).EndInit();
             this.ResumeLayout(false);
 
         }
