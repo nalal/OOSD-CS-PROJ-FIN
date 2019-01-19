@@ -18,14 +18,15 @@ namespace OOSD_CS_PROJ
         {
             InitializeComponent();
             DBCall.InitSQL();
-            bindRefresh();
+            dGView.DataSource = DBCall.GetPackages();
             PopulateList();
             dDLSelected = ddl[0].ToString();
         }
         private void bindRefresh()
         {
+            object db = dGView.DataSource;
             dGView.DataSource = null;
-            dGView.DataSource = DBCall.GetPackages();
+            dGView.DataSource = db;
         }
 
         public void PopulateList()
@@ -36,7 +37,8 @@ namespace OOSD_CS_PROJ
             {
                 ddl.Add(col.Name.ToString());
             }
-
+            dDLSearch.DataSource = null;
+            dDLSearch.DataSource = ddl;
         }
         private void packagesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -51,12 +53,8 @@ namespace OOSD_CS_PROJ
             // TODO: This line of code loads data into the 'travelExpertsDataSet.Packages' table. You can move, or remove it, as needed.
             this.packagesTableAdapter.Fill(this.travelExpertsDataSet.Packages);
 
-            //  * * set the data source for the drop down list
-            dDLSearch.DataSource = ddl;
 
             ClearTxtBoxes();
-
-
 
         }
 
@@ -90,9 +88,10 @@ namespace OOSD_CS_PROJ
         private void dDLSearchPkg_SelectedIndexChanged(object sender, EventArgs e)
         {
             // create string variable for what is selected from the dropdown list
-            
-             dDLSelected = dDLSearch.SelectedValue.ToString();
-             
+            if (dDLSearch.SelectedValue != null)
+            {
+                dDLSelected = dDLSearch.SelectedValue.ToString();
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -137,6 +136,46 @@ namespace OOSD_CS_PROJ
         private void dGView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             Err.SQLErrorParser(sender, e);
+        }
+
+        private void btnPkgs_Click(object sender, EventArgs e)
+        {
+            dGView.DataSource = null;
+            dGView.DataSource = DBCall.GetPackages();
+            ClearTxtBoxes();
+            lblDetails.Text = "Package Details";
+            lblSearchPkg.Text = "Search Packages:";
+            PopulateList();
+        }
+
+        private void btnPrdts_Click(object sender, EventArgs e)
+        {
+            dGView.DataSource = null;
+            dGView.DataSource = DBCall.GetProducts();
+            ClearTxtBoxes();
+            lblDetails.Text = "Product Details";
+            lblSearchPkg.Text = "Search Products:";
+            PopulateList();
+        }
+
+        private void btnSupps_Click(object sender, EventArgs e)
+        {
+            dGView.DataSource = null;
+            dGView.DataSource = DBCall.GetSuppliers();
+            ClearTxtBoxes();
+            lblDetails.Text = "Supplier Details";
+            lblSearchPkg.Text = "Search Suppliers:";
+            PopulateList();
+        }
+
+        private void btnPrdctSupps_Click(object sender, EventArgs e)
+        {
+            dGView.DataSource = null;
+            dGView.DataSource = DBCall.GetPSuppliers();
+            ClearTxtBoxes();
+            lblDetails.Text = "Product Supplier Details";
+            lblSearchPkg.Text = "Search Product Suppliers:";
+            PopulateList();
         }
     }
 }
