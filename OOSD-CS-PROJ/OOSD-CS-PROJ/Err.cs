@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,17 +11,17 @@ namespace OOSD_CS_PROJ
     class Err
     {
         //Input errors
-            //check if string is null
+        //check if string is null
         public static bool IsNonNullString(string s)
         {
             bool res = true;
-            if(s == null || s == "")
+            if (s == null || s == "")
             {
                 res = false;
             }
             return res;
         }
-            //check if list is null
+        //check if list is null
         public static bool IsNonNullList(List<string> l)
         {
             bool res = true;
@@ -30,7 +31,7 @@ namespace OOSD_CS_PROJ
             }
             return res;
         }
-            //check if string array is null
+        //check if string array is null
         public static bool IsNonNullStringArray(string[] l)
         {
             bool res = true;
@@ -40,7 +41,7 @@ namespace OOSD_CS_PROJ
             }
             return res;
         }
-            //Error message multiline relay for the lazy
+        //Error message multiline relay for the lazy
         public static void EMA(string[] i, string t)
         {
             string c = "";
@@ -48,22 +49,22 @@ namespace OOSD_CS_PROJ
             {
                 c = c + s + "\n";
             }
-            MessageBox.Show(c,t);
+            MessageBox.Show(c, t);
         }
         //MSSQL Error Handling
-            //Catch timmy
+        //Catch timmy
         public static bool SQLIsNonDestructive(string inp)
         {
             bool res = true;
-            if(inp.Contains("DROP"))
+            if (inp.Contains("DROP"))
             {
                 res = false;
             }
             return res;
         }
-            //Generic error parser
+        //Generic error parser
         public static void SQLErrorParser(object sender, DataGridViewDataErrorEventArgs anError)
-        {             
+        {
             //Checks for error type and displays in message box
             MessageBox.Show("An error occured while you were attempting the following opperation(s): \n" +
                 anError.Context.ToString() + "\n" +
@@ -80,4 +81,6 @@ namespace OOSD_CS_PROJ
                 anError.ThrowException = false;
             }
 
+        }
+    }
 }
