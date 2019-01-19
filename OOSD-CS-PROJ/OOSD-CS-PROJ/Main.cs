@@ -43,7 +43,7 @@ namespace OOSD_CS_PROJ
         {
             foreach(DataGridViewRow row in dGVPkg.SelectedRows)
             {
-                //populate text box with column data 
+                //populate text box with column data
                 TextBox[] textboxes = { txtPkgID, txtPkgName, txtPkgStartDate, txtPkgEndDate,
                 txtPkgDesc, txtPkgBasePrice, txtPkgAgencyComm};
                 foreach (DataGridViewCell i in row.Cells)
