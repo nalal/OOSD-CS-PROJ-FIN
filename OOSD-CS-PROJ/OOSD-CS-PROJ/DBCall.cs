@@ -14,9 +14,9 @@ namespace OOSD_CS_PROJ
         public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         public static void InitSQL()
         {
-            builder.DataSource = "10.163.37.67";
+            builder.DataSource = "localhost";
             builder.UserID = "sa";
-            builder.Password = "N1o2a3h4!";
+            builder.Password = "PASSWORD";
             builder.InitialCatalog = "TravelExperts";
         }
         //Get DB Table data
