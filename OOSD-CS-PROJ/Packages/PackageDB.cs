@@ -16,9 +16,10 @@ namespace OOSD_CS_PROJ
             //PackageID will be auto incremented once created
             int PackageId;
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-            builder.DataSource = "10.163.37.67";   // update me
-            builder.UserID = "sa";              // update me
-            builder.Password = "N1o2a3h4!"; // update me
+            builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";   // update me
+            //builder.UserID = "sa";              // update me
+            //builder.Password = "OOSD1234"; // update me
+            builder.IntegratedSecurity = true;
             builder.InitialCatalog = "TravelExperts";
             using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
             {

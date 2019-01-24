@@ -14,10 +14,11 @@ namespace OOSD_CS_PROJ
         public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         public static void InitSQL()
         {
-            builder.DataSource = "localhost";
-            builder.UserID = "sa";
-            builder.Password = "PASSWORD";
+            builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";
+            //builder.UserID = "sa";
+            //builder.Password = "OOSD1234";
             builder.InitialCatalog = "TravelExperts";
+            builder.IntegratedSecurity = true;
         }
         //Get DB Table data
         public static DataTable GetPackages()
