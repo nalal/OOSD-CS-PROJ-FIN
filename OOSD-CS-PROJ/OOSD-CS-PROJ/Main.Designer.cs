@@ -211,7 +211,7 @@
             this.packagesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.packagesBindingNavigator.Name = "packagesBindingNavigator";
             this.packagesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.packagesBindingNavigator.Size = new System.Drawing.Size(845, 25);
+            this.packagesBindingNavigator.Size = new System.Drawing.Size(839, 25);
             this.packagesBindingNavigator.TabIndex = 1;
             this.packagesBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -421,7 +421,7 @@
             // btnSearch
             // 
             this.btnSearch.Location = new System.Drawing.Point(546, 173);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(56, 19);
             this.btnSearch.TabIndex = 23;
@@ -432,7 +432,7 @@
             // btnPkgs
             // 
             this.btnPkgs.Location = new System.Drawing.Point(19, 77);
-            this.btnPkgs.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPkgs.Margin = new System.Windows.Forms.Padding(2);
             this.btnPkgs.Name = "btnPkgs";
             this.btnPkgs.Size = new System.Drawing.Size(65, 34);
             this.btnPkgs.TabIndex = 24;
@@ -442,7 +442,7 @@
             // btnPrdts
             // 
             this.btnPrdts.Location = new System.Drawing.Point(19, 124);
-            this.btnPrdts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPrdts.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrdts.Name = "btnPrdts";
             this.btnPrdts.Size = new System.Drawing.Size(65, 34);
             this.btnPrdts.TabIndex = 25;
@@ -453,7 +453,7 @@
             // btnSupps
             // 
             this.btnSupps.Location = new System.Drawing.Point(19, 169);
-            this.btnSupps.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSupps.Margin = new System.Windows.Forms.Padding(2);
             this.btnSupps.Name = "btnSupps";
             this.btnSupps.Size = new System.Drawing.Size(65, 34);
             this.btnSupps.TabIndex = 26;
@@ -464,7 +464,7 @@
             // btnPrdctSupps
             // 
             this.btnPrdctSupps.Location = new System.Drawing.Point(19, 218);
-            this.btnPrdctSupps.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPrdctSupps.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrdctSupps.Name = "btnPrdctSupps";
             this.btnPrdctSupps.Size = new System.Drawing.Size(65, 34);
             this.btnPrdctSupps.TabIndex = 27;
@@ -476,7 +476,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 507);
+            this.ClientSize = new System.Drawing.Size(839, 507);
             this.Controls.Add(this.btnPrdctSupps);
             this.Controls.Add(this.btnSupps);
             this.Controls.Add(this.btnPrdts);

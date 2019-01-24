@@ -12,13 +12,49 @@ namespace OOSD_CS_PROJ
     {
         //Init connection
         public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+        public static bool CSucces = false;
         public static void InitSQL()
         {
-            builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";
-            //builder.UserID = "sa";
-            //builder.Password = "OOSD1234";
-            builder.InitialCatalog = "TravelExperts";
-            builder.IntegratedSecurity = true;
+            if (ConnectionPage.Local)
+            {
+                builder.DataSource = ConnectionPage.Name;
+                builder.InitialCatalog = "TravelExperts";
+                builder.IntegratedSecurity = true;
+                using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
+                {
+                    try
+                    {
+                        conn.Open();
+                        CSucces = true;
+                        conn.Close();
+                    }
+                    catch(SqlException ex)
+                    {
+                        System.Windows.Forms.MessageBox.Show("SQL connection attempt returned error code " + ex.ErrorCode, "SQL Error");
+                    }
+                }
+            }
+            else if (!ConnectionPage.Local)
+            {
+                builder.DataSource = ConnectionPage.Name;
+                builder.UserID = ConnectionPage.User;
+                builder.Password = ConnectionPage.Pass;
+                builder.InitialCatalog = "TravelExperts";
+                using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
+                {
+                    try
+                    {
+                        conn.Open();
+                        CSucces = true;
+                        conn.Close();
+                    }
+                    catch (SqlException ex)
+                    {
+                        System.Windows.Forms.MessageBox.Show("SQL connection attempt returned error code " + ex.ErrorCode, "SQL Error");
+                    }
+                }
+            }
+
         }
         //Get DB Table data
         public static DataTable GetPackages()

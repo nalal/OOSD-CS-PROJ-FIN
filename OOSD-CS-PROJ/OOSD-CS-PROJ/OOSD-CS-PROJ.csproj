@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectionPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectionPage.Designer.cs">
+      <DependentUpon>ConnectionPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBCall.cs" />
     <Compile Include="Err.cs" />
     <Compile Include="FormAddNewPackage.cs">
@@ -67,6 +73,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TravelExpertsDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ConnectionPage.resx">
+      <DependentUpon>ConnectionPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAddNewPackage.resx">
       <DependentUpon>FormAddNewPackage.cs</DependentUpon>
     </EmbeddedResource>

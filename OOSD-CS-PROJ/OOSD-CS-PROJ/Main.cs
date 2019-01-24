@@ -17,10 +17,24 @@ namespace OOSD_CS_PROJ
         public Main()
         {
             InitializeComponent();
+            SQLCon();
             DBCall.InitSQL();
             dGView.DataSource = DBCall.GetPackages();
             PopulateList();
             dDLSelected = ddl[0].ToString();
+        }
+        private void SQLCon()
+        {
+            Form lp = new ConnectionPage();
+            lp.ShowDialog();
+            if(ConnectionPage.Term)
+            {
+                Application.Exit();
+            }
+            if(!DBCall.CSucces)
+            {
+                SQLCon();
+            }
         }
         private void bindRefresh()
         {
