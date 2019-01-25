@@ -18,13 +18,13 @@ namespace OOSD_CS_PROJ
         {
             InitializeComponent();
             SQLCon();
-            if (!ConnectionPage.Term)
+            if (!ConnectionPage.Term && DBCall.CSucces)
             {
                 dGView.DataSource = DBCall.GetPackages();
                 PopulateList();
                 dDLSelected = ddl[0].ToString();
             }
-            else if (ConnectionPage.Term)
+            else if (ConnectionPage.Term || !DBCall.CSucces)
             {
                 Environment.Exit(1);
             }
