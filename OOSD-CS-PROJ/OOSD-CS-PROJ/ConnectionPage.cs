@@ -14,7 +14,7 @@ namespace OOSD_CS_PROJ
     {
         //init blank connection info
         public static bool Local = false;
-        public static string Name = "";
+        public static string LName = "";
         public static string User = "";
         public static string Pass = "";
         public static bool Term = false;
@@ -31,7 +31,7 @@ namespace OOSD_CS_PROJ
             //check login type
             if(RBLocal.Checked && Err.IsNonNullString(TBName.Text))
             {
-                Name = TBName.Text;
+                LName = TBName.Text;
                 Local = true;
                 DBCall.InitSQL();
                 if(DBCall.CSucces)
@@ -42,7 +42,7 @@ namespace OOSD_CS_PROJ
             if(RBRemote.Checked && Err.IsNonNullString(TBName.Text))
             {
                 Local = false;
-                Name = TBName.Text;
+                LName = TBName.Text;
                 User = TBUser.Text;
                 Pass = TBPass.Text;
                 DBCall.InitSQL();

@@ -45,14 +45,14 @@
             this.TBUser.Location = new System.Drawing.Point(76, 38);
             this.TBUser.Name = "TBUser";
             this.TBUser.Size = new System.Drawing.Size(100, 20);
-            this.TBUser.TabIndex = 0;
+            this.TBUser.TabIndex = 1;
             // 
             // TBName
             // 
             this.TBName.Location = new System.Drawing.Point(76, 12);
             this.TBName.Name = "TBName";
             this.TBName.Size = new System.Drawing.Size(100, 20);
-            this.TBName.TabIndex = 1;
+            this.TBName.TabIndex = 0;
             // 
             // TBPass
             // 
@@ -137,7 +137,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(232, 181);
+            this.ClientSize = new System.Drawing.Size(237, 181);
             this.Controls.Add(this.BClose);
             this.Controls.Add(this.RBRemote);
             this.Controls.Add(this.RBLocal);
@@ -148,6 +148,7 @@
             this.Controls.Add(this.TBPass);
             this.Controls.Add(this.TBName);
             this.Controls.Add(this.TBUser);
+            this.Name = "ConnectionPage";
             this.Text = "ConnectionPage";
             this.ResumeLayout(false);
             this.PerformLayout();

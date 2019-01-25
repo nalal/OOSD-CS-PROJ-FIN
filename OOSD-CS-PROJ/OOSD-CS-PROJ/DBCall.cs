@@ -19,7 +19,7 @@ namespace OOSD_CS_PROJ
             if (ConnectionPage.Local)
             {
                 //get connection data
-                builder.DataSource = ConnectionPage.Name;
+                builder.DataSource = ConnectionPage.LName;
                 builder.InitialCatalog = "TravelExperts";
                 builder.IntegratedSecurity = true;
                 using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
@@ -39,7 +39,7 @@ namespace OOSD_CS_PROJ
             }
             else if (!ConnectionPage.Local)
             {
-                builder.DataSource = ConnectionPage.Name;
+                builder.DataSource = ConnectionPage.LName;
                 builder.UserID = ConnectionPage.User;
                 builder.Password = ConnectionPage.Pass;
                 builder.InitialCatalog = "TravelExperts";

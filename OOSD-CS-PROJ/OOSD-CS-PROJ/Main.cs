@@ -18,23 +18,21 @@ namespace OOSD_CS_PROJ
         {
             InitializeComponent();
             SQLCon();
-            DBCall.InitSQL();
-            dGView.DataSource = DBCall.GetPackages();
-            PopulateList();
-            dDLSelected = ddl[0].ToString();
+            if (!ConnectionPage.Term)
+            {
+                dGView.DataSource = DBCall.GetPackages();
+                PopulateList();
+                dDLSelected = ddl[0].ToString();
+            }
+            else if (ConnectionPage.Term)
+            {
+                Environment.Exit(1);
+            }
         }
         private void SQLCon()
         {
             Form lp = new ConnectionPage();
             lp.ShowDialog();
-            if(ConnectionPage.Term)
-            {
-                Application.Exit();
-            }
-            if(!DBCall.CSucces)
-            {
-                SQLCon();
-            }
         }
         private void bindRefresh()
         {
