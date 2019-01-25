@@ -28,11 +28,13 @@ namespace OOSD_CS_PROJ
         {
             if(RBLocal.Checked && Err.IsNonNullString(TBName.Text))
             {
+                DBCall.InitSQL();
                 Name = TBName.Text;
                 Local = true;
             }
             if(RBRemote.Checked && Err.IsNonNullString(TBName.Text))
             {
+                DBCall.InitSQL();
                 Local = false;
                 Name = TBName.Text;
                 User = TBUser.Text;
