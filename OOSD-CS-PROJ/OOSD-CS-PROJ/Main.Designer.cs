@@ -71,6 +71,7 @@
             this.btnPrdts = new System.Windows.Forms.Button();
             this.btnSupps = new System.Windows.Forms.Button();
             this.btnPrdctSupps = new System.Windows.Forms.Button();
+            this.btnAddNew = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.packagesBindingSource)).BeginInit();
@@ -472,11 +473,22 @@
             this.btnPrdctSupps.UseVisualStyleBackColor = true;
             this.btnPrdctSupps.Click += new System.EventHandler(this.btnPrdctSupps_Click_1);
             // 
+            // btnAddNew
+            // 
+            this.btnAddNew.Location = new System.Drawing.Point(460, 218);
+            this.btnAddNew.Name = "btnAddNew";
+            this.btnAddNew.Size = new System.Drawing.Size(142, 43);
+            this.btnAddNew.TabIndex = 28;
+            this.btnAddNew.Text = "Add New Package";
+            this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 507);
+            this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.btnPrdctSupps);
             this.Controls.Add(this.btnSupps);
             this.Controls.Add(this.btnPrdts);
@@ -561,6 +573,7 @@
         private System.Windows.Forms.Label lblDesc;
         private System.Windows.Forms.Label lblBasePrice;
         private System.Windows.Forms.Label lblAgencyComm;
+        private System.Windows.Forms.Button btnAddNew;
     }
 }
 

@@ -209,5 +209,11 @@ namespace OOSD_CS_PROJ
             lblSearch.Text = "Search Product Suppliers:";
             PopulateList();
         }
+
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+            FormAddNewPackage f2 = new FormAddNewPackage();//create a variable for AddPackage form
+            f2.ShowDialog();//show the AddPackage form 
+        }
     }
 }
