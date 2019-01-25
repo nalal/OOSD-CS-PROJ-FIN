@@ -70,6 +70,7 @@ namespace OOSD_CS_PROJ
                     convEndDate = dtEndDate.Value.Date;
                     
                     //putting in variables so that we can error check Pkg start and end date 
+                    //currently this gives an sql error that I haven't figured out
                     if(convStartDate > convEndDate)
                     {
                         MessageBox.Show("Package start date cannot be later than end date");
