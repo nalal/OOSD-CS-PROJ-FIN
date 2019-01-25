@@ -12,6 +12,7 @@ namespace OOSD_CS_PROJ
 {
     public partial class ConnectionPage : Form
     {
+        //init blank connection info
         public static bool Local = false;
         public static string Name = "";
         public static string User = "";
@@ -19,6 +20,7 @@ namespace OOSD_CS_PROJ
         public static bool Term = false;
         public ConnectionPage()
         {
+            //init form
             InitializeComponent();
             TBUser.Enabled = false;
             TBPass.Enabled = false;
@@ -26,10 +28,11 @@ namespace OOSD_CS_PROJ
 
         private void BLogin_Click(object sender, EventArgs e)
         {
+            //check login type
             if(RBLocal.Checked && Err.IsNonNullString(TBName.Text))
             {
-                DBCall.InitSQL();
                 Name = TBName.Text;
+                DBCall.InitSQL();
                 Local = true;
             }
             if(RBRemote.Checked && Err.IsNonNullString(TBName.Text))
@@ -41,7 +44,7 @@ namespace OOSD_CS_PROJ
                 Pass = TBPass.Text;
             }
         }
-
+        //change con type and reset
         private void RBRemote_Click(object sender, EventArgs e)
         {
             TBName.Text = "";
@@ -55,7 +58,7 @@ namespace OOSD_CS_PROJ
             TBUser.Enabled = false;
             TBPass.Enabled = false;
         }
-
+        //terminate program
         private void BClose_Click(object sender, EventArgs e)
         {
             Term = true;
