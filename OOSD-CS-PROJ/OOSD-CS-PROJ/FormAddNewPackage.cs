@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Packages;
 
 namespace OOSD_CS_PROJ
 {
@@ -54,13 +55,28 @@ namespace OOSD_CS_PROJ
         //this will take from the textboxes and put it into the object
         private void PutPackageData(Package package)
         {
-            package.PkgName = txtPkgName.Text;
-            package.PkgStartDate = dtStartDate.Value.Date;
-            package.PkgEndDate = dtEndDate.Value.Date;
-            package.PkgDesc = txtPkgDesc.Text;
-            package.PkgBasePrice  = Convert.ToDecimal(txtPkgBasePrice.Text);
-            package.PkgAgencyCommission = Convert.ToDecimal(txtPkgAgencyComission.Text);
 
+            if (Validator.IsProvided(txtPkgName, "Package Name") &&
+                Validator.IsProvided(txtPkgDesc, "Package Description") &&
+                Validator.IsNonNegativeDecimal(txtPkgBasePrice, "Base Price") &&
+                   Validator.IsNonNegativeDecimal(txtPkgAgencyComission, "Agency Commission"))
+            {
+                package.PkgName = txtPkgName.Text;
+
+                //putting in variables so that we can error check Pkg start and end date 
+                if (dtStartDate.Value.Date > dtEndDate.Value.Date)
+                {
+                    MessageBox.Show("Package start date cannot be later than end date");
+                }
+                else
+                {
+                    package.PkgStartDate = dtStartDate.Value.Date;
+                    package.PkgEndDate = dtEndDate.Value.Date;
+                    package.PkgDesc = txtPkgDesc.Text;
+                    package.PkgBasePrice = Convert.ToDecimal(txtPkgBasePrice.Text);
+                    package.PkgAgencyCommission = Convert.ToDecimal(txtPkgAgencyComission.Text);
+                }
+            }
             
         }
 
