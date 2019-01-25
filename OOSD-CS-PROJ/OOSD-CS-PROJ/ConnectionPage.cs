@@ -32,8 +32,8 @@ namespace OOSD_CS_PROJ
             if(RBLocal.Checked && Err.IsNonNullString(TBName.Text))
             {
                 Name = TBName.Text;
-                DBCall.InitSQL();
                 Local = true;
+                DBCall.InitSQL();
             }
             if(RBRemote.Checked && Err.IsNonNullString(TBName.Text))
             {
