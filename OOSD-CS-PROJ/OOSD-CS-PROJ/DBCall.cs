@@ -15,13 +15,16 @@ namespace OOSD_CS_PROJ
         public static bool CSucces = false;
         public static void InitSQL()
         {
+            //check connection type
             if (ConnectionPage.Local)
             {
+                //get connection data
                 builder.DataSource = ConnectionPage.Name;
                 builder.InitialCatalog = "TravelExperts";
                 builder.IntegratedSecurity = true;
                 using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
                 {
+                    //test connection
                     try
                     {
                         conn.Open();
