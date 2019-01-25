@@ -34,14 +34,22 @@ namespace OOSD_CS_PROJ
                 Name = TBName.Text;
                 Local = true;
                 DBCall.InitSQL();
+                if(DBCall.CSucces)
+                {
+                    Close();
+                }
             }
             if(RBRemote.Checked && Err.IsNonNullString(TBName.Text))
             {
-                DBCall.InitSQL();
                 Local = false;
                 Name = TBName.Text;
                 User = TBUser.Text;
                 Pass = TBPass.Text;
+                DBCall.InitSQL();
+                if (DBCall.CSucces)
+                {
+                    Close();
+                }
             }
         }
         //change con type and reset
