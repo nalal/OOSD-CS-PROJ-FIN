@@ -21,30 +21,33 @@ namespace OOSD_CS_PROJ
 
         public Package package; //added package
 
-        
+        DateTime convStartDate;
+        DateTime convEndDate;
 
         //When user clicks save new package, will submit information to the database
         private void btnSaveNewPackage_Click(object sender, EventArgs e)
         {
             
 
-                package = new Package();
+            package = new Package();
+            try
+            {
                 this.PutPackageData(package);
-            
-                try
-                {
+
+
                 package.PackageID = PackageDB.AddNewPackage(package);
                 this.DialogResult = DialogResult.OK;
                 txtPackageID.Text = Convert.ToString(package.PackageID);
-                //sending the completed package to the AddNewPackage method, then retrieving the packageID to be displayed
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, ex.GetType().ToString());
-                }
+            //sending the completed package to the AddNewPackage method, then retrieving the packageID to be displayed
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
 
 
-        }
+}
 
         //Upon form loading, label the form as Add New Package
         private void FormAddNewPackage_Load(object sender, EventArgs e)
@@ -55,29 +58,36 @@ namespace OOSD_CS_PROJ
         //this will take from the textboxes and put it into the object
         private void PutPackageData(Package package)
         {
-
-            if (Validator.IsProvided(txtPkgName, "Package Name") &&
-                Validator.IsProvided(txtPkgDesc, "Package Description") &&
-                Validator.IsNonNegativeDecimal(txtPkgBasePrice, "Base Price") &&
-                   Validator.IsNonNegativeDecimal(txtPkgAgencyComission, "Agency Commission"))
+            try
             {
-                package.PkgName = txtPkgName.Text;
-
-                //putting in variables so that we can error check Pkg start and end date 
-                if (dtStartDate.Value.Date > dtEndDate.Value.Date)
+                if (Validator.IsProvided(txtPkgName, "Package Name") &&
+                    Validator.IsProvided(txtPkgDesc, "Package Description") &&
+                    Validator.IsNonNegativeDecimal(txtPkgBasePrice, "Base Price") &&
+                       Validator.IsNonNegativeDecimal(txtPkgAgencyComission, "Agency Commission"))
                 {
-                    MessageBox.Show("Package start date cannot be later than end date");
-                }
-                else
-                {
-                    package.PkgStartDate = dtStartDate.Value.Date;
-                    package.PkgEndDate = dtEndDate.Value.Date;
-                    package.PkgDesc = txtPkgDesc.Text;
-                    package.PkgBasePrice = Convert.ToDecimal(txtPkgBasePrice.Text);
-                    package.PkgAgencyCommission = Convert.ToDecimal(txtPkgAgencyComission.Text);
+                    package.PkgName = txtPkgName.Text;
+                    convStartDate = dtStartDate.Value.Date;
+                    convEndDate = dtEndDate.Value.Date;
+                    
+                    //putting in variables so that we can error check Pkg start and end date 
+                    if(convStartDate > convEndDate)
+                    {
+                        MessageBox.Show("Package start date cannot be later than end date");
+                    }
+                    else
+                    {
+                        package.PkgStartDate = this.dtStartDate.Value.Date;
+                        package.PkgEndDate = this.dtEndDate.Value.Date;
+                        package.PkgDesc = txtPkgDesc.Text;
+                        package.PkgBasePrice = Convert.ToDecimal(txtPkgBasePrice.Text);
+                        package.PkgAgencyCommission = Convert.ToDecimal(txtPkgAgencyComission.Text);
+                    }
                 }
             }
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
         }
 
     }

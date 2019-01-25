@@ -7,14 +7,13 @@ using System.Threading.Tasks;
 
 namespace OOSD_CS_PROJ
 {//Author: Helen Lin
-    public class PackageDB
+    public static class PackageDB
     {
         public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         public static void InitSQL()
         {
-            builder.DataSource = "localhost";
-            builder.UserID = "sa";
-            builder.Password = "PASSWORD";
+            builder.DataSource = "ELF8OOSD197690\\SQLEXPRESS";
+            builder.IntegratedSecurity = true;
             builder.InitialCatalog = "TravelExperts";
         }
         //this will allow user to add a new package to list
@@ -23,12 +22,10 @@ namespace OOSD_CS_PROJ
         {
             //PackageID will be auto incremented once created
             int PackageId;
-            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-            builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";   // update me
-            //builder.UserID = "sa";              // update me
-            //builder.Password = "OOSD1234"; // update me
-            builder.IntegratedSecurity = true;
-            builder.InitialCatalog = "TravelExperts";
+
+
+            PackageDB.InitSQL();
+
             using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
             {
                 string insertStatement = "INSERT INTO Packages(PkgName, PkgStartDate, PkgEndDate, PkgDesc, PkgBasePrice, PkgAgencyCommission)" + "VALUES(@PkgName, @PkgStartDate, @PkgEndDate, @PkgDesc, @PkgBasePrice, @PkgAgencyCommission)";
