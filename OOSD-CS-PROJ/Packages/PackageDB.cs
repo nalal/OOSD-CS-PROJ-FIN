@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -33,8 +34,14 @@ namespace OOSD_CS_PROJ
                 SqlCommand cmd = new SqlCommand(insertStatement, conn);
 
                 cmd.Parameters.AddWithValue("@PkgName", newPackage.PkgName);
+
                 cmd.Parameters.AddWithValue("@PkgStartDate", newPackage.PkgStartDate);
+             
+
                 cmd.Parameters.AddWithValue("@PkgEndDate", newPackage.PkgEndDate);
+            
+
+
                 cmd.Parameters.AddWithValue("@PkgDesc", newPackage.PkgDesc);
                 cmd.Parameters.AddWithValue("@PkgBasePrice", newPackage.PkgBasePrice);
                 cmd.Parameters.AddWithValue("@PkgAgencyCommission", newPackage.PkgAgencyCommission);
