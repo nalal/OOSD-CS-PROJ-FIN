@@ -10,8 +10,7 @@ namespace OOSD_CS_PROJ
     {
             public Package() { }
 
-            public int PackageID
-            { get; set; }
+            public int PackageID { get; set; }
 
             public string PkgName { get; set; }
 

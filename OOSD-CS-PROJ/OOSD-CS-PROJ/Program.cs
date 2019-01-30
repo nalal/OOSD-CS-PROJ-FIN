@@ -16,7 +16,7 @@ namespace OOSD_CS_PROJ
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Application.Run(new Main1());
         }
     }
 }
