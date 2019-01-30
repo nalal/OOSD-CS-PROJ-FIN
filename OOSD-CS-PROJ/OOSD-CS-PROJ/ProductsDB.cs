@@ -12,12 +12,6 @@ namespace OOSD_CS_PROJ
     {
         // connecting to the DB
         public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-        public static void InitSQL()
-        {
-            builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";
-            builder.IntegratedSecurity = true;
-            builder.InitialCatalog = "TravelExperts";
-        }
 
         // creating list of instances of the ProdSuppliers class
         public static List<Product> GetProducts()
@@ -25,9 +19,9 @@ namespace OOSD_CS_PROJ
             // create new list of Products
             List<Product> Products = new List<Product>(); // make an empty list
             Product prod; // reference to new Product object
-           
+
             //
-            InitSQL();
+            DBCall.InitSQL();
 
             using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
             {
