@@ -60,80 +60,80 @@ namespace OOSD_CS_PROJ
 
         }
         //Get DB Table data
-        //public static DataTable GetPackages()
-        //{
-        //    DataTable TB = new DataTable();
-        //    using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
-        //    {
-        //        string query = "select * from Packages";
-        //        SqlCommand cmd = new SqlCommand(query, conn);
-        //        conn.Open();
-        //        SqlDataAdapter da = new SqlDataAdapter(cmd);
-        //        da.Fill(TB);
-        //        conn.Close();
-        //        da.Dispose();
-        //    }
-        //    return TB;
-        //}
-        //public static DataTable GetProducts()
-        //{
-        //    DataTable TB = new DataTable();
-        //    using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
-        //    {
-        //        string query = "select * from Products";
-        //        SqlCommand cmd = new SqlCommand(query, conn);
-        //        conn.Open();
-        //        SqlDataAdapter da = new SqlDataAdapter(cmd);
-        //        da.Fill(TB);
-        //        conn.Close();
-        //        da.Dispose();
-        //    }
-        //    return TB;
-        //}
-        //public static DataTable GetPSuppliers()
-        //{
-        //    DataTable TB = new DataTable();
-        //    using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
-        //    {
-        //        string query = "select * from Products_suppliers";
-        //        SqlCommand cmd = new SqlCommand(query, conn);
-        //        conn.Open();
-        //        SqlDataAdapter da = new SqlDataAdapter(cmd);
-        //        da.Fill(TB);
-        //        conn.Close();
-        //        da.Dispose();
-        //    }
-        //    return TB;
-        //}
-        //public static DataTable GetSuppliers()
-        //{
-        //    DataTable TB = new DataTable();
-        //    using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
-        //    {
-        //        string query = "select * from Suppliers";
-        //        SqlCommand cmd = new SqlCommand(query, conn);
-        //        conn.Open();
-        //        SqlDataAdapter da = new SqlDataAdapter(cmd);
-        //        da.Fill(TB);
-        //        conn.Close();
-        //        da.Dispose();
-        //    }
-        //    return TB;
-        //}
-        //public static DataTable GetPPSuppliers()
-        //{
-        //    DataTable TB = new DataTable();
-        //    using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
-        //    {
-        //        string query = "select * from Packages_products_suppliers";
-        //        SqlCommand cmd = new SqlCommand(query, conn);
-        //        conn.Open();
-        //        SqlDataAdapter da = new SqlDataAdapter(cmd);
-        //        da.Fill(TB);
-        //        conn.Close();
-        //        da.Dispose();
-        //    }
-        //    return TB;
-        //}
+        public static DataTable GetPackages()
+        {
+            DataTable TB = new DataTable();
+            using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
+            {
+                string query = "select * from Packages";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(TB);
+                conn.Close();
+                da.Dispose();
+            }
+            return TB;
+        }
+        public static DataTable GetProducts()
+        {
+            DataTable TB = new DataTable();
+            using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
+            {
+                string query = "select * from Products";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(TB);
+                conn.Close();
+                da.Dispose();
+            }
+            return TB;
+        }
+        public static DataTable GetPSuppliers()
+        {
+            DataTable TB = new DataTable();
+            using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
+            {
+                string query = "select * from Products_suppliers";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(TB);
+                conn.Close();
+                da.Dispose();
+            }
+            return TB;
+        }
+        public static DataTable GetSuppliers()
+        {
+            DataTable TB = new DataTable();
+            using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
+            {
+                string query = "select * from Suppliers";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(TB);
+                conn.Close();
+                da.Dispose();
+            }
+            return TB;
+        }
+        public static DataTable GetPPSuppliers()
+        {
+            DataTable TB = new DataTable();
+            using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
+            {
+                string query = "select * from Packages_products_suppliers";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(TB);
+                conn.Close();
+                da.Dispose();
+            }
+            return TB;
+        }
     }
 }
