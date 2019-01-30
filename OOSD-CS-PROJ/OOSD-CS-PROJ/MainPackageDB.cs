@@ -49,8 +49,8 @@ namespace OOSD_CS_PROJ
                         pkg = new Package();
                         pkg.PackageID = Convert.ToInt32(reader["PackageID"]);
                         pkg.PkgName = reader["PkgName"].ToString();
-                        pkg.PkgStartDate = Convert.ToDateTime(reader["PkgStartDate"]);
-                        pkg.PkgEndDate = Convert.ToDateTime(reader["PkgEndDate"]);
+                        pkg.PkgStartDate = reader["PkgStartDate"].ToString();
+                        pkg.PkgEndDate = reader["PkgEndDate"].ToString();
                         pkg.PkgDesc = reader["PkgDesc"].ToString();
                         pkg.PkgBasePrice = Convert.ToDecimal(reader["PkgBasePrice"]);
                         pkg.PkgAgencyCommission = Convert.ToDecimal(reader["PkgAgencyCommission"]);

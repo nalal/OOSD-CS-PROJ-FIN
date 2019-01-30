@@ -37,7 +37,6 @@
             this.btnPkgs = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.dDLSearch = new System.Windows.Forms.ComboBox();
             this.lblSearch = new System.Windows.Forms.Label();
             this.lblDetails = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
@@ -95,13 +94,13 @@
             // btnPrdctSupps
             // 
             this.btnPrdctSupps.BackColor = System.Drawing.Color.Crimson;
-            this.btnPrdctSupps.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrdctSupps.Location = new System.Drawing.Point(465, 62);
+            this.btnPrdctSupps.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrdctSupps.Location = new System.Drawing.Point(451, 75);
             this.btnPrdctSupps.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrdctSupps.Name = "btnPrdctSupps";
-            this.btnPrdctSupps.Size = new System.Drawing.Size(96, 54);
+            this.btnPrdctSupps.Size = new System.Drawing.Size(134, 41);
             this.btnPrdctSupps.TabIndex = 53;
-            this.btnPrdctSupps.Text = "Product\r\nSuppliers\r\n";
+            this.btnPrdctSupps.Text = "Product Suppliers\r\n";
             this.btnPrdctSupps.UseVisualStyleBackColor = false;
             this.btnPrdctSupps.Click += new System.EventHandler(this.btnPrdctSupps_Click);
             // 
@@ -164,24 +163,6 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(98, 20);
             this.txtSearch.TabIndex = 48;
-            // 
-            // dDLSearch
-            // 
-            this.dDLSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dDLSearch.FormattingEnabled = true;
-            this.dDLSearch.Items.AddRange(new object[] {
-            "ID",
-            "Name",
-            "Start Date",
-            "End Date",
-            "Description",
-            "Base Price",
-            "Agency Commission"});
-            this.dDLSearch.Location = new System.Drawing.Point(503, 129);
-            this.dDLSearch.Margin = new System.Windows.Forms.Padding(2);
-            this.dDLSearch.Name = "dDLSearch";
-            this.dDLSearch.Size = new System.Drawing.Size(70, 21);
-            this.dDLSearch.TabIndex = 46;
             // 
             // lblSearch
             // 
@@ -267,6 +248,7 @@
             // 
             this.txtDesc.Location = new System.Drawing.Point(131, 320);
             this.txtDesc.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(114, 20);
             this.txtDesc.TabIndex = 37;
@@ -464,7 +446,6 @@
             this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.dDLSearch);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.lblDetails);
             this.Controls.Add(this.lblID);
@@ -505,7 +486,6 @@
         private System.Windows.Forms.Button btnPkgs;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.ComboBox dDLSearch;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.Label lblDetails;
         private System.Windows.Forms.Label lblID;
