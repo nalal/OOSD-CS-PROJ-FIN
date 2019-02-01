@@ -13,8 +13,8 @@ namespace OOSD_CS_PROJ
         public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         public static void InitSQL()
         {
-            builder.DataSource = "ELF8OOSD197690\\SQLEXPRESS";
-            builder.IntegratedSecurity = true;
+            builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";
+            builder.IntegratedSecurity = true; 
             builder.InitialCatalog = "TravelExperts";
         }
         //this will allow user to add a new package to list

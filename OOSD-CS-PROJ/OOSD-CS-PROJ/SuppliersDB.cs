@@ -12,7 +12,12 @@ namespace OOSD_CS_PROJ
     {
         // connecting to the DB
         public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-
+        public static void InitSQL()
+        {
+            builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";
+            builder.IntegratedSecurity = true;
+            builder.InitialCatalog = "TravelExperts";
+        }
         // creating list of instances of the Suppliers class
         public static List<Supplier> GetSuppliers()
         {
@@ -21,7 +26,7 @@ namespace OOSD_CS_PROJ
             Supplier sup; // reference to new Supplier object
 
             //
-            DBCall.InitSQL();
+            InitSQL();
 
             using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
             {
