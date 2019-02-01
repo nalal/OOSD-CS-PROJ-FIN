@@ -12,7 +12,12 @@ namespace OOSD_CS_PROJ
     {
         // connecting to the DB
         public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-
+        public static void InitSQL()
+        {
+            builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";
+            builder.IntegratedSecurity = true;
+            builder.InitialCatalog = "TravelExperts";
+        }
         // creating list of instances of the Suppliers class
         public static List<Supplier> GetSuppliers()
         {
@@ -21,12 +26,12 @@ namespace OOSD_CS_PROJ
             Supplier sup; // reference to new Supplier object
 
             //
-            PackageDB.InitSQL();
+            InitSQL();
 
             using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
             {
                 // create select command
-                string selectString = "SELECT SupplierID, SupName FROM Suppliers";
+                string selectString = "SELECT SupplierId, SupName FROM Suppliers";
 
                 // selects records from data source based on connection and string
                 SqlCommand selectCommand = new SqlCommand(selectString, connection);
@@ -40,7 +45,7 @@ namespace OOSD_CS_PROJ
                     {
                         // create Supplier objects to populate list
                         sup = new Supplier();
-                        sup.SupplierId = Convert.ToInt32(reader["SupplierID"]);
+                        sup.SupplierId = Convert.ToInt32(reader["SupplierId"]);
                         sup.SupName = reader["SupName"].ToString();
                         Suppliers.Add(sup);
                     }
@@ -82,10 +87,10 @@ namespace OOSD_CS_PROJ
                 {
                     conn.Open();
                     cmd.ExecuteNonQuery(); //run DML statements
-    
+
                     SqlCommand selectCommand = new SqlCommand(insertStatement, conn);
                     selectCommand.ExecuteScalar(); //selects one value
-                  
+
                 }
                 catch (SqlException ex)
                 {
@@ -95,7 +100,7 @@ namespace OOSD_CS_PROJ
                 {
                     conn.Close();
                 }
-               
+
             }
 
         }

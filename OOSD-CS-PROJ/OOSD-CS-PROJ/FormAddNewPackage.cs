@@ -36,7 +36,7 @@ namespace OOSD_CS_PROJ
                 
                
             }
-            //sending the completed package to the AddNewPackage method, then retrieving the packageID to be displayed
+            //sending the completed package to the AddNewPackage method, then retrieving the PackageId to be displayed
 
             catch (Exception ex)
             {
@@ -87,9 +87,9 @@ namespace OOSD_CS_PROJ
                         package.PkgBasePrice = Convert.ToDecimal(txtPkgBasePrice.Text);
                         package.PkgAgencyCommission = Convert.ToDecimal(txtPkgAgencyCommission.Text);
 
-                        package.PackageID = PackageDB.AddNewPackage(package);
+                        package.PackageId = PackageDB.AddNewPackage(package);
                         this.DialogResult = DialogResult.OK;
-                        txtPackageID.Text = Convert.ToString(package.PackageID);
+                        txtPackageId.Text = Convert.ToString(package.PackageId);
                     }
                 }
             }

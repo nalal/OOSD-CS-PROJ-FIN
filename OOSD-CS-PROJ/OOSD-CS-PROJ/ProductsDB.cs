@@ -12,7 +12,12 @@ namespace OOSD_CS_PROJ
     {
         // connecting to the DB
         public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-
+        public static void InitSQL()
+        {
+            builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";
+            builder.IntegratedSecurity = true;
+            builder.InitialCatalog = "TravelExperts";
+        }
         // creating list of instances of the ProdSuppliers class
         public static List<Product> GetProducts()
         {
@@ -21,12 +26,12 @@ namespace OOSD_CS_PROJ
             Product prod; // reference to new Product object
 
             //
-            PackageDB.InitSQL();
+            InitSQL();
 
             using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
             {
                 // create select command
-                string selectString = "SELECT ProductID, ProdName FROM Products";
+                string selectString = "SELECT ProductId, ProdName FROM Products";
 
                 // selects records from data source based on connection and string
                 SqlCommand selectCommand = new SqlCommand(selectString, connection);
@@ -40,7 +45,7 @@ namespace OOSD_CS_PROJ
                     {
                         // create Product objects to populate list
                         prod = new Product();
-                        prod.ProductId = Convert.ToInt32(reader["ProductID"]);
+                        prod.ProductId = Convert.ToInt32(reader["ProductId"]);
                         prod.ProdName = reader["ProdName"].ToString();
                         Products.Add(prod);
                     }
@@ -59,7 +64,7 @@ namespace OOSD_CS_PROJ
                 return Products;
             }
         }
-//Helen Lin 
+//Helen Lin
         public static void AddNewProduct(Product newProduct)
         //returns the auto-generated ID of the new Package
         {
@@ -81,7 +86,7 @@ namespace OOSD_CS_PROJ
                     cmd.ExecuteNonQuery(); //run DML statements
                     SqlCommand selectCommand = new SqlCommand(insertStatement, conn);
                     selectCommand.ExecuteScalar(); //selects one value
-                    
+
                 }
                 catch (SqlException ex)
                 {
@@ -91,7 +96,7 @@ namespace OOSD_CS_PROJ
                 {
                     conn.Close();
                 }
-                
+
             }
 
         }

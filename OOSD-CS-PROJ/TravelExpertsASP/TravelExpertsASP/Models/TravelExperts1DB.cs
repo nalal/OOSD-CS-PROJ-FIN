@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
-namespace TravelExpertsASP.App_Code
+namespace TravelExpertsASP.Models
 {
     public class TravelExperts1DB
     {

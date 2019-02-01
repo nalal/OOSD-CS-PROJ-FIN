@@ -14,7 +14,9 @@ namespace OOSD_CS_PROJ
         public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         public static void InitSQL()
         {
+
             builder.DataSource = "ELF8OOSD197690\\SQLEXPRESS";
+
             builder.IntegratedSecurity = true;
             builder.InitialCatalog = "TravelExperts";
         }
@@ -32,7 +34,7 @@ namespace OOSD_CS_PROJ
             using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
             {
                 // create select command
-                string selectString = "SELECT ProductSupplierID, ProductID, SupplierID FROM Products_Suppliers";
+                string selectString = "SELECT ProductSupplierId, ProductId, SupplierId FROM Products_Suppliers";
 
                 // selects records from data source based on connection and string
                 SqlCommand selectCommand = new SqlCommand(selectString, connection);
@@ -46,9 +48,9 @@ namespace OOSD_CS_PROJ
                     {
                         // create ProdSupplier objects to populate list
                         prodSup = new ProdSupplier();
-                        prodSup.ProductSupplierId = Convert.ToInt32(reader["ProductSupplierID"]);
-                        prodSup.ProductId = Convert.ToInt32(reader["ProductID"]);
-                        prodSup.SupplierId = Convert.ToInt32(reader["SupplierID"]);
+                        prodSup.ProductSupplierId = Convert.ToInt32(reader["ProductSupplierId"]);
+                        prodSup.ProductId = Convert.ToInt32(reader["ProductId"]);
+                        prodSup.SupplierId = Convert.ToInt32(reader["SupplierId"]);
                         ProdSuppliers.Add(prodSup);
                     }
                     reader.Close();
@@ -66,7 +68,7 @@ namespace OOSD_CS_PROJ
                 return ProdSuppliers;
             }
         }
-/*Add new Product Supplier to the list 
+/*Add new Product Supplier to the list
 Author: Helen Lin */
 
         public static void AddNewProdSupplier(ProdSupplier newProductSupplier)

@@ -10,16 +10,16 @@ namespace OOSD_CS_PROJ
     // class for SQL commands regarding the Packages class on the main viewing form
     class MainPackageDB
     {
-        public static void InitSQL()
-        {
-            builder.DataSource = "ELF8OOSD197690\\SQLEXPRESS";
-            builder.IntegratedSecurity = true;
-            builder.InitialCatalog = "TravelExperts";
-        }
+       
 
         // connecting to the DB
         public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-
+        public static void InitSQL()
+        {
+            builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";
+            builder.IntegratedSecurity = true;
+            builder.InitialCatalog = "TravelExperts";
+        }
         // creating list of instances of the Package class
         public static List<Package> GetPackages()
         {
@@ -27,15 +27,16 @@ namespace OOSD_CS_PROJ
             List<Package> Packagess = new List<Package>(); // make an empty list
             Package pkg; // reference to new Package object
 
-            //
-            InitSQL();
+
+
+           InitSQL();
 
             using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
             {
                 // create select command
-                string selectString = "SELECT PackageID, PkgName, PkgStartDate, PkgEndDate, " +
+                string selectString = "SELECT PackageId, PkgName, PkgStartDate, PkgEndDate, " +
                                       "PkgDesc, PkgBasePrice, PkgAgencyCommission FROM Packages";
-                                  
+
                 // selects records from data source based on connection and string
                 SqlCommand selectCommand = new SqlCommand(selectString, connection);
                 try
@@ -48,7 +49,7 @@ namespace OOSD_CS_PROJ
                     {
                         // create Package objects to populate list
                         pkg = new Package();
-                        pkg.PackageID = Convert.ToInt32(reader["PackageID"]);
+                        pkg.PackageId = Convert.ToInt32(reader["PackageId"]);
                         pkg.PkgName = reader["PkgName"].ToString();
                         pkg.PkgStartDate = reader["PkgStartDate"].ToString();
                         pkg.PkgEndDate = reader["PkgEndDate"].ToString();

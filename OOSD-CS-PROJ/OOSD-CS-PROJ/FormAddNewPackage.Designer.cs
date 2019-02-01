@@ -35,7 +35,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtPackageID = new System.Windows.Forms.TextBox();
+            this.txtPackageId = new System.Windows.Forms.TextBox();
             this.txtPkgName = new System.Windows.Forms.TextBox();
             this.txtPkgDesc = new System.Windows.Forms.TextBox();
             this.txtPkgBasePrice = new System.Windows.Forms.TextBox();
@@ -115,14 +115,14 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Package Agency Commission";
             // 
-            // txtPackageID
+            // txtPackageId
             // 
-            this.txtPackageID.Location = new System.Drawing.Point(203, 37);
-            this.txtPackageID.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPackageID.Name = "txtPackageID";
-            this.txtPackageID.ReadOnly = true;
-            this.txtPackageID.Size = new System.Drawing.Size(76, 20);
-            this.txtPackageID.TabIndex = 7;
+            this.txtPackageId.Location = new System.Drawing.Point(203, 37);
+            this.txtPackageId.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPackageId.Name = "txtPackageId";
+            this.txtPackageId.ReadOnly = true;
+            this.txtPackageId.Size = new System.Drawing.Size(76, 20);
+            this.txtPackageId.TabIndex = 7;
             // 
             // txtPkgName
             // 
@@ -201,7 +201,7 @@
             this.Controls.Add(this.txtPkgBasePrice);
             this.Controls.Add(this.txtPkgDesc);
             this.Controls.Add(this.txtPkgName);
-            this.Controls.Add(this.txtPackageID);
+            this.Controls.Add(this.txtPackageId);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
@@ -227,7 +227,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtPackageID;
+        private System.Windows.Forms.TextBox txtPackageId;
         private System.Windows.Forms.TextBox txtPkgName;
         private System.Windows.Forms.TextBox txtPkgDesc;
         private System.Windows.Forms.TextBox txtPkgBasePrice;
