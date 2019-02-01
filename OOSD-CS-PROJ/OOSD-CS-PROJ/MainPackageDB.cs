@@ -33,7 +33,7 @@ namespace OOSD_CS_PROJ
             using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
             {
                 // create select command
-                string selectString = "SELECT PackageID, PkgName, PkgStartDate, PkgEndDate, " +
+                string selectString = "SELECT PackageId, PkgName, PkgStartDate, PkgEndDate, " +
                                       "PkgDesc, PkgBasePrice, PkgAgencyCommission FROM Packages";
 
                 // selects records from data source based on connection and string
@@ -48,7 +48,7 @@ namespace OOSD_CS_PROJ
                     {
                         // create Package objects to populate list
                         pkg = new Package();
-                        pkg.PackageID = Convert.ToInt32(reader["PackageID"]);
+                        pkg.PackageId = Convert.ToInt32(reader["PackageId"]);
                         pkg.PkgName = reader["PkgName"].ToString();
                         pkg.PkgStartDate = reader["PkgStartDate"].ToString();
                         pkg.PkgEndDate = reader["PkgEndDate"].ToString();

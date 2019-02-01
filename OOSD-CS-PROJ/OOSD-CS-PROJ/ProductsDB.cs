@@ -31,7 +31,7 @@ namespace OOSD_CS_PROJ
             using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
             {
                 // create select command
-                string selectString = "SELECT ProductID, ProdName FROM Products";
+                string selectString = "SELECT ProductId, ProdName FROM Products";
 
                 // selects records from data source based on connection and string
                 SqlCommand selectCommand = new SqlCommand(selectString, connection);
@@ -45,7 +45,7 @@ namespace OOSD_CS_PROJ
                     {
                         // create Product objects to populate list
                         prod = new Product();
-                        prod.ProductId = Convert.ToInt32(reader["ProductID"]);
+                        prod.ProductId = Convert.ToInt32(reader["ProductId"]);
                         prod.ProdName = reader["ProdName"].ToString();
                         Products.Add(prod);
                     }

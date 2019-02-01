@@ -32,7 +32,7 @@ namespace OOSD_CS_PROJ
             using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
             {
                 // create select command
-                string selectString = "SELECT ProductSupplierID, ProductID, SupplierID FROM Products_Suppliers";
+                string selectString = "SELECT ProductSupplierId, ProductId, SupplierId FROM Products_Suppliers";
 
                 // selects records from data source based on connection and string
                 SqlCommand selectCommand = new SqlCommand(selectString, connection);
@@ -46,9 +46,9 @@ namespace OOSD_CS_PROJ
                     {
                         // create ProdSupplier objects to populate list
                         prodSup = new ProdSupplier();
-                        prodSup.ProductSupplierId = Convert.ToInt32(reader["ProductSupplierID"]);
-                        prodSup.ProductId = Convert.ToInt32(reader["ProductID"]);
-                        prodSup.SupplierId = Convert.ToInt32(reader["SupplierID"]);
+                        prodSup.ProductSupplierId = Convert.ToInt32(reader["ProductSupplierId"]);
+                        prodSup.ProductId = Convert.ToInt32(reader["ProductId"]);
+                        prodSup.SupplierId = Convert.ToInt32(reader["SupplierId"]);
                         ProdSuppliers.Add(prodSup);
                     }
                     reader.Close();

@@ -181,7 +181,7 @@ namespace OOSD_CS_PROJ
                                selectedpkg.PkgName == cBName.Text
                                select selectedpkg).First();
 
-                    txtID.Text = pkg.PackageID.ToString();
+                    txtID.Text = pkg.PackageId.ToString();
                     dTPStartDate.Value = Convert.ToDateTime(pkg.PkgStartDate);
                     dTPEndDate.Value = Convert.ToDateTime(pkg.PkgEndDate);
                     txtDesc.Text = pkg.PkgDesc;

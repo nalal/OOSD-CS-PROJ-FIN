@@ -21,7 +21,7 @@ namespace OOSD_CS_PROJ
         public static int AddNewPackage(Package newPackage)
             //returns the auto-generated ID of the new Package
         {
-            //PackageID will be auto incremented once created
+            //PackageId will be auto incremented once created
             int PackageId;
 
             PackageDB.InitSQL();

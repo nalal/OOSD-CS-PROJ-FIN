@@ -31,7 +31,7 @@ namespace OOSD_CS_PROJ
             using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
             {
                 // create select command
-                string selectString = "SELECT SupplierID, SupName FROM Suppliers";
+                string selectString = "SELECT SupplierId, SupName FROM Suppliers";
 
                 // selects records from data source based on connection and string
                 SqlCommand selectCommand = new SqlCommand(selectString, connection);
@@ -45,7 +45,7 @@ namespace OOSD_CS_PROJ
                     {
                         // create Supplier objects to populate list
                         sup = new Supplier();
-                        sup.SupplierId = Convert.ToInt32(reader["SupplierID"]);
+                        sup.SupplierId = Convert.ToInt32(reader["SupplierId"]);
                         sup.SupName = reader["SupName"].ToString();
                         Suppliers.Add(sup);
                     }
