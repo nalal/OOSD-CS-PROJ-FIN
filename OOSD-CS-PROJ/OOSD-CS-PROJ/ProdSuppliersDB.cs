@@ -22,7 +22,7 @@ namespace OOSD_CS_PROJ
             ProdSupplier prodSup; // reference to new ProdSupplier object
 
             //
-            DBCall.InitSQL();
+            PackageDB.InitSQL();
 
             using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
             {
@@ -41,9 +41,9 @@ namespace OOSD_CS_PROJ
                     {
                         // create ProdSupplier objects to populate list
                         prodSup = new ProdSupplier();
-                        prodSup.ProductSupplierID = Convert.ToInt32(reader["ProductSupplierID"]);
-                        prodSup.ProductID = Convert.ToInt32(reader["ProductID"]);
-                        prodSup.SupplierID = Convert.ToInt32(reader["SupplierID"]);
+                        prodSup.ProductSupplierId = Convert.ToInt32(reader["ProductSupplierID"]);
+                        prodSup.ProductId = Convert.ToInt32(reader["ProductID"]);
+                        prodSup.SupplierId = Convert.ToInt32(reader["SupplierID"]);
                         ProdSuppliers.Add(prodSup);
                     }
                     reader.Close();
@@ -60,6 +60,47 @@ namespace OOSD_CS_PROJ
                 // return list of ProdSuppliers
                 return ProdSuppliers;
             }
+        }
+/*Add new Product Supplier to the list 
+Author: Helen Lin */
+
+        public static void AddNewProdSupplier(ProdSupplier newProductSupplier)
+        //returns the auto-generated ID of the new Package
+        {
+            //using package db to initialize connection
+            PackageDB.InitSQL();
+
+            using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
+            {
+                string insertStatement = "INSERT INTO Packages(ProductSupplierId, ProductId, SupplierId) VALUES(@ProductSupplierId, @ProductId, @SupplierId)";
+
+                SqlCommand cmd = new SqlCommand(insertStatement, conn);
+
+                cmd.Parameters.AddWithValue("@PkgName", newProductSupplier.ProductSupplierId);
+                cmd.Parameters.AddWithValue("@PkgStartDate", newProductSupplier.ProductId);
+                cmd.Parameters.AddWithValue("@PkgStartDate", newProductSupplier.SupplierId);
+
+
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery(); //run DML statements
+
+                    SqlCommand selectCommand = new SqlCommand(insertStatement, conn);
+                    selectCommand.ExecuteScalar(); //selects one value
+
+                }
+                catch (SqlException ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+            }
+
         }
     }
 }

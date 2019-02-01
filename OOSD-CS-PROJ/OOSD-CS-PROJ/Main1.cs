@@ -119,12 +119,12 @@ namespace OOSD_CS_PROJ
             var prodSupplierLinq = from prodSup in prodSupplierList
                                select new
                                {
-                                   prodSup.ProductSupplierID
+                                   prodSup.ProductSupplierId
                                };
 
             foreach (var item in prodSupplierLinq)
             {
-                cBID.Items.Add(item.ProductSupplierID);
+                cBID.Items.Add(item.ProductSupplierId);
             }
         }
 
@@ -144,7 +144,7 @@ namespace OOSD_CS_PROJ
                                 selectedprod.ProdName == cBName.Text
                                 select selectedprod).First();
 
-                    txtID.Text = prod.ProductID.ToString();
+                    txtID.Text = prod.ProductId.ToString();
                 }
             }
 
@@ -162,7 +162,7 @@ namespace OOSD_CS_PROJ
                                 where selectedsup.SupName == cBName.Text
                                 select selectedsup).First();
 
-                    txtID.Text = sup.SupplierID.ToString();
+                    txtID.Text = sup.SupplierId.ToString();
                 }
             }
 
@@ -204,11 +204,11 @@ namespace OOSD_CS_PROJ
             {
                 // display information about the selected product supplier
                 var prodSup = (from selectedprodSup in prodSupplierList where
-                                selectedprodSup.ProductSupplierID == Convert.ToInt32(cBID.Text)
+                                selectedprodSup.ProductSupplierId == Convert.ToInt32(cBID.Text)
                                 select selectedprodSup).First();
 
-                txtProdID.Text = prodSup.ProductID.ToString();
-                txtSupID.Text = prodSup.SupplierID.ToString();
+                txtProdID.Text = prodSup.ProductId.ToString();
+                txtSupID.Text = prodSup.SupplierId.ToString();
             }
             
         }
@@ -372,13 +372,37 @@ namespace OOSD_CS_PROJ
             // create list of product suppliers from DB class
             PopulateProdSuppliers();
         }
+/*Buttons that lead to new forms 
+Author:Helen Lin */
 
-        // add new button is clicked
+        // add new Package button is clicked
         private void btnAddNew_Click(object sender, EventArgs e)
         {
             FormAddNewPackage f2 = new FormAddNewPackage();//create a variable for AddPackage form
             f2.ShowDialog();//show the AddPackage form 
         }
+
+        //Add Products button is clicked
+        private void btnAddProd_Click(object sender, EventArgs e)
+        {
+            frmAddNewProduct f3 = new frmAddNewProduct();//create a variable for AddProd form
+            f3.ShowDialog();//show the AddProd form 
+        }
+
+        //Add new Supplier button is clicked
+        private void btnAddSup_Click(object sender, EventArgs e)
+        {
+            frmAddNewSupplier f4 = new frmAddNewSupplier();//create a variable for AddSupplier form
+            f4.ShowDialog();//show the AddSupplier form 
+        }
+        //Add new Product Supplier is clicked
+        private void btnAddProdSup_Click(object sender, EventArgs e)
+        {
+            frmAddNewProduct f5 = new frmAddNewProduct();//create a variable for AddProductSupplier form
+            f5.ShowDialog();//show the AddProductSupplier form 
+        }
+
+
 
         // search button is clicked
         private void btnSearch_Click(object sender, EventArgs e)
@@ -416,5 +440,7 @@ namespace OOSD_CS_PROJ
                 }
             }
         }
+
+        
     } 
 }

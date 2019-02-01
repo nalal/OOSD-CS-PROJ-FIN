@@ -60,6 +60,24 @@
     <Compile Include="FormAddNewPackage.Designer.cs">
       <DependentUpon>FormAddNewPackage.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddNewProdSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddNewProdSupplier.Designer.cs">
+      <DependentUpon>frmAddNewProdSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddNewProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddNewProduct.Designer.cs">
+      <DependentUpon>frmAddNewProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddNewSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddNewSupplier.Designer.cs">
+      <DependentUpon>frmAddNewSupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +109,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAddNewPackage.resx">
       <DependentUpon>FormAddNewPackage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddNewProdSupplier.resx">
+      <DependentUpon>frmAddNewProdSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddNewProduct.resx">
+      <DependentUpon>frmAddNewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddNewSupplier.resx">
+      <DependentUpon>frmAddNewSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
