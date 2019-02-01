@@ -12,7 +12,7 @@ namespace OOSD_CS_PROJ
         public Supplier() { }
 
         // create properties
-        public int SupplierID { get; set; }
+        public int SupplierId { get; set; }
 
         public string SupName { get; set; }
     }

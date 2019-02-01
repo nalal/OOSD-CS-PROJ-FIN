@@ -12,11 +12,11 @@ namespace OOSD_CS_PROJ
         public ProdSupplier() { }
 
         // create properties
-        public int ProductSupplierID { get; set; }
+        public int ProductSupplierId { get; set; }
 
-        public int ProductID{ get; set; }
+        public int ProductId{ get; set; }
 
-        public int SupplierID{ get; set; }
+        public int SupplierId{ get; set; }
 
     }
 }
