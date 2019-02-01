@@ -45,7 +45,7 @@ namespace OOSD_CS_PROJ
                     {
                         // create Supplier objects to populate list
                         sup = new Supplier();
-                        sup.SupplierID = Convert.ToInt32(reader["SupplierID"]);
+                        sup.SupplierId = Convert.ToInt32(reader["SupplierID"]);
                         sup.SupName = reader["SupName"].ToString();
                         Suppliers.Add(sup);
                     }
@@ -63,6 +63,46 @@ namespace OOSD_CS_PROJ
                 // return list of Suppliers
                 return Suppliers;
             }
+        }
+
+//this will allow user to add a new Supplier to list
+        public static void AddNewSupplier(Supplier newSupplier)
+        //returns the auto-generated ID of the new Package
+        {
+            //using package db to initialize connection
+            PackageDB.InitSQL();
+
+            using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
+            {
+                string insertStatement = "INSERT INTO Packages(SupplierId, SupName) VALUES(@SupplierId, @SupName)";
+
+                SqlCommand cmd = new SqlCommand(insertStatement, conn);
+
+                cmd.Parameters.AddWithValue("@PkgName", newSupplier.SupplierId);
+
+                cmd.Parameters.AddWithValue("@PkgStartDate", newSupplier.SupName);
+
+
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery(); //run DML statements
+
+                    SqlCommand selectCommand = new SqlCommand(insertStatement, conn);
+                    selectCommand.ExecuteScalar(); //selects one value
+
+                }
+                catch (SqlException ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+            }
+
         }
     }
 }

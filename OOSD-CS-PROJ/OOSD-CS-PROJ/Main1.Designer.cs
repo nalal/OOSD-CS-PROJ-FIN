@@ -69,6 +69,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblHeader = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAddProd = new System.Windows.Forms.Button();
+            this.btnAddSup = new System.Windows.Forms.Button();
+            this.btnAddProdSup = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.packagesBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSet)).BeginInit();
@@ -83,7 +86,7 @@
             // btnAddNew
             // 
             this.btnAddNew.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnAddNew.Location = new System.Drawing.Point(397, 324);
+            this.btnAddNew.Location = new System.Drawing.Point(273, 337);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(142, 43);
             this.btnAddNew.TabIndex = 54;
@@ -428,12 +431,48 @@
             this.pictureBox1.TabIndex = 63;
             this.pictureBox1.TabStop = false;
             // 
+            // btnAddProd
+            // 
+            this.btnAddProd.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnAddProd.Location = new System.Drawing.Point(430, 309);
+            this.btnAddProd.Name = "btnAddProd";
+            this.btnAddProd.Size = new System.Drawing.Size(67, 43);
+            this.btnAddProd.TabIndex = 64;
+            this.btnAddProd.Text = "Add New Products";
+            this.btnAddProd.UseVisualStyleBackColor = false;
+            this.btnAddProd.Click += new System.EventHandler(this.btnAddProd_Click);
+            // 
+            // btnAddSup
+            // 
+            this.btnAddSup.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnAddSup.Location = new System.Drawing.Point(503, 309);
+            this.btnAddSup.Name = "btnAddSup";
+            this.btnAddSup.Size = new System.Drawing.Size(85, 43);
+            this.btnAddSup.TabIndex = 65;
+            this.btnAddSup.Text = "Add New Suppliers";
+            this.btnAddSup.UseVisualStyleBackColor = false;
+            this.btnAddSup.Click += new System.EventHandler(this.btnAddSup_Click);
+            // 
+            // btnAddProdSup
+            // 
+            this.btnAddProdSup.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnAddProdSup.Location = new System.Drawing.Point(451, 368);
+            this.btnAddProdSup.Name = "btnAddProdSup";
+            this.btnAddProdSup.Size = new System.Drawing.Size(110, 43);
+            this.btnAddProdSup.TabIndex = 66;
+            this.btnAddProdSup.Text = "Add New Product Suppliers";
+            this.btnAddProdSup.UseVisualStyleBackColor = false;
+            this.btnAddProdSup.Click += new System.EventHandler(this.btnAddProdSup_Click);
+            // 
             // Main1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(596, 528);
+            this.Controls.Add(this.btnAddProdSup);
+            this.Controls.Add(this.btnAddSup);
+            this.Controls.Add(this.btnAddProd);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblSearchFor);
@@ -518,5 +557,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnAddProd;
+        private System.Windows.Forms.Button btnAddSup;
+        private System.Windows.Forms.Button btnAddProdSup;
     }
 }

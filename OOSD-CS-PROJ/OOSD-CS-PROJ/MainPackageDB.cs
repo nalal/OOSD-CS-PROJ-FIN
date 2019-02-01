@@ -10,6 +10,8 @@ namespace OOSD_CS_PROJ
     // class for SQL commands regarding the Packages class on the main viewing form
     class MainPackageDB
     {
+
+
         // connecting to the DB
         public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         public static void InitSQL()
@@ -33,7 +35,7 @@ namespace OOSD_CS_PROJ
                 // create select command
                 string selectString = "SELECT PackageID, PkgName, PkgStartDate, PkgEndDate, " +
                                       "PkgDesc, PkgBasePrice, PkgAgencyCommission FROM Packages";
-                                  
+
                 // selects records from data source based on connection and string
                 SqlCommand selectCommand = new SqlCommand(selectString, connection);
                 try

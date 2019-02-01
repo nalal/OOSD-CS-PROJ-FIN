@@ -45,7 +45,7 @@ namespace OOSD_CS_PROJ
                     {
                         // create Product objects to populate list
                         prod = new Product();
-                        prod.ProductID = Convert.ToInt32(reader["ProductID"]);
+                        prod.ProductId = Convert.ToInt32(reader["ProductID"]);
                         prod.ProdName = reader["ProdName"].ToString();
                         Products.Add(prod);
                     }
@@ -63,6 +63,42 @@ namespace OOSD_CS_PROJ
                 // return list of Products
                 return Products;
             }
+        }
+//Helen Lin
+        public static void AddNewProduct(Product newProduct)
+        //returns the auto-generated ID of the new Package
+        {
+            PackageDB.InitSQL(); //use the database connection from PackageDB
+
+            using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
+            {
+                string insertStatement = "INSERT INTO Products(ProductId, ProdName)" + "VALUES(@ProductId, @ProdName)";
+
+                SqlCommand cmd = new SqlCommand(insertStatement, conn);
+
+                cmd.Parameters.AddWithValue("@ProductId", newProduct.ProductId);
+
+                cmd.Parameters.AddWithValue("@ProdName", newProduct.ProdName);
+
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery(); //run DML statements
+                    SqlCommand selectCommand = new SqlCommand(insertStatement, conn);
+                    selectCommand.ExecuteScalar(); //selects one value
+
+                }
+                catch (SqlException ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+            }
+
         }
     }
 }
