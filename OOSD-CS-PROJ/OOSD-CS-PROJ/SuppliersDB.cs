@@ -73,9 +73,9 @@ namespace OOSD_CS_PROJ
 
                 SqlCommand cmd = new SqlCommand(insertStatement, conn);
 
-                cmd.Parameters.AddWithValue("@PkgName", newSupplier.SupplierId);
+                cmd.Parameters.AddWithValue("@SupplierId", newSupplier.SupplierId);
 
-                cmd.Parameters.AddWithValue("@PkgStartDate", newSupplier.SupName);
+                cmd.Parameters.AddWithValue("@SupName", newSupplier.SupName);
 
 
                 try

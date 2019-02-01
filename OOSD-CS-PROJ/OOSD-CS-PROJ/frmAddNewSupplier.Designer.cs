@@ -32,7 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtSupId = new System.Windows.Forms.TextBox();
             this.txtSupName = new System.Windows.Forms.TextBox();
-            this.btnAddSupplier = new System.Windows.Forms.Button();
+            this.btnAddSup = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -67,21 +67,22 @@
             this.txtSupName.Size = new System.Drawing.Size(100, 20);
             this.txtSupName.TabIndex = 3;
             // 
-            // btnAddSupplier
+            // btnAddSup
             // 
-            this.btnAddSupplier.Location = new System.Drawing.Point(244, 177);
-            this.btnAddSupplier.Name = "btnAddSupplier";
-            this.btnAddSupplier.Size = new System.Drawing.Size(101, 51);
-            this.btnAddSupplier.TabIndex = 4;
-            this.btnAddSupplier.Text = "Add New  Supplier";
-            this.btnAddSupplier.UseVisualStyleBackColor = true;
+            this.btnAddSup.Location = new System.Drawing.Point(253, 180);
+            this.btnAddSup.Name = "btnAddSup";
+            this.btnAddSup.Size = new System.Drawing.Size(89, 60);
+            this.btnAddSup.TabIndex = 5;
+            this.btnAddSup.Text = "Add New  Supplier";
+            this.btnAddSup.UseVisualStyleBackColor = true;
+            this.btnAddSup.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmAddNewSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(383, 264);
-            this.Controls.Add(this.btnAddSupplier);
+            this.Controls.Add(this.btnAddSup);
             this.Controls.Add(this.txtSupName);
             this.Controls.Add(this.txtSupId);
             this.Controls.Add(this.label2);
@@ -100,6 +101,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSupId;
         private System.Windows.Forms.TextBox txtSupName;
-        private System.Windows.Forms.Button btnAddSupplier;
+        private System.Windows.Forms.Button btnAddSup;
     }
 }

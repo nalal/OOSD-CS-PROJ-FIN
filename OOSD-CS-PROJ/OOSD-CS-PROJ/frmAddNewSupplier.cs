@@ -31,22 +31,7 @@ namespace OOSD_CS_PROJ
             this.Text = "Add New Product Supplier"; //on load, name the window this
         }
 
-        private void btnSaveProdSup_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-                supplier = new Supplier();
-                this.PutSupplierData(supplier);
-
-            }
-            //sending the completed package to the AddNewPackage method, then retrieving the packageID to be displayed
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
-            }
-        }
+      
 
 
 
@@ -79,5 +64,23 @@ namespace OOSD_CS_PROJ
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Work");
+
+            try
+            {
+                supplier = new Supplier();
+                this.PutSupplierData(supplier);
+
+            }
+            //sending the completed package to the AddNewPackage method, then retrieving the packageID to be displayed
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
+
+        }
     }
 }

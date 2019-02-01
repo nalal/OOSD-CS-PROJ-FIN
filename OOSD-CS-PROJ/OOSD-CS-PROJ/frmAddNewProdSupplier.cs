@@ -18,7 +18,7 @@ namespace OOSD_CS_PROJ
             InitializeComponent();
         }
 
-        //Author: Helen Lin 
+        //Author: Helen Lin
         private ProdSupplier prodSupplier; //new added product supplier
 
         private void frmAddNewProdSupplier_Load(object sender, EventArgs e)
@@ -26,23 +26,22 @@ namespace OOSD_CS_PROJ
             this.Text = "Add New Product Supplier"; //on load, name the window this
         }
 
-        private void btnSaveProdSup_Click(object sender, EventArgs e)
+        private void btnSaveProdSup_Click_1(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Hello");
             try
             {
                 prodSupplier = new ProdSupplier();
                 this.PutProdSupplierData(prodSupplier);
 
             }
-            
+
 
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
         }
-
 
 
         private void PutProdSupplierData(ProdSupplier newProductSupplier)
@@ -50,24 +49,22 @@ namespace OOSD_CS_PROJ
             try
             {
                 if (Validator.IsProvided(txtProdId, "Product Id") &&
-                    Validator.IsProvided(txtProdSupId, "Product Supplier Id") &&
                     Validator.IsProvided(txtSupId, "Supplier Id") &&
                     Validator.IsNonNegativeDecimal(txtProdId, "Product Id") &&
-                       Validator.IsNonNegativeDecimal(txtProdSupId, "Product Supplier Id") &&
-                       Validator.IsNonNegativeDecimal(txtSupId, "Supplier Id"))
+                    Validator.IsNonNegativeDecimal(txtSupId, "Supplier Id"))
                 {
 
 
 
-                   
+
                     prodSupplier.ProductSupplierId = Convert.ToInt32(txtProdSupId.Text);
-                    prodSupplier.ProductId = Convert.ToInt32(txtProdId.Text);
+
                     prodSupplier.SupplierId = Convert.ToInt32(txtSupId.Text);
                     ProdSuppliersDB.AddNewProdSupplier(prodSupplier);
 
                     this.DialogResult = DialogResult.OK;
-                        
-                    
+
+
                 }
             }
             catch (Exception ex)
@@ -75,6 +72,7 @@ namespace OOSD_CS_PROJ
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
         }
+
 
     }
 }

@@ -54,10 +54,7 @@ namespace OOSD_CS_PROJ
         {
             try
             {
-                if (Validator.IsProvided(txtProdId, "Product Id") &&
-                    Validator.IsProvided(txtProdName, "Product Name") &&
-
-                    Validator.IsNonNegativeDecimal(txtProdId, "Product Id") &&
+                if (Validator.IsProvided(txtProdName, "Product Name") &&
                        Validator.IsNonNegativeDecimal(txtProdName, "Product Name"))
 
                 {
