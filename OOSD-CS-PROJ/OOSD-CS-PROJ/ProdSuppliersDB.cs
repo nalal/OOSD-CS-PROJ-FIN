@@ -14,7 +14,9 @@ namespace OOSD_CS_PROJ
         public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         public static void InitSQL()
         {
-            builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";
+
+            builder.DataSource = "ELF8OOSD197690\\SQLEXPRESS";
+
             builder.IntegratedSecurity = true;
             builder.InitialCatalog = "TravelExperts";
         }
@@ -73,17 +75,17 @@ Author: Helen Lin */
         //returns the auto-generated ID of the new Package
         {
             //using package db to initialize connection
-            PackageDB.InitSQL();
+            InitSQL();
 
             using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
             {
-                string insertStatement = "INSERT INTO Packages(ProductSupplierId, ProductId, SupplierId) VALUES(@ProductSupplierId, @ProductId, @SupplierId)";
+                string insertStatement = "INSERT INTO Packages(ProductId, SupplierId) VALUES(@ProductId, @SupplierId)";
 
                 SqlCommand cmd = new SqlCommand(insertStatement, conn);
 
-                cmd.Parameters.AddWithValue("@PkgName", newProductSupplier.ProductSupplierId);
-                cmd.Parameters.AddWithValue("@PkgStartDate", newProductSupplier.ProductId);
-                cmd.Parameters.AddWithValue("@PkgStartDate", newProductSupplier.SupplierId);
+                cmd.Parameters.AddWithValue("@ProductSupplierId", newProductSupplier.ProductSupplierId);
+                cmd.Parameters.AddWithValue("@ProductId", newProductSupplier.ProductId);
+                cmd.Parameters.AddWithValue("@SupplierId", newProductSupplier.SupplierId);
 
 
                 try
