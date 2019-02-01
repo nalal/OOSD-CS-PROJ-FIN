@@ -5,8 +5,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
-namespace TravelExpertsASP.App_Code
-{ // Chad Dundas Smith
+namespace TravelExpertsASP.Models
+{
     public class TravelExperts1DB
     {
         // get connection string from web.config file
