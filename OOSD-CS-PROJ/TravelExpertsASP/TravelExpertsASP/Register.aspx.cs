@@ -39,7 +39,7 @@ namespace TravelExpertsASP
             Customer cust = new Customer(txtCustFirstName.Text, txtCustLastName.Text, txtCustAddress.Text,
                                         txtCustCity.Text, txtCustProv.Text, txtCustPostal.Text, txtCustCountry.Text,
                                         txtCustHomePhone.Text, txtCustBusPhone.Text, txtCustEmail.Text, txtCustUserName.Text,
-                                          txtCustPassword.Text);
+                                        txtCustPassword.Text);
             try
             {
                 CustomersDB.CreateCustomer(cust);
