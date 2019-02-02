@@ -17,8 +17,7 @@ namespace TravelExpertsASP
             try
             {
                 conn.Open();
-                SqlDataReader myReader;
-                //myReader = ExecuteReader();
+                
 
 
             }
@@ -49,5 +48,7 @@ namespace TravelExpertsASP
                 throw ex;
             }
         }
+
+      
     }
 }
