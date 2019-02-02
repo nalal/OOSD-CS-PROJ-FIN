@@ -14,7 +14,7 @@ namespace OOSD_CS_PROJ
         public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         public static void InitSQL()
         {
-            builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";
+            builder.DataSource = "ELF8OOSD197844\\SQLEXPRESS";
             builder.IntegratedSecurity = true;
             builder.InitialCatalog = "TravelExperts";
         }
@@ -100,9 +100,43 @@ namespace OOSD_CS_PROJ
                 {
                     conn.Close();
                 }
-
             }
+        }
 
+        //Maryam 
+        //Update Statement for Suppliers
+        public static bool UpdateSupplier(Supplier newSup, Supplier oldSup)
+        {
+            bool Supplier = false;
+            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+            {
+                string updateStatement = "UPDATE Suppliers " +
+                                     "SET SupName = @NewSupName " +
+                                     "WHERE SupplierId = @OldSupplierId " +
+                                     "AND SupName = @OldSupName ";
+                SqlCommand cmd = new SqlCommand(updateStatement, connection);
+                cmd.Parameters.AddWithValue("@NewSupName", newSup.SupName);
+                cmd.Parameters.AddWithValue("@OldSupName", oldSup.SupName);
+                cmd.Parameters.AddWithValue("@OldSupplierId", oldSup.SupplierId);
+                try
+                {
+                    connection.Open();
+                    Supplier = Convert.ToBoolean(cmd.ExecuteNonQuery());
+                    if (Supplier)
+                        Supplier = true;
+                    else
+                        Supplier = false;
+                }
+                catch (SqlException ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+                return Supplier;
+            }
         }
     }
 }

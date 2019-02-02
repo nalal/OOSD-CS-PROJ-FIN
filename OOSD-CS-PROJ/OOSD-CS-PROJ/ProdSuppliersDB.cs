@@ -15,7 +15,7 @@ namespace OOSD_CS_PROJ
         public static void InitSQL()
         {
 
-            builder.DataSource = "ELF8OOSD197690\\SQLEXPRESS";
+            builder.DataSource = "ELF8OOSD197844\\SQLEXPRESS";
 
             builder.IntegratedSecurity = true;
             builder.InitialCatalog = "TravelExperts";
@@ -108,6 +108,47 @@ Author: Helen Lin */
 
             }
 
+        }
+
+        //Maryam 
+        //Update statement Product Suppliers
+        public static bool UpdateProdSupplier(ProdSupplier newProSup, ProdSupplier oldProSup)
+        {
+            bool ProdsSupplier = false;
+            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+            {
+                string updateStatement = "UPDATE Products_Suppliers " +
+                                     "SET SupplierId = @NewSupplierId, " +
+                                     " ProductId = @NewProductId " +
+                                     "WHERE ProductSupplierId = @OldProductSupplierId " +
+                                     "AND SupplierId = @OldSupplierId " +
+                                     "AND ProductId = @OldProductId ";
+                SqlCommand cmd = new SqlCommand(updateStatement, connection);
+                cmd.Parameters.AddWithValue("@NewSupplierId", newProSup.SupplierId);
+                cmd.Parameters.AddWithValue("@NewProductId", newProSup.ProductId);
+                cmd.Parameters.AddWithValue("@OldProductSupplierId", oldProSup.ProductSupplierId);
+                cmd.Parameters.AddWithValue("@OldSupplierId", oldProSup.SupplierId);
+                cmd.Parameters.AddWithValue("@OldProductId", oldProSup.ProductId);
+
+                try
+                {
+                    connection.Open();
+                    ProdsSupplier = Convert.ToBoolean(cmd.ExecuteNonQuery());
+                    if (ProdsSupplier)
+                        ProdsSupplier = true;
+                    else
+                        ProdsSupplier = false;
+                }
+                catch (SqlException ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+                return ProdsSupplier;
+            }
         }
     }
 }

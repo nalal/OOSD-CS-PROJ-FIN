@@ -72,6 +72,8 @@
             this.btnAddProd = new System.Windows.Forms.Button();
             this.btnAddSup = new System.Windows.Forms.Button();
             this.btnAddProdSup = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.packagesBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSet)).BeginInit();
@@ -86,7 +88,7 @@
             // btnAddNew
             // 
             this.btnAddNew.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnAddNew.Location = new System.Drawing.Point(282, 337);
+            this.btnAddNew.Location = new System.Drawing.Point(282, 326);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(142, 43);
             this.btnAddNew.TabIndex = 54;
@@ -456,13 +458,33 @@
             // btnAddProdSup
             // 
             this.btnAddProdSup.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnAddProdSup.Location = new System.Drawing.Point(451, 370);
+            this.btnAddProdSup.Location = new System.Drawing.Point(484, 372);
             this.btnAddProdSup.Name = "btnAddProdSup";
-            this.btnAddProdSup.Size = new System.Drawing.Size(110, 43);
+            this.btnAddProdSup.Size = new System.Drawing.Size(104, 43);
             this.btnAddProdSup.TabIndex = 66;
             this.btnAddProdSup.Text = "Add New Product Suppliers";
             this.btnAddProdSup.UseVisualStyleBackColor = false;
             this.btnAddProdSup.Click += new System.EventHandler(this.btnAddProdSup_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(368, 375);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(104, 40);
+            this.btnUpdate.TabIndex = 67;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(270, 375);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(92, 40);
+            this.btnSave.TabIndex = 68;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // Main1
             // 
@@ -470,6 +492,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(596, 528);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAddProdSup);
             this.Controls.Add(this.btnAddSup);
             this.Controls.Add(this.btnAddProd);
@@ -560,5 +584,7 @@
         private System.Windows.Forms.Button btnAddProd;
         private System.Windows.Forms.Button btnAddSup;
         private System.Windows.Forms.Button btnAddProdSup;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnSave;
     }
 }

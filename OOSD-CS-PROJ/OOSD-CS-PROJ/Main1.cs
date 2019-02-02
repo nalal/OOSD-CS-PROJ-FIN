@@ -18,7 +18,12 @@ namespace OOSD_CS_PROJ
         private bool btnProdClicked = false;
         private bool btnSupClicked = false;
         private bool btnProdSupClicked = false;
-        
+        private bool btnPackClicked = true;
+        private Package SinglePkg;
+        private Product SingleProd;
+        private Supplier SingleSup;
+        private ProdSupplier SingleProdSup;
+
 
         public Main1()
         {// Noah
@@ -50,7 +55,7 @@ namespace OOSD_CS_PROJ
             cBID.Visible = false;
             txtProdID.Visible = false;
             txtSupID.Visible = false;
-            
+            btnSave.Visible = false;
         }
 
         // populate drop down with names of pkg objects from the Packages list
@@ -147,6 +152,8 @@ namespace OOSD_CS_PROJ
                                 select selectedprod).First();
 
                     txtID.Text = prod.ProductId.ToString();
+
+                    SingleProd = prod;
                 }
             }
 
@@ -190,9 +197,13 @@ namespace OOSD_CS_PROJ
                     txtBasePrice.Text = pkg.PkgBasePrice.ToString();
                     txtAgencyComm.Text = pkg.PkgAgencyCommission.ToString();
 
+                    SinglePkg = pkg;
                 }
             }
 
+            SingleSup = new Supplier();
+            SingleSup.SupplierId = Convert.ToInt32(txtID.Text);
+            SingleSup.SupName = cBName.Text;
         }
 
         // when name combo box (ddl) is used to select an object from the list
@@ -211,6 +222,8 @@ namespace OOSD_CS_PROJ
 
                 txtProdID.Text = prodSup.ProductId.ToString();
                 txtSupID.Text = prodSup.SupplierId.ToString();
+
+                SingleProdSup = prodSup;
             }
             
         }
@@ -236,6 +249,7 @@ namespace OOSD_CS_PROJ
             btnProdClicked = false;
             btnSupClicked = false;
             btnProdSupClicked = false;
+            btnPackClicked = true;
 
             // visibility settings
             lblID.Text = "   ID:";
@@ -273,6 +287,7 @@ namespace OOSD_CS_PROJ
             btnProdClicked = true;
             btnSupClicked = false;
             btnProdSupClicked = false;
+            btnPackClicked = false;
 
             // visibility settings
             lblID.Text = "   ID:";
@@ -309,6 +324,7 @@ namespace OOSD_CS_PROJ
             btnProdClicked = false;
             btnSupClicked = true;
             btnProdSupClicked = false;
+            btnPackClicked = false;
 
             // visibility settings
             lblID.Text = "   ID:";
@@ -345,7 +361,8 @@ namespace OOSD_CS_PROJ
             btnProdClicked = false;
             btnSupClicked = false;
             btnProdSupClicked = true;
-           
+            btnPackClicked = false;
+
             // visibility settings
             lblID.Text = "Product\nSupplier ID:";
             txtID.Visible = false;
@@ -443,6 +460,119 @@ Author:Helen Lin */
             }
         }
 
-        
+        //Maryam
+        //Updating the data
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            btnSave.Visible = true;
+        }
+
+        //Saving the Data in database
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            bool updated = false;
+
+            //if Supplier button is clicked
+            if (btnSupClicked)
+            {
+                if (Validator1.IsProvidedCombo(cBName, "Supplier Name"))
+                {
+                    Supplier newSup = new Supplier();
+                    newSup.SupName = cBName.Text;
+
+                    updated = SuppliersDB.UpdateSupplier(newSup, SingleSup);
+                    if (updated)
+                    {
+                        MessageBox.Show("Supplier Updated");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Supplier not Updated. Please try again.");
+                    }
+                }
+            }
+            //If Products button is clicked
+            if (btnProdClicked)
+            {
+                if (Validator1.IsProvidedCombo(cBName, "Product Name"))
+                {
+                    Product NewProd = new Product();
+                    NewProd.ProdName = cBName.Text;
+
+                    updated = ProductsDB.UpdateProducts(NewProd, SingleProd);
+                    if (updated)
+                    {
+                        MessageBox.Show("Products Updated");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Products not Updated. Please try again");
+                    }
+                }
+            }
+            if (btnProdSupClicked)// this does not work yet
+            {
+                if (Validator1.IsProvided(txtProdID, "Product Id") &&
+                    Validator1.IsProvided(txtSupID, "Supplier Id"))
+                {
+                    ProdSupplier newProdSupplier = new ProdSupplier();
+                    newProdSupplier.ProductId = Convert.ToInt32(txtProdID.Text);
+                    newProdSupplier.SupplierId = Convert.ToInt32(txtSupID.Text);
+
+                    updated = ProdSuppliersDB.UpdateProdSupplier(newProdSupplier, SingleProdSup);
+                    if (updated)
+                    {
+                        MessageBox.Show("Product_Supplier is Updated");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Product_Supplier is not Updated. Please try again");
+                    }
+                }
+
+            }
+            if (btnPackClicked)  // Otherwise just load Packages
+            {
+                if (Validator1.IsProvidedCombo(cBName, "Package Name") &&
+                    Validator1.IsProvided(txtDesc, "Describtion") &&
+                    Validator1.IsProvided(txtBasePrice, "Base Price") &&
+                    Validator1.IsProvided(txtAgencyComm, "Agency Commission") &&
+                    Validator1.IsNonNegativeDecimal(txtAgencyComm, "Agency Commission") &&
+                    Validator1.IsNonNegativeDecimal(txtBasePrice, "Base Price"))
+                {
+
+                    Package NewPackage = new Package();
+                    NewPackage.PkgName = cBName.Text;
+                    if (dTPStartDate.Value.Date >= dTPEndDate.Value.Date)
+                    {
+                        MessageBox.Show("Package start date cannot be later than end date");
+                    }
+
+                    else if (Convert.ToDecimal(txtBasePrice.Text) < Convert.ToDecimal(txtAgencyComm.Text))
+                    {
+                        MessageBox.Show("Agency Comission cannot be more than Package Base price!");
+                    }
+                    else
+                    {
+                        NewPackage.PkgStartDate = dTPStartDate.Value.ToString("yyyy-MM-dd");
+                        NewPackage.PkgEndDate = dTPEndDate.Value.ToString("yyyy-MM-dd");
+                        NewPackage.PkgDesc = txtDesc.Text;
+                        NewPackage.PkgBasePrice = Convert.ToDecimal(txtBasePrice.Text);
+                        NewPackage.PkgAgencyCommission = Convert.ToDecimal(txtAgencyComm.Text);
+
+                        updated = PackageDB.UpdatePackage(NewPackage, SinglePkg);
+                    }
+
+                    if (updated)
+                    {
+                        MessageBox.Show("Package is Updated");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Package is not Updated, Please try again.");
+                    }
+                }
+            }
+        }
     } 
 }

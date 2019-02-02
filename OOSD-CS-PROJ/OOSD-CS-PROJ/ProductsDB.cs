@@ -14,7 +14,7 @@ namespace OOSD_CS_PROJ
         public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         public static void InitSQL()
         {
-            builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";
+            builder.DataSource = "ELF8OOSD197844\\SQLEXPRESS";
             builder.IntegratedSecurity = true;
             builder.InitialCatalog = "TravelExperts";
         }
@@ -98,7 +98,43 @@ namespace OOSD_CS_PROJ
                 }
 
             }
+        }
 
+        //Maryam
+        //Update statement for Products
+        public static bool UpdateProducts(Product newProd, Product oldProd)
+        {
+            bool Product = false;
+            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+            {
+                string updateProducts = "UPDATE Products " +
+                                     "SET ProdName = @NewProdName " +
+                                     "WHERE ProductId = @OldProductId " +
+                                     "AND ProdName = @OldProdName ";
+                SqlCommand cmd = new SqlCommand(updateProducts, connection);
+
+                cmd.Parameters.AddWithValue("@NewProdName", newProd.ProdName);
+                cmd.Parameters.AddWithValue("@OldProductId", oldProd.ProductId);
+                cmd.Parameters.AddWithValue("@OldProdName", oldProd.ProdName);
+                try
+                {
+                    connection.Open();
+                    Product = Convert.ToBoolean(cmd.ExecuteNonQuery());
+                    if (Product)
+                        Product = true;
+                    else
+                        Product = false;
+                }
+                catch (SqlException ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+            return Product;
         }
     }
 }
