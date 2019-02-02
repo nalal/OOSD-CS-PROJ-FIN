@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,6 +44,13 @@
             this.btnSaveNewPackage = new System.Windows.Forms.Button();
             this.dtStartDate = new System.Windows.Forms.DateTimePicker();
             this.dtEndDate = new System.Windows.Forms.DateTimePicker();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.travelExpertsDataSet = new OOSD_CS_PROJ.TravelExpertsDataSet();
+            this.label8 = new System.Windows.Forms.Label();
+            this.productsTableAdapter = new OOSD_CS_PROJ.TravelExpertsDataSetTableAdapters.ProductsTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -189,11 +197,46 @@
             this.dtEndDate.Size = new System.Drawing.Size(151, 20);
             this.dtEndDate.TabIndex = 16;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(203, 275);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 17;
+            this.comboBox1.ValueMember = "ProdName";
+            // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "Products";
+            this.productsBindingSource.DataSource = this.travelExpertsDataSet;
+            // 
+            // travelExpertsDataSet
+            // 
+            this.travelExpertsDataSet.DataSetName = "TravelExpertsDataSet";
+            this.travelExpertsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(24, 278);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(44, 13);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Product";
+            // 
+            // productsTableAdapter
+            // 
+            this.productsTableAdapter.ClearBeforeFill = true;
+            // 
             // FormAddNewPackage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 383);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dtEndDate);
             this.Controls.Add(this.dtStartDate);
             this.Controls.Add(this.btnSaveNewPackage);
@@ -213,6 +256,8 @@
             this.Name = "FormAddNewPackage";
             this.Text = "FormAddNewPackage";
             this.Load += new System.EventHandler(this.FormAddNewPackage_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,5 +280,10 @@
         private System.Windows.Forms.Button btnSaveNewPackage;
         private System.Windows.Forms.DateTimePicker dtStartDate;
         private System.Windows.Forms.DateTimePicker dtEndDate;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label8;
+        private TravelExpertsDataSet travelExpertsDataSet;
+        private System.Windows.Forms.BindingSource productsBindingSource;
+        private TravelExpertsDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
     }
 }

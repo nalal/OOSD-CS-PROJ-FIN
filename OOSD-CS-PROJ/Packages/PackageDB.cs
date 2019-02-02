@@ -13,7 +13,7 @@ namespace OOSD_CS_PROJ
         public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         public static void InitSQL()
         {
-            builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";
+            builder.DataSource = "ELF8OOSD197690\\SQLEXPRESS";
             builder.IntegratedSecurity = true; 
             builder.InitialCatalog = "TravelExperts";
         }
@@ -28,7 +28,7 @@ namespace OOSD_CS_PROJ
 
             using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
             {
-                string insertStatement = "INSERT INTO Packages(PkgName, PkgStartDate, PkgEndDate, PkgDesc, PkgBasePrice, PkgAgencyCommission)" + "VALUES(@PkgName, @PkgStartDate, @PkgEndDate, @PkgDesc, @PkgBasePrice, @PkgAgencyCommission)";
+                string insertStatement = "INSERT INTO Packages(PkgName, PkgStartDate, PkgEndDate, PkgDesc, PkgBasePrice, PkgAgencyCommission, ProdName)" + "VALUES(@PkgName, @PkgStartDate, @PkgEndDate, @PkgDesc, @PkgBasePrice, @PkgAgencyCommission, @ProdName)";
 
                 SqlCommand cmd = new SqlCommand(insertStatement, conn);
 
@@ -36,14 +36,14 @@ namespace OOSD_CS_PROJ
 
                 cmd.Parameters.AddWithValue("@PkgStartDate", newPackage.PkgStartDate);
              
-
                 cmd.Parameters.AddWithValue("@PkgEndDate", newPackage.PkgEndDate);
             
-
-
                 cmd.Parameters.AddWithValue("@PkgDesc", newPackage.PkgDesc);
                 cmd.Parameters.AddWithValue("@PkgBasePrice", newPackage.PkgBasePrice);
                 cmd.Parameters.AddWithValue("@PkgAgencyCommission", newPackage.PkgAgencyCommission);
+                cmd.Parameters.AddWithValue("@ProdName", newPackage.ProdName);
+
+
                 try
                 {
                     conn.Open();
