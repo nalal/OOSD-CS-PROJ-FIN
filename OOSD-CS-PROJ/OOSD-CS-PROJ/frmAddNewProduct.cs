@@ -31,9 +31,32 @@ namespace OOSD_CS_PROJ
             this.Text = "Add New Product Supplier"; //on load, name the window this
         }
 
-        private void btnSaveProdSup_Click(object sender, EventArgs e)
-        {
+       
 
+
+
+        private void PutProductData(Product newProduct)
+        {
+            try
+            {
+                if (Validator.IsProvided(txtProdName, "Product Name"))
+
+                {
+                    product.ProdName = txtProdName.Text.ToString();
+                    ProductsDB.AddNewProduct(product);
+                    this.DialogResult = DialogResult.OK;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
+        }
+
+        //This will Add new product
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
             try
             {
                 product = new Product();
@@ -47,28 +70,5 @@ namespace OOSD_CS_PROJ
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
         }
-
-
-
-        private void PutProductData(Product newProduct)
-        {
-            try
-            {
-                if (Validator.IsProvided(txtProdName, "Product Name") &&
-                       Validator.IsNonNegativeDecimal(txtProdName, "Product Name"))
-
-                {
-                    product.ProductId = Convert.ToInt32(txtProdId.Text);
-                    product.ProdName = txtProdName.Text.ToString();
-                    ProductsDB.AddNewProduct(product);
-                    this.DialogResult = DialogResult.OK;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
-            }
-        }
-
     }
 }

@@ -32,7 +32,7 @@
             this.txtProdId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtProdName = new System.Windows.Forms.TextBox();
-            this.btnAddNewProd = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -48,6 +48,7 @@
             // 
             this.txtProdId.Location = new System.Drawing.Point(141, 48);
             this.txtProdId.Name = "txtProdId";
+            this.txtProdId.ReadOnly = true;
             this.txtProdId.Size = new System.Drawing.Size(100, 20);
             this.txtProdId.TabIndex = 1;
             // 
@@ -67,21 +68,22 @@
             this.txtProdName.Size = new System.Drawing.Size(100, 20);
             this.txtProdName.TabIndex = 4;
             // 
-            // btnAddNewProd
+            // button1
             // 
-            this.btnAddNewProd.Location = new System.Drawing.Point(209, 205);
-            this.btnAddNewProd.Name = "btnAddNewProd";
-            this.btnAddNewProd.Size = new System.Drawing.Size(92, 41);
-            this.btnAddNewProd.TabIndex = 6;
-            this.btnAddNewProd.Text = "Add New Product";
-            this.btnAddNewProd.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(200, 184);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Save New Product";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmAddNewProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(329, 258);
-            this.Controls.Add(this.btnAddNewProd);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtProdName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtProdId);
@@ -100,6 +102,6 @@
         private System.Windows.Forms.TextBox txtProdId;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtProdName;
-        private System.Windows.Forms.Button btnAddNewProd;
+        private System.Windows.Forms.Button button1;
     }
 }

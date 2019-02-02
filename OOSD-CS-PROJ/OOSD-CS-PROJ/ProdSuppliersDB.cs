@@ -79,11 +79,11 @@ Author: Helen Lin */
 
             using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
             {
-                string insertStatement = "INSERT INTO Packages(ProductId, SupplierId) VALUES(@ProductId, @SupplierId)";
+                string insertStatement = "INSERT INTO Products_Suppliers(ProductId, SupplierId) VALUES(@ProductId, @SupplierId)";
 
                 SqlCommand cmd = new SqlCommand(insertStatement, conn);
 
-                cmd.Parameters.AddWithValue("@ProductSupplierId", newProductSupplier.ProductSupplierId);
+                
                 cmd.Parameters.AddWithValue("@ProductId", newProductSupplier.ProductId);
                 cmd.Parameters.AddWithValue("@SupplierId", newProductSupplier.SupplierId);
 
@@ -92,10 +92,7 @@ Author: Helen Lin */
                 {
                     conn.Open();
                     cmd.ExecuteNonQuery(); //run DML statements
-
-                    SqlCommand selectCommand = new SqlCommand(insertStatement, conn);
-                    selectCommand.ExecuteScalar(); //selects one value
-
+ 
                 }
                 catch (SqlException ex)
                 {

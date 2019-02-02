@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,28 @@ namespace OOSD_CS_PROJ
             InitializeComponent();
         }
 
+        private Package package; //added package
+        string selectedProduct; //to be used with comboBox1, stores the selectedProduct
 
-        public Package package; //added package
-     
+        //Populate the Product list with products from the database
+        private void Fillcombo()
+        {
+
+            // return list of product created in GetProductName()
+            List<Product> myProdList = ProductsDB.GetProducts();
+
+            // adding package names to the CBName (combo box)
+            var prodLinq = from prod in myProdList
+                           select new
+                           {
+                               prod.ProdName
+                           };
+
+            foreach (var item in prodLinq)
+            {
+                comboBox1.Items.Add(item.ProdName);
+            }
+        }
 
         //When user clicks save new package, will submit information to the database
         private void btnSaveNewPackage_Click(object sender, EventArgs e)
@@ -32,9 +52,7 @@ namespace OOSD_CS_PROJ
             {
                 package = new Package();
                 this.PutPackageData(package);
-
                 
-               
             }
             //sending the completed package to the AddNewPackage method, then retrieving the PackageId to be displayed
 
@@ -43,14 +61,15 @@ namespace OOSD_CS_PROJ
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
         }
-
+        
         //Upon form loading, label the form as Add New Package
         private void FormAddNewPackage_Load(object sender, EventArgs e)
         {
-            this.Text = "Add New Package";
            
+            this.Text = "Add New Package";
+            Fillcombo();
         }
-
+     
         //this will take from the textboxes and put it into the object
         private void PutPackageData(Package package)
         {
@@ -81,11 +100,12 @@ namespace OOSD_CS_PROJ
                         package.PkgStartDate =  dtStartDate.Value.ToString("yyyy-MM-dd");
                         package.PkgEndDate =  dtEndDate.Value.ToString("yyyy-MM-dd");
 
-                     
-
                         package.PkgDesc = txtPkgDesc.Text;
                         package.PkgBasePrice = Convert.ToDecimal(txtPkgBasePrice.Text);
                         package.PkgAgencyCommission = Convert.ToDecimal(txtPkgAgencyCommission.Text);
+
+                        selectedProduct = comboBox1.SelectedItem.ToString();
+                        package.ProdName = selectedProduct;
 
                         package.PackageId = PackageDB.AddNewPackage(package);
                         this.DialogResult = DialogResult.OK;
@@ -99,5 +119,6 @@ namespace OOSD_CS_PROJ
             }
         }
 
+        
     }
 }

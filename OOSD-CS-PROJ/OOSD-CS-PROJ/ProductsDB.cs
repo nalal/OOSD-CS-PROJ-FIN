@@ -14,11 +14,12 @@ namespace OOSD_CS_PROJ
         public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         public static void InitSQL()
         {
-            builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";
+            builder.DataSource = "ELF8OOSD197690\\SQLEXPRESS";
             builder.IntegratedSecurity = true;
             builder.InitialCatalog = "TravelExperts";
         }
-        // creating list of instances of the ProdSuppliers class
+       
+       
         public static List<Product> GetProducts()
         {
             // create new list of Products
@@ -68,15 +69,13 @@ namespace OOSD_CS_PROJ
         public static void AddNewProduct(Product newProduct)
         //returns the auto-generated ID of the new Package
         {
-            PackageDB.InitSQL(); //use the database connection from PackageDB
+            InitSQL(); //use the database connection from PackageDB
 
             using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
             {
-                string insertStatement = "INSERT INTO Products(ProductId, ProdName)" + "VALUES(@ProductId, @ProdName)";
+                string insertStatement = "INSERT INTO Products(ProdName)" + "VALUES(@ProdName)";
 
                 SqlCommand cmd = new SqlCommand(insertStatement, conn);
-
-                cmd.Parameters.AddWithValue("@ProductId", newProduct.ProductId);
 
                 cmd.Parameters.AddWithValue("@ProdName", newProduct.ProdName);
 
@@ -84,8 +83,7 @@ namespace OOSD_CS_PROJ
                 {
                     conn.Open();
                     cmd.ExecuteNonQuery(); //run DML statements
-                    SqlCommand selectCommand = new SqlCommand(insertStatement, conn);
-                    selectCommand.ExecuteScalar(); //selects one value
+                                    
 
                 }
                 catch (SqlException ex)
