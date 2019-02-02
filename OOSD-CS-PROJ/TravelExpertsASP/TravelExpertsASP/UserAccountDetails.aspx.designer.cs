@@ -40,6 +40,15 @@ namespace TravelExpertsASP {
         protected global::System.Web.UI.WebControls.Label lblAccountDetails;
         
         /// <summary>
+        /// btnUpdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpdate;
+        
+        /// <summary>
         /// lblCustFirstName control.
         /// </summary>
         /// <remarks>
@@ -416,14 +425,5 @@ namespace TravelExpertsASP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CompareValidator cvPasswords;
-        
-        /// <summary>
-        /// btnCustRegister control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCustRegister;
     }
 }

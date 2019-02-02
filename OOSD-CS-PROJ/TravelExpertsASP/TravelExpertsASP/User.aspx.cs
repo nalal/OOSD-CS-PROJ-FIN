@@ -29,12 +29,13 @@ namespace TravelExpertsASP
                     conn.Open();
                     SqlDataReader myReader;
                     myReader = cmd.ExecuteReader();
+                    string name = "";
                     while (myReader.Read())
                     {
-                        lblWelcome.Text += (myReader["CustFirstName"].ToString());
+                        name = (myReader["CustFirstName"].ToString());
+                        lblWelcome.Text += name;
                     }
 
-                    Session["Name"] = (myReader["CustFirstName"].ToString());
                 }
                 catch(Exception ex)
                 {
@@ -55,6 +56,11 @@ namespace TravelExpertsASP
         {
             Session["Login"] = null;
             Response.Redirect("Login.aspx");
+        }
+
+        protected void btnAccountDetails_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("UserAccountDetails.aspx");
         }
     }
 }

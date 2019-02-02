@@ -12,6 +12,8 @@
 &nbsp;<br />
         <br />
         <asp:Label ID="lblAccountDetails" runat="server" Text="Account Details"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="btnUpdate" runat="server" Text="Update" />
             <br />
             <br />
             <asp:Label ID="lblCustFirstName" runat="server" Text="First Name:"></asp:Label>
@@ -112,7 +114,6 @@
             &nbsp;&nbsp;
             <br />
             <br />
-            <asp:Button ID="btnCustRegister" runat="server" OnClick="btnCustRegister_Click" Text="Register" />
         <div>
         </div>
     </form>
