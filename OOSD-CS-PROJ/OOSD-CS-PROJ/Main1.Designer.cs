@@ -83,6 +83,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
+
+            // btnAddNew
+            // 
+            this.btnAddNew.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnAddNew.Location = new System.Drawing.Point(282, 337);
+            this.btnAddNew.Name = "btnAddNew";
+            this.btnAddNew.Size = new System.Drawing.Size(142, 43);
+            this.btnAddNew.TabIndex = 54;
+            this.btnAddNew.Text = "Add New Package(s)";
+            this.btnAddNew.UseVisualStyleBackColor = false;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
+            // 
+
             // btnPrdctSupps
             // 
             this.btnPrdctSupps.BackColor = System.Drawing.Color.Crimson;
@@ -434,7 +447,7 @@
             // btnAddSup
             // 
             this.btnAddSup.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnAddSup.Location = new System.Drawing.Point(503, 309);
+            this.btnAddSup.Location = new System.Drawing.Point(503, 320);
             this.btnAddSup.Name = "btnAddSup";
             this.btnAddSup.Size = new System.Drawing.Size(85, 43);
             this.btnAddSup.TabIndex = 65;
@@ -445,7 +458,7 @@
             // btnAddProdSup
             // 
             this.btnAddProdSup.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnAddProdSup.Location = new System.Drawing.Point(451, 368);
+            this.btnAddProdSup.Location = new System.Drawing.Point(451, 370);
             this.btnAddProdSup.Name = "btnAddProdSup";
             this.btnAddProdSup.Size = new System.Drawing.Size(110, 43);
             this.btnAddProdSup.TabIndex = 66;

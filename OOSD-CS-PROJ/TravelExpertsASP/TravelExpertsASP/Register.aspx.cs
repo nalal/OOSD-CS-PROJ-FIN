@@ -17,8 +17,7 @@ namespace TravelExpertsASP
             try
             {
                 conn.Open();
-                SqlDataReader myReader;
-                //myReader = ExecuteReader();
+                
 
 
             }
@@ -37,9 +36,9 @@ namespace TravelExpertsASP
         protected void btnCustRegister_Click(object sender, EventArgs e)
         {
             Customer cust = new Customer(txtCustFirstName.Text, txtCustLastName.Text, txtCustAddress.Text,
-                                        txtCustCity.Text, txtCustProv.Text, txtCustPostal.Text, txtCustCountry.Text,
-                                        txtCustHomePhone.Text, txtCustBusPhone.Text, txtCustEmail.Text, txtCustUserName.Text,
-                                        txtCustPassword.Text);
+                                        txtCustCity.Text, ddlCustProv.SelectedValue.ToString() , txtCustPostal.Text, 
+                                        ddlCustCountry.SelectedValue.ToString(),txtCustHomePhone.Text, txtCustBusPhone.Text, 
+                                        txtCustEmail.Text, txtCustUserName.Text, txtCustPassword.Text);
             try
             {
                 CustomersDB.CreateCustomer(cust);
@@ -49,5 +48,7 @@ namespace TravelExpertsASP
                 throw ex;
             }
         }
+
+      
     }
 }

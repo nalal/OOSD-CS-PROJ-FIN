@@ -18,6 +18,7 @@ namespace OOSD_CS_PROJ
         private bool btnProdClicked = false;
         private bool btnSupClicked = false;
         private bool btnProdSupClicked = false;
+        
 
         public Main1()
         {// Noah
@@ -49,6 +50,7 @@ namespace OOSD_CS_PROJ
             cBID.Visible = false;
             txtProdID.Visible = false;
             txtSupID.Visible = false;
+            
         }
 
         // populate drop down with names of pkg objects from the Packages list

@@ -55,9 +55,6 @@ namespace TravelExpertsASP.Models
                     
                 }
 
-                
-
-
 
             }
             catch(Exception ex)
