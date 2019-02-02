@@ -26,9 +26,10 @@ namespace OOSD_CS_PROJ
             this.Text = "Add New Product Supplier"; //on load, name the window this
         }
 
+        //This will add new product supplier
         private void btnSaveProdSup_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("Hello");
+           
             try
             {
                 prodSupplier = new ProdSupplier();
@@ -53,15 +54,9 @@ namespace OOSD_CS_PROJ
                     Validator.IsNonNegativeDecimal(txtProdId, "Product Id") &&
                     Validator.IsNonNegativeDecimal(txtSupId, "Supplier Id"))
                 {
-
-
-
-
-                    prodSupplier.ProductSupplierId = Convert.ToInt32(txtProdSupId.Text);
-
+                    prodSupplier.ProductId = Convert.ToInt32(txtProdId.Text);
                     prodSupplier.SupplierId = Convert.ToInt32(txtSupId.Text);
                     ProdSuppliersDB.AddNewProdSupplier(prodSupplier);
-
                     this.DialogResult = DialogResult.OK;
 
 

@@ -58,8 +58,7 @@ namespace OOSD_CS_PROJ
             {
                 if (Validator.IsProvided(txtSupId, "Supplier Id") &&
                     Validator.IsProvided(txtSupName, "Supplier Name") &&
-                    Validator.IsNonNegativeDecimal(txtSupId, "Supplier Id") &&
-                       Validator.IsNonNegativeDecimal(txtSupName, "Supplier Name"))
+                    Validator.IsNonNegativeDecimal(txtSupId, "Supplier Id"))
                 {
 
 
@@ -81,9 +80,10 @@ namespace OOSD_CS_PROJ
             }
         }
 
+        //This will add new supplier
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Work");
+            
 
             try
             {

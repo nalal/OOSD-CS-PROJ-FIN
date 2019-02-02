@@ -14,7 +14,7 @@ namespace OOSD_CS_PROJ
         public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         public static void InitSQL()
         {
-            builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";
+            builder.DataSource = "ELF8OOSD197690\\SQLEXPRESS";
             builder.IntegratedSecurity = true;
             builder.InitialCatalog = "TravelExperts";
         }
@@ -74,7 +74,7 @@ namespace OOSD_CS_PROJ
 
             using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
             {
-                string insertStatement = "INSERT INTO Packages(SupplierId, SupName) VALUES(@SupplierId, @SupName)";
+                string insertStatement = "INSERT INTO Suppliers(SupplierId, SupName) VALUES(@SupplierId, @SupName)";
 
                 SqlCommand cmd = new SqlCommand(insertStatement, conn);
 
@@ -88,9 +88,7 @@ namespace OOSD_CS_PROJ
                     conn.Open();
                     cmd.ExecuteNonQuery(); //run DML statements
 
-                    SqlCommand selectCommand = new SqlCommand(insertStatement, conn);
-                    selectCommand.ExecuteScalar(); //selects one value
-
+               
                 }
                 catch (SqlException ex)
                 {

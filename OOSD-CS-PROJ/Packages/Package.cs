@@ -24,5 +24,10 @@ namespace OOSD_CS_PROJ
 
             public decimal PkgAgencyCommission { get; set; }
 
+            public string ProdName { get; set; }
+
+
+            
+
     }
 }

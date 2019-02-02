@@ -258,7 +258,7 @@ namespace OOSD_CS_PROJ
             lblDetails.Text = "Package Details";
             lblSearch.Text = "Search Packages:";
             lblSearchFor.Text = "Names";
-            btnAddNew.Text = "Add New Package(s)";
+            
 
             // create list of packages from DB class
             PopulatePackages();
@@ -294,7 +294,7 @@ namespace OOSD_CS_PROJ
             lblDetails.Text = "Product Details";
             lblSearch.Text = "Search Products:";
             lblSearchFor.Text = "Names";
-            btnAddNew.Text = "Add New Product(s)";
+            
 
             // create list of products from DB class
             PopulateProducts();
@@ -330,7 +330,7 @@ namespace OOSD_CS_PROJ
             lblDetails.Text = "Supplier Details";
             lblSearch.Text = "Search Suppliers:";
             lblSearchFor.Text = "Names";
-            btnAddNew.Text = "Add New Supplier(s)";
+            
 
             // create list of suppliers from DB class
             PopulateSuppliers();
@@ -367,20 +367,20 @@ namespace OOSD_CS_PROJ
             lblDetails.Text = "Product Supplier Details";
             lblSearch.Text = "Search Product Suppliers:";
             lblSearchFor.Text = "     IDs";
-            btnAddNew.Text = "Add New\nProduct Supplier(s)";
+            
 
             // create list of product suppliers from DB class
             PopulateProdSuppliers();
         }
-/*Buttons that lead to new forms 
-Author:Helen Lin */
+        /*Buttons that lead to new forms 
+        Author:Helen Lin */
 
-        // add new Package button is clicked
-        private void btnAddNew_Click(object sender, EventArgs e)
+        private void btnAddNewPackage_Click(object sender, EventArgs e)
         {
             FormAddNewPackage f2 = new FormAddNewPackage();//create a variable for AddPackage form
             f2.ShowDialog();//show the AddPackage form 
         }
+
 
         //Add Products button is clicked
         private void btnAddProd_Click(object sender, EventArgs e)
@@ -398,7 +398,7 @@ Author:Helen Lin */
         //Add new Product Supplier is clicked
         private void btnAddProdSup_Click(object sender, EventArgs e)
         {
-            frmAddNewProduct f5 = new frmAddNewProduct();//create a variable for AddProductSupplier form
+            frmAddNewProdSupplier f5 = new frmAddNewProdSupplier();//create a variable for AddProductSupplier form
             f5.ShowDialog();//show the AddProductSupplier form 
         }
 
@@ -441,6 +441,10 @@ Author:Helen Lin */
             }
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormAddNewPackage f2 = new FormAddNewPackage();//create a variable for AddSupplier form
+            f2.ShowDialog();//show the AddSupplier form 
+        }
     } 
 }
