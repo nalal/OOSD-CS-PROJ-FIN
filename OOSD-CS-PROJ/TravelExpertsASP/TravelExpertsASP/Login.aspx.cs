@@ -38,7 +38,7 @@ namespace TravelExpertsASP
                     {
                         Session["Login"] = txtCustUserName.Text;
                         Response.Write("Password is correct");
-                        Response.Redirect("Register.aspx");
+                        Response.Redirect("User.aspx");
                     }
                     else
                     {
@@ -60,6 +60,11 @@ namespace TravelExpertsASP
             {
                 conn.Close();
             }
+
+        }
+
+        protected void btnSignUp_Click(object sender, EventArgs e)
+        {
 
         }
     }

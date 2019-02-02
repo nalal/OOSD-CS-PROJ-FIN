@@ -13,24 +13,23 @@ namespace TravelExpertsASP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SqlConnection conn = TravelExperts1DB.GetConnection();
-            try
-            {
-                conn.Open();
-                
+            //SqlConnection conn = TravelExperts1DB.GetConnection();
+            //try
+            //{
+            //    conn.Open();
 
 
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                conn.Close();
-            }
-            
-           
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw ex;
+            //}
+            //finally
+            //{
+            //    conn.Close();
+            //}
+            UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
         }
 
         protected void btnCustRegister_Click(object sender, EventArgs e)
@@ -39,14 +38,33 @@ namespace TravelExpertsASP
                                         txtCustCity.Text, ddlCustProv.SelectedValue.ToString() , txtCustPostal.Text, 
                                         ddlCustCountry.SelectedValue.ToString(),txtCustHomePhone.Text, txtCustBusPhone.Text, 
                                         txtCustEmail.Text, txtCustUserName.Text, txtCustPassword.Text);
-            try
+
+            
+            if (Page.IsValid)
             {
-                CustomersDB.CreateCustomer(cust);
+                SqlConnection conn = TravelExperts1DB.GetConnection();
+                try
+                {
+                    conn.Open();
+
+                    CustomersDB.CreateCustomer(cust);
+
+                    Response.Write("Registration successful");
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
             }
-            catch (Exception ex)
+            else
             {
-                throw ex;
+                Response.Write("Registration unsuccessful");
             }
+            
         }
 
       

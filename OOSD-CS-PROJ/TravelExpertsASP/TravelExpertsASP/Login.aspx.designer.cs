@@ -49,6 +49,15 @@ namespace TravelExpertsASP {
         protected global::System.Web.UI.WebControls.TextBox txtCustUserName;
         
         /// <summary>
+        /// rfvCustUserName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCustUserName;
+        
+        /// <summary>
         /// lblCustPassword control.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace TravelExpertsASP {
         protected global::System.Web.UI.WebControls.TextBox txtCustPassword;
         
         /// <summary>
+        /// rfvCustPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCustPassword;
+        
+        /// <summary>
         /// btnLogin control.
         /// </summary>
         /// <remarks>
@@ -74,5 +92,14 @@ namespace TravelExpertsASP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnLogin;
+        
+        /// <summary>
+        /// hlSignUp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlSignUp;
     }
 }

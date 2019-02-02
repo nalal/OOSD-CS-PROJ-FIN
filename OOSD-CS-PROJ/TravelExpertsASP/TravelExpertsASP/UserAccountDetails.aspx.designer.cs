@@ -10,7 +10,7 @@
 namespace TravelExpertsASP {
     
     
-    public partial class Register {
+    public partial class UserAccountDetails {
         
         /// <summary>
         /// form1 control.
@@ -20,6 +20,24 @@ namespace TravelExpertsASP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
+        /// lblLoginUserName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLoginUserName;
+        
+        /// <summary>
+        /// lblAccountDetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAccountDetails;
         
         /// <summary>
         /// lblCustFirstName control.

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="TravelExpertsASP.Register" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserAccountDetails.aspx.cs" Inherits="TravelExpertsASP.UserAccountDetails" %>
 
 <!DOCTYPE html>
 
@@ -8,8 +8,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            Register
+        <asp:Label ID="lblLoginUserName" runat="server"></asp:Label>
+&nbsp;<br />
+        <br />
+        <asp:Label ID="lblAccountDetails" runat="server" Text="Account Details"></asp:Label>
             <br />
             <br />
             <asp:Label ID="lblCustFirstName" runat="server" Text="First Name:"></asp:Label>
@@ -111,8 +113,7 @@
             <br />
             <br />
             <asp:Button ID="btnCustRegister" runat="server" OnClick="btnCustRegister_Click" Text="Register" />
-            <br />
-            <br />
+        <div>
         </div>
     </form>
 </body>
