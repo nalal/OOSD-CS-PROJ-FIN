@@ -50,8 +50,7 @@ namespace OOSD_CS_PROJ
             cBID.Visible = false;
             txtProdID.Visible = false;
             txtSupID.Visible = false;
-            cbProdID.Visible = false;
-            cbSupID.Visible = false;
+            
         }
 
         // populate drop down with names of pkg objects from the Packages list
