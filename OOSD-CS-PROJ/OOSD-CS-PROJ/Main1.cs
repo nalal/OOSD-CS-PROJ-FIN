@@ -19,6 +19,7 @@ namespace OOSD_CS_PROJ
         private bool btnSupClicked = false;
         private bool btnProdSupClicked = false;
         private bool btnPackClicked = true;
+        private bool btnUpdateClicked = false;
         private Package SinglePkg;
         private Product SingleProd;
         private Supplier SingleSup;
@@ -56,6 +57,9 @@ namespace OOSD_CS_PROJ
             txtProdID.Visible = false;
             txtSupID.Visible = false;
             btnSave.Visible = false;
+            cbProdID.Visible = false;
+            cbSupID.Visible = false;
+            
         }
 
         // populate drop down with names of pkg objects from the Packages list
@@ -84,16 +88,33 @@ namespace OOSD_CS_PROJ
             // return list of packages created in GetProducts()
             List<Product> productList = ProductsDB.GetProducts();
 
-            // adding product names to the CBName (combo box)
-            var productLinq = from prod in productList
-                              select new
-                              {
-                                  prod.ProdName
-                              };
-
-            foreach (var item in productLinq)
+            if(btnUpdateClicked)
             {
-                cBName.Items.Add(item.ProdName);
+                // adding product names to the CBName (combo box)
+                var productLinq = from prod in productList
+                                  select new
+                                  {
+                                      prod.ProdName
+                                  };
+
+                foreach (var item in productLinq)
+                {
+                    cBName.Items.Add(item.ProdName);
+                }
+            }
+            else
+            {
+                // adding product names to the CBName (combo box)
+                var productLinq = from prod in productList
+                                  select new
+                                  {
+                                      prod.ProductId
+                                  };
+
+                foreach (var item in productLinq)
+                {
+                    cbProdID.Items.Add(item.ProductId);
+                }
             }
         }
 
@@ -102,17 +123,34 @@ namespace OOSD_CS_PROJ
         {
             // return list of suppliers created in GetSuppliers()
             List<Supplier> supplierList = SuppliersDB.GetSuppliers();
-
-            // adding supplier names to the CBName (combo box)
-            var supplierLinq = from sup in supplierList
-                              select new
-                              {
-                                  sup.SupName
-                              };
-
-            foreach (var item in supplierLinq)
+            if (btnUpdateClicked)
             {
-                cBName.Items.Add(item.SupName);
+                // adding supplier names to the CBName (combo box)
+                var supplierLinq = from sup in supplierList
+                                   select new
+                                   {
+                                       sup.SupName
+                                   };
+
+                foreach (var item in supplierLinq)
+                {
+                    cBName.Items.Add(item.SupName);
+                }
+            }
+            else
+            {
+                // adding supplier names to the CBName (combo box)
+                var supplierLinq = from sup in supplierList
+                                   select new
+                                   {
+                                       sup.SupplierId
+                                   };
+
+                foreach (var item in supplierLinq)
+                {
+                    cbSupID.Items.Add(item.SupplierId);
+                }
+
             }
         }
 
@@ -234,12 +272,17 @@ namespace OOSD_CS_PROJ
             txtID.Text = "";
             cBName.SelectedIndex = -1;
             cBName.Items.Clear();
+            cBID.SelectedIndex = -1;
+            cBID.Items.Clear();
+            cbProdID.SelectedIndex = -1;
+            cbProdID.Items.Clear();
+            cbSupID.SelectedIndex = -1;
+            cbSupID.Items.Clear();
             dTPStartDate.Text = "";
             dTPEndDate.Text = "";
             txtDesc.Text = "";
             txtBasePrice.Text = "";
             txtAgencyComm.Text = "";
-
         }
 
         // packages button is clicked
@@ -250,6 +293,7 @@ namespace OOSD_CS_PROJ
             btnSupClicked = false;
             btnProdSupClicked = false;
             btnPackClicked = true;
+            btnUpdateClicked = false;
 
             // visibility settings
             lblID.Text = "   ID:";
@@ -258,7 +302,9 @@ namespace OOSD_CS_PROJ
             txtProdID.Visible = false;
             cBName.Visible = true;
             lblName.Text = "Name";
+            cbProdID.Visible = false;
             txtSupID.Visible = false;
+            cbSupID.Visible = false;
             lblStartDate.Visible = true;
             lblStartDate.Text = "Start Date:";
             dTPStartDate.Visible = true;
@@ -288,6 +334,7 @@ namespace OOSD_CS_PROJ
             btnSupClicked = false;
             btnProdSupClicked = false;
             btnPackClicked = false;
+            btnUpdateClicked = false;
 
             // visibility settings
             lblID.Text = "   ID:";
@@ -296,7 +343,9 @@ namespace OOSD_CS_PROJ
             txtProdID.Visible = false;
             cBName.Visible = true;
             lblName.Text = "Name";
+            cbProdID.Visible = false;
             txtSupID.Visible = false;
+            cbSupID.Visible = false;
             lblStartDate.Visible = false;
             dTPStartDate.Visible = false;
             lblEndDate.Visible = false;
@@ -325,6 +374,7 @@ namespace OOSD_CS_PROJ
             btnSupClicked = true;
             btnProdSupClicked = false;
             btnPackClicked = false;
+            btnUpdateClicked = false;
 
             // visibility settings
             lblID.Text = "   ID:";
@@ -333,7 +383,9 @@ namespace OOSD_CS_PROJ
             txtProdID.Visible = false;
             cBName.Visible = true;
             lblName.Text = "Name";
+            cbProdID.Visible = false;
             txtSupID.Visible = false;
+            cbSupID.Visible = false;
             lblStartDate.Visible = false;
             dTPStartDate.Visible = false;
             lblEndDate.Visible = false;
@@ -362,6 +414,7 @@ namespace OOSD_CS_PROJ
             btnSupClicked = false;
             btnProdSupClicked = true;
             btnPackClicked = false;
+            btnUpdateClicked = false;
 
             // visibility settings
             lblID.Text = "Product\nSupplier ID:";
@@ -465,6 +518,16 @@ Author:Helen Lin */
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             btnSave.Visible = true;
+            // updates - Chad
+            if (btnProdSupClicked)
+            {
+                cbProdID.Visible = true;
+                cbSupID.Visible = true;
+
+                PopulateProducts();
+                PopulateSuppliers();
+            }
+            
         }
 
         //Saving the Data in database

@@ -74,6 +74,8 @@
             this.btnAddProdSup = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.cbProdID = new System.Windows.Forms.ComboBox();
+            this.cbSupID = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.packagesBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSet)).BeginInit();
@@ -486,12 +488,30 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // cbProdID
+            // 
+            this.cbProdID.FormattingEnabled = true;
+            this.cbProdID.Location = new System.Drawing.Point(131, 222);
+            this.cbProdID.Name = "cbProdID";
+            this.cbProdID.Size = new System.Drawing.Size(121, 21);
+            this.cbProdID.TabIndex = 69;
+            // 
+            // cbSupID
+            // 
+            this.cbSupID.FormattingEnabled = true;
+            this.cbSupID.Location = new System.Drawing.Point(131, 257);
+            this.cbSupID.Name = "cbSupID";
+            this.cbSupID.Size = new System.Drawing.Size(121, 21);
+            this.cbSupID.TabIndex = 70;
+            // 
             // Main1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(596, 528);
+            this.Controls.Add(this.cbSupID);
+            this.Controls.Add(this.cbProdID);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAddProdSup);
@@ -586,5 +606,7 @@
         private System.Windows.Forms.Button btnAddProdSup;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.ComboBox cbProdID;
+        private System.Windows.Forms.ComboBox cbSupID;
     }
 }

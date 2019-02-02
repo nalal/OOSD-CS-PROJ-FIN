@@ -16,7 +16,7 @@ namespace OOSD_CS_PROJ
         public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         public static void InitSQL()
         {
-            builder.DataSource = "ELF8OOSD197844\\SQLEXPRESS";
+            builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";
             builder.IntegratedSecurity = true;
             builder.InitialCatalog = "TravelExperts";
         }
