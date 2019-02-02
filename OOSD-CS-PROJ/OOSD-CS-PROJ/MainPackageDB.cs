@@ -10,7 +10,7 @@ namespace OOSD_CS_PROJ
     // class for SQL commands regarding the Packages class on the main viewing form
     class MainPackageDB
     {
-
+       
 
         // connecting to the DB
         public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
@@ -27,7 +27,8 @@ namespace OOSD_CS_PROJ
             List<Package> Packagess = new List<Package>(); // make an empty list
             Package pkg; // reference to new Package object
 
-            //z
+
+
            InitSQL();
 
             using (SqlConnection connection = new SqlConnection(builder.ConnectionString))

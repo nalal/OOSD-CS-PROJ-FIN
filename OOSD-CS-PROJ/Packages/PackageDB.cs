@@ -24,7 +24,7 @@ namespace OOSD_CS_PROJ
             //PackageId will be auto incremented once created
             int PackageId;
 
-            PackageDB.InitSQL();
+            InitSQL();
 
             using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
             {

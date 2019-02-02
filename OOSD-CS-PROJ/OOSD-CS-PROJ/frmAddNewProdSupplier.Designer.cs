@@ -87,13 +87,13 @@
             // 
             // btnSaveProdSup
             // 
-            this.btnSaveProdSup.Location = new System.Drawing.Point(272, 259);
+            this.btnSaveProdSup.Location = new System.Drawing.Point(290, 262);
             this.btnSaveProdSup.Name = "btnSaveProdSup";
-            this.btnSaveProdSup.Size = new System.Drawing.Size(108, 53);
+            this.btnSaveProdSup.Size = new System.Drawing.Size(103, 52);
             this.btnSaveProdSup.TabIndex = 6;
-            this.btnSaveProdSup.Text = "Save Product Supplier";
+            this.btnSaveProdSup.Text = "Save New Product Supplier";
             this.btnSaveProdSup.UseVisualStyleBackColor = true;
-            this.btnSaveProdSup.Click += new System.EventHandler(this.btnSaveProdSup_Click);
+            this.btnSaveProdSup.Click += new System.EventHandler(this.btnSaveProdSup_Click_1);
             // 
             // frmAddNewProdSupplier
             // 
