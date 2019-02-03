@@ -13,11 +13,12 @@
         <br />
         <asp:Label ID="lblAccountDetails" runat="server" Text="Account Details"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btnUpdate" runat="server" Text="Update" />
+        <asp:Button ID="btnUpdate" runat="server" CausesValidation="False" OnClick="btnUpdate_Click1" Text="Update" />
+        <asp:Button ID="btnSaveUpd" runat="server" OnClick="btnSaveUpd_Click" Text="Save" />
             <br />
             <br />
             <asp:Label ID="lblCustFirstName" runat="server" Text="First Name:"></asp:Label>
-&nbsp;<asp:TextBox ID="txtCustFirstName" runat="server" AutoPostBack="False"></asp:TextBox>
+&nbsp;<asp:TextBox ID="txtCustFirstName" runat="server" AutoPostBack="True"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvCustFirstName" runat="server" ErrorMessage="First name is required" ControlToValidate="txtCustFirstName" ForeColor="Red"></asp:RequiredFieldValidator>
             <br />
             <br />
@@ -37,7 +38,7 @@
             <asp:Label ID="lblCustCity" runat="server" Text="City:"></asp:Label>
 &nbsp;<asp:TextBox ID="txtCustCity" runat="server" AutoPostBack="False"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvCustCity" runat="server" ControlToValidate="txtCustCity" ErrorMessage="City is required" ForeColor="Red"></asp:RequiredFieldValidator>
-            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
             <br />
             <asp:Label ID="lblCustProv" runat="server" Text="Province:"></asp:Label>
