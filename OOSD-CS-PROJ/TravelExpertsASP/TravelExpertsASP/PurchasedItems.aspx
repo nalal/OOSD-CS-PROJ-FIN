@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PurchasedProducts.aspx.cs" Inherits="TravelExpertsASP.PurchasedProducts" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PurchasedItems.aspx.cs" Inherits="TravelExpertsASP.PurchasedProducts" %>
 
 <!DOCTYPE html>
 

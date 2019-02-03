@@ -62,5 +62,10 @@ namespace TravelExpertsASP
         {
             Response.Redirect("UserAccountDetails.aspx");
         }
+
+        protected void btnPurchasedProducts_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PurchasedItems.aspx");
+        }
     }
 }

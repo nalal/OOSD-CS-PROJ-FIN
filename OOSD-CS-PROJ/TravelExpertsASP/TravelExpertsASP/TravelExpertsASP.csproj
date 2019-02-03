@@ -79,7 +79,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Login.aspx" />
-    <Content Include="PurchasedProducts.aspx" />
+    <Content Include="PurchasedItems.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -131,13 +131,14 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\CustomersDB.cs" />
+    <Compile Include="Models\PurchasedItems.cs" />
     <Compile Include="Models\TravelExperts1DB.cs" />
-    <Compile Include="PurchasedProducts.aspx.cs">
-      <DependentUpon>PurchasedProducts.aspx</DependentUpon>
+    <Compile Include="PurchasedItems.aspx.cs">
+      <DependentUpon>PurchasedItems.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PurchasedProducts.aspx.designer.cs">
-      <DependentUpon>PurchasedProducts.aspx</DependentUpon>
+    <Compile Include="PurchasedItems.aspx.designer.cs">
+      <DependentUpon>PurchasedItems.aspx</DependentUpon>
     </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>

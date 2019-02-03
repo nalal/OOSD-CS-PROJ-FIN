@@ -16,6 +16,7 @@
             <br />
             <br />
             <asp:Button ID="btnAccountDetails" runat="server" OnClick="btnAccountDetails_Click" Text="AccountDetails" />
+            <asp:Button ID="btnPurchasedProducts" runat="server" OnClick="btnPurchasedProducts_Click" Text="Purchased Products" />
         </div>
     </form>
 </body>
