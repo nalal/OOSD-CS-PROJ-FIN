@@ -18,41 +18,55 @@ namespace TravelExpertsASP
             {
                 AccountDetailsVisibility();
                 ReadOnly();
+                LoadSessionData();
 
-                if (Session["Login"] != null)
-                {
-                    string custUserName = Session["Login"].ToString();
-                    lblLoginUserName.Text = custUserName;
-                    Customer cust = CustomersDB.GetCustomerByUserName(custUserName);
-                    PopulateAccountDetails(cust);
+                //if (Session["Login"] != null)
+                //{
+                //    string custUserName = Session["Login"].ToString();
+                //    lblLoginUserName.Text = custUserName;
+                //    Customer cust = CustomersDB.GetCustomerByUserName(custUserName);
+                //    PopulateAccountDetails(cust);
 
-                    Session["UN"] = txtCustUserName.Text.ToString();
-                    Session["PENIS"] = txtCustPassword.Text.ToString();
-                }
+                //    Session["UserName"] = cust.CustUserName;
+                //    Session["Password"] = cust.CustPassword;
+                //}
 
-                else
-                {
-                    Response.Redirect("Login.aspx");
-                }
+                //else
+                //{
+                //    Response.Redirect("Login.aspx");
+                //}
                 
             }
             else
             {
 
             }
-            txtCustRePassword.Text = txtCustPassword.Text;
+            
+        }
+
+        private void LoadSessionData()
+        {
+            if (Session["Login"] != null)
+            {
+                string custUserName = Session["Login"].ToString();
+                lblLoginUserName.Text = custUserName;
+                Customer cust = CustomersDB.GetCustomerByUserName(custUserName);
+                PopulateAccountDetails(cust);
+
+                Session["UserName"] = cust.CustUserName;
+                Session["Password"] = cust.CustPassword;
+            }
+
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
+            
         }
 
         public void AccountDetailsVisibility()
         {
-            
-            lblCustUserName.Visible = false;
-            lblCustPassword.Visible = false;
-            lblCustRePassword.Visible = false;
-            txtCustUserName.Visible = false;
-            txtCustPassword.Visible = false;
-            txtCustRePassword.Visible = false;
-            btnSaveUpdate.Visible = false;
+            btnSaveUpd.Visible = false;
         }
         private void PopulateAccountDetails(Customer cust)
         {
@@ -66,8 +80,7 @@ namespace TravelExpertsASP
             txtCustHomePhone.Text = cust.CustHomePhone.ToString();
             txtCustBusPhone.Text = cust.CustBusPhone.ToString();
             txtCustEmail.Text = cust.CustEmail.ToString();
-            txtCustUserName.Text = cust.CustUserName.ToString();
-            txtCustPassword.Text = cust.CustPassword.ToString();
+            
 
             
         }
@@ -99,69 +112,73 @@ namespace TravelExpertsASP
             txtCustHomePhone.ReadOnly = false;
             txtCustBusPhone.ReadOnly = false;
             txtCustEmail.ReadOnly = false;
-            btnSaveUpdate.Visible = true;
+            btnSaveUpd.Visible = true;
         }
 
         protected void btnUpdate_Click1(object sender, EventArgs e)
         {
+           
+            EnableForUpdates();
             
 
-
-            EnableForUpdates();
         }
 
         protected void btnSaveUpd_Click(object sender, EventArgs e)
         {
+            
+
             //SqlConnection conn = TravelExperts1DB.GetConnection();
 
-            Customer currCust = CustomersDB.GetCustomerByUserName(txtCustUserName.Text);
+            Customer currCust = CustomersDB.GetCustomerByUserName(Session["UserName"].ToString());
 
-            //if (Page.IsValid)
-            //{
-            //Customer updCust = new Customer(
-            //txtCustFirstName.Text.ToString().ToString(), txtCustLastName.Text.ToString(), txtCustAddress.Text.ToString(),
-            //txtCustCity.Text.ToString(), ddlCustProv.Text.ToString(), txtCustPostal.Text.ToString(), ddlCustCountry.Text.ToString(),
-            //txtCustHomePhone.Text.ToString(), txtCustBusPhone.Text.ToString(), txtCustEmail.Text.ToString(),
-            //txtCustUserName.Text.ToString(), txtCustPassword.Text.ToString());
+                //if (Page.IsValid)
+                //{
+                //Customer updCust = new Customer(
+                //txtCustFirstName.Text.ToString().ToString(), txtCustLastName.Text.ToString(), txtCustAddress.Text.ToString(),
+                //txtCustCity.Text.ToString(), ddlCustProv.Text.ToString(), txtCustPostal.Text.ToString(), ddlCustCountry.Text.ToString(),
+                //txtCustHomePhone.Text.ToString(), txtCustBusPhone.Text.ToString(), txtCustEmail.Text.ToString(),
+                //txtCustUserName.Text.ToString(), txtCustPassword.Text.ToString());
 
-            Customer updCust = new Customer();
+                Customer updCust = new Customer();
 
-            updCust.CustFirstName = txtCustFirstName.Text.ToString();
-            updCust.CustLastName = txtCustLastName.Text.ToString();
-            updCust.CustAddress = txtCustAddress.Text.ToString();
-            updCust.CustCity = txtCustCity.Text.ToString();
-            updCust.CustProv = ddlCustProv.Text.ToString();
-            updCust.CustPostal = txtCustPostal.Text.ToString();
-            updCust.CustCountry = ddlCustCountry.Text.ToString();
-            updCust.CustHomePhone = txtCustHomePhone.Text.ToString();
-            updCust.CustBusPhone = txtCustBusPhone.Text.ToString();
-            updCust.CustEmail = txtCustEmail.Text.ToString();
-            updCust.CustUserName = Session["UN"].ToString();
-            updCust.CustPassword = Session["PENIS"].ToString();
+                updCust.CustFirstName = txtCustFirstName.Text.ToString();
+                updCust.CustLastName = txtCustLastName.Text.ToString();
+                updCust.CustAddress = txtCustAddress.Text.ToString();
+                updCust.CustCity = txtCustCity.Text.ToString();
+                updCust.CustProv = ddlCustProv.Text.ToString();
+                updCust.CustPostal = txtCustPostal.Text.ToString();
+                updCust.CustCountry = ddlCustCountry.Text.ToString();
+                updCust.CustHomePhone = txtCustHomePhone.Text.ToString();
+                updCust.CustBusPhone = txtCustBusPhone.Text.ToString();
+                updCust.CustEmail = txtCustEmail.Text.ToString();
+                updCust.CustUserName = Session["UserName"].ToString();
+                updCust.CustPassword = Session["Password"].ToString();
 
 
 
-            try
-            {
-                bool updSuccessful = CustomersDB.UpdateCustomer(currCust, updCust);
-                if (updSuccessful)
+                try
                 {
-                    Response.Write("Account Details update successful");
+                    bool updSuccessful = CustomersDB.UpdateCustomer(currCust, updCust);
+                    if (updSuccessful)
+                    {
+                        Response.Write("Account Details update successful");
+                    }
+                    else
+                    {
+                        Response.Write("Account Details update failed, please try again");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    Response.Write("Account Details update failed, please try again");
+                    throw ex;
                 }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            //}
-            //else
-            //{
-            //    Response.Write("Update FAILED");
-            //}
+                //}
+                //else
+                //{
+                //    Response.Write("Update FAILED");
+                //}
+            
+
         }
     }
 }

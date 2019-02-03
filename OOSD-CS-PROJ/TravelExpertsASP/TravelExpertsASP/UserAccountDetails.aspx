@@ -13,12 +13,12 @@
         <br />
         <asp:Label ID="lblAccountDetails" runat="server" Text="Account Details"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btnUpdate" runat="server" CausesValidation="False" OnClick="btnUpdate_Click1" Text="Update" />
+        <asp:Button ID="btnUpdate" runat="server" CausesValidation="False" OnClick="btnUpdate_Click1" Text="Update" UseSubmitBehavior="False" />
         <asp:Button ID="btnSaveUpd" runat="server" OnClick="btnSaveUpd_Click" Text="Save" />
             <br />
             <br />
             <asp:Label ID="lblCustFirstName" runat="server" Text="First Name:"></asp:Label>
-&nbsp;<asp:TextBox ID="txtCustFirstName" runat="server" AutoPostBack="True"></asp:TextBox>
+&nbsp;<asp:TextBox ID="txtCustFirstName" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvCustFirstName" runat="server" ErrorMessage="First name is required" ControlToValidate="txtCustFirstName" ForeColor="Red"></asp:RequiredFieldValidator>
             <br />
             <br />
@@ -94,25 +94,6 @@
 &nbsp;<asp:TextBox ID="txtCustEmail" runat="server" AutoPostBack="False" Width="120px"></asp:TextBox>
             <asp:RegularExpressionValidator ID="revCustEmail" runat="server" ControlToValidate="txtCustEmail" ErrorMessage="Invalid email format" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"  ForeColor="Red"></asp:RegularExpressionValidator>
             <br />
-            <br />
-            <br />
-            <asp:Label ID="lblCustUserName" runat="server" Text="User Name:"></asp:Label>
-&nbsp;<asp:TextBox ID="txtCustUserName" runat="server" AutoPostBack="False"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="rfvCustUserName" runat="server" ControlToValidate="txtCustUserName" ErrorMessage="User Name is required" ForeColor="Red"></asp:RequiredFieldValidator>
-            <br />
-            <br />
-            <br />
-            <asp:Label ID="lblCustPassword" runat="server" Text="Password: "></asp:Label>
-&nbsp;<asp:TextBox ID="txtCustPassword" runat="server" AutoPostBack="False" TextMode="Password"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="rfvCustPassword" runat="server" ErrorMessage="Password is required" ControlToValidate="txtCustPassword" ForeColor="Red"></asp:RequiredFieldValidator>
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Password must contain one upper case character, lower case character, number, and special character. It must be between 8-15 characters long." ForeColor="Red" ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&amp;])[A-Za-z\d@$!%*?&amp;]{8,}$" ControlToValidate="txtCustPassword"></asp:RegularExpressionValidator>
-            <br />
-            <br />
-            <br />
-            <asp:Label ID="lblCustRePassword" runat="server" Text="Re-enter Password: "></asp:Label>
-&nbsp;<asp:TextBox ID="txtCustRePassword" runat="server" AutoPostBack="False" TextMode="Password"></asp:TextBox>
-            <asp:CompareValidator ID="cvPasswords" runat="server" ControlToCompare="txtCustPassword" ControlToValidate="txtCustRePassword" ErrorMessage="Passwords do not match" ForeColor="Red"></asp:CompareValidator>
-            &nbsp;&nbsp;
             <br />
             <br />
         <div>
