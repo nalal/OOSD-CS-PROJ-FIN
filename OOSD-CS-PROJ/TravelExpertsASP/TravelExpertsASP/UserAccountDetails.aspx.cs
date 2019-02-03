@@ -131,52 +131,45 @@ namespace TravelExpertsASP
 
             Customer currCust = CustomersDB.GetCustomerByUserName(Session["UserName"].ToString());
 
-                //if (Page.IsValid)
-                //{
-                //Customer updCust = new Customer(
-                //txtCustFirstName.Text.ToString().ToString(), txtCustLastName.Text.ToString(), txtCustAddress.Text.ToString(),
-                //txtCustCity.Text.ToString(), ddlCustProv.Text.ToString(), txtCustPostal.Text.ToString(), ddlCustCountry.Text.ToString(),
-                //txtCustHomePhone.Text.ToString(), txtCustBusPhone.Text.ToString(), txtCustEmail.Text.ToString(),
-                //txtCustUserName.Text.ToString(), txtCustPassword.Text.ToString());
+               if (Page.IsValid)
+               {
+                
 
-                Customer updCust = new Customer();
+                    Customer updCust = new Customer();
 
-                updCust.CustFirstName = txtCustFirstName.Text.ToString();
-                updCust.CustLastName = txtCustLastName.Text.ToString();
-                updCust.CustAddress = txtCustAddress.Text.ToString();
-                updCust.CustCity = txtCustCity.Text.ToString();
-                updCust.CustProv = ddlCustProv.Text.ToString();
-                updCust.CustPostal = txtCustPostal.Text.ToString();
-                updCust.CustCountry = ddlCustCountry.Text.ToString();
-                updCust.CustHomePhone = txtCustHomePhone.Text.ToString();
-                updCust.CustBusPhone = txtCustBusPhone.Text.ToString();
-                updCust.CustEmail = txtCustEmail.Text.ToString();
-                updCust.CustUserName = Session["UserName"].ToString();
-                updCust.CustPassword = Session["Password"].ToString();
+                    updCust.CustFirstName = txtCustFirstName.Text.ToString();
+                    updCust.CustLastName = txtCustLastName.Text.ToString();
+                    updCust.CustAddress = txtCustAddress.Text.ToString();
+                    updCust.CustCity = txtCustCity.Text.ToString();
+                    updCust.CustProv = ddlCustProv.Text.ToString();
+                    updCust.CustPostal = txtCustPostal.Text.ToString();
+                    updCust.CustCountry = ddlCustCountry.Text.ToString();
+                    updCust.CustHomePhone = txtCustHomePhone.Text.ToString();
+                    updCust.CustBusPhone = txtCustBusPhone.Text.ToString();
+                    updCust.CustEmail = txtCustEmail.Text.ToString();
+                    updCust.CustUserName = Session["UserName"].ToString();
+                    updCust.CustPassword = Session["Password"].ToString();
 
 
 
-                try
-                {
-                    bool updSuccessful = CustomersDB.UpdateCustomer(currCust, updCust);
-                    if (updSuccessful)
+                    try
                     {
-                        Response.Write("Account Details update successful");
+                        bool updSuccessful = CustomersDB.UpdateCustomer(currCust, updCust);
+                        if (updSuccessful)
+                        {
+                            Response.Write("Account Details update successful");
+                        }
+                        else
+                        {
+                            Response.Write("Account Details update failed, please try again");
+                        }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        Response.Write("Account Details update failed, please try again");
+                        throw ex;
                     }
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-                //}
-                //else
-                //{
-                //    Response.Write("Update FAILED");
-                //}
+               }
+               
             
 
         }
