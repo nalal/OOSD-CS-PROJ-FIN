@@ -5,7 +5,7 @@ using System.Web;
 
 namespace TravelExpertsASP.Models
 {
-    public class PurchasedItems
+    public class PurchasedItem
     {
         private decimal totalCost;
         public string Destination { get; set; }
