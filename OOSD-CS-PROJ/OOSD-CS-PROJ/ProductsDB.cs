@@ -10,14 +10,6 @@ namespace OOSD_CS_PROJ
     // class for SQL commands regarding the Products class on the main view form
     class ProductsDB
     {
-        // connecting to the DB
-        //public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-        //public static void InitSQL()
-        //{
-        //    builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";
-        //    builder.IntegratedSecurity = true;
-        //    builder.InitialCatalog = "TravelExperts";
-        //}
         // creating list of instances of the ProdSuppliers class
         public static List<Product> GetProducts()
         {

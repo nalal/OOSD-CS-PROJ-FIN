@@ -10,8 +10,6 @@ namespace OOSD_CS_PROJ
     // class for SQL commands regarding the Packages class on the main viewing form
     class MainPackageDB
     {
-
-
         // connecting to the DB
         //public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         ////public static void InitSQL()
