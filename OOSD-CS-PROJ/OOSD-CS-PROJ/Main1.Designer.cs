@@ -464,7 +464,7 @@
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(110, 45);
             this.btnAddNew.TabIndex = 71;
-            this.btnAddNew.Text = "Add New Packages";
+            this.btnAddNew.Text = "Add New Package(s)";
             this.btnAddNew.UseVisualStyleBackColor = false;
             this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 

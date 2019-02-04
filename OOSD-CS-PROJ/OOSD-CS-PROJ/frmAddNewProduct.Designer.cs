@@ -32,7 +32,6 @@
             this.txtProdId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtProdName = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnAddNewProd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -69,13 +68,6 @@
             this.txtProdName.Size = new System.Drawing.Size(100, 20);
             this.txtProdName.TabIndex = 4;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            // 
             // btnAddNewProd
             // 
             this.btnAddNewProd.BackColor = System.Drawing.Color.PaleGreen;
@@ -94,7 +86,6 @@
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(329, 258);
             this.Controls.Add(this.btnAddNewProd);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtProdName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtProdId);
@@ -113,7 +104,6 @@
         private System.Windows.Forms.TextBox txtProdId;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtProdName;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnAddNewProd;
     }
 }
