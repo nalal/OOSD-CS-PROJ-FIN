@@ -1,5 +1,4 @@
-﻿using Packages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,7 +33,7 @@ namespace OOSD_CS_PROJ
         {
             try
             {
-                if (Validator.IsProvided(txtProdName, "Product Name"))
+                if (Validator1.IsProvided(txtProdName, "Product Name"))
 
                 {
                     product.ProdName = txtProdName.Text.ToString();
