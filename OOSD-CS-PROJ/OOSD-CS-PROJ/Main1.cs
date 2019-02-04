@@ -20,6 +20,7 @@ namespace OOSD_CS_PROJ
         private bool btnProdSupClicked = false;
         private bool btnPackClicked = true;
         private bool btnUpdateClicked = false;
+        //Maryam
         private Package SinglePkg;
         private Product SingleProd;
         private Supplier SingleSup;
@@ -191,6 +192,7 @@ namespace OOSD_CS_PROJ
 
                     txtID.Text = prod.ProductId.ToString();
 
+                    //Maryam
                     SingleProd = prod;
                 }
             }
@@ -235,10 +237,12 @@ namespace OOSD_CS_PROJ
                     txtBasePrice.Text = pkg.PkgBasePrice.ToString();
                     txtAgencyComm.Text = pkg.PkgAgencyCommission.ToString();
 
+                    //Maryam
                     SinglePkg = pkg;
                 }
             }
 
+            //Maryam
             SingleSup = new Supplier();
             SingleSup.SupplierId = Convert.ToInt32(txtID.Text);
             SingleSup.SupName = cBName.Text;
@@ -261,6 +265,7 @@ namespace OOSD_CS_PROJ
                 txtProdID.Text = prodSup.ProductId.ToString();
                 txtSupID.Text = prodSup.SupplierId.ToString();
 
+                //Maryam
                 SingleProdSup = prodSup;
             }
             
@@ -539,6 +544,7 @@ Author:Helen Lin */
 
         //Maryam
         //Updating the data
+        //Make save button visible
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             btnSave.Visible = true;
@@ -562,10 +568,11 @@ Author:Helen Lin */
             //if Supplier button is clicked
             if (btnSupClicked)
             {
+                //Validating Supplier Table
                 if (Validator1.IsProvidedCombo(cBName, "Supplier Name"))
                 {
                     Supplier newSup = new Supplier();
-                    newSup.SupName = cBName.Text;
+                    newSup.SupName = cBName.Text;  //for new supplier name 
 
                     updated = SuppliersDB.UpdateSupplier(newSup, SingleSup);
                     if (updated)
@@ -581,10 +588,11 @@ Author:Helen Lin */
             //If Products button is clicked
             if (btnProdClicked)
             {
+                //Validating Product Table
                 if (Validator1.IsProvidedCombo(cBName, "Product Name"))
                 {
                     Product NewProd = new Product();
-                    NewProd.ProdName = cBName.Text;
+                    NewProd.ProdName = cBName.Text; //for new Product name 
 
                     updated = ProductsDB.UpdateProducts(NewProd, SingleProd);
                     if (updated)
@@ -599,6 +607,7 @@ Author:Helen Lin */
             }
             if (btnProdSupClicked)// this does not work yet
             {
+                //Validating Product-Supplier table
                 if (Validator1.IsProvided(txtProdID, "Product Id") &&
                     Validator1.IsProvided(txtSupID, "Supplier Id"))
                 {
@@ -620,6 +629,7 @@ Author:Helen Lin */
             }
             if (btnPackClicked)  // Otherwise just load Packages
             {
+                //Validating data for Packages
                 if (Validator1.IsProvidedCombo(cBName, "Package Name") &&
                     Validator1.IsProvided(txtDesc, "Describtion") &&
                     Validator1.IsProvided(txtBasePrice, "Base Price") &&
@@ -630,11 +640,14 @@ Author:Helen Lin */
 
                     Package NewPackage = new Package();
                     NewPackage.PkgName = cBName.Text;
+
+                    //Start Date cannnot be greater then End Date
                     if (dTPStartDate.Value.Date >= dTPEndDate.Value.Date)
                     {
                         MessageBox.Show("Package start date cannot be later than end date");
                     }
 
+                    //Agency commission cannot be greater then base price
                     else if (Convert.ToDecimal(txtBasePrice.Text) < Convert.ToDecimal(txtAgencyComm.Text))
                     {
                         MessageBox.Show("Agency Comission cannot be more than Package Base price!");

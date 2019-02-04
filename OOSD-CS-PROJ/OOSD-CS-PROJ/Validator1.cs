@@ -9,6 +9,7 @@ namespace OOSD_CS_PROJ
 {
     public static class Validator1
     {
+        //Maryam just combo box
         public static bool IsProvidedCombo(ComboBox cb, string name)
         {
             bool result = true; // "innocent until proven guilty"
@@ -34,11 +35,6 @@ namespace OOSD_CS_PROJ
             return result;
         }
 
-        //public static bool IsNotANum(ComboBox cb, string name)
-        //{
-        //    bool result = true;
-        //    if(cb.Text=)
-        //}
         // tests if input is a non-negative decimal
         public static bool IsNonNegativeDecimal(ComboBox cb, string name)
         {
