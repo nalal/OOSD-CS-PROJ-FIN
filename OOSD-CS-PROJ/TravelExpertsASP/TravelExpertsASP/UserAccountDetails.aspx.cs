@@ -41,7 +41,6 @@ namespace TravelExpertsASP
             {
 
             }
-            
         }
 
         private void LoadSessionData()
@@ -79,10 +78,7 @@ namespace TravelExpertsASP
             ddlCustCountry.SelectedValue = cust.CustCountry;
             txtCustHomePhone.Text = cust.CustHomePhone.ToString();
             txtCustBusPhone.Text = cust.CustBusPhone.ToString();
-            txtCustEmail.Text = cust.CustEmail.ToString();
-            
-
-            
+            txtCustEmail.Text = cust.CustEmail.ToString(); 
         }
 
         public void ReadOnly()
@@ -97,7 +93,6 @@ namespace TravelExpertsASP
             txtCustHomePhone.ReadOnly = true;
             txtCustBusPhone.ReadOnly = true;
             txtCustEmail.ReadOnly = true;
-
         }
 
         public void EnableForUpdates()
@@ -116,16 +111,12 @@ namespace TravelExpertsASP
         }
 
         protected void btnUpdate_Click1(object sender, EventArgs e)
-        {
-           
+        {  
             EnableForUpdates();
-            
-
         }
 
         protected void btnSaveUpd_Click(object sender, EventArgs e)
         {
-            
 
             //SqlConnection conn = TravelExperts1DB.GetConnection();
 
@@ -169,9 +160,6 @@ namespace TravelExpertsASP
                         throw ex;
                     }
                }
-               
-            
-
         }
     }
 }

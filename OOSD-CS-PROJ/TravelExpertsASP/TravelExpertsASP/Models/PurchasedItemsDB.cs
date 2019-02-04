@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using TravelExpertsASP;
 
 namespace TravelExpertsASP.Models
 {
@@ -16,12 +18,12 @@ namespace TravelExpertsASP.Models
             // initialize connection 
             SqlConnection conn = TravelExperts1DB.GetConnection();
 
-            List<PurchasedItem> purchasedItems = new List<PurchasedItem>;
+            List<PurchasedItem> purchasedItems = new List<PurchasedItem>();
 
-            string selectString = "SELECT BookingDetails.Destination, BookingDetails.[Description], " + 
-                                  "Products.ProdName, BookingDetails.TripStart, BookingDetails.TripEnd, Bookings.TravelerCount, " + 
-		                          "Bookings.BookingId, Bookings.BookingDate, TripTypes.TTName, Classes.ClassName, " + 
-		                           "BookingDetails.BasePrice, Fees.FeeAmt " +
+            string selectString = "SELECT BookingDetails.Destination, BookingDetails.[Description], " +
+                                  "Products.ProdName, BookingDetails.TripStart, BookingDetails.TripEnd, Bookings.TravelerCount, " +
+                                  "Bookings.BookingId, Bookings.BookingDate, TripTypes.TTName, Classes.ClassName, " +
+                                   "BookingDetails.BasePrice, Fees.FeeAmt " +
                                    "FROM Customers " +
                                    "JOIN Bookings " +
                                        "ON Customers.CustomerId = Bookings.CustomerId " +
@@ -37,7 +39,7 @@ namespace TravelExpertsASP.Models
                                        "ON BookingDetails.ProductSupplierId = Products_Suppliers.ProductSupplierId " +
                                    "JOIN Products " +
                                        "ON Products_Suppliers.ProductId = Products.ProductId " +
-                                   "WHERE Customers.CustUserName = @CustUserName";
+                                   "WHERE CustUserName = @CustUserName";
 
             SqlCommand getPurchasedItems = new SqlCommand(selectString, conn);
             getPurchasedItems.Parameters.AddWithValue("@CustUserName", custUserName);
@@ -63,7 +65,7 @@ namespace TravelExpertsASP.Models
                     purchItem.ClassName = myReader["ClassName"].ToString();
                     purchItem.BasePrice = Convert.ToDecimal(myReader["BasePrice"]);
                     purchItem.FeeAmt = Convert.ToDecimal(myReader["FeeAmt"]);
-                   
+                    purchasedItems.Add(purchItem);
                 }
             }
             catch (Exception ex)
@@ -77,5 +79,5 @@ namespace TravelExpertsASP.Models
             return purchasedItems; // return instance of customer
         }
     }
-    }
+    
 }
