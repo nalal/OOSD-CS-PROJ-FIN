@@ -84,17 +84,7 @@
             this.SuspendLayout();
             // 
 
-            // btnAddNew
-            // 
-            this.btnAddNew.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnAddNew.Location = new System.Drawing.Point(282, 337);
-            this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(142, 43);
-            this.btnAddNew.TabIndex = 54;
-            this.btnAddNew.Text = "Add New Package(s)";
-            this.btnAddNew.UseVisualStyleBackColor = false;
-            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
-            // 
+
 
             // btnPrdctSupps
             // 

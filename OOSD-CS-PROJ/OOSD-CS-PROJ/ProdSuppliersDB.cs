@@ -29,9 +29,9 @@ namespace OOSD_CS_PROJ
             ProdSupplier prodSup; // reference to new ProdSupplier object
 
             //
-            InitSQL();
+            DBCall.InitSQL();
 
-            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(DBCall.builder.ConnectionString))
             {
                 // create select command
                 string selectString = "SELECT ProductSupplierId, ProductId, SupplierId FROM Products_Suppliers";
@@ -75,9 +75,9 @@ Author: Helen Lin */
         //returns the auto-generated ID of the new Package
         {
             //using package db to initialize connection
-            InitSQL();
+            DBCall.InitSQL();
 
-            using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
+            using (SqlConnection conn = new SqlConnection(DBCall.builder.ConnectionString))
             {
                 string insertStatement = "INSERT INTO Products_Suppliers(ProductId, SupplierId) VALUES(@ProductId, @SupplierId)";
 

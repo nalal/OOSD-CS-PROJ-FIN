@@ -29,9 +29,9 @@ namespace OOSD_CS_PROJ
 
 
 
-           InitSQL();
+           DBCall.InitSQL();
 
-            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(DBCall.builder.ConnectionString))
             {
                 // create select command
                 string selectString = "SELECT PackageId, PkgName, PkgStartDate, PkgEndDate, " +
