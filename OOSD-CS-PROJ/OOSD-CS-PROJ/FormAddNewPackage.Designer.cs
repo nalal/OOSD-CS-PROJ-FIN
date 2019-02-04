@@ -195,7 +195,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(612, 383);
+            this.ClientSize = new System.Drawing.Size(527, 335);
             this.Controls.Add(this.dtEndDate);
             this.Controls.Add(this.dtStartDate);
             this.Controls.Add(this.btnSaveNewPackage);

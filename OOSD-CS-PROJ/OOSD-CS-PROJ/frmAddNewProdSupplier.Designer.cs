@@ -91,7 +91,7 @@
             this.btnSaveProdSup.BackColor = System.Drawing.Color.PaleGreen;
             this.btnSaveProdSup.Location = new System.Drawing.Point(266, 248);
             this.btnSaveProdSup.Name = "btnSaveProdSup";
-            this.btnSaveProdSup.Size = new System.Drawing.Size(128, 78);
+            this.btnSaveProdSup.Size = new System.Drawing.Size(92, 67);
             this.btnSaveProdSup.TabIndex = 6;
             this.btnSaveProdSup.Text = "Save New Product Supplier";
             this.btnSaveProdSup.UseVisualStyleBackColor = false;

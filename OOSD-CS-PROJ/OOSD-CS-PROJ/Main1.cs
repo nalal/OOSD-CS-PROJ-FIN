@@ -450,21 +450,25 @@ Author:Helen Lin */
         // add new Package button is clicked
         private void btnAddNew_Click(object sender, EventArgs e)
         {
+            //if top menu Package button is clicked
             if(btnPackClicked) 
             {
                 FormAddNewPackage f2 = new FormAddNewPackage();//create a variable for AddPackage form
                 f2.ShowDialog();//show the AddPackage form 
             }
+            //if top menu Product button is clicked
             else if (btnProdClicked)
             {
                 frmAddNewProduct f3 = new frmAddNewProduct();//create a variable for AddProd form
                 f3.ShowDialog();//show the AddProd form 
             }
+            //if top menu Supplier button is clicked
             else if (btnSupClicked)
             {
                 frmAddNewSupplier f4 = new frmAddNewSupplier();//create a variable for AddSupplier form
                 f4.ShowDialog();//show the AddSupplier form 
             }
+            //if top menu Product SUpplier is clicked
             else
             {
                 frmAddNewProdSupplier f5 = new frmAddNewProdSupplier();//create a variable for AddProductSupplier form

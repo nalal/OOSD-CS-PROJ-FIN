@@ -73,7 +73,7 @@
             this.btnAddNewProd.BackColor = System.Drawing.Color.PaleGreen;
             this.btnAddNewProd.Location = new System.Drawing.Point(189, 168);
             this.btnAddNewProd.Name = "btnAddNewProd";
-            this.btnAddNewProd.Size = new System.Drawing.Size(128, 78);
+            this.btnAddNewProd.Size = new System.Drawing.Size(92, 67);
             this.btnAddNewProd.TabIndex = 6;
             this.btnAddNewProd.Text = "Add New Product";
             this.btnAddNewProd.UseVisualStyleBackColor = false;

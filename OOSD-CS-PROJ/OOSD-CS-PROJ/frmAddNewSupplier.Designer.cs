@@ -70,9 +70,9 @@
             // btnAddSup
             // 
             this.btnAddSup.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnAddSup.Location = new System.Drawing.Point(253, 180);
+            this.btnAddSup.Location = new System.Drawing.Point(253, 169);
             this.btnAddSup.Name = "btnAddSup";
-            this.btnAddSup.Size = new System.Drawing.Size(128, 78);
+            this.btnAddSup.Size = new System.Drawing.Size(92, 67);
             this.btnAddSup.TabIndex = 5;
             this.btnAddSup.Text = "Add New  Supplier";
             this.btnAddSup.UseVisualStyleBackColor = false;
