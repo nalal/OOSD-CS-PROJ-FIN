@@ -31,7 +31,7 @@ namespace OOSD_CS_PROJ
             this.Text = "Add New Product Supplier"; //on load, name the window this
         }
 
-
+        //Save the new supplier
         private void btnSaveProdSup_Click(object sender, EventArgs e)
         {
 
@@ -70,7 +70,7 @@ namespace OOSD_CS_PROJ
                     SuppliersDB.AddNewSupplier(supplier);
 
                     this.DialogResult = DialogResult.OK;
-
+                    MessageBox.Show("Supplier has been saved");
 
                 }
             }
@@ -89,9 +89,10 @@ namespace OOSD_CS_PROJ
             {
                 supplier = new Supplier();
                 this.PutSupplierData(supplier);
+                
 
             }
-            //sending the completed package to the AddNewPackage method, then retrieving the packageID to be displayed
+            //sending the completed supplier to the save supplier method
 
             catch (Exception ex)
             {

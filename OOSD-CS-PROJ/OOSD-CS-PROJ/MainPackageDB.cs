@@ -14,12 +14,12 @@ namespace OOSD_CS_PROJ
 
         // connecting to the DB
         public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-        public static void InitSQL()
-        {
-            builder.DataSource = "ELF8OOSD197690\\SQLEXPRESS";
-            builder.IntegratedSecurity = true;
-            builder.InitialCatalog = "TravelExperts";
-        }
+        //public static void InitSQL()
+        //{
+        //    builder.DataSource = "ELF8OOSD197690\\SQLEXPRESS";
+        //    builder.IntegratedSecurity = true;
+        //    builder.InitialCatalog = "TravelExperts";
+        //}
         // creating list of instances of the Package class
         public static List<Package> GetPackages()
         {
