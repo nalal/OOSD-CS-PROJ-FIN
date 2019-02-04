@@ -88,7 +88,7 @@
             // 
             this.btnPrdctSupps.BackColor = System.Drawing.Color.Crimson;
             this.btnPrdctSupps.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrdctSupps.Location = new System.Drawing.Point(451, 75);
+            this.btnPrdctSupps.Location = new System.Drawing.Point(594, 75);
             this.btnPrdctSupps.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrdctSupps.Name = "btnPrdctSupps";
             this.btnPrdctSupps.Size = new System.Drawing.Size(134, 41);
@@ -101,7 +101,7 @@
             // 
             this.btnSupps.BackColor = System.Drawing.Color.Crimson;
             this.btnSupps.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupps.Location = new System.Drawing.Point(335, 75);
+            this.btnSupps.Location = new System.Drawing.Point(458, 75);
             this.btnSupps.Margin = new System.Windows.Forms.Padding(2);
             this.btnSupps.Name = "btnSupps";
             this.btnSupps.Size = new System.Drawing.Size(96, 41);
@@ -114,7 +114,7 @@
             // 
             this.btnPrdts.BackColor = System.Drawing.Color.Crimson;
             this.btnPrdts.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrdts.Location = new System.Drawing.Point(195, 75);
+            this.btnPrdts.Location = new System.Drawing.Point(318, 75);
             this.btnPrdts.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrdts.Name = "btnPrdts";
             this.btnPrdts.Size = new System.Drawing.Size(96, 41);
@@ -128,7 +128,7 @@
             this.btnPkgs.BackColor = System.Drawing.Color.Crimson;
             this.btnPkgs.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnPkgs.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPkgs.Location = new System.Drawing.Point(53, 75);
+            this.btnPkgs.Location = new System.Drawing.Point(176, 75);
             this.btnPkgs.Margin = new System.Windows.Forms.Padding(2);
             this.btnPkgs.Name = "btnPkgs";
             this.btnPkgs.Size = new System.Drawing.Size(96, 41);
@@ -140,7 +140,7 @@
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.Thistle;
-            this.btnSearch.Location = new System.Drawing.Point(414, 263);
+            this.btnSearch.Location = new System.Drawing.Point(638, 254);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(84, 38);
@@ -151,7 +151,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(414, 233);
+            this.txtSearch.Location = new System.Drawing.Point(638, 220);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(98, 20);
@@ -161,7 +161,7 @@
             // 
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(368, 163);
+            this.lblSearch.Location = new System.Drawing.Point(606, 160);
             this.lblSearch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(193, 25);
@@ -243,13 +243,13 @@
             this.txtDesc.Margin = new System.Windows.Forms.Padding(2);
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(114, 20);
+            this.txtDesc.Size = new System.Drawing.Size(174, 74);
             this.txtDesc.TabIndex = 37;
             // 
             // lblBasePrice
             // 
             this.lblBasePrice.AutoSize = true;
-            this.lblBasePrice.Location = new System.Drawing.Point(35, 352);
+            this.lblBasePrice.Location = new System.Drawing.Point(95, 401);
             this.lblBasePrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBasePrice.Name = "lblBasePrice";
             this.lblBasePrice.Size = new System.Drawing.Size(61, 13);
@@ -258,7 +258,7 @@
             // 
             // txtBasePrice
             // 
-            this.txtBasePrice.Location = new System.Drawing.Point(131, 349);
+            this.txtBasePrice.Location = new System.Drawing.Point(191, 398);
             this.txtBasePrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtBasePrice.Name = "txtBasePrice";
             this.txtBasePrice.Size = new System.Drawing.Size(114, 20);
@@ -267,7 +267,7 @@
             // lblAgencyComm
             // 
             this.lblAgencyComm.AutoSize = true;
-            this.lblAgencyComm.Location = new System.Drawing.Point(23, 383);
+            this.lblAgencyComm.Location = new System.Drawing.Point(83, 432);
             this.lblAgencyComm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAgencyComm.Name = "lblAgencyComm";
             this.lblAgencyComm.Size = new System.Drawing.Size(104, 13);
@@ -276,7 +276,7 @@
             // 
             // txtAgencyComm
             // 
-            this.txtAgencyComm.Location = new System.Drawing.Point(131, 382);
+            this.txtAgencyComm.Location = new System.Drawing.Point(191, 432);
             this.txtAgencyComm.Margin = new System.Windows.Forms.Padding(2);
             this.txtAgencyComm.Name = "txtAgencyComm";
             this.txtAgencyComm.Size = new System.Drawing.Size(114, 20);
@@ -373,7 +373,7 @@
             // 
             this.lblSearchFor.AutoSize = true;
             this.lblSearchFor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchFor.Location = new System.Drawing.Point(418, 195);
+            this.lblSearchFor.Location = new System.Drawing.Point(656, 192);
             this.lblSearchFor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearchFor.Name = "lblSearchFor";
             this.lblSearchFor.Size = new System.Drawing.Size(79, 25);
@@ -394,7 +394,7 @@
             this.panel1.Controls.Add(this.btnSupps);
             this.panel1.Location = new System.Drawing.Point(0, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(601, 123);
+            this.panel1.Size = new System.Drawing.Size(892, 123);
             this.panel1.TabIndex = 62;
             // 
             // lblHeader
@@ -403,7 +403,7 @@
             this.lblHeader.BackColor = System.Drawing.Color.Transparent;
             this.lblHeader.Font = new System.Drawing.Font("Calibri", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.lblHeader.Location = new System.Drawing.Point(122, -6);
+            this.lblHeader.Location = new System.Drawing.Point(270, -6);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(350, 79);
             this.lblHeader.TabIndex = 54;
@@ -414,16 +414,16 @@
             // 
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 441);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 478);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(601, 124);
+            this.pictureBox1.Size = new System.Drawing.Size(585, 124);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 63;
             this.pictureBox1.TabStop = false;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(368, 375);
+            this.btnUpdate.Location = new System.Drawing.Point(606, 372);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(104, 40);
             this.btnUpdate.TabIndex = 67;
@@ -433,7 +433,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(270, 375);
+            this.btnSave.Location = new System.Drawing.Point(508, 372);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(92, 40);
             this.btnSave.TabIndex = 68;
@@ -460,7 +460,7 @@
             // btnAddNew
             // 
             this.btnAddNew.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnAddNew.Location = new System.Drawing.Point(368, 324);
+            this.btnAddNew.Location = new System.Drawing.Point(638, 317);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(110, 45);
             this.btnAddNew.TabIndex = 71;
@@ -473,7 +473,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(596, 528);
+            this.ClientSize = new System.Drawing.Size(1172, 780);
             this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.cbSupID);
             this.Controls.Add(this.cbProdID);

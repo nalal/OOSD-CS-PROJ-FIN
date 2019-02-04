@@ -31,10 +31,13 @@ namespace TravelExpertsASP
 
                 if (temp == 1)
                 {
-                    string checkPassword = "SELECT CustPassword FROM Customers WHERE CustPassword='" + txtCustPassword.Text + "'";
+                     
+                    string cryptPassword = EncryptDB.Encrypt(txtCustPassword.Text);
+
+                    string checkPassword = "SELECT CustPassword FROM Customers WHERE CustPassword='" + cryptPassword + "'";
                     SqlCommand passCmd = new SqlCommand(checkPassword, conn);
                     string password = passCmd.ExecuteScalar().ToString().Replace(" ", "");
-                    if(password == txtCustPassword.Text)
+                    if(password == cryptPassword)
                     {
                         Session["Login"] = txtCustUserName.Text;
                         Response.Write("Password is correct");
