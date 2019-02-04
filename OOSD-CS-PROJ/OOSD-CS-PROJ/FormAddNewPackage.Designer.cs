@@ -57,7 +57,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 103);
+            this.label1.Location = new System.Drawing.Point(20, 66);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
@@ -67,7 +67,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 134);
+            this.label2.Location = new System.Drawing.Point(20, 97);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 13);
@@ -77,7 +77,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 202);
+            this.label3.Location = new System.Drawing.Point(20, 165);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 13);
@@ -87,7 +87,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(41, 165);
+            this.label4.Location = new System.Drawing.Point(20, 128);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 13);
@@ -97,7 +97,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(41, 268);
+            this.label5.Location = new System.Drawing.Point(20, 231);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 13);
@@ -107,7 +107,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(41, 237);
+            this.label6.Location = new System.Drawing.Point(20, 200);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(106, 13);
@@ -117,7 +117,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(40, 299);
+            this.label7.Location = new System.Drawing.Point(19, 262);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(147, 13);
@@ -126,7 +126,7 @@
             // 
             // txtPackageId
             // 
-            this.txtPackageId.Location = new System.Drawing.Point(220, 103);
+            this.txtPackageId.Location = new System.Drawing.Point(199, 66);
             this.txtPackageId.Margin = new System.Windows.Forms.Padding(2);
             this.txtPackageId.Name = "txtPackageId";
             this.txtPackageId.ReadOnly = true;
@@ -135,7 +135,7 @@
             // 
             // txtPkgName
             // 
-            this.txtPkgName.Location = new System.Drawing.Point(220, 134);
+            this.txtPkgName.Location = new System.Drawing.Point(199, 97);
             this.txtPkgName.Margin = new System.Windows.Forms.Padding(2);
             this.txtPkgName.Name = "txtPkgName";
             this.txtPkgName.Size = new System.Drawing.Size(76, 20);
@@ -143,7 +143,7 @@
             // 
             // txtPkgDesc
             // 
-            this.txtPkgDesc.Location = new System.Drawing.Point(220, 237);
+            this.txtPkgDesc.Location = new System.Drawing.Point(199, 200);
             this.txtPkgDesc.Margin = new System.Windows.Forms.Padding(2);
             this.txtPkgDesc.Name = "txtPkgDesc";
             this.txtPkgDesc.Size = new System.Drawing.Size(76, 20);
@@ -151,7 +151,7 @@
             // 
             // txtPkgBasePrice
             // 
-            this.txtPkgBasePrice.Location = new System.Drawing.Point(220, 268);
+            this.txtPkgBasePrice.Location = new System.Drawing.Point(199, 231);
             this.txtPkgBasePrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtPkgBasePrice.Name = "txtPkgBasePrice";
             this.txtPkgBasePrice.Size = new System.Drawing.Size(76, 20);
@@ -159,7 +159,7 @@
             // 
             // txtPkgAgencyCommission
             // 
-            this.txtPkgAgencyCommission.Location = new System.Drawing.Point(220, 299);
+            this.txtPkgAgencyCommission.Location = new System.Drawing.Point(199, 262);
             this.txtPkgAgencyCommission.Margin = new System.Windows.Forms.Padding(2);
             this.txtPkgAgencyCommission.Name = "txtPkgAgencyCommission";
             this.txtPkgAgencyCommission.Size = new System.Drawing.Size(76, 20);
@@ -168,10 +168,10 @@
             // btnSaveNewPackage
             // 
             this.btnSaveNewPackage.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnSaveNewPackage.Location = new System.Drawing.Point(434, 312);
+            this.btnSaveNewPackage.Location = new System.Drawing.Point(367, 233);
             this.btnSaveNewPackage.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveNewPackage.Name = "btnSaveNewPackage";
-            this.btnSaveNewPackage.Size = new System.Drawing.Size(105, 66);
+            this.btnSaveNewPackage.Size = new System.Drawing.Size(128, 78);
             this.btnSaveNewPackage.TabIndex = 14;
             this.btnSaveNewPackage.Text = "Save Package";
             this.btnSaveNewPackage.UseVisualStyleBackColor = false;
@@ -181,7 +181,7 @@
             // 
             this.dtStartDate.CustomFormat = "MM-dd-yyyy";
             this.dtStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtStartDate.Location = new System.Drawing.Point(220, 165);
+            this.dtStartDate.Location = new System.Drawing.Point(199, 128);
             this.dtStartDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtStartDate.MaxDate = new System.DateTime(9998, 1, 29, 0, 0, 0, 0);
             this.dtStartDate.MinDate = new System.DateTime(1753, 1, 31, 0, 0, 0, 0);
@@ -193,7 +193,7 @@
             // 
             this.dtEndDate.CustomFormat = "MM-dd-yyyy";
             this.dtEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtEndDate.Location = new System.Drawing.Point(220, 202);
+            this.dtEndDate.Location = new System.Drawing.Point(199, 165);
             this.dtEndDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtEndDate.Name = "dtEndDate";
             this.dtEndDate.Size = new System.Drawing.Size(151, 20);
@@ -249,7 +249,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(635, 429);
+            this.ClientSize = new System.Drawing.Size(527, 335);
             this.Controls.Add(this.lblDetails);
             this.Controls.Add(this.dtEndDate);
             this.Controls.Add(this.dtStartDate);
