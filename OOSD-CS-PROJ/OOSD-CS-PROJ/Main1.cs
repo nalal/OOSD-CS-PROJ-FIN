@@ -13,12 +13,19 @@ namespace OOSD_CS_PROJ
     //Chad Dundas Smith
     public partial class Main1 : Form
     {
-        // bools set - later to be used to indicate if a 
+        // bools set - later to be used to indicate if a
         // specific button has been clicked
         private bool btnProdClicked = false;
         private bool btnSupClicked = false;
         private bool btnProdSupClicked = false;
-        
+        private bool btnPackClicked = true;
+        private bool btnUpdateClicked = false;
+        //Maryam
+        private Package SinglePkg;
+        private Product SingleProd;
+        private Supplier SingleSup;
+        private ProdSupplier SingleProdSup;
+
 
         public Main1()
         {// Noah
@@ -26,7 +33,7 @@ namespace OOSD_CS_PROJ
             SQLCon();
             if (!ConnectionPage.Term && DBCall.CSucces)
             {
-                
+
             }
             else if (ConnectionPage.Term || !DBCall.CSucces)
             {
@@ -46,11 +53,14 @@ namespace OOSD_CS_PROJ
             // populate drop down with names of pkg objects from the Packages list
             PopulatePackages();
 
-            // setting visibility 
+            // setting visibility
             cBID.Visible = false;
             txtProdID.Visible = false;
             txtSupID.Visible = false;
-            
+            btnSave.Visible = false;
+            cbProdID.Visible = false;
+            cbSupID.Visible = false;
+
         }
 
         // populate drop down with names of pkg objects from the Packages list
@@ -72,23 +82,40 @@ namespace OOSD_CS_PROJ
             }
         }
 
-        
+
         // populate drop down with names of prod objects from the Products list
         private void PopulateProducts()
         {
             // return list of packages created in GetProducts()
             List<Product> productList = ProductsDB.GetProducts();
 
-            // adding product names to the CBName (combo box)
-            var productLinq = from prod in productList
-                              select new
-                              {
-                                  prod.ProdName
-                              };
-
-            foreach (var item in productLinq)
+            if(btnUpdateClicked)
             {
-                cBName.Items.Add(item.ProdName);
+                // adding product names to the CBName (combo box)
+                var productLinq = from prod in productList
+                                  select new
+                                  {
+                                      prod.ProdName
+                                  };
+
+                foreach (var item in productLinq)
+                {
+                    cBName.Items.Add(item.ProdName);
+                }
+            }
+            else
+            {
+                // adding product names to the CBName (combo box)
+                var productLinq = from prod in productList
+                                  select new
+                                  {
+                                      prod.ProductId
+                                  };
+
+                foreach (var item in productLinq)
+                {
+                    cbProdID.Items.Add(item.ProductId);
+                }
             }
         }
 
@@ -97,17 +124,34 @@ namespace OOSD_CS_PROJ
         {
             // return list of suppliers created in GetSuppliers()
             List<Supplier> supplierList = SuppliersDB.GetSuppliers();
-
-            // adding supplier names to the CBName (combo box)
-            var supplierLinq = from sup in supplierList
-                              select new
-                              {
-                                  sup.SupName
-                              };
-
-            foreach (var item in supplierLinq)
+            if (btnUpdateClicked)
             {
-                cBName.Items.Add(item.SupName);
+                // adding supplier names to the CBName (combo box)
+                var supplierLinq = from sup in supplierList
+                                   select new
+                                   {
+                                       sup.SupName
+                                   };
+
+                foreach (var item in supplierLinq)
+                {
+                    cBName.Items.Add(item.SupName);
+                }
+            }
+            else
+            {
+                // adding supplier names to the CBName (combo box)
+                var supplierLinq = from sup in supplierList
+                                   select new
+                                   {
+                                       sup.SupplierId
+                                   };
+
+                foreach (var item in supplierLinq)
+                {
+                    cbSupID.Items.Add(item.SupplierId);
+                }
+
             }
         }
 
@@ -147,6 +191,9 @@ namespace OOSD_CS_PROJ
                                 select selectedprod).First();
 
                     txtID.Text = prod.ProductId.ToString();
+
+                    //Maryam
+                    SingleProd = prod;
                 }
             }
 
@@ -179,7 +226,7 @@ namespace OOSD_CS_PROJ
                 if (cBName.SelectedIndex != -1)
                 {
                     // display information about the selected package
-                    var pkg = (from selectedpkg in packageList where 
+                    var pkg = (from selectedpkg in packageList where
                                selectedpkg.PkgName == cBName.Text
                                select selectedpkg).First();
 
@@ -190,9 +237,15 @@ namespace OOSD_CS_PROJ
                     txtBasePrice.Text = pkg.PkgBasePrice.ToString();
                     txtAgencyComm.Text = pkg.PkgAgencyCommission.ToString();
 
+                    //Maryam
+                    SinglePkg = pkg;
                 }
             }
 
+            //Maryam
+            SingleSup = new Supplier();
+            SingleSup.SupplierId = Convert.ToInt32(txtID.Text);
+            SingleSup.SupName = cBName.Text;
         }
 
         // when name combo box (ddl) is used to select an object from the list
@@ -211,8 +264,11 @@ namespace OOSD_CS_PROJ
 
                 txtProdID.Text = prodSup.ProductId.ToString();
                 txtSupID.Text = prodSup.SupplierId.ToString();
+
+                //Maryam
+                SingleProdSup = prodSup;
             }
-            
+
         }
 
         // all text boxes are cleared
@@ -221,12 +277,17 @@ namespace OOSD_CS_PROJ
             txtID.Text = "";
             cBName.SelectedIndex = -1;
             cBName.Items.Clear();
+            cBID.SelectedIndex = -1;
+            cBID.Items.Clear();
+            cbProdID.SelectedIndex = -1;
+            cbProdID.Items.Clear();
+            cbSupID.SelectedIndex = -1;
+            cbSupID.Items.Clear();
             dTPStartDate.Text = "";
             dTPEndDate.Text = "";
             txtDesc.Text = "";
             txtBasePrice.Text = "";
             txtAgencyComm.Text = "";
-
         }
 
         // packages button is clicked
@@ -236,6 +297,8 @@ namespace OOSD_CS_PROJ
             btnProdClicked = false;
             btnSupClicked = false;
             btnProdSupClicked = false;
+            btnPackClicked = true;
+            btnUpdateClicked = false;
 
             // visibility settings
             lblID.Text = "   ID:";
@@ -244,7 +307,9 @@ namespace OOSD_CS_PROJ
             txtProdID.Visible = false;
             cBName.Visible = true;
             lblName.Text = "Name";
+            cbProdID.Visible = false;
             txtSupID.Visible = false;
+            cbSupID.Visible = false;
             lblStartDate.Visible = true;
             lblStartDate.Text = "Start Date:";
             dTPStartDate.Visible = true;
@@ -260,7 +325,7 @@ namespace OOSD_CS_PROJ
             lblDetails.Text = "Package Details";
             lblSearch.Text = "Search Packages:";
             lblSearchFor.Text = "Names";
-            
+
 
             // create list of packages from DB class
             PopulatePackages();
@@ -273,6 +338,8 @@ namespace OOSD_CS_PROJ
             btnProdClicked = true;
             btnSupClicked = false;
             btnProdSupClicked = false;
+            btnPackClicked = false;
+            btnUpdateClicked = false;
 
             // visibility settings
             lblID.Text = "   ID:";
@@ -281,7 +348,9 @@ namespace OOSD_CS_PROJ
             txtProdID.Visible = false;
             cBName.Visible = true;
             lblName.Text = "Name";
+            cbProdID.Visible = false;
             txtSupID.Visible = false;
+            cbSupID.Visible = false;
             lblStartDate.Visible = false;
             dTPStartDate.Visible = false;
             lblEndDate.Visible = false;
@@ -296,7 +365,7 @@ namespace OOSD_CS_PROJ
             lblDetails.Text = "Product Details";
             lblSearch.Text = "Search Products:";
             lblSearchFor.Text = "Names";
-            
+
 
             // create list of products from DB class
             PopulateProducts();
@@ -309,6 +378,8 @@ namespace OOSD_CS_PROJ
             btnProdClicked = false;
             btnSupClicked = true;
             btnProdSupClicked = false;
+            btnPackClicked = false;
+            btnUpdateClicked = false;
 
             // visibility settings
             lblID.Text = "   ID:";
@@ -317,7 +388,9 @@ namespace OOSD_CS_PROJ
             txtProdID.Visible = false;
             cBName.Visible = true;
             lblName.Text = "Name";
+            cbProdID.Visible = false;
             txtSupID.Visible = false;
+            cbSupID.Visible = false;
             lblStartDate.Visible = false;
             dTPStartDate.Visible = false;
             lblEndDate.Visible = false;
@@ -332,7 +405,7 @@ namespace OOSD_CS_PROJ
             lblDetails.Text = "Supplier Details";
             lblSearch.Text = "Search Suppliers:";
             lblSearchFor.Text = "Names";
-            
+
 
             // create list of suppliers from DB class
             PopulateSuppliers();
@@ -345,7 +418,9 @@ namespace OOSD_CS_PROJ
             btnProdClicked = false;
             btnSupClicked = false;
             btnProdSupClicked = true;
-           
+            btnPackClicked = false;
+            btnUpdateClicked = false;
+
             // visibility settings
             lblID.Text = "Product\nSupplier ID:";
             txtID.Visible = false;
@@ -369,40 +444,64 @@ namespace OOSD_CS_PROJ
             lblDetails.Text = "Product Supplier Details";
             lblSearch.Text = "Search Product Suppliers:";
             lblSearchFor.Text = "     IDs";
-            
+
 
             // create list of product suppliers from DB class
             PopulateProdSuppliers();
         }
-        /*Buttons that lead to new forms 
+        /*Buttons that lead to new forms
         Author:Helen Lin */
 
         private void btnAddNewPackage_Click(object sender, EventArgs e)
         {
-            FormAddNewPackage f2 = new FormAddNewPackage();//create a variable for AddPackage form
-            f2.ShowDialog();//show the AddPackage form 
+            //if top menu Package button is clicked
+            if(btnPackClicked)
+            {
+                FormAddNewPackage f2 = new FormAddNewPackage();//create a variable for AddPackage form
+                f2.ShowDialog();//show the AddPackage form
+            }
+            //if top menu Product button is clicked
+            else if (btnProdClicked)
+            {
+                frmAddNewProduct f3 = new frmAddNewProduct();//create a variable for AddProd form
+                f3.ShowDialog();//show the AddProd form
+            }
+            //if top menu Supplier button is clicked
+            else if (btnSupClicked)
+            {
+                frmAddNewSupplier f4 = new frmAddNewSupplier();//create a variable for AddSupplier form
+                f4.ShowDialog();//show the AddSupplier form
+            }
+            //if top menu Product SUpplier is clicked
+            else
+            {
+                frmAddNewProdSupplier f5 = new frmAddNewProdSupplier();//create a variable for AddProductSupplier form
+                f5.ShowDialog();//show the AddProductSupplier form
+            }
+            //FormAddNewPackage f2 = new FormAddNewPackage();//create a variable for AddPackage form
+            //f2.ShowDialog();//show the AddPackage form
         }
 
 
         //Add Products button is clicked
-        private void btnAddProd_Click(object sender, EventArgs e)
-        {
-            frmAddNewProduct f3 = new frmAddNewProduct();//create a variable for AddProd form
-            f3.ShowDialog();//show the AddProd form 
-        }
+        //private void btnAddProd_Click(object sender, EventArgs e)
+        //{
+        //    frmAddNewProduct f3 = new frmAddNewProduct();//create a variable for AddProd form
+        //    f3.ShowDialog();//show the AddProd form
+        //}
 
-        //Add new Supplier button is clicked
-        private void btnAddSup_Click(object sender, EventArgs e)
-        {
-            frmAddNewSupplier f4 = new frmAddNewSupplier();//create a variable for AddSupplier form
-            f4.ShowDialog();//show the AddSupplier form 
-        }
-        //Add new Product Supplier is clicked
-        private void btnAddProdSup_Click(object sender, EventArgs e)
-        {
-            frmAddNewProdSupplier f5 = new frmAddNewProdSupplier();//create a variable for AddProductSupplier form
-            f5.ShowDialog();//show the AddProductSupplier form 
-        }
+        ////Add new Supplier button is clicked
+        //private void btnAddSup_Click(object sender, EventArgs e)
+        //{
+        //    frmAddNewSupplier f4 = new frmAddNewSupplier();//create a variable for AddSupplier form
+        //    f4.ShowDialog();//show the AddSupplier form
+        //}
+        ////Add new Product Supplier is clicked
+        //private void btnAddProdSup_Click(object sender, EventArgs e)
+        //{
+        //    frmAddNewProduct f5 = new frmAddNewProduct();//create a variable for AddProductSupplier form
+        //    f5.ShowDialog();//show the AddProductSupplier form
+        //}
 
 
 
@@ -443,10 +542,137 @@ namespace OOSD_CS_PROJ
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //Maryam
+        //Updating the data
+        //Make save button visible
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            FormAddNewPackage f2 = new FormAddNewPackage();//create a variable for AddSupplier form
-            f2.ShowDialog();//show the AddSupplier form 
+            btnSave.Visible = true;
+            // updates - Chad
+            if (btnProdSupClicked)
+            {
+                cbProdID.Visible = true;
+                cbSupID.Visible = true;
+
+                PopulateProducts();
+                PopulateSuppliers();
+            }
+
         }
-    } 
+
+        //Saving the Data in database
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            bool updated = false;
+
+            //if Supplier button is clicked
+            if (btnSupClicked)
+            {
+                //Validating Supplier Table
+                if (Validator1.IsProvidedCombo(cBName, "Supplier Name"))
+                {
+                    Supplier newSup = new Supplier();
+                    newSup.SupName = cBName.Text;  //for new supplier name
+
+                    updated = SuppliersDB.UpdateSupplier(newSup, SingleSup);
+                    if (updated)
+                    {
+                        MessageBox.Show("Supplier Updated");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Supplier not Updated. Please try again.");
+                    }
+                }
+            }
+            //If Products button is clicked
+            if (btnProdClicked)
+            {
+                //Validating Product Table
+                if (Validator1.IsProvidedCombo(cBName, "Product Name"))
+                {
+                    Product NewProd = new Product();
+                    NewProd.ProdName = cBName.Text; //for new Product name
+
+                    updated = ProductsDB.UpdateProducts(NewProd, SingleProd);
+                    if (updated)
+                    {
+                        MessageBox.Show("Products Updated");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Products not Updated. Please try again");
+                    }
+                }
+            }
+            if (btnProdSupClicked)// this does not work yet
+            {
+                //Validating Product-Supplier table
+                if (Validator1.IsProvided(txtProdID, "Product Id") &&
+                    Validator1.IsProvided(txtSupID, "Supplier Id"))
+                {
+                    ProdSupplier newProdSupplier = new ProdSupplier();
+                    newProdSupplier.ProductId = Convert.ToInt32(txtProdID.Text);
+                    newProdSupplier.SupplierId = Convert.ToInt32(txtSupID.Text);
+
+                    updated = ProdSuppliersDB.UpdateProdSupplier(newProdSupplier, SingleProdSup);
+                    if (updated)
+                    {
+                        MessageBox.Show("Product_Supplier is Updated");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Product_Supplier is not Updated. Please try again");
+                    }
+                }
+
+            }
+            if (btnPackClicked)  // Otherwise just load Packages
+            {
+                //Validating data for Packages
+                if (Validator1.IsProvidedCombo(cBName, "Package Name") &&
+                    Validator1.IsProvided(txtDesc, "Describtion") &&
+                    Validator1.IsProvided(txtBasePrice, "Base Price") &&
+                    Validator1.IsProvided(txtAgencyComm, "Agency Commission") &&
+                    Validator1.IsNonNegativeDecimal(txtAgencyComm, "Agency Commission") &&
+                    Validator1.IsNonNegativeDecimal(txtBasePrice, "Base Price"))
+                {
+
+                    Package NewPackage = new Package();
+                    NewPackage.PkgName = cBName.Text;
+
+                    //Start Date cannnot be greater then End Date
+                    if (dTPStartDate.Value.Date >= dTPEndDate.Value.Date)
+                    {
+                        MessageBox.Show("Package start date cannot be later than end date");
+                    }
+
+                    //Agency commission cannot be greater then base price
+                    else if (Convert.ToDecimal(txtBasePrice.Text) < Convert.ToDecimal(txtAgencyComm.Text))
+                    {
+                        MessageBox.Show("Agency Comission cannot be more than Package Base price!");
+                    }
+                    else
+                    {
+                        NewPackage.PkgStartDate = dTPStartDate.Value.ToString("yyyy-MM-dd");
+                        NewPackage.PkgEndDate = dTPEndDate.Value.ToString("yyyy-MM-dd");
+                        NewPackage.PkgDesc = txtDesc.Text;
+                        NewPackage.PkgBasePrice = Convert.ToDecimal(txtBasePrice.Text);
+                        NewPackage.PkgAgencyCommission = Convert.ToDecimal(txtAgencyComm.Text);
+
+                        updated = PackageDB.UpdatePackage(NewPackage, SinglePkg);
+                    }
+
+                    if (updated)
+                    {
+                        MessageBox.Show("Package is Updated");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Package is not Updated, Please try again.");
+                    }
+                }
+            }
+        }
+    }
 }

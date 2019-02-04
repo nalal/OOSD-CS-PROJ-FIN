@@ -11,11 +11,11 @@ namespace OOSD_CS_PROJ
     class ProdSuppliersDB
     {
         // connecting to the DB
-        public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+        //public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         //public static void InitSQL()
         //{
 
-        //    builder.DataSource = "ELF8OOSD197690\\SQLEXPRESS";
+        //    builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";
 
         //    builder.IntegratedSecurity = true;
         //    builder.InitialCatalog = "TravelExperts";
@@ -83,7 +83,7 @@ Author: Helen Lin */
 
                 SqlCommand cmd = new SqlCommand(insertStatement, conn);
 
-                
+
                 cmd.Parameters.AddWithValue("@ProductId", newProductSupplier.ProductId);
                 cmd.Parameters.AddWithValue("@SupplierId", newProductSupplier.SupplierId);
 
@@ -92,7 +92,7 @@ Author: Helen Lin */
                 {
                     conn.Open();
                     cmd.ExecuteNonQuery(); //run DML statements
- 
+
                 }
                 catch (SqlException ex)
                 {
@@ -105,6 +105,47 @@ Author: Helen Lin */
 
             }
 
+        }
+
+        //Maryam
+        //Update statement Product Suppliers
+        public static bool UpdateProdSupplier(ProdSupplier newProSup, ProdSupplier oldProSup)
+        {
+            bool ProdsSupplier = false;
+            using (SqlConnection connection = new SqlConnection(DBCall.builder.ConnectionString))
+            {
+                string updateStatement = "UPDATE Products_Suppliers " +
+                                     "SET SupplierId = @NewSupplierId, " +
+                                     " ProductId = @NewProductId " +
+                                     "WHERE ProductSupplierId = @OldProductSupplierId " +
+                                     "AND SupplierId = @OldSupplierId " +
+                                     "AND ProductId = @OldProductId ";
+                SqlCommand cmd = new SqlCommand(updateStatement, connection);
+                cmd.Parameters.AddWithValue("@NewSupplierId", newProSup.SupplierId);
+                cmd.Parameters.AddWithValue("@NewProductId", newProSup.ProductId);
+                cmd.Parameters.AddWithValue("@OldProductSupplierId", oldProSup.ProductSupplierId);
+                cmd.Parameters.AddWithValue("@OldSupplierId", oldProSup.SupplierId);
+                cmd.Parameters.AddWithValue("@OldProductId", oldProSup.ProductId);
+
+                try
+                {
+                    connection.Open();
+                    ProdsSupplier = Convert.ToBoolean(cmd.ExecuteNonQuery());
+                    if (ProdsSupplier)
+                        ProdsSupplier = true;
+                    else
+                        ProdsSupplier = false;
+                }
+                catch (SqlException ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+                return ProdsSupplier;
+            }
         }
     }
 }

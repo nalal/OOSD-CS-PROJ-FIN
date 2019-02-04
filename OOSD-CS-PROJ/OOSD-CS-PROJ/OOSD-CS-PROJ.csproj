@@ -104,6 +104,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TravelExpertsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Validator1.cs" />
     <EmbeddedResource Include="ConnectionPage.resx">
       <DependentUpon>ConnectionPage.cs</DependentUpon>
     </EmbeddedResource>

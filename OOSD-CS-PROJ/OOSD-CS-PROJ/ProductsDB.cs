@@ -11,15 +11,14 @@ namespace OOSD_CS_PROJ
     class ProductsDB
     {
         // connecting to the DB
-        public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+        //public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         //public static void InitSQL()
         //{
-        //    builder.DataSource = "ELF8OOSD197690\\SQLEXPRESS";
+        //    builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";
         //    builder.IntegratedSecurity = true;
         //    builder.InitialCatalog = "TravelExperts";
         //}
-       
-       
+        // creating list of instances of the ProdSuppliers class
         public static List<Product> GetProducts()
         {
             // create new list of Products
@@ -83,7 +82,7 @@ namespace OOSD_CS_PROJ
                 {
                     conn.Open();
                     cmd.ExecuteNonQuery(); //run DML statements
-                                    
+
 
                 }
                 catch (SqlException ex)
@@ -96,7 +95,43 @@ namespace OOSD_CS_PROJ
                 }
 
             }
+        }
 
+        //Maryam
+        //Update statement for Products
+        public static bool UpdateProducts(Product newProd, Product oldProd)
+        {
+            bool Product = false;
+            using (SqlConnection connection = new SqlConnection(DBCall.builder.ConnectionString))
+            {
+                string updateProducts = "UPDATE Products " +
+                                     "SET ProdName = @NewProdName " +
+                                     "WHERE ProductId = @OldProductId " +
+                                     "AND ProdName = @OldProdName ";
+                SqlCommand cmd = new SqlCommand(updateProducts, connection);
+
+                cmd.Parameters.AddWithValue("@NewProdName", newProd.ProdName);
+                cmd.Parameters.AddWithValue("@OldProductId", oldProd.ProductId);
+                cmd.Parameters.AddWithValue("@OldProdName", oldProd.ProdName);
+                try
+                {
+                    connection.Open();
+                    Product = Convert.ToBoolean(cmd.ExecuteNonQuery());
+                    if (Product)
+                        Product = true;
+                    else
+                        Product = false;
+                }
+                catch (SqlException ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+            return Product;
         }
     }
 }

@@ -64,7 +64,65 @@ namespace OOSD_CS_PROJ
                 }
                 return PackageId;
             }
+        }
 
+        //Maryam
+        //Update statement for Packages
+        public static bool UpdatePackage(Package newPkg, Package oldPkg)
+        {
+            bool Pkg = false;
+
+            PackageDB.InitSQL();
+
+            using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
+            {
+                string updateStatement = "UPDATE Packages " +
+                                     "SET PkgName = @NewPkgName, " +
+                                     "    PkgStartDate = @NewPkgStartDate, " +
+                                     "    PkgEndDate = @NewPkgEndDate, " +
+                                     "    PkgDesc = @NewPkgDesc, " +
+                                     "    PkgBasePrice = @NewPkgBasePrice, " +
+                                     "    PkgAgencyCommission = @NewPkgAgencyCommission " +
+                                     "WHERE PackageId = @OldPackageId " +
+                "AND PkgName = @OldPkgName " +
+                "AND PkgStartDate = @OldPkgStartDate " +
+                "AND PkgEndDate = @OldPkgEndDate " +
+                "AND PkgDesc = @OldPkgDesc " +
+                "AND PkgBasePrice = @OldPkgBasePrice " +
+                "AND PkgAgencyCommission = @OldPkgAgencyCommission";
+                SqlCommand cmd = new SqlCommand(updateStatement, conn);
+                cmd.Parameters.AddWithValue("@NewPkgName", newPkg.PkgName);
+                cmd.Parameters.AddWithValue("@NewPkgStartDate", newPkg.PkgStartDate);
+                cmd.Parameters.AddWithValue("@NewPkgEndDate", newPkg.PkgEndDate);
+                cmd.Parameters.AddWithValue("@NewPkgDesc", newPkg.PkgDesc);
+                cmd.Parameters.AddWithValue("@NewPkgBasePrice", newPkg.PkgBasePrice);
+                cmd.Parameters.AddWithValue("@NewPkgAgencyCommission", newPkg.PkgAgencyCommission);
+                cmd.Parameters.AddWithValue("@OldPackageId", oldPkg.PackageId);
+                cmd.Parameters.AddWithValue("@OldPkgName", oldPkg.PkgName);
+                cmd.Parameters.AddWithValue("@OldPkgStartDate", oldPkg.PkgStartDate);
+                cmd.Parameters.AddWithValue("@OldPkgEndDate", oldPkg.PkgEndDate);
+                cmd.Parameters.AddWithValue("@OldPkgDesc", oldPkg.PkgDesc);
+                cmd.Parameters.AddWithValue("@OldPkgBasePrice", oldPkg.PkgBasePrice);
+                cmd.Parameters.AddWithValue("@OldPkgAgencyCommission", oldPkg.PkgAgencyCommission);
+                try
+                {
+                    conn.Open();
+                    Pkg = Convert.ToBoolean(cmd.ExecuteNonQuery());
+                    if (Pkg)
+                        Pkg = true;
+                    else
+                        Pkg = false;
+                }
+                catch (SqlException ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+            return Pkg;
         }
     }
 }
