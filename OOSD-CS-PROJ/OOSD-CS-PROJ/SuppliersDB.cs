@@ -12,12 +12,12 @@ namespace OOSD_CS_PROJ
     {
         // connecting to the DB
         public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-        public static void InitSQL()
-        {
-            builder.DataSource = "ELF8OOSD197690\\SQLEXPRESS";
-            builder.IntegratedSecurity = true;
-            builder.InitialCatalog = "TravelExperts";
-        }
+        //public static void InitSQL()
+        //{
+        //    builder.DataSource = "ELF8OOSD197690\\SQLEXPRESS";
+        //    builder.IntegratedSecurity = true;
+        //    builder.InitialCatalog = "TravelExperts";
+        //}
         // creating list of instances of the Suppliers class
         public static List<Supplier> GetSuppliers()
         {
@@ -26,9 +26,9 @@ namespace OOSD_CS_PROJ
             Supplier sup; // reference to new Supplier object
 
             //
-            InitSQL();
+            DBCall.InitSQL();
 
-            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(DBCall.builder.ConnectionString))
             {
                 // create select command
                 string selectString = "SELECT SupplierId, SupName FROM Suppliers";
@@ -70,9 +70,9 @@ namespace OOSD_CS_PROJ
         //returns the auto-generated ID of the new Package
         {
             //using package db to initialize connection
-            PackageDB.InitSQL();
+            DBCall.InitSQL();
 
-            using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
+            using (SqlConnection conn = new SqlConnection(DBCall.builder.ConnectionString))
             {
                 string insertStatement = "INSERT INTO Suppliers(SupplierId, SupName) VALUES(@SupplierId, @SupName)";
 

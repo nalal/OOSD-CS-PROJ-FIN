@@ -13,28 +13,23 @@ namespace OOSD_CS_PROJ
 {
     public partial class frmAddNewProduct : Form
     {
+        //Author: Helen Lin 
+
+        //initializing product
+        private Product product; //new added supplier
+
         public frmAddNewProduct()
         {
             InitializeComponent();
         }
-
         private void frmAddNewProduct_Load(object sender, EventArgs e)
         {
             this.Text = "Add New Product";//on load, name the window this
         }
-
-        //Author: Helen Lin 
-        private Product product; //new added supplier
-
         private void frmAddNewProdSupplier_Load(object sender, EventArgs e)
         {
             this.Text = "Add New Product Supplier"; //on load, name the window this
         }
-
-       
-
-
-
         private void PutProductData(Product newProduct)
         {
             try
@@ -52,7 +47,6 @@ namespace OOSD_CS_PROJ
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
         }
-
         //This will Add new product
         private void button1_Click(object sender, EventArgs e)
         {
@@ -61,10 +55,9 @@ namespace OOSD_CS_PROJ
             {
                 product = new Product();
                 this.PutProductData(product);
-
+                MessageBox.Show("Product has been saved");
             }
             //sending the completed package to the AddNewPackage method, then retrieving the PackageId to be displayed
-
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
