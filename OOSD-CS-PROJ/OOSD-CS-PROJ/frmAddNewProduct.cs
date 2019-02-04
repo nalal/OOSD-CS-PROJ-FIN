@@ -48,7 +48,7 @@ namespace OOSD_CS_PROJ
             }
         }
         //This will Add new product
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAddNewProd_Click(object sender, EventArgs e)
         {
             
             try

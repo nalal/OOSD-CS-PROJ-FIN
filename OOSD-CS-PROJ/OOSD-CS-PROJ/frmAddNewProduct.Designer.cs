@@ -33,57 +33,67 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtProdName = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnAddNewProd = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            //
+            // 
             // label1
-            //
+            // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(29, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "ProductId: ";
-            //
+            // 
             // txtProdId
-            //
+            // 
             this.txtProdId.Location = new System.Drawing.Point(141, 48);
             this.txtProdId.Name = "txtProdId";
             this.txtProdId.ReadOnly = true;
             this.txtProdId.Size = new System.Drawing.Size(100, 20);
             this.txtProdId.TabIndex = 1;
-            //
+            // 
             // label2
-            //
+            // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(29, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Product Name: ";
-            //
+            // 
             // txtProdName
-            //
+            // 
             this.txtProdName.Location = new System.Drawing.Point(141, 104);
             this.txtProdName.Name = "txtProdName";
             this.txtProdName.Size = new System.Drawing.Size(100, 20);
             this.txtProdName.TabIndex = 4;
-            //
+            // 
             // button1
-            //
+            // 
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            // 
+            // btnAddNewProd
+            // 
             this.btnAddNewProd.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnAddNewProd.Location = new System.Drawing.Point(189, 168);
+            this.btnAddNewProd.Location = new System.Drawing.Point(165, 171);
             this.btnAddNewProd.Name = "btnAddNewProd";
-            this.btnAddNewProd.Size = new System.Drawing.Size(92, 67);
-            this.btnAddNewProd.TabIndex = 6;
+            this.btnAddNewProd.Size = new System.Drawing.Size(116, 50);
+            this.btnAddNewProd.TabIndex = 5;
             this.btnAddNewProd.Text = "Add New Product";
             this.btnAddNewProd.UseVisualStyleBackColor = false;
-            //
+            this.btnAddNewProd.Click += new System.EventHandler(this.btnAddNewProd_Click);
+            // 
             // frmAddNewProduct
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(329, 258);
+            this.Controls.Add(this.btnAddNewProd);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtProdName);
             this.Controls.Add(this.label2);
@@ -104,5 +114,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtProdName;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddNewProd;
     }
 }

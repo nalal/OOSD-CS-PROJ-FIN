@@ -72,6 +72,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.cbProdID = new System.Windows.Forms.ComboBox();
             this.cbSupID = new System.Windows.Forms.ComboBox();
+            this.btnAddNew = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.packagesBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSet)).BeginInit();
@@ -82,20 +83,9 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            //
-            // btnAddNew
-            //
-            this.btnAddNew.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnAddNew.Location = new System.Drawing.Point(270, 326);
-            this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(142, 43);
-            this.btnAddNew.TabIndex = 54;
-            this.btnAddNew.Text = "Add New Package(s)";
-            this.btnAddNew.UseVisualStyleBackColor = false;
-            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
-            //
+            // 
             // btnPrdctSupps
-            //
+            // 
             this.btnPrdctSupps.BackColor = System.Drawing.Color.Crimson;
             this.btnPrdctSupps.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrdctSupps.Location = new System.Drawing.Point(451, 75);
@@ -106,9 +96,9 @@
             this.btnPrdctSupps.Text = "Product Suppliers\r\n";
             this.btnPrdctSupps.UseVisualStyleBackColor = false;
             this.btnPrdctSupps.Click += new System.EventHandler(this.btnPrdctSupps_Click);
-            //
+            // 
             // btnSupps
-            //
+            // 
             this.btnSupps.BackColor = System.Drawing.Color.Crimson;
             this.btnSupps.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSupps.Location = new System.Drawing.Point(335, 75);
@@ -119,9 +109,9 @@
             this.btnSupps.Text = "Suppliers";
             this.btnSupps.UseVisualStyleBackColor = false;
             this.btnSupps.Click += new System.EventHandler(this.btnSupps_Click);
-            //
+            // 
             // btnPrdts
-            //
+            // 
             this.btnPrdts.BackColor = System.Drawing.Color.Crimson;
             this.btnPrdts.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrdts.Location = new System.Drawing.Point(195, 75);
@@ -132,9 +122,9 @@
             this.btnPrdts.Text = "Products";
             this.btnPrdts.UseVisualStyleBackColor = false;
             this.btnPrdts.Click += new System.EventHandler(this.btnPrdts_Click);
-            //
+            // 
             // btnPkgs
-            //
+            // 
             this.btnPkgs.BackColor = System.Drawing.Color.Crimson;
             this.btnPkgs.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnPkgs.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -146,9 +136,9 @@
             this.btnPkgs.Text = "Packages";
             this.btnPkgs.UseVisualStyleBackColor = false;
             this.btnPkgs.Click += new System.EventHandler(this.btnPkgs_Click);
-            //
+            // 
             // btnSearch
-            //
+            // 
             this.btnSearch.BackColor = System.Drawing.Color.Thistle;
             this.btnSearch.Location = new System.Drawing.Point(414, 263);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
@@ -158,17 +148,17 @@
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            //
+            // 
             // txtSearch
-            //
+            // 
             this.txtSearch.Location = new System.Drawing.Point(414, 233);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(98, 20);
             this.txtSearch.TabIndex = 48;
-            //
+            // 
             // lblSearch
-            //
+            // 
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearch.Location = new System.Drawing.Point(368, 163);
@@ -177,9 +167,9 @@
             this.lblSearch.Size = new System.Drawing.Size(193, 25);
             this.lblSearch.TabIndex = 45;
             this.lblSearch.Text = "Search Packages: ";
-            //
+            // 
             // lblDetails
-            //
+            // 
             this.lblDetails.AutoSize = true;
             this.lblDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDetails.Location = new System.Drawing.Point(77, 146);
@@ -188,9 +178,9 @@
             this.lblDetails.Size = new System.Drawing.Size(168, 25);
             this.lblDetails.TabIndex = 44;
             this.lblDetails.Text = "Package Details";
-            //
+            // 
             // lblID
-            //
+            // 
             this.lblID.AutoSize = true;
             this.lblID.Location = new System.Drawing.Point(35, 192);
             this.lblID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -198,17 +188,17 @@
             this.lblID.Size = new System.Drawing.Size(30, 13);
             this.lblID.TabIndex = 30;
             this.lblID.Text = "   ID:";
-            //
+            // 
             // txtID
-            //
+            // 
             this.txtID.Location = new System.Drawing.Point(131, 190);
             this.txtID.Margin = new System.Windows.Forms.Padding(2);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(114, 20);
             this.txtID.TabIndex = 31;
-            //
+            // 
             // lblName
-            //
+            // 
             this.lblName.AutoSize = true;
             this.lblName.Location = new System.Drawing.Point(35, 223);
             this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -216,9 +206,9 @@
             this.lblName.Size = new System.Drawing.Size(38, 13);
             this.lblName.TabIndex = 32;
             this.lblName.Text = "Name:";
-            //
+            // 
             // lblStartDate
-            //
+            // 
             this.lblStartDate.AutoSize = true;
             this.lblStartDate.Location = new System.Drawing.Point(35, 254);
             this.lblStartDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -226,9 +216,9 @@
             this.lblStartDate.Size = new System.Drawing.Size(58, 13);
             this.lblStartDate.TabIndex = 34;
             this.lblStartDate.Text = "Start Date:";
-            //
+            // 
             // lblEndDate
-            //
+            // 
             this.lblEndDate.AutoSize = true;
             this.lblEndDate.Location = new System.Drawing.Point(35, 288);
             this.lblEndDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -236,9 +226,9 @@
             this.lblEndDate.Size = new System.Drawing.Size(55, 13);
             this.lblEndDate.TabIndex = 35;
             this.lblEndDate.Text = "End Date:";
-            //
+            // 
             // lblDesc
-            //
+            // 
             this.lblDesc.AutoSize = true;
             this.lblDesc.Location = new System.Drawing.Point(35, 324);
             this.lblDesc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -246,18 +236,18 @@
             this.lblDesc.Size = new System.Drawing.Size(60, 13);
             this.lblDesc.TabIndex = 36;
             this.lblDesc.Text = "Description";
-            //
+            // 
             // txtDesc
-            //
+            // 
             this.txtDesc.Location = new System.Drawing.Point(131, 320);
             this.txtDesc.Margin = new System.Windows.Forms.Padding(2);
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(114, 20);
             this.txtDesc.TabIndex = 37;
-            //
+            // 
             // lblBasePrice
-            //
+            // 
             this.lblBasePrice.AutoSize = true;
             this.lblBasePrice.Location = new System.Drawing.Point(35, 352);
             this.lblBasePrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -265,17 +255,17 @@
             this.lblBasePrice.Size = new System.Drawing.Size(61, 13);
             this.lblBasePrice.TabIndex = 38;
             this.lblBasePrice.Text = "Base Price:";
-            //
+            // 
             // txtBasePrice
-            //
+            // 
             this.txtBasePrice.Location = new System.Drawing.Point(131, 349);
             this.txtBasePrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtBasePrice.Name = "txtBasePrice";
             this.txtBasePrice.Size = new System.Drawing.Size(114, 20);
             this.txtBasePrice.TabIndex = 39;
-            //
+            // 
             // lblAgencyComm
-            //
+            // 
             this.lblAgencyComm.AutoSize = true;
             this.lblAgencyComm.Location = new System.Drawing.Point(23, 383);
             this.lblAgencyComm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -283,56 +273,56 @@
             this.lblAgencyComm.Size = new System.Drawing.Size(104, 13);
             this.lblAgencyComm.TabIndex = 40;
             this.lblAgencyComm.Text = "Agency Commission:";
-            //
+            // 
             // txtAgencyComm
-            //
+            // 
             this.txtAgencyComm.Location = new System.Drawing.Point(131, 382);
             this.txtAgencyComm.Margin = new System.Windows.Forms.Padding(2);
             this.txtAgencyComm.Name = "txtAgencyComm";
             this.txtAgencyComm.Size = new System.Drawing.Size(114, 20);
             this.txtAgencyComm.TabIndex = 41;
-            //
+            // 
             // packagesBindingSource4
-            //
+            // 
             this.packagesBindingSource4.DataMember = "Packages";
             this.packagesBindingSource4.DataSource = this.travelExpertsDataSetBindingSource;
-            //
+            // 
             // travelExpertsDataSetBindingSource
-            //
+            // 
             this.travelExpertsDataSetBindingSource.DataSource = this.travelExpertsDataSet;
             this.travelExpertsDataSetBindingSource.Position = 0;
-            //
+            // 
             // travelExpertsDataSet
-            //
+            // 
             this.travelExpertsDataSet.DataSetName = "TravelExpertsDataSet";
             this.travelExpertsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            //
+            // 
             // packagesBindingSource
-            //
+            // 
             this.packagesBindingSource.DataMember = "Packages";
             this.packagesBindingSource.DataSource = this.travelExpertsDataSet;
-            //
+            // 
             // packagesTableAdapter
-            //
+            // 
             this.packagesTableAdapter.ClearBeforeFill = true;
-            //
+            // 
             // packagesBindingSource1
-            //
+            // 
             this.packagesBindingSource1.DataMember = "Packages";
             this.packagesBindingSource1.DataSource = this.travelExpertsDataSetBindingSource;
-            //
+            // 
             // packagesBindingSource2
-            //
+            // 
             this.packagesBindingSource2.DataMember = "Packages";
             this.packagesBindingSource2.DataSource = this.travelExpertsDataSetBindingSource;
-            //
+            // 
             // packagesBindingSource3
-            //
+            // 
             this.packagesBindingSource3.DataMember = "Packages";
             this.packagesBindingSource3.DataSource = this.travelExpertsDataSetBindingSource;
-            //
+            // 
             // cBName
-            //
+            // 
             this.cBName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cBName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cBName.FormattingEnabled = true;
@@ -341,46 +331,46 @@
             this.cBName.Size = new System.Drawing.Size(121, 21);
             this.cBName.TabIndex = 55;
             this.cBName.SelectedIndexChanged += new System.EventHandler(this.cBPkgName_SelectedIndexChanged);
-            //
+            // 
             // dTPStartDate
-            //
+            // 
             this.dTPStartDate.Location = new System.Drawing.Point(131, 257);
             this.dTPStartDate.Name = "dTPStartDate";
             this.dTPStartDate.Size = new System.Drawing.Size(200, 20);
             this.dTPStartDate.TabIndex = 56;
-            //
+            // 
             // dTPEndDate
-            //
+            // 
             this.dTPEndDate.Location = new System.Drawing.Point(131, 288);
             this.dTPEndDate.Name = "dTPEndDate";
             this.dTPEndDate.Size = new System.Drawing.Size(200, 20);
             this.dTPEndDate.TabIndex = 57;
-            //
+            // 
             // cBID
-            //
+            // 
             this.cBID.FormattingEnabled = true;
             this.cBID.Location = new System.Drawing.Point(131, 190);
             this.cBID.Name = "cBID";
             this.cBID.Size = new System.Drawing.Size(121, 21);
             this.cBID.TabIndex = 58;
             this.cBID.SelectedIndexChanged += new System.EventHandler(this.cBID_SelectedIndexChanged);
-            //
+            // 
             // txtSupID
-            //
+            // 
             this.txtSupID.Location = new System.Drawing.Point(131, 257);
             this.txtSupID.Name = "txtSupID";
             this.txtSupID.Size = new System.Drawing.Size(114, 20);
             this.txtSupID.TabIndex = 59;
-            //
+            // 
             // txtProdID
-            //
+            // 
             this.txtProdID.Location = new System.Drawing.Point(131, 223);
             this.txtProdID.Name = "txtProdID";
             this.txtProdID.Size = new System.Drawing.Size(114, 20);
             this.txtProdID.TabIndex = 60;
-            //
+            // 
             // lblSearchFor
-            //
+            // 
             this.lblSearchFor.AutoSize = true;
             this.lblSearchFor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearchFor.Location = new System.Drawing.Point(418, 195);
@@ -389,13 +379,13 @@
             this.lblSearchFor.Size = new System.Drawing.Size(79, 25);
             this.lblSearchFor.TabIndex = 61;
             this.lblSearchFor.Text = "Names";
-            //
+            // 
             // packages_Products_SuppliersTableAdapter1
-            //
+            // 
             this.packages_Products_SuppliersTableAdapter1.ClearBeforeFill = true;
-            //
+            // 
             // panel1
-            //
+            // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel1.Controls.Add(this.btnPrdctSupps);
             this.panel1.Controls.Add(this.lblHeader);
@@ -406,9 +396,9 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(601, 123);
             this.panel1.TabIndex = 62;
-            //
+            // 
             // lblHeader
-            //
+            // 
             this.lblHeader.AutoSize = true;
             this.lblHeader.BackColor = System.Drawing.Color.Transparent;
             this.lblHeader.Font = new System.Drawing.Font("Calibri", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -419,9 +409,9 @@
             this.lblHeader.TabIndex = 54;
             this.lblHeader.Text = "Travel Experts";
             this.lblHeader.UseCompatibleTextRendering = true;
-            //
+            // 
             // pictureBox1
-            //
+            // 
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 441);
@@ -430,9 +420,9 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 63;
             this.pictureBox1.TabStop = false;
-            //
+            // 
             // btnUpdate
-            //
+            // 
             this.btnUpdate.Location = new System.Drawing.Point(368, 375);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(104, 40);
@@ -440,9 +430,9 @@
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            //
+            // 
             // btnSave
-            //
+            // 
             this.btnSave.Location = new System.Drawing.Point(270, 375);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(92, 40);
@@ -450,40 +440,41 @@
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            //
+            // 
             // cbProdID
-            //
+            // 
             this.cbProdID.FormattingEnabled = true;
             this.cbProdID.Location = new System.Drawing.Point(131, 222);
             this.cbProdID.Name = "cbProdID";
             this.cbProdID.Size = new System.Drawing.Size(121, 21);
             this.cbProdID.TabIndex = 69;
-            //
+            // 
             // cbSupID
-            //
+            // 
             this.cbSupID.FormattingEnabled = true;
             this.cbSupID.Location = new System.Drawing.Point(131, 257);
             this.cbSupID.Name = "cbSupID";
             this.cbSupID.Size = new System.Drawing.Size(121, 21);
             this.cbSupID.TabIndex = 70;
-            //
-            // button1
-            //
-            this.button1.BackColor = System.Drawing.Color.PaleGreen;
-            this.button1.Location = new System.Drawing.Point(334, 383);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 57);
-            this.button1.TabIndex = 67;
-            this.button1.Text = "Add New Packages";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            //
+            // 
+            // btnAddNew
+            // 
+            this.btnAddNew.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnAddNew.Location = new System.Drawing.Point(368, 324);
+            this.btnAddNew.Name = "btnAddNew";
+            this.btnAddNew.Size = new System.Drawing.Size(110, 45);
+            this.btnAddNew.TabIndex = 71;
+            this.btnAddNew.Text = "Add New Packages";
+            this.btnAddNew.UseVisualStyleBackColor = false;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
+            // 
             // Main1
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(596, 528);
+            this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.cbSupID);
             this.Controls.Add(this.cbProdID);
             this.Controls.Add(this.btnSave);
@@ -573,5 +564,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.ComboBox cbProdID;
         private System.Windows.Forms.ComboBox cbSupID;
+        private System.Windows.Forms.Button btnAddNew;
     }
 }

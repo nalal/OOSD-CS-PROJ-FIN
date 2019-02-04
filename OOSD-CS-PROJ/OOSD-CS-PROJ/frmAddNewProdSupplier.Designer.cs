@@ -65,10 +65,10 @@
             //
             // txtProdId
             //
-            this.txtProdId.Location = new System.Drawing.Point(156, 131);
-            this.txtProdId.Name = "txtProdId";
-            this.txtProdId.Size = new System.Drawing.Size(100, 20);
-            this.txtProdId.TabIndex = 3;
+            //this.txtProdId.Location = new System.Drawing.Point(156, 131);
+            //this.txtProdId.Name = "txtProdId";
+            //this.txtProdId.Size = new System.Drawing.Size(100, 20);
+            //this.txtProdId.TabIndex = 3;
             //
             // label3
             //
@@ -81,10 +81,10 @@
             //
             // txtSupId
             //
-            this.txtSupId.Location = new System.Drawing.Point(156, 191);
-            this.txtSupId.Name = "txtSupId";
-            this.txtSupId.Size = new System.Drawing.Size(100, 20);
-            this.txtSupId.TabIndex = 5;
+            //this.txtSupId.Location = new System.Drawing.Point(156, 191);
+            //this.txtSupId.Name = "txtSupId";
+            //this.txtSupId.Size = new System.Drawing.Size(100, 20);
+            //this.txtSupId.TabIndex = 5;
             //
             // btnSaveProdSup
             //
