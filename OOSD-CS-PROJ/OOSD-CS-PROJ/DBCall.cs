@@ -60,6 +60,7 @@ namespace OOSD_CS_PROJ
 
         }
         //Get DB Table data
+        //This is mostly redundant, might prune
         public static DataTable GetPackages()
         {
             DataTable TB = new DataTable();
