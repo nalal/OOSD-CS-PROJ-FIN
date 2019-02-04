@@ -53,8 +53,8 @@ namespace TravelExpertsASP
             }
             catch//(Exception ex)
             {
-                //Response.Write("Password is not correct"); NEED TO FIGURE OUT HOW TO FIX IF PASSWORD IS NOT IN DATABASE
-               // throw ex;
+                Response.Write("Password is not correct"); //NEED TO FIGURE OUT HOW TO FIX IF PASSWORD IS NOT IN DATABASE
+                //throw ex;
             }
             finally
             {

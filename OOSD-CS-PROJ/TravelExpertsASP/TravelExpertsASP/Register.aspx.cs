@@ -34,39 +34,99 @@ namespace TravelExpertsASP
 
         protected void btnCustRegister_Click(object sender, EventArgs e)
         {
-            Customer cust = new Customer(txtCustFirstName.Text, txtCustLastName.Text, txtCustAddress.Text,
-                                        txtCustCity.Text, ddlCustProv.SelectedValue.ToString() , txtCustPostal.Text, 
-                                        ddlCustCountry.SelectedValue.ToString(),txtCustHomePhone.Text, txtCustBusPhone.Text, 
+            bool UserNameChecked = false;
+            bool insert = false;
+            List<string> userNames = CustomersDB.GetUserNames(); // replace with user name list
+
+            foreach (string username in userNames)
+            {
+                if (txtCustUserName.Text == username)
+                {
+                    Response.Write("User name is already taken. Please choose another user name");
+                    UserNameChecked = false;
+                    break;
+                }
+                else
+                    UserNameChecked = true;
+            }
+
+            if (Page.IsValid && UserNameChecked)
+            {
+                Customer cust = new Customer(txtCustFirstName.Text, txtCustLastName.Text, txtCustAddress.Text,
+                                        txtCustCity.Text, ddlCustProv.SelectedValue.ToString(), txtCustPostal.Text,
+                                        ddlCustCountry.SelectedValue.ToString(), txtCustHomePhone.Text, txtCustBusPhone.Text,
                                         txtCustEmail.Text, txtCustUserName.Text, txtCustPassword.Text);
 
-            
-            if (Page.IsValid)
-            {
                 SqlConnection conn = TravelExperts1DB.GetConnection();
                 try
                 {
                     conn.Open();
 
-                    CustomersDB.CreateCustomer(cust);
+                    insert = CustomersDB.CreateCustomer(cust);
 
-                    Response.Write("Registration successful");
+                    if (insert)
+                    {
+                        Response.Write("Registration successful");
+                    }
+                    //else
+                    //    Response.Write("Registration unsuccessful");
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    throw ex;
+                    //Response.Write("User name is already taken. Please choose another user name");
+                    //throw ex;
+                    Response.Write("Registration unsuccessful");
                 }
                 finally
                 {
                     conn.Close();
                 }
             }
-            else
-            {
-                Response.Write("Registration unsuccessful");
-            }
-            
+            //else
+            //{
+            //    Response.Write("Registration unsuccessful");
+            //}
         }
 
-      
+            // ===============         YOUR ORIGINAL CODE!!!!!!          ===================== //
+
+            //bool insert = false;
+
+            //Customer cust = new Customer(txtCustFirstName.Text, txtCustLastName.Text, txtCustAddress.Text,
+            //                            txtCustCity.Text, ddlCustProv.SelectedValue.ToString() , txtCustPostal.Text, 
+            //                            ddlCustCountry.SelectedValue.ToString(),txtCustHomePhone.Text, txtCustBusPhone.Text, 
+            //                            txtCustEmail.Text, txtCustUserName.Text, txtCustPassword.Text);
+
+            
+            //if (Page.IsValid)
+            //{
+            //    SqlConnection conn = TravelExperts1DB.GetConnection();
+            //    try
+            //    {
+            //        conn.Open();
+
+            //        insert = CustomersDB.CreateCustomer(cust);
+
+            //        if (insert)
+            //        {
+            //            Response.Write("Registration successful");
+            //        }
+            //        else
+            //            Response.Write("GET ME COOKIES");
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Response.Write("User name is already taken. Please choose another user name");
+            //        throw ex;
+            //    }
+            //    finally
+            //    {
+            //        conn.Close();
+            //    }
+            //}
+            //else
+            //{
+            //    Response.Write("Registration unsuccessful");
+            //}
     }
 }

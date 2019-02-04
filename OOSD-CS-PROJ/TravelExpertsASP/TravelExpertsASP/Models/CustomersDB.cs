@@ -11,17 +11,57 @@ namespace TravelExpertsASP.Models
     [DataObject(true)]
     public class CustomersDB
     {
+        [DataObjectMethod(DataObjectMethodType.Select)]
+
+        public static List<string> GetUserNames()
+        {
+            List<string> list = new List<string>();
+            string username;
+
+            // initialize connection 
+            SqlConnection conn = TravelExperts1DB.GetConnection();
+
+            string selectString = "SELECT CustUserName FROM Customers";
+
+            SqlCommand getCustomer = new SqlCommand(selectString, conn);
+
+            try
+            {
+                conn.Open(); // create connection
+                SqlDataReader myReader = getCustomer.ExecuteReader();
+
+                while (myReader.Read()) // if the user name matches a customer in the database 
+                {
+                    // create customer object based on database information of the matching user name
+                    username = null;
+                    username = myReader["CustUserName"].ToString();
+                    list.Add(username);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conn.Close(); // close connection
+            }
+            return list; // return instance of customer
+        }
+
 
         [DataObjectMethod(DataObjectMethodType.Insert)]
         //insert customer record into Travel ExpertsDB
 
-        public static Customer CreateCustomer(Customer cust)
+        public static bool CreateCustomer(Customer cust)
         {
+            bool inserted = false;
             // initialize connection 
             SqlConnection conn = TravelExperts1DB.GetConnection();
 
             // creation of database INSERT method string
-            string insertString = "INSERT INTO Customers " +
+            string insertString =   "IF NOT EXISTS (SELECT * FROM Customers WHERE CustUserName = @CustUserName) " +
+                                    "INSERT INTO Customers " +
                                     "(CustFirstName, CustLastName, CustAddress, CustCity, " +
                                     "CustProv, CustPostal, CustCountry, CustHomePhone, " +
                                     "CustBusPhone, CustEmail, CustUserName, CustPassword) " +
@@ -48,22 +88,25 @@ namespace TravelExpertsASP.Models
                 // open connection 
                 conn.Open();
 
-                //integer returned by the INSERT SQL command
-                int insertSuccess = insertCommand.ExecuteNonQuery();
-                if (insertSuccess == 1) // insert successful {
-                {
+                inserted = Convert.ToBoolean(insertCommand.ExecuteNonQuery());
 
-                }
+                ////integer returned by the INSERT SQL command
+                //int insertSuccess = insertCommand.ExecuteNonQuery();
+                //if (insertSuccess == 1) // insert successful {
+                //{
+
+                //}
             }
             catch (Exception ex)
             {
+                
                 throw ex;
             }
             finally
             {
                 conn.Close();
             }
-            return cust;
+            return inserted;
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]

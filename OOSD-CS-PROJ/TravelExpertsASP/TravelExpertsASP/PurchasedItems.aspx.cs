@@ -31,8 +31,6 @@ namespace TravelExpertsASP
 
                     //Response.Write(fuck);
 
-
-
                 }
                 else
                 {
