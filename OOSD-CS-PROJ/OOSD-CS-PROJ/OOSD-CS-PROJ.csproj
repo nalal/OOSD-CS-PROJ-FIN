@@ -91,6 +91,8 @@
       <DependentUpon>Main1.cs</DependentUpon>
     </Compile>
     <Compile Include="MainPackageDB.cs" />
+    <Compile Include="Package.cs" />
+    <Compile Include="PackageDB.cs" />
     <Compile Include="ProdSupplier.cs" />
     <Compile Include="ProdSuppliersDB.cs" />
     <Compile Include="Product.cs" />
@@ -158,12 +160,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Packages\Packages.csproj">
-      <Project>{04e6e9e9-74be-422e-a818-38342ca64622}</Project>
-      <Name>Packages</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
