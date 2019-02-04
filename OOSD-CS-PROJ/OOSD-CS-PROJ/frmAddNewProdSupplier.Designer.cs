@@ -35,90 +35,89 @@
             this.btnSaveProdSup = new System.Windows.Forms.Button();
             this.cboProdID = new System.Windows.Forms.ComboBox();
             this.cboSupID = new System.Windows.Forms.ComboBox();
+            this.lblDetails = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            //
+            // 
             // label1
-            //
+            // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 63);
+            this.label1.Location = new System.Drawing.Point(21, 104);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "ProductSupplierId: ";
-            //
+            // 
             // label2
-            //
+            // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 134);
+            this.label2.Location = new System.Drawing.Point(20, 160);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "ProductId: ";
-            //
+            // 
             // txtProdSupId
-            //
-            this.txtProdSupId.Location = new System.Drawing.Point(156, 63);
+            // 
+            this.txtProdSupId.Location = new System.Drawing.Point(142, 101);
             this.txtProdSupId.Name = "txtProdSupId";
             this.txtProdSupId.ReadOnly = true;
             this.txtProdSupId.Size = new System.Drawing.Size(100, 20);
             this.txtProdSupId.TabIndex = 2;
-            //
-            // txtProdId
-            //
-            //this.txtProdId.Location = new System.Drawing.Point(156, 131);
-            //this.txtProdId.Name = "txtProdId";
-            //this.txtProdId.Size = new System.Drawing.Size(100, 20);
-            //this.txtProdId.TabIndex = 3;
-            //
+            // 
             // label3
-            //
+            // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 194);
+            this.label3.Location = new System.Drawing.Point(21, 220);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "SupplierId: ";
-            //
-            // txtSupId
-            //
-            //this.txtSupId.Location = new System.Drawing.Point(156, 191);
-            //this.txtSupId.Name = "txtSupId";
-            //this.txtSupId.Size = new System.Drawing.Size(100, 20);
-            //this.txtSupId.TabIndex = 5;
-            //
+            // 
             // btnSaveProdSup
-            //
+            // 
             this.btnSaveProdSup.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnSaveProdSup.Location = new System.Drawing.Point(266, 248);
+            this.btnSaveProdSup.Location = new System.Drawing.Point(333, 220);
             this.btnSaveProdSup.Name = "btnSaveProdSup";
-            this.btnSaveProdSup.Size = new System.Drawing.Size(92, 67);
+            this.btnSaveProdSup.Size = new System.Drawing.Size(105, 66);
             this.btnSaveProdSup.TabIndex = 6;
             this.btnSaveProdSup.Text = "Save New Product Supplier";
             this.btnSaveProdSup.UseVisualStyleBackColor = false;
             this.btnSaveProdSup.Click += new System.EventHandler(this.btnSaveProdSup_Click_1);
-            //
+            // 
             // cboProdID
-            //
+            // 
             this.cboProdID.FormattingEnabled = true;
-            this.cboProdID.Location = new System.Drawing.Point(121, 160);
+            this.cboProdID.Location = new System.Drawing.Point(142, 157);
             this.cboProdID.Name = "cboProdID";
             this.cboProdID.Size = new System.Drawing.Size(121, 21);
             this.cboProdID.TabIndex = 7;
-            //
+            // 
             // cboSupID
-            //
+            // 
             this.cboSupID.FormattingEnabled = true;
-            this.cboSupID.Location = new System.Drawing.Point(121, 220);
+            this.cboSupID.Location = new System.Drawing.Point(142, 217);
             this.cboSupID.Name = "cboSupID";
             this.cboSupID.Size = new System.Drawing.Size(121, 21);
             this.cboSupID.TabIndex = 8;
-            //
+            // 
+            // lblDetails
+            // 
+            this.lblDetails.AutoSize = true;
+            this.lblDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetails.Location = new System.Drawing.Point(18, 21);
+            this.lblDetails.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDetails.Name = "lblDetails";
+            this.lblDetails.Size = new System.Drawing.Size(233, 25);
+            this.lblDetails.TabIndex = 45;
+            this.lblDetails.Text = "Add a Product Supplier";
+            // 
             // frmAddNewProdSupplier
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(422, 338);
+            this.ClientSize = new System.Drawing.Size(505, 342);
+            this.Controls.Add(this.lblDetails);
             this.Controls.Add(this.cboSupID);
             this.Controls.Add(this.cboProdID);
             this.Controls.Add(this.btnSaveProdSup);
@@ -143,5 +142,6 @@
         private System.Windows.Forms.Button btnSaveProdSup;
         private System.Windows.Forms.ComboBox cboProdID;
         private System.Windows.Forms.ComboBox cboSupID;
+        private System.Windows.Forms.Label lblDetails;
     }
 }
