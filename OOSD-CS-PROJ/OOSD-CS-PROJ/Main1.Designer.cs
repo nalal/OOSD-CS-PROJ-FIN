@@ -83,9 +83,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-
-
-
             // btnPrdctSupps
             // 
             this.btnPrdctSupps.BackColor = System.Drawing.Color.Crimson;
@@ -142,10 +139,10 @@
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.Thistle;
-            this.btnSearch.Location = new System.Drawing.Point(428, 270);
+            this.btnSearch.Location = new System.Drawing.Point(414, 263);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(69, 31);
+            this.btnSearch.Size = new System.Drawing.Size(84, 38);
             this.btnSearch.TabIndex = 49;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -426,9 +423,9 @@
             // btnAddProd
             // 
             this.btnAddProd.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnAddProd.Location = new System.Drawing.Point(430, 309);
+            this.btnAddProd.Location = new System.Drawing.Point(335, 320);
             this.btnAddProd.Name = "btnAddProd";
-            this.btnAddProd.Size = new System.Drawing.Size(67, 43);
+            this.btnAddProd.Size = new System.Drawing.Size(110, 57);
             this.btnAddProd.TabIndex = 64;
             this.btnAddProd.Text = "Add New Products";
             this.btnAddProd.UseVisualStyleBackColor = false;
@@ -437,9 +434,9 @@
             // btnAddSup
             // 
             this.btnAddSup.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnAddSup.Location = new System.Drawing.Point(503, 320);
+            this.btnAddSup.Location = new System.Drawing.Point(464, 320);
             this.btnAddSup.Name = "btnAddSup";
-            this.btnAddSup.Size = new System.Drawing.Size(85, 43);
+            this.btnAddSup.Size = new System.Drawing.Size(110, 57);
             this.btnAddSup.TabIndex = 65;
             this.btnAddSup.Text = "Add New Suppliers";
             this.btnAddSup.UseVisualStyleBackColor = false;
@@ -448,9 +445,9 @@
             // btnAddProdSup
             // 
             this.btnAddProdSup.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnAddProdSup.Location = new System.Drawing.Point(451, 370);
+            this.btnAddProdSup.Location = new System.Drawing.Point(464, 383);
             this.btnAddProdSup.Name = "btnAddProdSup";
-            this.btnAddProdSup.Size = new System.Drawing.Size(110, 43);
+            this.btnAddProdSup.Size = new System.Drawing.Size(110, 57);
             this.btnAddProdSup.TabIndex = 66;
             this.btnAddProdSup.Text = "Add New Product Suppliers";
             this.btnAddProdSup.UseVisualStyleBackColor = false;
@@ -458,12 +455,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(304, 352);
+            this.button1.BackColor = System.Drawing.Color.PaleGreen;
+            this.button1.Location = new System.Drawing.Point(334, 383);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 67);
+            this.button1.Size = new System.Drawing.Size(110, 57);
             this.button1.TabIndex = 67;
             this.button1.Text = "Add New Packages";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Main1

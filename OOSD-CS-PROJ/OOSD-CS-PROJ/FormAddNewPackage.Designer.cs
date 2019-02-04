@@ -44,7 +44,7 @@
             this.btnSaveNewPackage = new System.Windows.Forms.Button();
             this.dtStartDate = new System.Windows.Forms.DateTimePicker();
             this.dtEndDate = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboProdName = new System.Windows.Forms.ComboBox();
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.travelExpertsDataSet = new OOSD_CS_PROJ.TravelExpertsDataSet();
             this.label8 = new System.Windows.Forms.Label();
@@ -197,14 +197,15 @@
             this.dtEndDate.Size = new System.Drawing.Size(151, 20);
             this.dtEndDate.TabIndex = 16;
             // 
-            // comboBox1
+            // cboProdName
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(203, 275);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 17;
-            this.comboBox1.ValueMember = "ProdName";
+            this.cboProdName.DisplayMember = "ProdName";
+            this.cboProdName.FormattingEnabled = true;
+            this.cboProdName.Location = new System.Drawing.Point(203, 275);
+            this.cboProdName.Name = "cboProdName";
+            this.cboProdName.Size = new System.Drawing.Size(121, 21);
+            this.cboProdName.TabIndex = 17;
+            this.cboProdName.ValueMember = "ProdName";
             // 
             // productsBindingSource
             // 
@@ -236,7 +237,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 383);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboProdName);
             this.Controls.Add(this.dtEndDate);
             this.Controls.Add(this.dtStartDate);
             this.Controls.Add(this.btnSaveNewPackage);
@@ -280,7 +281,7 @@
         private System.Windows.Forms.Button btnSaveNewPackage;
         private System.Windows.Forms.DateTimePicker dtStartDate;
         private System.Windows.Forms.DateTimePicker dtEndDate;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboProdName;
         private System.Windows.Forms.Label label8;
         private TravelExpertsDataSet travelExpertsDataSet;
         private System.Windows.Forms.BindingSource productsBindingSource;

@@ -12,14 +12,14 @@ namespace OOSD_CS_PROJ
     {
         // connecting to the DB
         public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-        public static void InitSQL()
-        {
+        //public static void InitSQL()
+        //{
 
-            builder.DataSource = "ELF8OOSD197690\\SQLEXPRESS";
+        //    builder.DataSource = "ELF8OOSD197690\\SQLEXPRESS";
 
-            builder.IntegratedSecurity = true;
-            builder.InitialCatalog = "TravelExperts";
-        }
+        //    builder.IntegratedSecurity = true;
+        //    builder.InitialCatalog = "TravelExperts";
+        //}
 
         // creating list of instances of the ProdSuppliers class
         public static List<ProdSupplier> GetProdSuppliers()

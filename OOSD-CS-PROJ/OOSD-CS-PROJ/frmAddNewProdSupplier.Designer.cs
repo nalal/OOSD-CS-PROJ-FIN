@@ -31,10 +31,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtProdSupId = new System.Windows.Forms.TextBox();
-            this.txtProdId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtSupId = new System.Windows.Forms.TextBox();
             this.btnSaveProdSup = new System.Windows.Forms.Button();
+            this.cboProdID = new System.Windows.Forms.ComboBox();
+            this.cboSupID = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -63,13 +63,6 @@
             this.txtProdSupId.Size = new System.Drawing.Size(100, 20);
             this.txtProdSupId.TabIndex = 2;
             // 
-            // txtProdId
-            // 
-            this.txtProdId.Location = new System.Drawing.Point(167, 157);
-            this.txtProdId.Name = "txtProdId";
-            this.txtProdId.Size = new System.Drawing.Size(100, 20);
-            this.txtProdId.TabIndex = 3;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -78,13 +71,6 @@
             this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "SupplierId: ";
-            // 
-            // txtSupId
-            // 
-            this.txtSupId.Location = new System.Drawing.Point(167, 217);
-            this.txtSupId.Name = "txtSupId";
-            this.txtSupId.Size = new System.Drawing.Size(100, 20);
-            this.txtSupId.TabIndex = 5;
             // 
             // btnSaveProdSup
             // 
@@ -96,15 +82,31 @@
             this.btnSaveProdSup.UseVisualStyleBackColor = true;
             this.btnSaveProdSup.Click += new System.EventHandler(this.btnSaveProdSup_Click_1);
             // 
+            // cboProdID
+            // 
+            this.cboProdID.FormattingEnabled = true;
+            this.cboProdID.Location = new System.Drawing.Point(121, 160);
+            this.cboProdID.Name = "cboProdID";
+            this.cboProdID.Size = new System.Drawing.Size(121, 21);
+            this.cboProdID.TabIndex = 7;
+            // 
+            // cboSupID
+            // 
+            this.cboSupID.FormattingEnabled = true;
+            this.cboSupID.Location = new System.Drawing.Point(121, 220);
+            this.cboSupID.Name = "cboSupID";
+            this.cboSupID.Size = new System.Drawing.Size(121, 21);
+            this.cboSupID.TabIndex = 8;
+            // 
             // frmAddNewProdSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(422, 338);
+            this.Controls.Add(this.cboSupID);
+            this.Controls.Add(this.cboProdID);
             this.Controls.Add(this.btnSaveProdSup);
-            this.Controls.Add(this.txtSupId);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtProdId);
             this.Controls.Add(this.txtProdSupId);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -121,9 +123,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtProdSupId;
-        private System.Windows.Forms.TextBox txtProdId;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtSupId;
         private System.Windows.Forms.Button btnSaveProdSup;
+        private System.Windows.Forms.ComboBox cboProdID;
+        private System.Windows.Forms.ComboBox cboSupID;
     }
 }

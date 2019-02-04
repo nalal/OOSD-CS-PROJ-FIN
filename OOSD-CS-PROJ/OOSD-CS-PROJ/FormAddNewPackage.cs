@@ -30,7 +30,7 @@ namespace OOSD_CS_PROJ
             // return list of product created in GetProductName()
             List<Product> myProdList = ProductsDB.GetProducts();
 
-            // adding package names to the CBName (combo box)
+            // adding product names to the CBName (combo box)
             var prodLinq = from prod in myProdList
                            select new
                            {
@@ -39,7 +39,7 @@ namespace OOSD_CS_PROJ
 
             foreach (var item in prodLinq)
             {
-                comboBox1.Items.Add(item.ProdName);
+                cboProdName.Items.Add(item.ProdName);
             }
         }
 
@@ -97,6 +97,7 @@ namespace OOSD_CS_PROJ
                     }
                     else
                     {
+                        //Assigning all the given values to the package object
                         package.PkgStartDate =  dtStartDate.Value.ToString("yyyy-MM-dd");
                         package.PkgEndDate =  dtEndDate.Value.ToString("yyyy-MM-dd");
 
@@ -104,12 +105,13 @@ namespace OOSD_CS_PROJ
                         package.PkgBasePrice = Convert.ToDecimal(txtPkgBasePrice.Text);
                         package.PkgAgencyCommission = Convert.ToDecimal(txtPkgAgencyCommission.Text);
 
-                        selectedProduct = comboBox1.SelectedItem.ToString();
+                        selectedProduct = cboProdName.SelectedItem.ToString();
                         package.ProdName = selectedProduct;
 
                         package.PackageId = PackageDB.AddNewPackage(package);
                         this.DialogResult = DialogResult.OK;
                         txtPackageId.Text = Convert.ToString(package.PackageId);
+                        MessageBox.Show("Package has been saved");
                     }
                 }
             }
