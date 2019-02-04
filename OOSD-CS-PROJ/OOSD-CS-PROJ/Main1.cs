@@ -325,6 +325,7 @@ namespace OOSD_CS_PROJ
             lblDetails.Text = "Package Details";
             lblSearch.Text = "Search Packages:";
             lblSearchFor.Text = "Names";
+            btnAddNew.Text = "Add New Package(s)";
 
 
             // create list of packages from DB class
@@ -365,7 +366,7 @@ namespace OOSD_CS_PROJ
             lblDetails.Text = "Product Details";
             lblSearch.Text = "Search Products:";
             lblSearchFor.Text = "Names";
-
+            btnAddNew.Text = "Add New Product(s)";
 
             // create list of products from DB class
             PopulateProducts();
@@ -405,7 +406,7 @@ namespace OOSD_CS_PROJ
             lblDetails.Text = "Supplier Details";
             lblSearch.Text = "Search Suppliers:";
             lblSearchFor.Text = "Names";
-
+            btnAddNew.Text = "Add New Supplier(s)";
 
             // create list of suppliers from DB class
             PopulateSuppliers();
@@ -444,7 +445,7 @@ namespace OOSD_CS_PROJ
             lblDetails.Text = "Product Supplier Details";
             lblSearch.Text = "Search Product Suppliers:";
             lblSearchFor.Text = "     IDs";
-
+            btnAddNew.Text = "Add New Product Supplier(s)";
 
             // create list of product suppliers from DB class
             PopulateProdSuppliers();
