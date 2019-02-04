@@ -40,7 +40,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 89);
+            this.label1.Location = new System.Drawing.Point(21, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 13);
             this.label1.TabIndex = 0;
@@ -49,7 +49,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 160);
+            this.label2.Location = new System.Drawing.Point(21, 134);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 1;
@@ -57,14 +57,15 @@
             // 
             // txtProdSupId
             // 
-            this.txtProdSupId.Location = new System.Drawing.Point(167, 89);
+            this.txtProdSupId.Location = new System.Drawing.Point(156, 63);
             this.txtProdSupId.Name = "txtProdSupId";
+            this.txtProdSupId.ReadOnly = true;
             this.txtProdSupId.Size = new System.Drawing.Size(100, 20);
             this.txtProdSupId.TabIndex = 2;
             // 
             // txtProdId
             // 
-            this.txtProdId.Location = new System.Drawing.Point(167, 157);
+            this.txtProdId.Location = new System.Drawing.Point(156, 131);
             this.txtProdId.Name = "txtProdId";
             this.txtProdId.Size = new System.Drawing.Size(100, 20);
             this.txtProdId.TabIndex = 3;
@@ -72,7 +73,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 220);
+            this.label3.Location = new System.Drawing.Point(21, 194);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 4;
@@ -80,25 +81,27 @@
             // 
             // txtSupId
             // 
-            this.txtSupId.Location = new System.Drawing.Point(167, 217);
+            this.txtSupId.Location = new System.Drawing.Point(156, 191);
             this.txtSupId.Name = "txtSupId";
             this.txtSupId.Size = new System.Drawing.Size(100, 20);
             this.txtSupId.TabIndex = 5;
             // 
             // btnSaveProdSup
             // 
-            this.btnSaveProdSup.Location = new System.Drawing.Point(290, 262);
+            this.btnSaveProdSup.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnSaveProdSup.Location = new System.Drawing.Point(266, 248);
             this.btnSaveProdSup.Name = "btnSaveProdSup";
-            this.btnSaveProdSup.Size = new System.Drawing.Size(103, 52);
+            this.btnSaveProdSup.Size = new System.Drawing.Size(128, 78);
             this.btnSaveProdSup.TabIndex = 6;
             this.btnSaveProdSup.Text = "Save New Product Supplier";
-            this.btnSaveProdSup.UseVisualStyleBackColor = true;
+            this.btnSaveProdSup.UseVisualStyleBackColor = false;
             this.btnSaveProdSup.Click += new System.EventHandler(this.btnSaveProdSup_Click_1);
             // 
             // frmAddNewProdSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(422, 338);
             this.Controls.Add(this.btnSaveProdSup);
             this.Controls.Add(this.txtSupId);

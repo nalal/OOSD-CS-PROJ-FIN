@@ -48,6 +48,7 @@
             // 
             this.txtProdId.Location = new System.Drawing.Point(141, 48);
             this.txtProdId.Name = "txtProdId";
+            this.txtProdId.ReadOnly = true;
             this.txtProdId.Size = new System.Drawing.Size(100, 20);
             this.txtProdId.TabIndex = 1;
             // 
@@ -69,17 +70,19 @@
             // 
             // btnAddNewProd
             // 
-            this.btnAddNewProd.Location = new System.Drawing.Point(209, 205);
+            this.btnAddNewProd.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnAddNewProd.Location = new System.Drawing.Point(189, 168);
             this.btnAddNewProd.Name = "btnAddNewProd";
-            this.btnAddNewProd.Size = new System.Drawing.Size(92, 41);
+            this.btnAddNewProd.Size = new System.Drawing.Size(128, 78);
             this.btnAddNewProd.TabIndex = 6;
             this.btnAddNewProd.Text = "Add New Product";
-            this.btnAddNewProd.UseVisualStyleBackColor = true;
+            this.btnAddNewProd.UseVisualStyleBackColor = false;
             // 
             // frmAddNewProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(329, 258);
             this.Controls.Add(this.btnAddNewProd);
             this.Controls.Add(this.txtProdName);

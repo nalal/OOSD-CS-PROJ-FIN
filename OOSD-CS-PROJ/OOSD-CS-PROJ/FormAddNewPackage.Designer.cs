@@ -158,13 +158,14 @@
             // 
             // btnSaveNewPackage
             // 
+            this.btnSaveNewPackage.BackColor = System.Drawing.Color.PaleGreen;
             this.btnSaveNewPackage.Location = new System.Drawing.Point(367, 233);
             this.btnSaveNewPackage.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveNewPackage.Name = "btnSaveNewPackage";
-            this.btnSaveNewPackage.Size = new System.Drawing.Size(98, 38);
+            this.btnSaveNewPackage.Size = new System.Drawing.Size(128, 78);
             this.btnSaveNewPackage.TabIndex = 14;
             this.btnSaveNewPackage.Text = "Save Package";
-            this.btnSaveNewPackage.UseVisualStyleBackColor = true;
+            this.btnSaveNewPackage.UseVisualStyleBackColor = false;
             this.btnSaveNewPackage.Click += new System.EventHandler(this.btnSaveNewPackage_Click);
             // 
             // dtStartDate
@@ -193,6 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(612, 383);
             this.Controls.Add(this.dtEndDate);
             this.Controls.Add(this.dtStartDate);

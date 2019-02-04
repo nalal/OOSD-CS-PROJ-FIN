@@ -10,14 +10,14 @@ namespace OOSD_CS_PROJ
     // class for SQL commands regarding the Suppliers class on the main view form
     class SuppliersDB
     {
-        // connecting to the DB
-        public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-        public static void InitSQL()
-        {
-            builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";
-            builder.IntegratedSecurity = true;
-            builder.InitialCatalog = "TravelExperts";
-        }
+        //// connecting to the DB
+        //public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+        //public static void InitSQL()
+        //{
+        //    builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";
+        //    builder.IntegratedSecurity = true;
+        //    builder.InitialCatalog = "TravelExperts";
+        //}
         // creating list of instances of the Suppliers class
         public static List<Supplier> GetSuppliers()
         {
@@ -26,9 +26,9 @@ namespace OOSD_CS_PROJ
             Supplier sup; // reference to new Supplier object
 
             //
-            InitSQL();
+            DBCall.InitSQL();
 
-            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(DBCall.builder.ConnectionString))
             {
                 // create select command
                 string selectString = "SELECT SupplierId, SupName FROM Suppliers";
@@ -72,7 +72,7 @@ namespace OOSD_CS_PROJ
             //using package db to initialize connection
             PackageDB.InitSQL();
 
-            using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
+            using (SqlConnection conn = new SqlConnection(DBCall.builder.ConnectionString))
             {
                 string insertStatement = "INSERT INTO Packages(SupplierId, SupName) VALUES(@SupplierId, @SupName)";
 
@@ -108,7 +108,7 @@ namespace OOSD_CS_PROJ
         public static bool UpdateSupplier(Supplier newSup, Supplier oldSup)
         {
             bool Supplier = false;
-            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(DBCall.builder.ConnectionString))
             {
                 string updateStatement = "UPDATE Suppliers " +
                                      "SET SupName = @NewSupName " +

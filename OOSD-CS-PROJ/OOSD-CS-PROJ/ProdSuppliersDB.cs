@@ -11,15 +11,15 @@ namespace OOSD_CS_PROJ
     class ProdSuppliersDB
     {
         // connecting to the DB
-        public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-        public static void InitSQL()
-        {
+        //public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+        //public static void InitSQL()
+        //{
 
-            builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";
+        //    builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";
 
-            builder.IntegratedSecurity = true;
-            builder.InitialCatalog = "TravelExperts";
-        }
+        //    builder.IntegratedSecurity = true;
+        //    builder.InitialCatalog = "TravelExperts";
+        //}
 
         // creating list of instances of the ProdSuppliers class
         public static List<ProdSupplier> GetProdSuppliers()
@@ -29,9 +29,9 @@ namespace OOSD_CS_PROJ
             ProdSupplier prodSup; // reference to new ProdSupplier object
 
             //
-            InitSQL();
+            DBCall.InitSQL();
 
-            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(DBCall.builder.ConnectionString))
             {
                 // create select command
                 string selectString = "SELECT ProductSupplierId, ProductId, SupplierId FROM Products_Suppliers";
@@ -75,9 +75,9 @@ Author: Helen Lin */
         //returns the auto-generated ID of the new Package
         {
             //using package db to initialize connection
-            InitSQL();
+            DBCall.InitSQL();
 
-            using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
+            using (SqlConnection conn = new SqlConnection(DBCall.builder.ConnectionString))
             {
                 string insertStatement = "INSERT INTO Packages(ProductId, SupplierId) VALUES(@ProductId, @SupplierId)";
 
@@ -115,7 +115,7 @@ Author: Helen Lin */
         public static bool UpdateProdSupplier(ProdSupplier newProSup, ProdSupplier oldProSup)
         {
             bool ProdsSupplier = false;
-            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(DBCall.builder.ConnectionString))
             {
                 string updateStatement = "UPDATE Products_Suppliers " +
                                      "SET SupplierId = @NewSupplierId, " +

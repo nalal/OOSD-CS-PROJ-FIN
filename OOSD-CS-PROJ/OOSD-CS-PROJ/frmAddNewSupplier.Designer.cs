@@ -69,18 +69,20 @@
             // 
             // btnAddSup
             // 
+            this.btnAddSup.BackColor = System.Drawing.Color.PaleGreen;
             this.btnAddSup.Location = new System.Drawing.Point(253, 180);
             this.btnAddSup.Name = "btnAddSup";
-            this.btnAddSup.Size = new System.Drawing.Size(89, 60);
+            this.btnAddSup.Size = new System.Drawing.Size(128, 78);
             this.btnAddSup.TabIndex = 5;
             this.btnAddSup.Text = "Add New  Supplier";
-            this.btnAddSup.UseVisualStyleBackColor = true;
+            this.btnAddSup.UseVisualStyleBackColor = false;
             this.btnAddSup.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmAddNewSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(383, 264);
             this.Controls.Add(this.btnAddSup);
             this.Controls.Add(this.txtSupName);

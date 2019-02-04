@@ -11,13 +11,13 @@ namespace OOSD_CS_PROJ
     class ProductsDB
     {
         // connecting to the DB
-        public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-        public static void InitSQL()
-        {
-            builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";
-            builder.IntegratedSecurity = true;
-            builder.InitialCatalog = "TravelExperts";
-        }
+        //public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+        //public static void InitSQL()
+        //{
+        //    builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";
+        //    builder.IntegratedSecurity = true;
+        //    builder.InitialCatalog = "TravelExperts";
+        //}
         // creating list of instances of the ProdSuppliers class
         public static List<Product> GetProducts()
         {
@@ -26,9 +26,9 @@ namespace OOSD_CS_PROJ
             Product prod; // reference to new Product object
 
             //
-            InitSQL();
+            DBCall.InitSQL();
 
-            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(DBCall.builder.ConnectionString))
             {
                 // create select command
                 string selectString = "SELECT ProductId, ProdName FROM Products";
@@ -70,7 +70,7 @@ namespace OOSD_CS_PROJ
         {
             PackageDB.InitSQL(); //use the database connection from PackageDB
 
-            using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
+            using (SqlConnection conn = new SqlConnection(DBCall.builder.ConnectionString))
             {
                 string insertStatement = "INSERT INTO Products(ProductId, ProdName)" + "VALUES(@ProductId, @ProdName)";
 
@@ -105,7 +105,7 @@ namespace OOSD_CS_PROJ
         public static bool UpdateProducts(Product newProd, Product oldProd)
         {
             bool Product = false;
-            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(DBCall.builder.ConnectionString))
             {
                 string updateProducts = "UPDATE Products " +
                                      "SET ProdName = @NewProdName " +
