@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -129,7 +130,51 @@ namespace OOSD_CS_PROJ
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
         }
+//This modifies Package Base price textbox so that we only allow digits and two digits after decimals
+        private void txtPkgBasePrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Don't allow other key presses
+            if (!char.IsControl(e.KeyChar)
+        && !char.IsDigit(e.KeyChar)
+        && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
 
-        
+            // only allow one decimal point 
+            if (e.KeyChar == '.'
+                && (sender as TextBox).Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+            //Only allow two digits after decimal 
+            if (Regex.IsMatch(txtPkgBasePrice.Text, @"\.\d\d") && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+//This modifies Agency Comission textbox so that we only allow digits and two digits after decimals
+        private void txtPkgAgencyCommission_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Don't allow other key presses
+            if (!char.IsControl(e.KeyChar)
+            && !char.IsDigit(e.KeyChar)
+            && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point 
+            if (e.KeyChar == '.'
+                && (sender as TextBox).Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+            //Only allow two digits after decimal 
+            if (Regex.IsMatch(txtPkgAgencyCommission.Text, @"\.\d\d") && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

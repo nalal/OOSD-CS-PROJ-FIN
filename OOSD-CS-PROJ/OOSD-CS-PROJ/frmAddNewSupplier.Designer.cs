@@ -40,7 +40,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(40, 129);
+            this.label1.Location = new System.Drawing.Point(59, 129);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(145, 29);
             this.label1.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(40, 221);
+            this.label2.Location = new System.Drawing.Point(17, 221);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(187, 29);
             this.label2.TabIndex = 1;
@@ -59,7 +59,7 @@
             // txtSupId
             // 
             this.txtSupId.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSupId.Location = new System.Drawing.Point(265, 127);
+            this.txtSupId.Location = new System.Drawing.Point(262, 127);
             this.txtSupId.Name = "txtSupId";
             this.txtSupId.Size = new System.Drawing.Size(149, 31);
             this.txtSupId.TabIndex = 2;
@@ -67,7 +67,7 @@
             // txtSupName
             // 
             this.txtSupName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSupName.Location = new System.Drawing.Point(265, 221);
+            this.txtSupName.Location = new System.Drawing.Point(262, 221);
             this.txtSupName.Name = "txtSupName";
             this.txtSupName.Size = new System.Drawing.Size(149, 31);
             this.txtSupName.TabIndex = 3;
