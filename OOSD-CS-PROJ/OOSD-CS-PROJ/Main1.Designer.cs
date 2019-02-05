@@ -249,7 +249,7 @@
             // 
             // txtDesc
             // 
-            this.txtDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDesc.Location = new System.Drawing.Point(339, 434);
             this.txtDesc.Margin = new System.Windows.Forms.Padding(2);
             this.txtDesc.Multiline = true;
@@ -344,7 +344,7 @@
             this.cBName.FormattingEnabled = true;
             this.cBName.Location = new System.Drawing.Point(339, 272);
             this.cBName.Name = "cBName";
-            this.cBName.Size = new System.Drawing.Size(121, 33);
+            this.cBName.Size = new System.Drawing.Size(214, 33);
             this.cBName.TabIndex = 55;
             this.cBName.SelectedIndexChanged += new System.EventHandler(this.cBPkgName_SelectedIndexChanged);
             // 
@@ -462,7 +462,7 @@
             this.cbProdID.FormattingEnabled = true;
             this.cbProdID.Location = new System.Drawing.Point(339, 271);
             this.cbProdID.Name = "cbProdID";
-            this.cbProdID.Size = new System.Drawing.Size(121, 33);
+            this.cbProdID.Size = new System.Drawing.Size(247, 33);
             this.cbProdID.TabIndex = 69;
             // 
             // cbSupID
@@ -471,7 +471,7 @@
             this.cbSupID.FormattingEnabled = true;
             this.cbSupID.Location = new System.Drawing.Point(339, 329);
             this.cbSupID.Name = "cbSupID";
-            this.cbSupID.Size = new System.Drawing.Size(121, 33);
+            this.cbSupID.Size = new System.Drawing.Size(247, 33);
             this.cbSupID.TabIndex = 70;
             // 
             // btnAddNew
@@ -513,7 +513,6 @@
             this.ClientSize = new System.Drawing.Size(1172, 670);
             this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.cbSupID);
-            this.Controls.Add(this.cbProdID);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.panel1);
@@ -539,6 +538,7 @@
             this.Controls.Add(this.txtBasePrice);
             this.Controls.Add(this.lblAgencyComm);
             this.Controls.Add(this.txtAgencyComm);
+            this.Controls.Add(this.cbProdID);
             this.Name = "Main1";
             this.Text = "Main1";
             this.Load += new System.EventHandler(this.Main1_Load);

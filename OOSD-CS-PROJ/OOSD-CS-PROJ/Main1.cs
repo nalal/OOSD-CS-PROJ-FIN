@@ -91,8 +91,8 @@ namespace OOSD_CS_PROJ
             // return list of packages created in GetProducts()
             List<Product> productList = ProductsDB.GetProducts();
 
-            if(btnUpdateClicked)
-            {
+            //if(btnUpdateClicked)
+            //{
                 // adding product names to the CBName (combo box)
                 var productLinq = from prod in productList
                                   select new
@@ -104,9 +104,9 @@ namespace OOSD_CS_PROJ
                 {
                     cBName.Items.Add(item.ProdName);
                 }
-            }
-            else
-            {
+           // }
+           // else
+           // {
                 //// adding product names to the CBName (combo box)
                 //var productLinq = from prod in productList
                 //                  select new
@@ -122,7 +122,7 @@ namespace OOSD_CS_PROJ
                 cbProdID.DataSource = productList;
                 cbProdID.DisplayMember = "ProdName";
                 cbProdID.ValueMember = "ProductId";
-            }
+           // }
         }
 
         // populate drop down with names of sup objects from the Suppliers list
@@ -130,8 +130,8 @@ namespace OOSD_CS_PROJ
         {
             // return list of suppliers created in GetSuppliers()
             List<Supplier> supplierList = SuppliersDB.GetSuppliers();
-            if (btnUpdateClicked)
-            {
+            //if (btnUpdateClicked)
+           // {
                 // adding supplier names to the CBName (combo box)
                 var supplierLinq = from sup in supplierList
                                    select new
@@ -143,9 +143,9 @@ namespace OOSD_CS_PROJ
                 {
                     cBName.Items.Add(item.SupName);
                 }
-            }
-            else
-            {
+           // }
+           // else
+           // {
                 //// adding supplier names to the CBName (combo box)
                 //var supplierLinq = from sup in supplierList
                 //                   select new
@@ -162,7 +162,7 @@ namespace OOSD_CS_PROJ
                 cbSupID.DataSource = supplierList;
                 cbSupID.DisplayMember = "SupName";
                 cbSupID.ValueMember = "SupplierId";
-            }
+            //}
         }
 
         // populate drop down with names of sup objects from the Suppliers list
@@ -222,6 +222,11 @@ namespace OOSD_CS_PROJ
                                 select selectedsup).First();
 
                     txtID.Text = sup.SupplierId.ToString();
+
+                    //Maryam
+                    SingleSup = new Supplier();
+                    SingleSup.SupplierId = Convert.ToInt32(txtID.Text);
+                    SingleSup.SupName = cBName.Text;
                 }
             }
 
@@ -252,32 +257,53 @@ namespace OOSD_CS_PROJ
                 }
             }
 
-            //Maryam
-            SingleSup = new Supplier();
-            SingleSup.SupplierId = Convert.ToInt32(txtID.Text);
-            SingleSup.SupName = cBName.Text;
+            
         }
 
         // when name combo box (ddl) is used to select an object from the list
         private void cBID_SelectedIndexChanged(object sender, EventArgs e)
         {
             // return list of packages created in GetProdSuppliers()
-            List<ProdSupplier> prodSupplierList = ProdSuppliersDB.GetProdSuppliers();
+            //List<ProdSupplier> prodSupplierList = ProdSuppliersDB.GetProdSuppliers();
 
-            // if a selection is made from the combo box
-            if (cBID.SelectedIndex != -1)
+            //// if a selection is made from the combo box
+            //if (cBID.SelectedIndex != -1)
+            //{
+            //    // display information about the selected product supplier
+            //    var prodSup = from selectedprodSup in prodSupplierList where
+            //                    selectedprodSup.ProductSupplierId == Convert.ToInt32(cBID.Text)
+            //                    select new
+            //                    {
+            //                        selectedprodSup.ProductId,
+            //                        selectedprodSup.ProdName,
+            //                        selectedprodSup.SupplierId,
+            //                        selectedprodSup.SupName
+
+            //                    };
+
+            //    //return list of packages created in GetSuppliers()
+
+            if (btnProdSupClicked && cBID.SelectedIndex != -1)
             {
-                // display information about the selected product supplier
-                var prodSup = (from selectedprodSup in prodSupplierList where
-                                selectedprodSup.ProductSupplierId == Convert.ToInt32(cBID.Text)
-                                select selectedprodSup).First();
+                int yolo = Convert.ToInt32(cBID.Text);
+                if (yolo != Convert.ToInt32(null))
+                {
+                    ProdSupplier prodSupplier = ProdSuppliersDB.GetProdSuppliersOBJECT(yolo);
 
-                txtProdID.Text = prodSup.ProductId.ToString();
-                txtSupID.Text = prodSup.SupplierId.ToString();
+                    cbProdID.Text = prodSupplier.ProdName.ToString();
+                    cbSupID.Text = prodSupplier.SupName.ToString();
 
-                //Maryam
-                SingleProdSup = prodSup;
+
+                    //cbProdID.Text = prodSup.ProdName.ToString();
+                    //cbSupID.Text = prodSup.SupName.ToString();
+
+                    //Maryam
+                    //SingleProdSup = prodSup;
+                    SingleProdSup = prodSupplier;
+                    //}
+                }
             }
+
 
         }
 
@@ -290,8 +316,10 @@ namespace OOSD_CS_PROJ
             cBID.SelectedIndex = -1;
             cBID.Items.Clear();
             cbProdID.SelectedIndex = -1;
+            cbProdID.DataSource = null;
             cbProdID.Items.Clear();
             cbSupID.SelectedIndex = -1;
+            cbSupID.DataSource = null;
             cbSupID.Items.Clear();
             dTPStartDate.Text = "";
             dTPEndDate.Text = "";
@@ -436,10 +464,14 @@ namespace OOSD_CS_PROJ
             lblID.Text = "Prod Sup Name:";
             txtID.Visible = false;
             cBID.Visible = true;
-            txtProdID.Visible = true;
+            cbProdID.Visible = true;
+            cbProdID.Enabled = false;
+           // txtProdID.Visible = true;
             cBName.Visible = false;
             lblName.Text = "Product Name:";
-            txtSupID.Visible = true;
+            cbSupID.Visible = true;
+            cbSupID.Enabled = false;
+            //txtSupID.Visible = true;
             lblStartDate.Visible = true;
             lblStartDate.Text = "  Supplier Name:";
             dTPStartDate.Visible = false;
@@ -563,7 +595,9 @@ namespace OOSD_CS_PROJ
             if (btnProdSupClicked)
             {
                 cbProdID.Visible = true;
+                cbProdID.Enabled = true;
                 cbSupID.Visible = true;
+                cbSupID.Enabled = true;
 
                 PopulateProducts();
                 PopulateSuppliers();
@@ -619,8 +653,8 @@ namespace OOSD_CS_PROJ
             if (btnProdSupClicked)// this does not work yet
             {
                 //Validating Product-Supplier table
-                if (Validator1.IsProvided(txtProdID, "Product Id") &&
-                    Validator1.IsProvided(txtSupID, "Supplier Id"))
+                if (Validator1.IsProvidedCombo(cbProdID, "Product Id") &&
+                    Validator1.IsProvidedCombo(cbSupID, "Supplier Id"))
                 {
                     ProdSupplier newProdSupplier = new ProdSupplier();
                     newProdSupplier.ProductId = Convert.ToInt32(cbProdID.SelectedValue);

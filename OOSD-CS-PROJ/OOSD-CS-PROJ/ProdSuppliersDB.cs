@@ -23,7 +23,10 @@ namespace OOSD_CS_PROJ
             using (SqlConnection connection = new SqlConnection(DBCall.builder.ConnectionString))
             {
                 // create select command
-                string selectString = "SELECT ProductSupplierId, ProductId, SupplierId FROM Products_Suppliers";
+                string selectString = "SELECT ProductSupplierId, ps.ProductId, ps.SupplierId, ProdName, SupName " +
+                    "FROM Products_Suppliers ps " +
+                    "join Products p on ps.ProductId = p.ProductId " +
+                    "join Suppliers s on ps.SupplierId = s.SupplierId";
 
                 // selects records from data source based on connection and string
                 SqlCommand selectCommand = new SqlCommand(selectString, connection);
@@ -40,6 +43,8 @@ namespace OOSD_CS_PROJ
                         prodSup.ProductSupplierId = Convert.ToInt32(reader["ProductSupplierId"]);
                         prodSup.ProductId = Convert.ToInt32(reader["ProductId"]);
                         prodSup.SupplierId = Convert.ToInt32(reader["SupplierId"]);
+                        prodSup.ProdName = (reader["ProdName"]).ToString();
+                        prodSup.SupName = (reader["SupName"]).ToString();
                         ProdSuppliers.Add(prodSup);
                     }
                     reader.Close();
@@ -57,8 +62,65 @@ namespace OOSD_CS_PROJ
                 return ProdSuppliers;
             }
         }
-/*Add new Product Supplier to the list
-Author: Helen Lin */
+
+
+        public static ProdSupplier GetProdSuppliersOBJECT(int yolo)
+        {
+            // create new list of ProdSuppliers
+            //List<ProdSupplier> ProdSuppliers = new List<ProdSupplier>(); // make an empty list
+            ProdSupplier prodSup = null; // reference to new ProdSupplier object
+
+            //
+            DBCall.InitSQL();
+
+            using (SqlConnection connection = new SqlConnection(DBCall.builder.ConnectionString))
+            {
+                // create select command
+                string selectString = "SELECT ProductSupplierId, ps.ProductId, ps.SupplierId, ProdName, SupName " +
+                    "FROM Products_Suppliers ps " +
+                    "join Products p on ps.ProductId = p.ProductId " +
+                    "join Suppliers s on ps.SupplierId = s.SupplierId " +
+                    "where ProductSupplierId = @ProductSupplierId";
+
+                // selects records from data source based on connection and string
+                SqlCommand selectCommand = new SqlCommand(selectString, connection);
+                selectCommand.Parameters.AddWithValue("ProductSupplierId", yolo);
+                try
+                {
+                    // open connection
+                    connection.Open();
+                    // run the select command and process the results adding ProdSuppliers to the list
+                    SqlDataReader reader = selectCommand.ExecuteReader();
+                    while (reader.Read())// process next row
+                    {
+                        // create ProdSupplier objects to populate list
+                        prodSup = new ProdSupplier();
+                        prodSup.ProductSupplierId = Convert.ToInt32(reader["ProductSupplierId"]);
+                        prodSup.ProductId = Convert.ToInt32(reader["ProductId"]);
+                        prodSup.SupplierId = Convert.ToInt32(reader["SupplierId"]);
+                        prodSup.ProdName = (reader["ProdName"]).ToString();
+                        prodSup.SupName = (reader["SupName"]).ToString();
+                    }
+                    reader.Close();
+                }
+                // general exception
+                catch (Exception ex)
+                {
+                    throw ex; // throw it to the form to handle
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+            // return list of ProdSuppliers
+            return prodSup;
+        }
+
+
+
+        /*Add new Product Supplier to the list
+        Author: Helen Lin */
 
         public static void AddNewProdSupplier(ProdSupplier newProductSupplier)
         //returns the auto-generated ID of the new Package
