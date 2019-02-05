@@ -34,6 +34,8 @@ namespace TravelExpertsASP
                      
                     string cryptPassword = EncryptDB.Encrypt(txtCustPassword.Text);
 
+                    Console.WriteLine(cryptPassword);
+
                     string checkPassword = "SELECT CustPassword FROM Customers WHERE CustPassword='" + cryptPassword + "'";
                     SqlCommand passCmd = new SqlCommand(checkPassword, conn);
                     string password = passCmd.ExecuteScalar().ToString().Replace(" ", "");

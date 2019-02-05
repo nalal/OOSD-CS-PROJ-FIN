@@ -62,7 +62,7 @@ namespace TravelExpertsASP
                 Customer cust = new Customer(txtCustFirstName.Text, txtCustLastName.Text, txtCustAddress.Text,
                                         txtCustCity.Text, ddlCustProv.SelectedValue.ToString(), txtCustPostal.Text,
                                         ddlCustCountry.SelectedValue.ToString(), txtCustHomePhone.Text, txtCustBusPhone.Text,
-                                        txtCustEmail.Text, txtCustUserName.Text, cryptPassword);
+                                        txtCustEmail.Text, txtCustUserName.Text, cryptPassword.ToString().Trim());
 
                 SqlConnection conn = TravelExperts1DB.GetConnection();
                 try
