@@ -34,6 +34,7 @@ namespace OOSD_CS_PROJ
 
         //populate combo boxes so there is a supplierID and product ID to choose from 
         //Populate the Product list with products from the database
+        //Populate the Supplier list with supplier from the database
         private void FillComboBoxes()
         {
 

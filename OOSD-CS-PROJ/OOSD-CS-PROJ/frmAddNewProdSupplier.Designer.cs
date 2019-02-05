@@ -41,82 +41,89 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 104);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(21, 126);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 13);
+            this.label1.Size = new System.Drawing.Size(234, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ProductSupplierId: ";
+            this.label1.Text = "Product Supplier ID: ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 160);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(20, 231);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.Size = new System.Drawing.Size(137, 29);
             this.label2.TabIndex = 1;
-            this.label2.Text = "ProductId: ";
+            this.label2.Text = "Product ID: ";
             // 
             // txtProdSupId
             // 
-            this.txtProdSupId.Location = new System.Drawing.Point(142, 101);
+            this.txtProdSupId.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProdSupId.Location = new System.Drawing.Point(298, 126);
             this.txtProdSupId.Name = "txtProdSupId";
             this.txtProdSupId.ReadOnly = true;
-            this.txtProdSupId.Size = new System.Drawing.Size(100, 20);
+            this.txtProdSupId.Size = new System.Drawing.Size(138, 31);
             this.txtProdSupId.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 220);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(21, 342);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.Size = new System.Drawing.Size(145, 29);
             this.label3.TabIndex = 4;
-            this.label3.Text = "SupplierId: ";
+            this.label3.Text = "Supplier ID: ";
             // 
             // btnSaveProdSup
             // 
             this.btnSaveProdSup.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnSaveProdSup.Location = new System.Drawing.Point(333, 220);
+            this.btnSaveProdSup.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveProdSup.Location = new System.Drawing.Point(487, 410);
             this.btnSaveProdSup.Name = "btnSaveProdSup";
-            this.btnSaveProdSup.Size = new System.Drawing.Size(105, 66);
+            this.btnSaveProdSup.Size = new System.Drawing.Size(144, 102);
             this.btnSaveProdSup.TabIndex = 6;
-            this.btnSaveProdSup.Text = "Save New Product Supplier";
+            this.btnSaveProdSup.Text = "S&ave New Product Supplier";
             this.btnSaveProdSup.UseVisualStyleBackColor = false;
             this.btnSaveProdSup.Click += new System.EventHandler(this.btnSaveProdSup_Click_1);
             // 
             // cboProdID
             // 
+            this.cboProdID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboProdID.FormattingEnabled = true;
-            this.cboProdID.Location = new System.Drawing.Point(142, 157);
+            this.cboProdID.Location = new System.Drawing.Point(298, 231);
             this.cboProdID.Name = "cboProdID";
-            this.cboProdID.Size = new System.Drawing.Size(121, 21);
+            this.cboProdID.Size = new System.Drawing.Size(138, 33);
             this.cboProdID.TabIndex = 7;
             // 
             // cboSupID
             // 
+            this.cboSupID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSupID.FormattingEnabled = true;
-            this.cboSupID.Location = new System.Drawing.Point(142, 217);
+            this.cboSupID.Location = new System.Drawing.Point(298, 342);
             this.cboSupID.Name = "cboSupID";
-            this.cboSupID.Size = new System.Drawing.Size(121, 21);
+            this.cboSupID.Size = new System.Drawing.Size(138, 33);
             this.cboSupID.TabIndex = 8;
             // 
             // lblDetails
             // 
             this.lblDetails.AutoSize = true;
-            this.lblDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetails.Location = new System.Drawing.Point(18, 21);
+            this.lblDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetails.Location = new System.Drawing.Point(143, 32);
             this.lblDetails.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDetails.Name = "lblDetails";
-            this.lblDetails.Size = new System.Drawing.Size(233, 25);
+            this.lblDetails.Size = new System.Drawing.Size(321, 37);
             this.lblDetails.TabIndex = 45;
-            this.lblDetails.Text = "Add a Product Supplier";
+            this.lblDetails.Text = "Add Product Supplier";
             // 
             // frmAddNewProdSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(505, 342);
+            this.ClientSize = new System.Drawing.Size(682, 541);
             this.Controls.Add(this.lblDetails);
             this.Controls.Add(this.cboSupID);
             this.Controls.Add(this.cboProdID);
