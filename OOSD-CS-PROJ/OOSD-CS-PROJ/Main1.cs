@@ -623,9 +623,7 @@ namespace OOSD_CS_PROJ
                 if (Validator1.IsProvidedCombo(cBName, "Package Name") &&
                     Validator1.IsProvided(txtDesc, "Describtion") &&
                     Validator1.IsProvided(txtBasePrice, "Base Price") &&
-                    Validator1.IsProvided(txtAgencyComm, "Agency Commission") &&
-                    Validator1.IsNonNegativeDecimal(txtAgencyComm, "Agency Commission") &&
-                    Validator1.IsNonNegativeDecimal(txtBasePrice, "Base Price"))
+                    Validator1.IsProvided(txtAgencyComm, "Agency Commission"))
                 {
 
                     Package NewPackage = new Package();
@@ -638,7 +636,7 @@ namespace OOSD_CS_PROJ
                     }
 
                     //Agency commission cannot be greater then base price
-                    else if (Convert.ToDecimal(txtBasePrice.Text) < Convert.ToDecimal(txtAgencyComm.Text))
+                    else if (Convert.ToDecimal(txtBasePrice.Text.Replace("$", "")) < (Convert.ToDecimal(txtAgencyComm.Text.Replace("$", ""))))
                     {
                         MessageBox.Show("Agency Comission cannot be more than Package Base price!");
                     }
@@ -647,8 +645,8 @@ namespace OOSD_CS_PROJ
                         NewPackage.PkgStartDate = dTPStartDate.Value.ToString("yyyy-MM-dd");
                         NewPackage.PkgEndDate = dTPEndDate.Value.ToString("yyyy-MM-dd");
                         NewPackage.PkgDesc = txtDesc.Text;
-                        NewPackage.PkgBasePrice = Convert.ToDecimal(txtBasePrice.Text);
-                        NewPackage.PkgAgencyCommission = Convert.ToDecimal(txtAgencyComm.Text);
+                        NewPackage.PkgBasePrice = Convert.ToDecimal(txtBasePrice.Text.Replace("$", ""));
+                        NewPackage.PkgAgencyCommission = Convert.ToDecimal(txtAgencyComm.Text.Replace("$", ""));
 
                         updated = PackageDB.UpdatePackage(NewPackage, SinglePkg);
                     }

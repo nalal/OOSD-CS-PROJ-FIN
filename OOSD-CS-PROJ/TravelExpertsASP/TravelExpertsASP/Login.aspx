@@ -4,9 +4,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link href="Styles/Main.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/popper.min.js"></script>
+  <%--  <link href="Styles/Main.css" rel="stylesheet" />--%>
     <title></title>
-    <style type="text/css">
+   <%-- <style type="text/css">
         .auto-style1 {
             width: 212px;
         }
@@ -35,7 +39,7 @@
             margin-bottom: 1rem;
             background-color: transparent;
         }
-    </style>
+    </style>--%>
 </head>
 <body>
     
@@ -45,7 +49,7 @@
 
     <form id="form1" runat="server">
         <header>
-            <div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+            <%--<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
       <div class="container">
         <a href="../" class="navbar-brand">Bootswatch</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -109,11 +113,10 @@
 
         </div>
       </div>
-    </div>
-        <%--<%--<%--    <%--<div class="container">
-                <img src="Images/l2.png" alt="logo" class="img-responsive" />--%>
-                <%--<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="#">Navbar</a>
+   <%-- </div>--%>
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Travel Experts</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -133,21 +136,33 @@
         <a class="nav-link" href="#">About</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-    </form>
+   <%-- <form class="form-inline my-2 my-lg-0">--%>
+    
+    <%--</form>--%>
   </div>
-</nav>--%>
-                <%--<nav>
+</nav>
+
+            <%--<div class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <div class="container">
+                    
+                    <a href="../" class="navbar-brand">TravelExperts</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+   
+               <nav>
+                   <div class="collapse navbar-collapse" id="navbarColor01">
                     <ul>
                         <li><a href="http://localhost:61652/Login.aspx">Log In</a></li>
                         <li><a href="http://localhost:61652/Register.aspx">Register</a></li>
                         <li><a href="http://localhost:61652/User.aspx">Account</a></li>
                         <li><a href="http://localhost:61652/Login.aspx">Logout</a></li>
                     </ul>
+                       </div>
                 </nav>--%>
-           <%-- </div>--%>
+                   <%--  </div>
+      </div>
+          --%>
         </header>
         </br>
         </br>
