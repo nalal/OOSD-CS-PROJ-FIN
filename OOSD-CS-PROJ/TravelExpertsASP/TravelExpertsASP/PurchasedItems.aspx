@@ -4,12 +4,25 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link href="Styles/Main.css" rel="stylesheet" />
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            Purchased Items<br />
+        <header>
+            <div class="container">
+                <img src="Images/l2.png" alt="logo" class="img-responsive" />
+                <nav>
+                    <ul>
+                        <li><a href="http://localhost:61652/Login.aspx">Log In</a></li>
+                        <li><a href="http://localhost:61652/Register.aspx">Register</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="container">
+            <h5 class="label">
+            Purchased Items<br /></h5>
             <br />
             <asp:DataList ID="dlAcctDetails" runat="server" BorderStyle="Dotted">
                 <ItemTemplate>

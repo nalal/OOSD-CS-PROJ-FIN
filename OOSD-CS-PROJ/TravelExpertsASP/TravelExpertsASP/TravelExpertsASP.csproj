@@ -78,6 +78,13 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Images\17993704494_f30b2feb68_b.jpg" />
+    <Content Include="Images\c.jpg" />
+    <Content Include="Images\e.jpg" />
+    <Content Include="Images\j.jpg" />
+    <Content Include="Images\j1.jpg" />
+    <Content Include="Images\j3.jpg" />
+    <Content Include="Images\p.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="PurchasedItems.aspx" />
     <Content Include="Register.aspx" />
@@ -116,6 +123,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Styles\Main.css" />
     <Content Include="User.aspx" />
     <Content Include="UserAccountDetails.aspx" />
     <Content Include="Web.config">
