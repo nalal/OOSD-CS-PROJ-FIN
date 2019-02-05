@@ -65,6 +65,9 @@ nav {
             width: 100%;
         }
 
+        .bold{
+            font:bold;
+        }
 .textbox{
     margin-left:40%;
 }
