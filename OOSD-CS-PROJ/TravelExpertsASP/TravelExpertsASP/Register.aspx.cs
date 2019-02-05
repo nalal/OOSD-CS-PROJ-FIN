@@ -6,6 +6,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TravelExpertsASP.Models;
+using System.IO;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace TravelExpertsASP
 {
@@ -52,10 +55,14 @@ namespace TravelExpertsASP
 
             if (Page.IsValid && UserNameChecked)
             {
+                string cryptPassword = EncryptDB.Encrypt(txtCustPassword.Text);
+
+             
+
                 Customer cust = new Customer(txtCustFirstName.Text, txtCustLastName.Text, txtCustAddress.Text,
                                         txtCustCity.Text, ddlCustProv.SelectedValue.ToString(), txtCustPostal.Text,
                                         ddlCustCountry.SelectedValue.ToString(), txtCustHomePhone.Text, txtCustBusPhone.Text,
-                                        txtCustEmail.Text, txtCustUserName.Text, txtCustPassword.Text);
+                                        txtCustEmail.Text, txtCustUserName.Text, cryptPassword.ToString().Trim());
 
                 SqlConnection conn = TravelExperts1DB.GetConnection();
                 try
