@@ -249,8 +249,8 @@ namespace OOSD_CS_PROJ
                     dTPStartDate.Value = Convert.ToDateTime(pkg.PkgStartDate);
                     dTPEndDate.Value = Convert.ToDateTime(pkg.PkgEndDate);
                     txtDesc.Text = pkg.PkgDesc;
-                    txtBasePrice.Text = pkg.PkgBasePrice.ToString();
-                    txtAgencyComm.Text = pkg.PkgAgencyCommission.ToString();
+                    txtBasePrice.Text = pkg.PkgBasePrice.ToString("c");
+                    txtAgencyComm.Text = pkg.PkgAgencyCommission.ToString("c");
 
                     //Maryam
                     SinglePkg = pkg;
@@ -285,10 +285,10 @@ namespace OOSD_CS_PROJ
 
             if (btnProdSupClicked && cBID.SelectedIndex != -1)
             {
-                int yolo = Convert.ToInt32(cBID.Text);
-                if (yolo != Convert.ToInt32(null))
+                int temp = Convert.ToInt32(cBID.Text);
+                if (temp != Convert.ToInt32(null))
                 {
-                    ProdSupplier prodSupplier = ProdSuppliersDB.GetProdSuppliersOBJECT(yolo);
+                    ProdSupplier prodSupplier = ProdSuppliersDB.GetProdSuppliersOBJECT(temp);
 
                     cbProdID.Text = prodSupplier.ProdName.ToString();
                     cbSupID.Text = prodSupplier.SupName.ToString();
