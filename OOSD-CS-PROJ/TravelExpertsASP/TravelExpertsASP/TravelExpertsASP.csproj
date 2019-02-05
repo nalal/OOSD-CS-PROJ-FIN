@@ -139,7 +139,7 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\CustomersDB.cs" />
-	<Compile Include="Models\EncryptDB.cs" />
+    <Compile Include="Models\EncryptDB.cs" />
     <Compile Include="Models\PurchasedItem.cs" />
     <Compile Include="Models\PurchasedItemsDB.cs" />
     <Compile Include="Models\TravelExperts1DB.cs" />
