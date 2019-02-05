@@ -65,6 +65,7 @@
             this.lblSearchFor = new System.Windows.Forms.Label();
             this.packages_Products_SuppliersTableAdapter1 = new OOSD_CS_PROJ.TravelExpertsDataSetTableAdapters.Packages_Products_SuppliersTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -73,7 +74,6 @@
             this.btnAddNew = new System.Windows.Forms.Button();
             this.productsSuppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.products_SuppliersTableAdapter = new OOSD_CS_PROJ.TravelExpertsDataSetTableAdapters.Products_SuppliersTableAdapter();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.packagesBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSet)).BeginInit();
@@ -82,8 +82,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.packagesBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.packagesBindingSource3)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productsSuppliersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsSuppliersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPrdctSupps
@@ -344,7 +344,7 @@
             this.cBName.FormattingEnabled = true;
             this.cBName.Location = new System.Drawing.Point(339, 272);
             this.cBName.Name = "cBName";
-            this.cBName.Size = new System.Drawing.Size(214, 33);
+            this.cBName.Size = new System.Drawing.Size(247, 33);
             this.cBName.TabIndex = 55;
             this.cBName.SelectedIndexChanged += new System.EventHandler(this.cBPkgName_SelectedIndexChanged);
             // 
@@ -418,6 +418,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1177, 147);
             this.panel1.TabIndex = 62;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::OOSD_CS_PROJ.Properties.Resources.THEFINALLOGO;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(160, 147);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 56;
+            this.pictureBox2.TabStop = false;
             // 
             // lblHeader
             // 
@@ -495,16 +505,6 @@
             // 
             this.products_SuppliersTableAdapter.ClearBeforeFill = true;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::OOSD_CS_PROJ.Properties.Resources.THEFINALLOGO;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(160, 147);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 56;
-            this.pictureBox2.TabStop = false;
-            // 
             // Main1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -551,8 +551,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.packagesBindingSource3)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productsSuppliersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsSuppliersBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
