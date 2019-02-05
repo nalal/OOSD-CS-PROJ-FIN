@@ -33,12 +33,13 @@
             this.txtSupId = new System.Windows.Forms.TextBox();
             this.txtSupName = new System.Windows.Forms.TextBox();
             this.btnAddSup = new System.Windows.Forms.Button();
+            this.lblDetails = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 69);
+            this.label1.Location = new System.Drawing.Point(30, 98);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 0;
@@ -47,7 +48,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 148);
+            this.label2.Location = new System.Drawing.Point(33, 177);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 1;
@@ -55,14 +56,14 @@
             // 
             // txtSupId
             // 
-            this.txtSupId.Location = new System.Drawing.Point(117, 69);
+            this.txtSupId.Location = new System.Drawing.Point(113, 98);
             this.txtSupId.Name = "txtSupId";
             this.txtSupId.Size = new System.Drawing.Size(100, 20);
             this.txtSupId.TabIndex = 2;
             // 
             // txtSupName
             // 
-            this.txtSupName.Location = new System.Drawing.Point(117, 140);
+            this.txtSupName.Location = new System.Drawing.Point(113, 169);
             this.txtSupName.Name = "txtSupName";
             this.txtSupName.Size = new System.Drawing.Size(100, 20);
             this.txtSupName.TabIndex = 3;
@@ -70,20 +71,32 @@
             // btnAddSup
             // 
             this.btnAddSup.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnAddSup.Location = new System.Drawing.Point(253, 169);
+            this.btnAddSup.Location = new System.Drawing.Point(328, 234);
             this.btnAddSup.Name = "btnAddSup";
-            this.btnAddSup.Size = new System.Drawing.Size(92, 67);
+            this.btnAddSup.Size = new System.Drawing.Size(105, 66);
             this.btnAddSup.TabIndex = 5;
             this.btnAddSup.Text = "Add New  Supplier";
             this.btnAddSup.UseVisualStyleBackColor = false;
             this.btnAddSup.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lblDetails
+            // 
+            this.lblDetails.AutoSize = true;
+            this.lblDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetails.Location = new System.Drawing.Point(18, 21);
+            this.lblDetails.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDetails.Name = "lblDetails";
+            this.lblDetails.Size = new System.Drawing.Size(153, 25);
+            this.lblDetails.TabIndex = 45;
+            this.lblDetails.Text = "Add a Supplier";
             // 
             // frmAddNewSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(383, 264);
+            this.ClientSize = new System.Drawing.Size(505, 342);
+            this.Controls.Add(this.lblDetails);
             this.Controls.Add(this.btnAddSup);
             this.Controls.Add(this.txtSupName);
             this.Controls.Add(this.txtSupId);
@@ -104,5 +117,6 @@
         private System.Windows.Forms.TextBox txtSupId;
         private System.Windows.Forms.TextBox txtSupName;
         private System.Windows.Forms.Button btnAddSup;
+        private System.Windows.Forms.Label lblDetails;
     }
 }

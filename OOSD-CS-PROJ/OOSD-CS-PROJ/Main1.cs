@@ -50,6 +50,8 @@ namespace OOSD_CS_PROJ
 
         private void Main1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'travelExpertsDataSet.Products_Suppliers' table. You can move, or remove it, as needed.
+            //this.products_SuppliersTableAdapter.Fill(this.travelExpertsDataSet.Products_Suppliers);
             // populate drop down with names of pkg objects from the Packages list
             PopulatePackages();
 
@@ -105,17 +107,21 @@ namespace OOSD_CS_PROJ
             }
             else
             {
-                // adding product names to the CBName (combo box)
-                var productLinq = from prod in productList
-                                  select new
-                                  {
-                                      prod.ProductId
-                                  };
+                //// adding product names to the CBName (combo box)
+                //var productLinq = from prod in productList
+                //                  select new
+                //                  {
+                //                      prod.ProductId
+                //                  };
 
-                foreach (var item in productLinq)
-                {
-                    cbProdID.Items.Add(item.ProductId);
-                }
+                //foreach (var item in productLinq)
+                //{
+                //    cbProdID.Items.Add(item.ProductId);
+                //}
+
+                cbProdID.DataSource = productList;
+                cbProdID.DisplayMember = "ProdName";
+                cbProdID.ValueMember = "ProductId";
             }
         }
 
@@ -140,18 +146,22 @@ namespace OOSD_CS_PROJ
             }
             else
             {
-                // adding supplier names to the CBName (combo box)
-                var supplierLinq = from sup in supplierList
-                                   select new
-                                   {
-                                       sup.SupplierId
-                                   };
+                //// adding supplier names to the CBName (combo box)
+                //var supplierLinq = from sup in supplierList
+                //                   select new
+                //                   {
+                //                       sup.SupplierId
+                //                   };
 
-                foreach (var item in supplierLinq)
-                {
-                    cbSupID.Items.Add(item.SupplierId);
-                }
+                //foreach (var item in supplierLinq)
+                //{
+                //    cbSupID.Items.Add(item.SupplierId);
+                //}
 
+
+                cbSupID.DataSource = supplierList;
+                cbSupID.DisplayMember = "SupName";
+                cbSupID.ValueMember = "SupplierId";
             }
         }
 
@@ -423,15 +433,15 @@ namespace OOSD_CS_PROJ
             btnUpdateClicked = false;
 
             // visibility settings
-            lblID.Text = "Product\nSupplier ID:";
+            lblID.Text = "Prod Sup Name:";
             txtID.Visible = false;
             cBID.Visible = true;
             txtProdID.Visible = true;
             cBName.Visible = false;
-            lblName.Text = "Product ID:";
+            lblName.Text = "Product Name:";
             txtSupID.Visible = true;
             lblStartDate.Visible = true;
-            lblStartDate.Text = "Supplier ID:";
+            lblStartDate.Text = "  Supplier Name:";
             dTPStartDate.Visible = false;
             lblEndDate.Visible = false;
             dTPEndDate.Visible = false;
@@ -613,8 +623,8 @@ namespace OOSD_CS_PROJ
                     Validator1.IsProvided(txtSupID, "Supplier Id"))
                 {
                     ProdSupplier newProdSupplier = new ProdSupplier();
-                    newProdSupplier.ProductId = Convert.ToInt32(txtProdID.Text);
-                    newProdSupplier.SupplierId = Convert.ToInt32(txtSupID.Text);
+                    newProdSupplier.ProductId = Convert.ToInt32(cbProdID.SelectedValue);
+                    newProdSupplier.SupplierId = Convert.ToInt32(cbSupID.SelectedValue);
 
                     updated = ProdSuppliersDB.UpdateProdSupplier(newProdSupplier, SingleProdSup);
                     if (updated)

@@ -33,12 +33,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtProdName = new System.Windows.Forms.TextBox();
             this.btnAddNewProd = new System.Windows.Forms.Button();
+            this.lblDetails = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 51);
+            this.label1.Location = new System.Drawing.Point(34, 114);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 0;
@@ -46,7 +47,7 @@
             // 
             // txtProdId
             // 
-            this.txtProdId.Location = new System.Drawing.Point(141, 48);
+            this.txtProdId.Location = new System.Drawing.Point(146, 111);
             this.txtProdId.Name = "txtProdId";
             this.txtProdId.ReadOnly = true;
             this.txtProdId.Size = new System.Drawing.Size(100, 20);
@@ -55,7 +56,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 107);
+            this.label2.Location = new System.Drawing.Point(34, 170);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 13);
             this.label2.TabIndex = 2;
@@ -63,7 +64,7 @@
             // 
             // txtProdName
             // 
-            this.txtProdName.Location = new System.Drawing.Point(141, 104);
+            this.txtProdName.Location = new System.Drawing.Point(146, 167);
             this.txtProdName.Name = "txtProdName";
             this.txtProdName.Size = new System.Drawing.Size(100, 20);
             this.txtProdName.TabIndex = 4;
@@ -71,20 +72,32 @@
             // btnAddNewProd
             // 
             this.btnAddNewProd.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnAddNewProd.Location = new System.Drawing.Point(165, 171);
+            this.btnAddNewProd.Location = new System.Drawing.Point(302, 248);
             this.btnAddNewProd.Name = "btnAddNewProd";
-            this.btnAddNewProd.Size = new System.Drawing.Size(116, 50);
+            this.btnAddNewProd.Size = new System.Drawing.Size(105, 66);
             this.btnAddNewProd.TabIndex = 5;
             this.btnAddNewProd.Text = "Add New Product";
             this.btnAddNewProd.UseVisualStyleBackColor = false;
             this.btnAddNewProd.Click += new System.EventHandler(this.btnAddNewProd_Click);
+            // 
+            // lblDetails
+            // 
+            this.lblDetails.AutoSize = true;
+            this.lblDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetails.Location = new System.Drawing.Point(18, 21);
+            this.lblDetails.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDetails.Name = "lblDetails";
+            this.lblDetails.Size = new System.Drawing.Size(150, 25);
+            this.lblDetails.TabIndex = 45;
+            this.lblDetails.Text = "Add A Product";
             // 
             // frmAddNewProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(329, 258);
+            this.ClientSize = new System.Drawing.Size(505, 342);
+            this.Controls.Add(this.lblDetails);
             this.Controls.Add(this.btnAddNewProd);
             this.Controls.Add(this.txtProdName);
             this.Controls.Add(this.label2);
@@ -105,5 +118,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtProdName;
         private System.Windows.Forms.Button btnAddNewProd;
+        private System.Windows.Forms.Label lblDetails;
     }
 }

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Packages;
+
 
 namespace OOSD_CS_PROJ
 {
@@ -75,10 +75,10 @@ namespace OOSD_CS_PROJ
         {
             try
             {
-                if (Validator.IsProvided(txtPkgName, "Package Name") &&
-                    Validator.IsProvided(txtPkgDesc, "Package Description") &&
-                    Validator.IsNonNegativeDecimal(txtPkgBasePrice, "Package Base Price") &&
-                       Validator.IsNonNegativeDecimal(txtPkgAgencyCommission, "Agency Commission"))
+                if (Validator1.IsProvided(txtPkgName, "Package Name") &&
+                    Validator1.IsProvided(txtPkgDesc, "Package Description") &&
+                    Validator1.IsNonNegativeDecimal(txtPkgBasePrice, "Package Base Price") &&
+                       Validator1.IsNonNegativeDecimal(txtPkgAgencyCommission, "Agency Commission"))
                 {
                    
                     package.PkgName = txtPkgName.Text;

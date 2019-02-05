@@ -1,5 +1,4 @@
-﻿using Packages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -56,9 +55,9 @@ namespace OOSD_CS_PROJ
         {
             try
             {
-                if (Validator.IsProvided(txtSupId, "Supplier Id") &&
-                    Validator.IsProvided(txtSupName, "Supplier Name") &&
-                    Validator.IsNonNegativeDecimal(txtSupId, "Supplier Id"))
+                if (Validator1.IsProvided(txtSupId, "Supplier Id") &&
+                    Validator1.IsProvided(txtSupName, "Supplier Name") &&
+                    Validator1.IsNonNegativeDecimal(txtSupId, "Supplier Id"))
                 {
 
 

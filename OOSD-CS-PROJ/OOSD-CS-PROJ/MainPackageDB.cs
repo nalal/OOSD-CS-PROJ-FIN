@@ -10,16 +10,7 @@ namespace OOSD_CS_PROJ
     // class for SQL commands regarding the Packages class on the main viewing form
     class MainPackageDB
     {
-
-
-        // connecting to the DB
-        //public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-        ////public static void InitSQL()
-        ////{
-        ////    builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";
-        ////    builder.IntegratedSecurity = true;
-        ////    builder.InitialCatalog = "TravelExperts";
-        ////}
+        
         // creating list of instances of the Package class
         public static List<Package> GetPackages()
         {
