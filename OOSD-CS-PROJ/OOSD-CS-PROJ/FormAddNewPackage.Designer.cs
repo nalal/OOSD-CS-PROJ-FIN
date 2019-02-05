@@ -57,146 +57,161 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 66);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(20, 103);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 13);
+            this.label1.Size = new System.Drawing.Size(134, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Package Id";
+            this.label1.Text = "Package ID: ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 97);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(20, 171);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 13);
+            this.label2.Size = new System.Drawing.Size(170, 25);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Package Name";
+            this.label2.Text = "Package Name: ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 165);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(20, 296);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 13);
+            this.label3.Size = new System.Drawing.Size(203, 25);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Package End Date";
+            this.label3.Text = "Package End Date: ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 128);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(20, 234);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 13);
+            this.label4.Size = new System.Drawing.Size(210, 25);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Package Start Date";
+            this.label4.Text = "Package Start Date: ";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 231);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(20, 421);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 13);
+            this.label5.Size = new System.Drawing.Size(218, 25);
             this.label5.TabIndex = 5;
-            this.label5.Text = "Package Base Price";
+            this.label5.Text = "Package Base Price: ";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(20, 200);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(20, 361);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 13);
+            this.label6.Size = new System.Drawing.Size(222, 25);
             this.label6.TabIndex = 4;
-            this.label6.Text = "Package Description";
+            this.label6.Text = "Package Description: ";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(19, 262);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(20, 481);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(147, 13);
+            this.label7.Size = new System.Drawing.Size(309, 25);
             this.label7.TabIndex = 6;
-            this.label7.Text = "Package Agency Commission";
+            this.label7.Text = "Package Agency Commission: ";
             // 
             // txtPackageId
             // 
-            this.txtPackageId.Location = new System.Drawing.Point(199, 66);
+            this.txtPackageId.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPackageId.Location = new System.Drawing.Point(402, 103);
             this.txtPackageId.Margin = new System.Windows.Forms.Padding(2);
             this.txtPackageId.Name = "txtPackageId";
             this.txtPackageId.ReadOnly = true;
-            this.txtPackageId.Size = new System.Drawing.Size(76, 20);
+            this.txtPackageId.Size = new System.Drawing.Size(151, 35);
             this.txtPackageId.TabIndex = 7;
             // 
             // txtPkgName
             // 
-            this.txtPkgName.Location = new System.Drawing.Point(199, 97);
+            this.txtPkgName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPkgName.Location = new System.Drawing.Point(402, 171);
             this.txtPkgName.Margin = new System.Windows.Forms.Padding(2);
             this.txtPkgName.Name = "txtPkgName";
-            this.txtPkgName.Size = new System.Drawing.Size(76, 20);
+            this.txtPkgName.Size = new System.Drawing.Size(151, 35);
             this.txtPkgName.TabIndex = 8;
             // 
             // txtPkgDesc
             // 
-            this.txtPkgDesc.Location = new System.Drawing.Point(199, 200);
+            this.txtPkgDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPkgDesc.Location = new System.Drawing.Point(402, 361);
             this.txtPkgDesc.Margin = new System.Windows.Forms.Padding(2);
             this.txtPkgDesc.Name = "txtPkgDesc";
-            this.txtPkgDesc.Size = new System.Drawing.Size(76, 20);
+            this.txtPkgDesc.Size = new System.Drawing.Size(151, 35);
             this.txtPkgDesc.TabIndex = 11;
             // 
             // txtPkgBasePrice
             // 
-            this.txtPkgBasePrice.Location = new System.Drawing.Point(199, 231);
+            this.txtPkgBasePrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPkgBasePrice.Location = new System.Drawing.Point(402, 421);
             this.txtPkgBasePrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtPkgBasePrice.Name = "txtPkgBasePrice";
-            this.txtPkgBasePrice.Size = new System.Drawing.Size(76, 20);
+            this.txtPkgBasePrice.Size = new System.Drawing.Size(151, 35);
             this.txtPkgBasePrice.TabIndex = 12;
             // 
             // txtPkgAgencyCommission
             // 
-            this.txtPkgAgencyCommission.Location = new System.Drawing.Point(199, 262);
+            this.txtPkgAgencyCommission.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPkgAgencyCommission.Location = new System.Drawing.Point(402, 481);
             this.txtPkgAgencyCommission.Margin = new System.Windows.Forms.Padding(2);
             this.txtPkgAgencyCommission.Name = "txtPkgAgencyCommission";
-            this.txtPkgAgencyCommission.Size = new System.Drawing.Size(76, 20);
+            this.txtPkgAgencyCommission.Size = new System.Drawing.Size(151, 35);
             this.txtPkgAgencyCommission.TabIndex = 13;
             // 
             // btnSaveNewPackage
             // 
             this.btnSaveNewPackage.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnSaveNewPackage.Location = new System.Drawing.Point(367, 233);
+            this.btnSaveNewPackage.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveNewPackage.Location = new System.Drawing.Point(646, 549);
             this.btnSaveNewPackage.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveNewPackage.Name = "btnSaveNewPackage";
-            this.btnSaveNewPackage.Size = new System.Drawing.Size(128, 78);
+            this.btnSaveNewPackage.Size = new System.Drawing.Size(141, 104);
             this.btnSaveNewPackage.TabIndex = 14;
-            this.btnSaveNewPackage.Text = "Save Package";
+            this.btnSaveNewPackage.Text = "&Save Package";
             this.btnSaveNewPackage.UseVisualStyleBackColor = false;
             this.btnSaveNewPackage.Click += new System.EventHandler(this.btnSaveNewPackage_Click);
             // 
             // dtStartDate
             // 
             this.dtStartDate.CustomFormat = "MM-dd-yyyy";
+            this.dtStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtStartDate.Location = new System.Drawing.Point(199, 128);
+            this.dtStartDate.Location = new System.Drawing.Point(402, 234);
             this.dtStartDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtStartDate.MaxDate = new System.DateTime(9998, 1, 29, 0, 0, 0, 0);
             this.dtStartDate.MinDate = new System.DateTime(1753, 1, 31, 0, 0, 0, 0);
             this.dtStartDate.Name = "dtStartDate";
-            this.dtStartDate.Size = new System.Drawing.Size(151, 20);
+            this.dtStartDate.Size = new System.Drawing.Size(151, 35);
             this.dtStartDate.TabIndex = 15;
             // 
             // dtEndDate
             // 
             this.dtEndDate.CustomFormat = "MM-dd-yyyy";
+            this.dtEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtEndDate.Location = new System.Drawing.Point(199, 165);
+            this.dtEndDate.Location = new System.Drawing.Point(402, 296);
             this.dtEndDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtEndDate.Name = "dtEndDate";
-            this.dtEndDate.Size = new System.Drawing.Size(151, 20);
+            this.dtEndDate.Size = new System.Drawing.Size(151, 35);
             this.dtEndDate.TabIndex = 16;
             // 
             // cboProdName
@@ -236,20 +251,20 @@
             // lblDetails
             // 
             this.lblDetails.AutoSize = true;
-            this.lblDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetails.Location = new System.Drawing.Point(18, 21);
+            this.lblDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetails.Location = new System.Drawing.Point(318, 24);
             this.lblDetails.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDetails.Name = "lblDetails";
-            this.lblDetails.Size = new System.Drawing.Size(158, 25);
+            this.lblDetails.Size = new System.Drawing.Size(217, 37);
             this.lblDetails.TabIndex = 45;
-            this.lblDetails.Text = "Add a Package";
+            this.lblDetails.Text = "Add  Package";
             // 
             // FormAddNewPackage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(527, 335);
+            this.ClientSize = new System.Drawing.Size(913, 682);
             this.Controls.Add(this.lblDetails);
             this.Controls.Add(this.dtEndDate);
             this.Controls.Add(this.dtStartDate);
