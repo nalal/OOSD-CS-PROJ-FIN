@@ -189,7 +189,7 @@
             // 
             this.btnSaveNewPackage.BackColor = System.Drawing.Color.PaleGreen;
             this.btnSaveNewPackage.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveNewPackage.Location = new System.Drawing.Point(646, 549);
+            this.btnSaveNewPackage.Location = new System.Drawing.Point(744, 544);
             this.btnSaveNewPackage.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveNewPackage.Name = "btnSaveNewPackage";
             this.btnSaveNewPackage.Size = new System.Drawing.Size(141, 104);
@@ -284,7 +284,7 @@
             this.cboProdList.FormattingEnabled = true;
             this.cboProdList.Location = new System.Drawing.Point(402, 579);
             this.cboProdList.Name = "cboProdList";
-            this.cboProdList.Size = new System.Drawing.Size(151, 37);
+            this.cboProdList.Size = new System.Drawing.Size(283, 37);
             this.cboProdList.TabIndex = 47;
             // 
             // label10
