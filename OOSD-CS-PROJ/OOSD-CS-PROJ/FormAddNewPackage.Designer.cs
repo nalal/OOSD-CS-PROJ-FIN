@@ -50,6 +50,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.productsTableAdapter = new OOSD_CS_PROJ.TravelExpertsDataSetTableAdapters.ProductsTableAdapter();
             this.lblDetails = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cboProdList = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSet)).BeginInit();
             this.SuspendLayout();
@@ -259,12 +261,34 @@
             this.lblDetails.TabIndex = 45;
             this.lblDetails.Text = "Add  Package";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(20, 570);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(98, 25);
+            this.label9.TabIndex = 46;
+            this.label9.Text = "Product: ";
+            // 
+            // cboProdList
+            // 
+            this.cboProdList.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.cboProdList.FormattingEnabled = true;
+            this.cboProdList.Location = new System.Drawing.Point(402, 560);
+            this.cboProdList.Name = "cboProdList";
+            this.cboProdList.Size = new System.Drawing.Size(151, 37);
+            this.cboProdList.TabIndex = 47;
+            // 
             // FormAddNewPackage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(913, 682);
+            this.Controls.Add(this.cboProdList);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.lblDetails);
             this.Controls.Add(this.dtEndDate);
             this.Controls.Add(this.dtStartDate);
@@ -315,5 +339,7 @@
         private System.Windows.Forms.BindingSource productsBindingSource;
         private TravelExpertsDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
         private System.Windows.Forms.Label lblDetails;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cboProdList;
     }
 }

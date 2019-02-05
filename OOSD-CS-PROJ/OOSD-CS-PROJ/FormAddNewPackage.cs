@@ -39,7 +39,7 @@ namespace OOSD_CS_PROJ
 
             foreach (var item in prodLinq)
             {
-                cboProdName.Items.Add(item.ProdName);
+                cboProdList.Items.Add(item.ProdName);
             }
         }
 
@@ -105,8 +105,17 @@ namespace OOSD_CS_PROJ
                         package.PkgBasePrice = Convert.ToDecimal(txtPkgBasePrice.Text);
                         package.PkgAgencyCommission = Convert.ToDecimal(txtPkgAgencyCommission.Text);
 
-                        selectedProduct = cboProdName.SelectedItem.ToString();
-                        package.ProdName = selectedProduct;
+                        if (cboProdList.SelectedIndex < 00000000)
+                        {
+
+                            selectedProduct = " ";
+                            package.ProdName = selectedProduct;
+                        }
+                        else
+                        {
+                            selectedProduct = cboProdList.SelectedItem.ToString();
+                            package.ProdName = selectedProduct;
+                        }
 
                         package.PackageId = PackageDB.AddNewPackage(package);
                         this.DialogResult = DialogResult.OK;
