@@ -10,14 +10,6 @@ namespace OOSD_CS_PROJ
     // class for SQL commands regarding the Suppliers class on the main view form
     class SuppliersDB
     {
-        //// connecting to the DB
-        //public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-        //public static void InitSQL()
-        //{
-        //    builder.DataSource = "ELF8OOSD197691\\SQLEXPRESS";
-        //    builder.IntegratedSecurity = true;
-        //    builder.InitialCatalog = "TravelExperts";
-        //}
         // creating list of instances of the Suppliers class
         public static List<Supplier> GetSuppliers()
         {
@@ -25,7 +17,7 @@ namespace OOSD_CS_PROJ
             List<Supplier> Suppliers = new List<Supplier>(); // make an empty list
             Supplier sup; // reference to new Supplier object
 
-            //
+            
             DBCall.InitSQL();
 
             using (SqlConnection connection = new SqlConnection(DBCall.builder.ConnectionString))

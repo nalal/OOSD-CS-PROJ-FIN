@@ -9,13 +9,6 @@ namespace OOSD_CS_PROJ
 {
     public static class PackageDB
     {
-        //public static SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-        //public static void InitSQL()
-        //{
-        //    builder.DataSource = "ELF8OOSD197690\\SQLEXPRESS";
-        //    builder.IntegratedSecurity = true;
-        //    builder.InitialCatalog = "TravelExperts";
-        //}
         //this will allow user to add a new package to list
         public static int AddNewPackage(Package newPackage)
         //returns the auto-generated ID of the new Package
