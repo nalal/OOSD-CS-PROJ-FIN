@@ -525,29 +525,6 @@ namespace OOSD_CS_PROJ
         //    //f2.ShowDialog();//show the AddPackage form
         }
 
-
-        //Add Products button is clicked
-        //private void btnAddProd_Click(object sender, EventArgs e)
-        //{
-        //    frmAddNewProduct f3 = new frmAddNewProduct();//create a variable for AddProd form
-        //    f3.ShowDialog();//show the AddProd form
-        //}
-
-        ////Add new Supplier button is clicked
-        //private void btnAddSup_Click(object sender, EventArgs e)
-        //{
-        //    frmAddNewSupplier f4 = new frmAddNewSupplier();//create a variable for AddSupplier form
-        //    f4.ShowDialog();//show the AddSupplier form
-        //}
-        ////Add new Product Supplier is clicked
-        //private void btnAddProdSup_Click(object sender, EventArgs e)
-        //{
-        //    frmAddNewProduct f5 = new frmAddNewProduct();//create a variable for AddProductSupplier form
-        //    f5.ShowDialog();//show the AddProductSupplier form
-        //}
-
-
-
         // search button is clicked
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -719,7 +696,7 @@ namespace OOSD_CS_PROJ
                 }
             }
         }
-
+//Helen - The working buttons that allow user to access the Add forms
         private void btnAddNew_Click(object sender, EventArgs e)
         {
                 //if top menu Package button is clicked
@@ -746,8 +723,7 @@ namespace OOSD_CS_PROJ
                     frmAddNewProdSupplier f5 = new frmAddNewProdSupplier();//create a variable for AddProductSupplier form
                     f5.ShowDialog();//show the AddProductSupplier form
                 }
-                //FormAddNewPackage f2 = new FormAddNewPackage();//create a variable for AddPackage form
-                //f2.ShowDialog();//show the AddPackage form
+             
             }
         
     }
