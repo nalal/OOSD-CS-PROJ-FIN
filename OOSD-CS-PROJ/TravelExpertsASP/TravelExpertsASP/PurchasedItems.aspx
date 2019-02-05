@@ -57,13 +57,13 @@
                     <asp:Label Text='<%# Eval("ClassName") %>' runat="server" id="ClassNameLabel"/>
                     <br />
                     BasePrice:
-                    <asp:Label Text='<%# Eval("BasePrice", "{0:c}") %>' runat="server" id="BasePriceLabel"/>
+                    <asp:Label Text='<%# Eval("BasePrice") %>' runat="server" id="BasePriceLabel"/>
                     <br />
                     FeeAmt:
-                    <asp:Label Text='<%# Eval("FeeAmt", "{0:c}") %>' runat="server" id="FeeAmtLabel"/>
+                    <asp:Label Text='<%# Eval("FeeAmt") %>' runat="server" id="FeeAmtLabel"/>
                     <br />
                     TotalCost:
-                    <asp:Label Text='<%# Eval("TotalCost", "{0:c}") %>' runat="server" id="TotalCostLabel"/>
+                    <asp:Label Text='<%# Eval("TotalCost") %>' runat="server" id="TotalCostLabel"/>
                     <br />
                     <br />
                     <br />

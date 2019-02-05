@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.IO;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -55,14 +52,10 @@ namespace TravelExpertsASP
 
             if (Page.IsValid && UserNameChecked)
             {
-                string cryptPassword = EncryptDB.Encrypt(txtCustPassword.Text);
-
-                Console.Write(cryptPassword);
-
                 Customer cust = new Customer(txtCustFirstName.Text, txtCustLastName.Text, txtCustAddress.Text,
                                         txtCustCity.Text, ddlCustProv.SelectedValue.ToString(), txtCustPostal.Text,
                                         ddlCustCountry.SelectedValue.ToString(), txtCustHomePhone.Text, txtCustBusPhone.Text,
-                                        txtCustEmail.Text, txtCustUserName.Text, cryptPassword.ToString().Trim());
+                                        txtCustEmail.Text, txtCustUserName.Text, txtCustPassword.Text);
 
                 SqlConnection conn = TravelExperts1DB.GetConnection();
                 try
@@ -95,47 +88,45 @@ namespace TravelExpertsASP
             //}
         }
 
-        // ===============         YOUR ORIGINAL CODE!!!!!!          ===================== //
+            // ===============         YOUR ORIGINAL CODE!!!!!!          ===================== //
 
-        //bool insert = false;
+            //bool insert = false;
 
-        //Customer cust = new Customer(txtCustFirstName.Text, txtCustLastName.Text, txtCustAddress.Text,
-        //                            txtCustCity.Text, ddlCustProv.SelectedValue.ToString() , txtCustPostal.Text, 
-        //                            ddlCustCountry.SelectedValue.ToString(),txtCustHomePhone.Text, txtCustBusPhone.Text, 
-        //                            txtCustEmail.Text, txtCustUserName.Text, txtCustPassword.Text);
+            //Customer cust = new Customer(txtCustFirstName.Text, txtCustLastName.Text, txtCustAddress.Text,
+            //                            txtCustCity.Text, ddlCustProv.SelectedValue.ToString() , txtCustPostal.Text, 
+            //                            ddlCustCountry.SelectedValue.ToString(),txtCustHomePhone.Text, txtCustBusPhone.Text, 
+            //                            txtCustEmail.Text, txtCustUserName.Text, txtCustPassword.Text);
 
+            
+            //if (Page.IsValid)
+            //{
+            //    SqlConnection conn = TravelExperts1DB.GetConnection();
+            //    try
+            //    {
+            //        conn.Open();
 
-        //if (Page.IsValid)
-        //{
-        //    SqlConnection conn = TravelExperts1DB.GetConnection();
-        //    try
-        //    {
-        //        conn.Open();
+            //        insert = CustomersDB.CreateCustomer(cust);
 
-        //        insert = CustomersDB.CreateCustomer(cust);
-
-        //        if (insert)
-        //        {
-        //            Response.Write("Registration successful");
-        //        }
-        //        else
-        //            Response.Write("GET ME COOKIES");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Response.Write("User name is already taken. Please choose another user name");
-        //        throw ex;
-        //    }
-        //    finally
-        //    {
-        //        conn.Close();
-        //    }
-        //}
-        //else
-        //{
-        //    Response.Write("Registration unsuccessful");
-        //}
-
-        
+            //        if (insert)
+            //        {
+            //            Response.Write("Registration successful");
+            //        }
+            //        else
+            //            Response.Write("GET ME COOKIES");
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Response.Write("User name is already taken. Please choose another user name");
+            //        throw ex;
+            //    }
+            //    finally
+            //    {
+            //        conn.Close();
+            //    }
+            //}
+            //else
+            //{
+            //    Response.Write("Registration unsuccessful");
+            //}
     }
 }

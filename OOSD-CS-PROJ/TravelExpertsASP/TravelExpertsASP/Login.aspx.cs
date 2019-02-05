@@ -9,7 +9,7 @@ using System.Configuration;
 using TravelExpertsASP.Models;
 
 namespace TravelExpertsASP
-{ 
+{
     public partial class Login : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
@@ -31,15 +31,10 @@ namespace TravelExpertsASP
 
                 if (temp == 1)
                 {
-                     
-                    string cryptPassword = EncryptDB.Encrypt(txtCustPassword.Text);
-
-                    Console.WriteLine(cryptPassword);
-
-                    string checkPassword = "SELECT CustPassword FROM Customers WHERE CustPassword='" + cryptPassword + "'";
+                    string checkPassword = "SELECT CustPassword FROM Customers WHERE CustPassword='" + txtCustPassword.Text + "'";
                     SqlCommand passCmd = new SqlCommand(checkPassword, conn);
                     string password = passCmd.ExecuteScalar().ToString().Replace(" ", "");
-                    if(password == cryptPassword)
+                    if(password == txtCustPassword.Text)
                     {
                         Session["Login"] = txtCustUserName.Text;
                         Response.Write("Password is correct");
