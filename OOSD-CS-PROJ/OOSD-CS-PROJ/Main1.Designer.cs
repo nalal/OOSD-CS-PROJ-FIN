@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main1));
             this.btnPrdctSupps = new System.Windows.Forms.Button();
             this.btnSupps = new System.Windows.Forms.Button();
             this.btnPrdts = new System.Windows.Forms.Button();
@@ -67,12 +66,14 @@
             this.packages_Products_SuppliersTableAdapter1 = new OOSD_CS_PROJ.TravelExpertsDataSetTableAdapters.Packages_Products_SuppliersTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.cbProdID = new System.Windows.Forms.ComboBox();
             this.cbSupID = new System.Windows.Forms.ComboBox();
             this.btnAddNew = new System.Windows.Forms.Button();
+            this.productsSuppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.products_SuppliersTableAdapter = new OOSD_CS_PROJ.TravelExpertsDataSetTableAdapters.Products_SuppliersTableAdapter();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.packagesBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSet)).BeginInit();
@@ -81,17 +82,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.packagesBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.packagesBindingSource3)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsSuppliersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPrdctSupps
             // 
             this.btnPrdctSupps.BackColor = System.Drawing.Color.Crimson;
-            this.btnPrdctSupps.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrdctSupps.Location = new System.Drawing.Point(594, 75);
+            this.btnPrdctSupps.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrdctSupps.Location = new System.Drawing.Point(824, 83);
             this.btnPrdctSupps.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrdctSupps.Name = "btnPrdctSupps";
-            this.btnPrdctSupps.Size = new System.Drawing.Size(134, 41);
+            this.btnPrdctSupps.Size = new System.Drawing.Size(150, 54);
             this.btnPrdctSupps.TabIndex = 53;
             this.btnPrdctSupps.Text = "Product Suppliers\r\n";
             this.btnPrdctSupps.UseVisualStyleBackColor = false;
@@ -100,11 +102,11 @@
             // btnSupps
             // 
             this.btnSupps.BackColor = System.Drawing.Color.Crimson;
-            this.btnSupps.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupps.Location = new System.Drawing.Point(458, 75);
+            this.btnSupps.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSupps.Location = new System.Drawing.Point(627, 83);
             this.btnSupps.Margin = new System.Windows.Forms.Padding(2);
             this.btnSupps.Name = "btnSupps";
-            this.btnSupps.Size = new System.Drawing.Size(96, 41);
+            this.btnSupps.Size = new System.Drawing.Size(135, 54);
             this.btnSupps.TabIndex = 52;
             this.btnSupps.Text = "Suppliers";
             this.btnSupps.UseVisualStyleBackColor = false;
@@ -113,11 +115,11 @@
             // btnPrdts
             // 
             this.btnPrdts.BackColor = System.Drawing.Color.Crimson;
-            this.btnPrdts.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrdts.Location = new System.Drawing.Point(318, 75);
+            this.btnPrdts.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrdts.Location = new System.Drawing.Point(432, 83);
             this.btnPrdts.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrdts.Name = "btnPrdts";
-            this.btnPrdts.Size = new System.Drawing.Size(96, 41);
+            this.btnPrdts.Size = new System.Drawing.Size(135, 54);
             this.btnPrdts.TabIndex = 51;
             this.btnPrdts.Text = "Products";
             this.btnPrdts.UseVisualStyleBackColor = false;
@@ -127,11 +129,11 @@
             // 
             this.btnPkgs.BackColor = System.Drawing.Color.Crimson;
             this.btnPkgs.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnPkgs.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPkgs.Location = new System.Drawing.Point(176, 75);
+            this.btnPkgs.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPkgs.Location = new System.Drawing.Point(243, 83);
             this.btnPkgs.Margin = new System.Windows.Forms.Padding(2);
             this.btnPkgs.Name = "btnPkgs";
-            this.btnPkgs.Size = new System.Drawing.Size(96, 41);
+            this.btnPkgs.Size = new System.Drawing.Size(135, 54);
             this.btnPkgs.TabIndex = 50;
             this.btnPkgs.Text = "Packages";
             this.btnPkgs.UseVisualStyleBackColor = false;
@@ -139,11 +141,12 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.Thistle;
-            this.btnSearch.Location = new System.Drawing.Point(638, 254);
+            this.btnSearch.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(969, 263);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(84, 38);
+            this.btnSearch.Size = new System.Drawing.Size(103, 41);
             this.btnSearch.TabIndex = 49;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -151,135 +154,147 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(638, 220);
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(796, 268);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(98, 20);
+            this.txtSearch.Size = new System.Drawing.Size(149, 31);
             this.txtSearch.TabIndex = 48;
             // 
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
-            this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(606, 160);
+            this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearch.Location = new System.Drawing.Point(763, 166);
             this.lblSearch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(193, 25);
+            this.lblSearch.Size = new System.Drawing.Size(259, 33);
             this.lblSearch.TabIndex = 45;
             this.lblSearch.Text = "Search Packages: ";
             // 
             // lblDetails
             // 
             this.lblDetails.AutoSize = true;
-            this.lblDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetails.Location = new System.Drawing.Point(77, 146);
+            this.lblDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetails.Location = new System.Drawing.Point(264, 161);
             this.lblDetails.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDetails.Name = "lblDetails";
-            this.lblDetails.Size = new System.Drawing.Size(168, 25);
+            this.lblDetails.Size = new System.Drawing.Size(247, 37);
             this.lblDetails.TabIndex = 44;
             this.lblDetails.Text = "Package Details";
             // 
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(35, 192);
+            this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.Location = new System.Drawing.Point(145, 217);
             this.lblID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(30, 13);
+            this.lblID.Size = new System.Drawing.Size(60, 29);
             this.lblID.TabIndex = 30;
             this.lblID.Text = "   ID:";
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(131, 190);
+            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(339, 215);
             this.txtID.Margin = new System.Windows.Forms.Padding(2);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(114, 20);
+            this.txtID.Size = new System.Drawing.Size(114, 31);
             this.txtID.TabIndex = 31;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(35, 223);
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(145, 276);
             this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(38, 13);
+            this.lblName.Size = new System.Drawing.Size(84, 29);
             this.lblName.TabIndex = 32;
             this.lblName.Text = "Name:";
             // 
             // lblStartDate
             // 
             this.lblStartDate.AutoSize = true;
-            this.lblStartDate.Location = new System.Drawing.Point(35, 254);
+            this.lblStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStartDate.Location = new System.Drawing.Point(129, 331);
             this.lblStartDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStartDate.Name = "lblStartDate";
-            this.lblStartDate.Size = new System.Drawing.Size(58, 13);
+            this.lblStartDate.Size = new System.Drawing.Size(124, 29);
             this.lblStartDate.TabIndex = 34;
             this.lblStartDate.Text = "Start Date:";
             // 
             // lblEndDate
             // 
             this.lblEndDate.AutoSize = true;
-            this.lblEndDate.Location = new System.Drawing.Point(35, 288);
+            this.lblEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEndDate.Location = new System.Drawing.Point(129, 385);
             this.lblEndDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEndDate.Name = "lblEndDate";
-            this.lblEndDate.Size = new System.Drawing.Size(55, 13);
+            this.lblEndDate.Size = new System.Drawing.Size(118, 29);
             this.lblEndDate.TabIndex = 35;
             this.lblEndDate.Text = "End Date:";
             // 
             // lblDesc
             // 
             this.lblDesc.AutoSize = true;
-            this.lblDesc.Location = new System.Drawing.Point(35, 324);
+            this.lblDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesc.Location = new System.Drawing.Point(118, 450);
             this.lblDesc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(60, 13);
+            this.lblDesc.Size = new System.Drawing.Size(141, 29);
             this.lblDesc.TabIndex = 36;
-            this.lblDesc.Text = "Description";
+            this.lblDesc.Text = "Description:";
             // 
             // txtDesc
             // 
-            this.txtDesc.Location = new System.Drawing.Point(131, 320);
+            this.txtDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDesc.Location = new System.Drawing.Point(339, 434);
             this.txtDesc.Margin = new System.Windows.Forms.Padding(2);
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(174, 74);
+            this.txtDesc.Size = new System.Drawing.Size(283, 74);
             this.txtDesc.TabIndex = 37;
             // 
             // lblBasePrice
             // 
             this.lblBasePrice.AutoSize = true;
-            this.lblBasePrice.Location = new System.Drawing.Point(95, 401);
+            this.lblBasePrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBasePrice.Location = new System.Drawing.Point(117, 527);
             this.lblBasePrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBasePrice.Name = "lblBasePrice";
-            this.lblBasePrice.Size = new System.Drawing.Size(61, 13);
+            this.lblBasePrice.Size = new System.Drawing.Size(136, 29);
             this.lblBasePrice.TabIndex = 38;
             this.lblBasePrice.Text = "Base Price:";
             // 
             // txtBasePrice
             // 
-            this.txtBasePrice.Location = new System.Drawing.Point(191, 398);
+            this.txtBasePrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBasePrice.Location = new System.Drawing.Point(339, 529);
             this.txtBasePrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtBasePrice.Name = "txtBasePrice";
-            this.txtBasePrice.Size = new System.Drawing.Size(114, 20);
+            this.txtBasePrice.Size = new System.Drawing.Size(114, 31);
             this.txtBasePrice.TabIndex = 39;
             // 
             // lblAgencyComm
             // 
             this.lblAgencyComm.AutoSize = true;
-            this.lblAgencyComm.Location = new System.Drawing.Point(83, 432);
+            this.lblAgencyComm.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgencyComm.Location = new System.Drawing.Point(76, 576);
             this.lblAgencyComm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAgencyComm.Name = "lblAgencyComm";
-            this.lblAgencyComm.Size = new System.Drawing.Size(104, 13);
+            this.lblAgencyComm.Size = new System.Drawing.Size(238, 29);
             this.lblAgencyComm.TabIndex = 40;
             this.lblAgencyComm.Text = "Agency Commission:";
             // 
             // txtAgencyComm
             // 
-            this.txtAgencyComm.Location = new System.Drawing.Point(191, 432);
+            this.txtAgencyComm.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAgencyComm.Location = new System.Drawing.Point(339, 580);
             this.txtAgencyComm.Margin = new System.Windows.Forms.Padding(2);
             this.txtAgencyComm.Name = "txtAgencyComm";
-            this.txtAgencyComm.Size = new System.Drawing.Size(114, 20);
+            this.txtAgencyComm.Size = new System.Drawing.Size(114, 31);
             this.txtAgencyComm.TabIndex = 41;
             // 
             // packagesBindingSource4
@@ -325,58 +340,64 @@
             // 
             this.cBName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cBName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cBName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cBName.FormattingEnabled = true;
-            this.cBName.Location = new System.Drawing.Point(131, 223);
+            this.cBName.Location = new System.Drawing.Point(339, 272);
             this.cBName.Name = "cBName";
-            this.cBName.Size = new System.Drawing.Size(121, 21);
+            this.cBName.Size = new System.Drawing.Size(121, 33);
             this.cBName.TabIndex = 55;
             this.cBName.SelectedIndexChanged += new System.EventHandler(this.cBPkgName_SelectedIndexChanged);
             // 
             // dTPStartDate
             // 
-            this.dTPStartDate.Location = new System.Drawing.Point(131, 257);
+            this.dTPStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dTPStartDate.Location = new System.Drawing.Point(339, 329);
             this.dTPStartDate.Name = "dTPStartDate";
-            this.dTPStartDate.Size = new System.Drawing.Size(200, 20);
+            this.dTPStartDate.Size = new System.Drawing.Size(346, 31);
             this.dTPStartDate.TabIndex = 56;
             // 
             // dTPEndDate
             // 
-            this.dTPEndDate.Location = new System.Drawing.Point(131, 288);
+            this.dTPEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dTPEndDate.Location = new System.Drawing.Point(339, 383);
             this.dTPEndDate.Name = "dTPEndDate";
-            this.dTPEndDate.Size = new System.Drawing.Size(200, 20);
+            this.dTPEndDate.Size = new System.Drawing.Size(346, 31);
             this.dTPEndDate.TabIndex = 57;
             // 
             // cBID
             // 
+            this.cBID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cBID.FormattingEnabled = true;
-            this.cBID.Location = new System.Drawing.Point(131, 190);
+            this.cBID.Location = new System.Drawing.Point(339, 215);
             this.cBID.Name = "cBID";
-            this.cBID.Size = new System.Drawing.Size(121, 21);
+            this.cBID.Size = new System.Drawing.Size(121, 33);
             this.cBID.TabIndex = 58;
             this.cBID.SelectedIndexChanged += new System.EventHandler(this.cBID_SelectedIndexChanged);
             // 
             // txtSupID
             // 
-            this.txtSupID.Location = new System.Drawing.Point(131, 257);
+            this.txtSupID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSupID.Location = new System.Drawing.Point(339, 329);
             this.txtSupID.Name = "txtSupID";
-            this.txtSupID.Size = new System.Drawing.Size(114, 20);
+            this.txtSupID.Size = new System.Drawing.Size(114, 31);
             this.txtSupID.TabIndex = 59;
             // 
             // txtProdID
             // 
-            this.txtProdID.Location = new System.Drawing.Point(131, 223);
+            this.txtProdID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProdID.Location = new System.Drawing.Point(339, 272);
             this.txtProdID.Name = "txtProdID";
-            this.txtProdID.Size = new System.Drawing.Size(114, 20);
+            this.txtProdID.Size = new System.Drawing.Size(114, 31);
             this.txtProdID.TabIndex = 60;
             // 
             // lblSearchFor
             // 
             this.lblSearchFor.AutoSize = true;
-            this.lblSearchFor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchFor.Location = new System.Drawing.Point(656, 192);
+            this.lblSearchFor.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchFor.Location = new System.Drawing.Point(825, 211);
             this.lblSearchFor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearchFor.Name = "lblSearchFor";
-            this.lblSearchFor.Size = new System.Drawing.Size(79, 25);
+            this.lblSearchFor.Size = new System.Drawing.Size(108, 33);
             this.lblSearchFor.TabIndex = 61;
             this.lblSearchFor.Text = "Names";
             // 
@@ -386,100 +407,115 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.btnPrdctSupps);
-            this.panel1.Controls.Add(this.lblHeader);
             this.panel1.Controls.Add(this.btnPkgs);
             this.panel1.Controls.Add(this.btnPrdts);
             this.panel1.Controls.Add(this.btnSupps);
+            this.panel1.Controls.Add(this.lblHeader);
             this.panel1.Location = new System.Drawing.Point(0, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(892, 123);
+            this.panel1.Size = new System.Drawing.Size(1177, 147);
             this.panel1.TabIndex = 62;
             // 
             // lblHeader
             // 
             this.lblHeader.AutoSize = true;
             this.lblHeader.BackColor = System.Drawing.Color.Transparent;
-            this.lblHeader.Font = new System.Drawing.Font("Calibri", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.Font = new System.Drawing.Font("Calibri", 44.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.lblHeader.Location = new System.Drawing.Point(270, -6);
+            this.lblHeader.Location = new System.Drawing.Point(410, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(350, 79);
+            this.lblHeader.Size = new System.Drawing.Size(369, 83);
             this.lblHeader.TabIndex = 54;
             this.lblHeader.Text = "Travel Experts";
             this.lblHeader.UseCompatibleTextRendering = true;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 478);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(585, 124);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 63;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(606, 372);
+            this.btnUpdate.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(825, 461);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(104, 40);
             this.btnUpdate.TabIndex = 67;
             this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(508, 372);
+            this.btnSave.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(825, 527);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(92, 40);
+            this.btnSave.Size = new System.Drawing.Size(102, 40);
             this.btnSave.TabIndex = 68;
             this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // cbProdID
             // 
+            this.cbProdID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbProdID.FormattingEnabled = true;
-            this.cbProdID.Location = new System.Drawing.Point(131, 222);
+            this.cbProdID.Location = new System.Drawing.Point(339, 271);
             this.cbProdID.Name = "cbProdID";
-            this.cbProdID.Size = new System.Drawing.Size(121, 21);
+            this.cbProdID.Size = new System.Drawing.Size(121, 33);
             this.cbProdID.TabIndex = 69;
             // 
             // cbSupID
             // 
+            this.cbSupID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSupID.FormattingEnabled = true;
-            this.cbSupID.Location = new System.Drawing.Point(131, 257);
+            this.cbSupID.Location = new System.Drawing.Point(339, 329);
             this.cbSupID.Name = "cbSupID";
-            this.cbSupID.Size = new System.Drawing.Size(121, 21);
+            this.cbSupID.Size = new System.Drawing.Size(121, 33);
             this.cbSupID.TabIndex = 70;
             // 
             // btnAddNew
             // 
             this.btnAddNew.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnAddNew.Location = new System.Drawing.Point(638, 317);
+            this.btnAddNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNew.Location = new System.Drawing.Point(821, 358);
             this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(110, 45);
+            this.btnAddNew.Size = new System.Drawing.Size(112, 57);
             this.btnAddNew.TabIndex = 71;
             this.btnAddNew.Text = "Add New Package(s)";
             this.btnAddNew.UseVisualStyleBackColor = false;
             this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
+            // 
+            // productsSuppliersBindingSource
+            // 
+            this.productsSuppliersBindingSource.DataMember = "Products_Suppliers";
+            this.productsSuppliersBindingSource.DataSource = this.travelExpertsDataSet;
+            // 
+            // products_SuppliersTableAdapter
+            // 
+            this.products_SuppliersTableAdapter.ClearBeforeFill = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::OOSD_CS_PROJ.Properties.Resources.THEFINALLOGO;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(160, 147);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 56;
+            this.pictureBox2.TabStop = false;
             // 
             // Main1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(1172, 780);
+            this.ClientSize = new System.Drawing.Size(1172, 670);
             this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.cbSupID);
             this.Controls.Add(this.cbProdID);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblSearchFor);
             this.Controls.Add(this.txtProdID);
@@ -515,7 +551,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.packagesBindingSource3)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsSuppliersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -559,11 +596,13 @@
         private TravelExpertsDataSetTableAdapters.Packages_Products_SuppliersTableAdapter packages_Products_SuppliersTableAdapter1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.ComboBox cbProdID;
         private System.Windows.Forms.ComboBox cbSupID;
         private System.Windows.Forms.Button btnAddNew;
+        private System.Windows.Forms.BindingSource productsSuppliersBindingSource;
+        private TravelExpertsDataSetTableAdapters.Products_SuppliersTableAdapter products_SuppliersTableAdapter;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
