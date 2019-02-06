@@ -4,13 +4,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-   
+    <link href="Styles/Main.css" rel="stylesheet" />
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/popper.min.js"></script>
 
   <%--  <link href="Styles/Main.css" rel="stylesheet" />--%>
-    <title></title>
+    <title>Login Page</title>
    <%-- <style type="text/css">
         .auto-style1 {
             width: 212px;
@@ -125,16 +125,10 @@
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="Default.aspx">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+        <a class="nav-link" href="Register.aspx">Register</a>
       </li>
     </ul>
    <%-- <form class="form-inline my-2 my-lg-0">--%>
@@ -207,9 +201,11 @@
                     </table>
             </div>
             <br />
-            <asp:Button ID="btnLogin" class="textbox" runat="server" OnClick="btnLogin_Click" Text="Login" />
-            &nbsp;or
-        <asp:HyperLink ID="hlSignUp" runat="server" NavigateUrl="~/Register.aspx">Sign Up</asp:HyperLink>
+            <div class="container">
+                <asp:Button ID="btnLogin" class="textbox" runat="server" OnClick="btnLogin_Click" Text="Login" />
+                &nbsp;or
+                <asp:HyperLink ID="hlSignUp" runat="server" NavigateUrl="~/Register.aspx">Sign Up</asp:HyperLink>
+            </div>
         </div>
     </form>
 </body>
