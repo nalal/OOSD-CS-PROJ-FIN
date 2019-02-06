@@ -46,5 +46,10 @@
         <div>
         </div>
     </form>
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">Place sticky footer content her.</span>
+        </div>
+    </footer>
 </body>
 </html>
