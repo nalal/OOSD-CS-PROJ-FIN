@@ -62,7 +62,7 @@ namespace OOSD_CS_PROJ
             btnSave.Visible = false;
             cbProdID.Visible = false;
             cbSupID.Visible = false;
-
+            btnDelete.Visible = false;
         }
 
         // populate drop down with names of pkg objects from the Packages list
@@ -326,6 +326,7 @@ namespace OOSD_CS_PROJ
             txtDesc.Text = "";
             txtBasePrice.Text = "";
             txtAgencyComm.Text = "";
+            txtSearch.Text = "";
         }
 
         // packages button is clicked
@@ -337,6 +338,7 @@ namespace OOSD_CS_PROJ
             btnProdSupClicked = false;
             btnPackClicked = true;
             btnUpdateClicked = false;
+            btnDelete.Visible = true;
 
             // visibility settings
             lblID.Text = "   ID:";
@@ -379,6 +381,7 @@ namespace OOSD_CS_PROJ
             btnProdSupClicked = false;
             btnPackClicked = false;
             btnUpdateClicked = false;
+            btnDelete.Visible = true;
 
             // visibility settings
             lblID.Text = "   ID:";
@@ -691,6 +694,65 @@ namespace OOSD_CS_PROJ
                 }
              
             }
-        
+
+        //Delete button 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            bool delete = false;
+
+            if (btnProdClicked)
+            {
+                DialogResult result = MessageBox.Show("Delete " + SingleProd.ProdName + "?",
+                "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+
+                    if (Validator1.IsProvidedCombo(cBName, "Product Name"))
+                    {
+                        Product NewProd = new Product();
+                        NewProd.ProdName = cBName.Text; //for new Product name
+
+                        delete = ProductsDB.DeleteProduct(SingleProd);
+                        if (delete)
+                        {
+                            MessageBox.Show("Product Deleted");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Products not Deleted. Please try again");
+                        }
+                    }
+                }
+            }
+
+            if (btnPackClicked)
+            {
+                if (Validator1.IsProvidedCombo(cBName, "Package Name") &&
+                   Validator1.IsProvided(txtDesc, "Describtion") &&
+                   Validator1.IsProvided(txtBasePrice, "Base Price") &&
+                   Validator1.IsProvided(txtAgencyComm, "Agency Commission"))
+                {
+
+                    Package NewPackage = new Package();
+                    NewPackage.PkgName = cBName.Text;
+                    NewPackage.PkgStartDate = dTPStartDate.Value.ToString("yyyy-MM-dd");
+                    NewPackage.PkgEndDate = dTPEndDate.Value.ToString("yyyy-MM-dd");
+                    NewPackage.PkgDesc = txtDesc.Text;
+                    NewPackage.PkgBasePrice = Convert.ToDecimal(txtBasePrice.Text.Replace("$", ""));
+                    NewPackage.PkgAgencyCommission = Convert.ToDecimal(txtAgencyComm.Text.Replace("$", ""));
+
+                    delete = PackageDB.DeletePackage(SinglePkg);
+                }
+
+                if (delete)
+                {
+                    MessageBox.Show("Package is Updated");
+                }
+                else
+                {
+                    MessageBox.Show("Package is not Updated, Please try again.");
+                }
+            }
+            }
     }
 }

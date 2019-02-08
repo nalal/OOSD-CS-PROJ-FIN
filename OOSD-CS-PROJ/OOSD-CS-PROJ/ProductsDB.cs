@@ -125,5 +125,44 @@ namespace OOSD_CS_PROJ
             }
             return Product;
         }
+
+        //Maryam
+        //Deleting the products
+        public static bool DeleteProduct(Product Pro)
+        {
+            bool Products = false;
+
+            using (SqlConnection connection = new SqlConnection(DBCall.builder.ConnectionString))
+            {
+                string deleteStatement = "DELETE ProductId, ps.ProductId, ProdName, " +
+                                     "FROM Products p " +
+                                     "join Products_Suppliers ps on p.ProductId = ps.ProductId " +
+                                     "WHERE ProductId = @ProductId " +
+                                     "AND ProdName = @ProdName ";
+                SqlCommand cmd = new SqlCommand(deleteStatement, connection);
+
+                cmd.Parameters.AddWithValue("@ProductId", Pro.ProductId);
+                cmd.Parameters.AddWithValue("@ProdName", Pro.ProdName);
+
+                try
+                {
+                    connection.Open();
+                    Products = Convert.ToBoolean(cmd.ExecuteNonQuery());
+                    if (Products)
+                        Products = true;
+                    else
+                        Products = false;
+                }
+                catch (SqlException ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+            return Products;
+        }
     }
 }

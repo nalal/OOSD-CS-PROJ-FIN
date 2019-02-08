@@ -74,6 +74,7 @@
             this.btnAddNew = new System.Windows.Forms.Button();
             this.productsSuppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.products_SuppliersTableAdapter = new OOSD_CS_PROJ.TravelExpertsDataSetTableAdapters.Products_SuppliersTableAdapter();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.packagesBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSet)).BeginInit();
@@ -505,12 +506,25 @@
             // 
             this.products_SuppliersTableAdapter.ClearBeforeFill = true;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(825, 582);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(102, 42);
+            this.btnDelete.TabIndex = 72;
+            this.btnDelete.Text = "Delete ";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // Main1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(1172, 670);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.cbSupID);
             this.Controls.Add(this.btnSave);
@@ -604,5 +618,6 @@
         private System.Windows.Forms.BindingSource productsSuppliersBindingSource;
         private TravelExpertsDataSetTableAdapters.Products_SuppliersTableAdapter products_SuppliersTableAdapter;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

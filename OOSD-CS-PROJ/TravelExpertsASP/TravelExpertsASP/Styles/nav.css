@@ -1,0 +1,45 @@
+﻿nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 70px;
+    position: relative;
+    color: aliceblue;
+}
+
+nav a {
+    color: aliceblue;
+    text-decoration: none;
+    text-transform: uppercase;
+    /*font-size: 14px;*/
+}
+
+p {
+    color: blueviolet;
+}
+
+nav a:hover {
+    color: #000;
+}
+
+h1, h3 {
+    color: aliceblue;
+    text-align: center;
+}
+.textbox {
+    margin-left: 40%;
+}
+
+.label {
+    margin-left: 33%;
+}
+
+.auto-style1 {
+    width: 55%;
+    margin-right: 0px;
+    margin-left: 25%;
+}

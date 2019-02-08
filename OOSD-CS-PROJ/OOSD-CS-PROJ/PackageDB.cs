@@ -116,5 +116,45 @@ namespace OOSD_CS_PROJ
             }
             return Pkg;
         }
+
+        public static bool DeletePackage(Package package)
+        {
+            SqlConnection conn = new SqlConnection(DBCall.builder.ConnectionString);
+            string deleteStatement =
+                "DELETE FROM Packages "
+                + "WHERE PackageId = @PackageId "
+                + "AND PkgName = @PkgName "
+                + "AND PkgStartDate = @PkgStartDate "
+                + "AND PkgEndDate = @PkgEndDate "
+                + "AND PkgDesc = @PkgDesc "
+                + "AND PkgBasePrice = @PkgBasePrice "
+                + "AND PkgAgencyCommission = @PkgAgencyCommission";
+
+            SqlCommand deleteCommand = new SqlCommand(deleteStatement, conn);
+            deleteCommand.Parameters.AddWithValue("@PackageId", package.PackageId);
+            deleteCommand.Parameters.AddWithValue("@PkgName", package.PkgName);
+            deleteCommand.Parameters.AddWithValue("@PkgStartDate", package.PkgStartDate);
+            deleteCommand.Parameters.AddWithValue("@PkgEndDate", package.PkgEndDate);
+            deleteCommand.Parameters.AddWithValue("@PkgDesc", package.PkgDesc);
+            deleteCommand.Parameters.AddWithValue("@PkgBasePrice", package.PkgBasePrice);
+            deleteCommand.Parameters.AddWithValue("@PkgAgencyCommission", package.PkgAgencyCommission);
+            try
+            {
+                conn.Open();
+                int count = deleteCommand.ExecuteNonQuery();
+                if (count > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }
