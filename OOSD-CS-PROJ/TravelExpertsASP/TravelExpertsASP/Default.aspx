@@ -13,7 +13,7 @@
 <body>
     <form id="form1" runat="server">
         <header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <%-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a class="navbar-brand" href="#">Travel Experts</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -35,7 +35,7 @@
                         </li>
                     </ul>
                 </div>
-            </nav>
+            </nav>--%>
         </header>
         <div class="jumbotron" id="jumbotron1">
             <div class="container">

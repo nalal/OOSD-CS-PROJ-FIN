@@ -53,6 +53,7 @@
             this.TBName.Name = "TBName";
             this.TBName.Size = new System.Drawing.Size(100, 20);
             this.TBName.TabIndex = 0;
+            this.TBName.Text = "ELF8OOSD197690\\SQLEXPRESS";
             // 
             // TBPass
             // 

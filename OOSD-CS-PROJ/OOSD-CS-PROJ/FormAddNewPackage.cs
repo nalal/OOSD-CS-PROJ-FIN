@@ -14,35 +14,55 @@ using System.Windows.Forms;
 namespace OOSD_CS_PROJ
 {
     public partial class FormAddNewPackage : Form
-    {   /*Author: Helen Lin
-        *This form is where the user adds new packages to the database*/
+    {   
+/*Author: Helen Lin
+*This form is where the user adds new packages to the database*/
         public FormAddNewPackage()
         {
             InitializeComponent();
         }
 
         private Package package; //added package
-        string selectedProduct; //to be used with comboBox1, stores the selectedProduct
-
-        //Populate the Product list with products from the database
-        private void Fillcombo()
+        private Product product;
+        private ProdSupplier prodSupListObj;
+        private ProdSupplier newProdSup;
+        private PackagesProductSuppliers newPackagesProductSuppliers;
+        int? selectedProduct; 
+//Populate the Product list with products from the database
+        private void FillComboProducts()
         {
-
             // return list of product created in GetProductName()
             List<Product> myProdList = ProductsDB.GetProducts();
 
-            // adding product names to the CBName (combo box)
+            // adding product id to the CBName (combo box)
             var prodLinq = from prod in myProdList
                            select new
                            {
-                               prod.ProdName
+                               prod.ProductId
                            };
 
             foreach (var item in prodLinq)
             {
-                cboProdList.Items.Add(item.ProdName);
+                cboProdList.Items.Add(item.ProductId);
             }
         }
+        private void FillComboPackageId()
+        {
+            List<Package> myPackList = MainPackageDB.GetPackages();
+
+            // adding product id to the CBName (combo box)
+            var packLinq = from pack in myPackList
+                           select new
+                           {
+                               pack.PackageId
+                           };
+
+            foreach (var item in packLinq)
+            {
+                cboPackId.Items.Add(item.PackageId);
+            }
+        }
+      
 
         //When user clicks save new package, will submit information to the database
         private void btnSaveNewPackage_Click(object sender, EventArgs e)
@@ -54,6 +74,8 @@ namespace OOSD_CS_PROJ
                 package = new Package();
                 this.PutPackageData(package);
                 
+                
+
             }
             //sending the completed package to the AddNewPackage method, then retrieving the PackageId to be displayed
 
@@ -62,16 +84,39 @@ namespace OOSD_CS_PROJ
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
         }
-        
+//Call the insert into packages product suppliers and add the packageId and productsupplier Id
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+
+            newPackagesProductSuppliers = new PackagesProductSuppliers();
+            newPackagesProductSuppliers.PackageId = Convert.ToInt32(cboPackId.Text);
+            newPackagesProductSuppliers.ProductSupplierId = Convert.ToInt32(cboSupplierList.SelectedValue);
+
+
+            int NAY = 0;
+            NAY = PackagesProductSuppliersDB.InsertPackagesProductSuppliers(newPackagesProductSuppliers);
+
+            if(NAY ==1)
+            {
+                MessageBox.Show("Package and Product has been inserted");
+            }
+            else
+            {
+                MessageBox.Show("Error. Package and product has not been inserted");
+            }
+        }
+
+
         //Upon form loading, label the form as Add New Package
         private void FormAddNewPackage_Load(object sender, EventArgs e)
         {
            
             this.Text = "Add New Package";
-            Fillcombo();
+            FillComboProducts();
+            FillComboPackageId();
         }
      
-        //this will take from the textboxes and put it into the object
+ //this will take from the textboxes and put it into the object
         private void PutPackageData(Package package)
         {
             try
@@ -101,7 +146,6 @@ namespace OOSD_CS_PROJ
                         //Assigning all the given values to the package object
                         package.PkgStartDate =  dtStartDate.Value.ToString("yyyy-MM-dd");
                         package.PkgEndDate =  dtEndDate.Value.ToString("yyyy-MM-dd");
-
                         package.PkgDesc = txtPkgDesc.Text;
                         package.PkgBasePrice = Convert.ToDecimal(txtPkgBasePrice.Text);
                         package.PkgAgencyCommission = Convert.ToDecimal(txtPkgAgencyCommission.Text);
@@ -109,13 +153,13 @@ namespace OOSD_CS_PROJ
                         if (cboProdList.SelectedIndex < 00000000)
                         {
 
-                            selectedProduct = " ";
-                            package.ProdName = selectedProduct;
+                            selectedProduct = null;
+                            product.ProductId = selectedProduct;
                         }
                         else
                         {
-                            selectedProduct = cboProdList.SelectedItem.ToString();
-                            package.ProdName = selectedProduct;
+                            selectedProduct = (int)cboProdList.SelectedItem;
+                            product.ProductId = selectedProduct;
                         }
 
                         package.PackageId = PackageDB.AddNewPackage(package);
@@ -176,5 +220,31 @@ namespace OOSD_CS_PROJ
                 e.Handled = true;
             }
         }
+//when user selects a product in the product list, populate suppliers list
+        private void cboProdList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboProdList.SelectedIndex < 00000000)
+            {
+                selectedProduct = null;
+                product.ProductId = selectedProduct;
+            }
+            else
+            {
+
+                newProdSup = new ProdSupplier();
+                newProdSup.ProductId = Convert.ToInt32(cboProdList.Text);
+
+
+                // return list of suppliers based on product ID from GetProdSuppliersBasedOnProductId
+
+           
+                cboSupplierList.DataSource = ProdSuppliersDB.GetProdSuppliersBasedOnProductId(newProdSup);
+                cboSupplierList.DisplayMember = "SupplierId";
+                cboSupplierList.ValueMember = "ProductSupplierId";
+            }
+        }
+
+
+      
     }
 }

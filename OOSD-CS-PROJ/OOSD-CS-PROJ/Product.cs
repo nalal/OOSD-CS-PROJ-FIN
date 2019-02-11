@@ -12,7 +12,7 @@ namespace OOSD_CS_PROJ
         public Product() { }
 
         // create properties
-        public int ProductId { get; set; }
+        public int? ProductId { get; set; }
 
         public string ProdName { get; set; }
 

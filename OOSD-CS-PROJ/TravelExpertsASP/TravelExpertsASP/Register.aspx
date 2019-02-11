@@ -76,9 +76,9 @@
             </div>
             <br />
             <br />
-            <div class="form-group">
                 <h5 class="label">
                     <asp:Label ID="lblCustFirstName" runat="server" Text="First Name:"></asp:Label></h5>
+            <div class="form-group">
                 <p class="textbox">
                     &nbsp;<asp:TextBox ID="txtCustFirstName" class="form-control" runat="server" AutoPostBack="False" Width="300px"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvCustFirstName" runat="server" ErrorMessage="First name is required" ControlToValidate="txtCustFirstName" ForeColor="Red"></asp:RequiredFieldValidator>
