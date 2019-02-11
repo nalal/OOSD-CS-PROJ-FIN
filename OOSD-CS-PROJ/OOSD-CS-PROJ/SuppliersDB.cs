@@ -56,8 +56,8 @@ namespace OOSD_CS_PROJ
                 return Suppliers;
             }
         }
-
-//this will allow user to add a new Supplier to list
+        //Helen 
+        //this will allow user to add a new Supplier to list
         public static void AddNewSupplier(Supplier newSupplier)
         //returns the auto-generated ID of the new Package
         {
@@ -92,6 +92,8 @@ namespace OOSD_CS_PROJ
                 }
             }
         }
+
+//Give us the product supplier ID from a joined table using product ID
 
         //Maryam
         //Update Statement for Suppliers

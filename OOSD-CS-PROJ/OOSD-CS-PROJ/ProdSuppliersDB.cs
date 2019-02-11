@@ -62,7 +62,56 @@ namespace OOSD_CS_PROJ
                 return ProdSuppliers;
             }
         }
+//Helen 
+//Here we will get a ProductSupplier Id and a SupId
+//which will be used in the supplier combo box within add packages and then insert method later in same
+        public static List<ProdSupplier> GetProdSuppliersBasedOnProductId(ProdSupplier newProductSupplier)
+        {
+            List<ProdSupplier> SupplierListBasedOnProd = new List<ProdSupplier>(); // make an empty list
+             
+            DBCall.InitSQL();
+            ProdSupplier prodSupListObj;// reference to new ProdSupplier object
 
+            using (SqlConnection connection = new SqlConnection(DBCall.builder.ConnectionString))
+            {
+                // create select command
+                string selectString = "select ps.SupplierId, ps.ProductSupplierId from Products_Suppliers ps " +
+                    "join Suppliers s on ps.SupplierId = s.SupplierId " +
+                    "where ProductId = @ProductId";
+
+                // selects records from data source based on connection and string
+                SqlCommand selectCommand = new SqlCommand(selectString, connection);
+                selectCommand.Parameters.AddWithValue("@ProductId", newProductSupplier.ProductId);
+                try
+                {
+                    // open connection
+                    connection.Open();
+                    // run the select command and process the results
+                    SqlDataReader reader = selectCommand.ExecuteReader();
+                    while (reader.Read())// process next row
+                    {
+                        // create Prod Supplier objects to populate list
+                        prodSupListObj = new ProdSupplier();
+                        prodSupListObj.SupplierId = Convert.ToInt32(reader["SupplierId"]);
+                        prodSupListObj.ProductSupplierId = Convert.ToInt32(reader["ProductSupplierId"]);
+                       
+                        SupplierListBasedOnProd.Add(prodSupListObj);
+                    }
+                    reader.Close();
+                }
+                // general exception
+                catch (Exception ex)
+                {
+                    throw ex; // throw it to the form to handle
+                }
+                finally
+                {
+                    connection.Close();
+                }
+                //return the list 
+                return SupplierListBasedOnProd;
+            }
+        }
 
         public static ProdSupplier GetProdSuppliersOBJECT(int yolo)
         {
@@ -119,8 +168,8 @@ namespace OOSD_CS_PROJ
 
 
 
-        /*Add new Product Supplier to the list
-        Author: Helen Lin */
+/*Add new Product Supplier to the list
+Author: Helen Lin */
 
         public static void AddNewProdSupplier(ProdSupplier newProductSupplier)
         //returns the auto-generated ID of the new Package
@@ -134,7 +183,7 @@ namespace OOSD_CS_PROJ
 
                 SqlCommand cmd = new SqlCommand(insertStatement, conn);
 
-
+                //Takes values from the main page and puts into database
                 cmd.Parameters.AddWithValue("@ProductId", newProductSupplier.ProductId);
                 cmd.Parameters.AddWithValue("@SupplierId", newProductSupplier.SupplierId);
 

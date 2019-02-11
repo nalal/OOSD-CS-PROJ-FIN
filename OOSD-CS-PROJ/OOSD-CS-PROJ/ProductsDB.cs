@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace OOSD_CS_PROJ
 {
-    // class for SQL commands regarding the Products class on the main view form
+//Chad
+//class for SQL commands regarding the Products class on the main view form
     class ProductsDB
     {
         // creating list of instances of the ProdSuppliers class
@@ -57,6 +58,7 @@ namespace OOSD_CS_PROJ
             }
         }
 //Helen Lin
+//Adding a new product to database
         public static void AddNewProduct(Product newProduct)
         //returns the auto-generated ID of the new Package
         {
@@ -89,8 +91,10 @@ namespace OOSD_CS_PROJ
             }
         }
 
-        //Maryam
-        //Update statement for Products
+        
+
+//Maryam
+//Update statement for Products
         public static bool UpdateProducts(Product newProd, Product oldProd)
         {
             bool Product = false;

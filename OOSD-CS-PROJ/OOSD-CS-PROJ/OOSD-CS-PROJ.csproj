@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PackagesProductSuppliers.cs" />
     <Compile Include="ConnectionPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +94,7 @@
     <Compile Include="MainPackageDB.cs" />
     <Compile Include="Package.cs" />
     <Compile Include="PackageDB.cs" />
+    <Compile Include="PackagesProductSuppliersDB.cs" />
     <Compile Include="ProdSupplier.cs" />
     <Compile Include="ProdSuppliersDB.cs" />
     <Compile Include="Product.cs" />

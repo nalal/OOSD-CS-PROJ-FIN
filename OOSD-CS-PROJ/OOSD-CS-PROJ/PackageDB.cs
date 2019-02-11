@@ -22,7 +22,10 @@ namespace OOSD_CS_PROJ
             {
                 string insertStatement = "INSERT INTO Packages(PkgName, PkgStartDate, PkgEndDate, PkgDesc, PkgBasePrice, PkgAgencyCommission, ProdName)" + "VALUES(@PkgName, @PkgStartDate, @PkgEndDate, @PkgDesc, @PkgBasePrice, @PkgAgencyCommission, @ProdName)";
 
-                SqlCommand cmd = new SqlCommand(insertStatement, conn);
+                //selects all the columns needed to insert the new product into package_products_suppliers
+                
+               SqlCommand cmd = new SqlCommand(insertStatement, conn);
+               
 
                 cmd.Parameters.AddWithValue("@PkgName", newPackage.PkgName);
 
@@ -31,20 +34,33 @@ namespace OOSD_CS_PROJ
                 cmd.Parameters.AddWithValue("@PkgEndDate", newPackage.PkgEndDate);
 
                 cmd.Parameters.AddWithValue("@PkgDesc", newPackage.PkgDesc);
+
                 cmd.Parameters.AddWithValue("@PkgBasePrice", newPackage.PkgBasePrice);
+
                 cmd.Parameters.AddWithValue("@PkgAgencyCommission", newPackage.PkgAgencyCommission);
-                cmd.Parameters.AddWithValue("@ProdName", newPackage.ProdName);
+
+                cmd.Parameters.AddWithValue("@PkgAgencyCommission", newPackage.PkgAgencyCommission);
+
+                
 
 
+
+                
                 try
                 {
                     conn.Open();
                     cmd.ExecuteNonQuery(); //run DML statements
                                            //retrieve generated ID
+                                           //runs first command which inserts
                     string selectQuery = "SELECT IDENT_CURRENT('Packages') FROM Packages"; //gets current ID
                     SqlCommand selectCommand = new SqlCommand(selectQuery, conn);
                     selectCommand.ExecuteScalar(); //selects one value
                     PackageId = Convert.ToInt32(selectCommand.ExecuteScalar()); //selects one value   Note that typecasting Int does not work!
+
+                    
+                    
+
+
                 }
                 catch (SqlException ex)
                 {
@@ -55,7 +71,10 @@ namespace OOSD_CS_PROJ
                     conn.Close();
                 }
                 return PackageId;
+                 
+            
             }
+            
         }
 
         //Maryam
