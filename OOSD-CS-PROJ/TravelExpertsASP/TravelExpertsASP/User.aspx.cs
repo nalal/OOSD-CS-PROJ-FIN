@@ -35,7 +35,6 @@ namespace TravelExpertsASP
                         name = (myReader["CustFirstName"].ToString());
                         lblWelcome.Text += name;
                     }
-
                 }
                 catch(Exception ex)
                 {

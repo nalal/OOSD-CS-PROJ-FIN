@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="User.aspx.cs" Inherits="TravelExpertsASP.User" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="TravelExpertsASP.Home" %>
 
 <!DOCTYPE html>
 
@@ -6,9 +6,6 @@
 <head runat="server">
     <link href="Styles/bootstrapLux.css" rel="stylesheet" />
     <link href="Styles/nav.css" rel="stylesheet" />
-     <script src="Scripts/jquery-3.0.0.min.js"></script>
-    <script src="Scripts/bootstrap.min.js"></script>
-    <script src="Scripts/popper.min.js"></script>
     <title></title>
 </head>
 <body>
@@ -22,9 +19,8 @@
                 <div class="collapse navbar-collapse" id="navbarColor01">
                     <ul class="navbar-nav mr-auto">
                         <li><a href="http://localhost:61652/Home.aspx">Home</a></li>
-                        <li><a href="http://localhost:61652/UserAccountDetails.aspx">Account Details</a></li>
-                        <li><a href="http://localhost:61652/PurchasedItems.aspx">Purchased Items</a></li>
-                        <li><a href="http://localhost:61652/Login.aspx">Log Out</a></li>
+                        <li><a href="http://localhost:61652/Login.aspx">Log In</a></li>
+                        <li><a href="http://localhost:61652/Register.aspx">Register</a></li>
 
                     </ul>
                 </div>
@@ -35,24 +31,26 @@
                 <h1 class="display-1">Welcome!!!</h1>
                 <h3 class="display-3">Travel Experts</h3>
             </div>
-        </div>
+            </div>
         <div class="container">
-            <h5 class="label">
-            <asp:Label ID="lblWelcome" runat="server" Text="Welcome..."></asp:Label></h5>
+            <h4>About Us:</h4>
+            <p>We are located in Calgary, with a branch office in Okotoks and we plan to open new agencies in the future.  
+                The agency has an easy-to-operate system for customers, suppliers, sales and commissions. 
+                We offer the best packages for our customers. Our Agents are friendly and offer the best packages for our customers,
+                not only that they are the ones who help customers anytime they need them.
+                In addition, we offer deals for our existing customers and our suppliers are happy to help any time a customer or agent needs them.
+            </p>
             <br />
             <br />
-            <asp:Button ID="btnLogout" class="textbox" runat="server" OnClick="btnLogout_Click" Text="Logout" />
-            <br />
-            <br />
-            <asp:Button ID="btnAccountDetails" class="textbox" runat="server" OnClick="btnAccountDetails_Click" Text="AccountDetails" />
-            <br />
-            <asp:Button ID="btnPurchasedProducts" class="textbox" runat="server" OnClick="btnPurchasedProducts_Click" Text="Purchased Products" />
+            <h4>Contact Us:</h4>
+            <p>We are happy to help anytime, anywhere!</p>
+            <p>123 street Calgary, Alberta</p>
+            <p>Phone: (403) 666-6666</p>
+            <p>Email: Travel@Experts.ca</p>
         </div>
     </form>
-    <br />
-    <br />
     <footer class="container-fluid text-center footerDiv">
-        <p>This page copyrighted &copy; by Travel Experts</p>
-    </footer>
+			<p>This page copyrighted &copy; by Travel Experts</p>
+		</footer>
 </body>
 </html>

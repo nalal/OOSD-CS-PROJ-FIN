@@ -73,7 +73,8 @@ namespace TravelExpertsASP
 
                     if (insert)
                     {
-                        Response.Write("Registration successful");
+                        Response.Redirect("http://localhost:61652/Login.aspx");
+                        //Response.Write("Registration successful");
                     }
                     //else
                     //    Response.Write("Registration unsuccessful");
